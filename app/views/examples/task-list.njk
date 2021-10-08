@@ -1,0 +1,78 @@
+
+{% extends "base.njk" %}
+
+{% set title = "Task list page" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ serviceName }}</h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 3 of 8 sections.</p>
+
+      {{ appTaskList({
+        sections: [{
+          titleText: "Check before you start",
+          items: [{
+            text: "Check eligibility",
+            href: "#",
+            tag: {
+              text: "Completed"
+            }
+          }, {
+            text: "Read declaration",
+            href: "#",
+            tag: {
+              text: "Completed"
+            }
+          }]
+        }, {
+          titleText: "Prepare application",
+          items: [{
+            text: "Company information",
+            href: "#",
+            tag: {
+              text: "Completed"
+            }
+          }, {
+            text: "Your contact details",
+            href: "#",
+            tag: {
+              colour: "blue",
+              text: "In progress"
+            }
+          }, {
+            text: "List convictions",
+            href: "#",
+            tag: {
+              colour: "grey",
+              text: "Not started"
+            }
+          }, {
+            text: "Provide financial evidence",
+            tag: {
+              colour: "grey",
+              text: "Cannot start yet"
+            }
+          }, {
+            text: "Give medical information",
+            tag: {
+              colour: "grey",
+              text: "Cannot start yet"
+            }
+          }]
+        }, {
+          titleText: "Apply",
+          items: [{
+            text: "Submit and pay",
+            tag: {
+              colour: "grey",
+              text: "Cannot start yet"
+            }
+          }]
+        }]
+      }) }}
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.njk" %}
+
+{% set title = "Clear session data?" %}
+
+{% block content %}
+  <form method="post">
+    {{ govukNotificationBanner({
+      html: "The session data has been cleared. <a class=\"govuk-notification-banner__link\" href=\"/\">Prototype home page</a>.",
+      type: "success"
+    }) if success }}
+
+    <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+    {{ govukWarningText({
+      text: "This will clear all of the data entered in this session",
+      iconFallbackText: "Warning"
+    }) }}
+
+    {{ govukButton({
+      text: "Clear the data"
+    }) }}
+  </form>
+{% endblock %}

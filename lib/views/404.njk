@@ -1,0 +1,9 @@
+{% extends "base.njk" %}
+
+{% set title = "Page not found" %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+  <p class="govuk-body">If you entered a web address, check it is correct.</p>
+  <pre class="govuk-!-margin-top-8">Status code: 404</pre>
+{% endblock %}

@@ -1,0 +1,21 @@
+{
+  "name": "Your service name",
+  "env": {
+    "USE_AUTH": {
+      "description": "Enable or disable password protection on production.",
+      "value": "true"
+    },
+    "USE_AUTO_STORE_DATA": {
+      "desciption": "Automatically store form data and send to all views",
+      "value": "true"
+    },
+    "USE_COOKIE_SESSION_STORE": {
+      "desciption": "Enable cookie-based session store (persists on restart)\nPlease note 4KB cookie limit per domain, cookies too large will silently be ignored.",
+      "value": "false"
+    },
+    "USE_HTTPS": {
+      "desciption": "Force HTTP to redirect to HTTPS on production",
+      "value": "true"
+    }
+  }
+}

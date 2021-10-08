@@ -1,0 +1,121 @@
+{% extends "base.njk" %}
+
+{% set title = "Summary cards" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-l">Contacts</h1>
+
+      {{ appSummaryCard({
+        classes: "govuk-!-margin-bottom-9",
+        titleText: "Sarah Philips",
+        actions: {
+          items: [{
+            href: "#",
+            text: "Delete",
+            visuallyHiddenText: "Sarah Philips"
+          }]
+        },
+        rows: [{
+          key: {
+            text: "Address"
+          },
+          value: {
+            html: "72 Guild Street\nLondon\nSE23 6FH" | nl2br
+          },
+          actions: {
+            items: [{
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "address for Sarah Philips"
+            }]
+          }
+        }, {
+          key: {
+            text: "Telephone"
+          },
+          value: {
+            text: "07700 900457"
+          },
+          actions: {
+            items: [{
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "telephone for Sarah Philips"
+            }]
+          }
+        }, {
+          key: {
+            text: "Email"
+          },
+          value: {
+            text: "sarah.phillips@example.com"
+          },
+          actions: {
+            items: [{
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "email for Sarah Philips"
+            }]
+          }
+        }]
+      }) }}
+
+      {{ appSummaryCard({
+        classes: "govuk-!-margin-bottom-9",
+        titleText: "David Smith",
+        actions: {
+          items: [{
+            href: "#",
+            text: "Delete",
+            visuallyHiddenText: "David Smith"
+          }]
+        },
+        rows: [{
+          key: {
+            text: "Address"
+          },
+          value: {
+            html: "114 Hill Road<br>Cardiff\nCF14 1XY" | nl2br
+          },
+          actions: {
+            items: [{
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "address for David Smith"
+            }]
+          }
+        }, {
+          key: {
+            text: "Telephone"
+          },
+          value: {
+            text: "07700 900582"
+          },
+          actions: {
+            items: [{
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "telephone for David Smith"
+            }]
+          }
+        }, {
+          key: {
+            text: "Email"
+          },
+          value: {
+            text: "david.smith@example.com"
+          },
+          actions: {
+            items: [{
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "email for David Smith"
+            }]
+          }
+        }]
+      }) }}
+    </div>
+  </div>
+{% endblock %}

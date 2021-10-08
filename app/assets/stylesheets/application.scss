@@ -1,0 +1,12 @@
+// GOV.UK Frontend options
+$govuk-global-styles: true;
+$govuk-new-link-styles: true;
+$govuk-assets-path: "/govuk/assets/";
+
+// Import GOV.UK Frontend
+@import "govuk-frontend/govuk/all";
+
+// Import components
+@import "../app/components/all";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you

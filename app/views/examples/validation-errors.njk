@@ -1,0 +1,41 @@
+{% extends "base.njk" %}
+
+{% set title = "Validation errors" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="#" method="post" novalidate>
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: errorList(errors)
+        }) if errors }}
+
+        {{ govukInput(decorate({
+          classes: "govuk-input--width-20",
+          label: {
+            text: "Full name",
+            isPageHeading: true,
+            classes: "govuk-label--l"
+          },
+          autocomplete: "name"
+        }, "full-name")) }}
+
+        {{ govukInput(decorate({
+          classes: "govuk-input--width-20",
+          label: {
+            text: "Email address",
+            isPageHeading: true,
+            classes: "govuk-label--l"
+          },
+          autocomplete: "email",
+          type: "email"
+        }, "email")) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

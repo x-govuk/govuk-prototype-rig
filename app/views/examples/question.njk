@@ -1,0 +1,38 @@
+{% extends "base.njk" %}
+
+{% set title = "Question page" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="#" method="post" novalidate>
+        {{ govukRadios(decorate({
+          fieldset: {
+            legend: {
+              text: "Where do you live?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [{
+            value: "england",
+            text: "England"
+          }, {
+            value: "scotland",
+            text: "Scotland"
+          }, {
+            value: "wales",
+            text: "Wales"
+          }, {
+            value: "northern-ireland",
+            text: "Northern Ireland"
+          }]
+        }, "where-do-you-live")) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

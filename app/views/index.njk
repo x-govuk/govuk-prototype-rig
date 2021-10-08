@@ -1,0 +1,66 @@
+{% extends "base.njk" %}
+
+{% set serviceName = "Prototype Rig" %}
+{% set title = "GOV.UK Prototype Rig" %}
+
+{% block pageTitle %}{{ title }}{% endblock %}
+
+{% block beforeContent %}{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body-l">Rapidly create prototypes of GOV.UK services<p>
+      <p>The Prototype Rig contains all you need to prototype anything from simple static pages to complex, data-driven transactions.</p>
+
+      <h2 class="govuk-heading-m">About this project</h2>
+      <p>The Prototype Rig is a minimal and opinionated version of the <a href="https://govuk-prototype-kit.herokuapp.com/docs">GOV.UK Prototype Kit</a>. It is designed to be used by developers familiar with the Nunjucks templating language.</p>
+      <p>It drops support for legacy frameworks and undocumented features, and updates the underlying tooling. It also includes Nunjucks helpers that are useful when creating pages and flows.</p>
+      <p>You can <a href="https://github.com/paulrobertlloyd/govuk-prototype-rig#readme">read more about this project</a> on GitHub.</p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      {{ appRelatedNavigation({
+        sections: [{
+          title: "Example pages",
+          items: [{
+            text: "Check answers page",
+            href: "/examples/check-answers"
+          }, {
+            text: "Confirmation page",
+            href: "/examples/confirmation"
+          }, {
+            text: "Content page",
+            href: "/examples/content"
+          }, {
+            text: "Question page",
+            href: "/examples/question"
+          }, {
+            text: "Start page on GOV.UK",
+            href: "/examples/start"
+          }, {
+            text: "Summary cards",
+            href: "/examples/summary-cards"
+          }, {
+            text: "Task list page",
+            href: "/examples/task-list"
+          }, {
+            text: "Validation errors",
+            href: "/examples/validation-errors"
+          }]
+        }, {
+          title: "Elsewhere on the web",
+          items: [{
+            text: "GOV.UK Design System",
+            href: "https://design-system.service.gov.uk"
+          }, {
+            text: "GOV.UK Frontend",
+            href: "https://frontend.design-system.service.gov.uk"
+          }]
+        }]
+      }) }}
+    </div>
+  </div>
+{% endblock %}

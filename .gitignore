@@ -1,0 +1,9 @@
+.DS_Store
+.env
+.port.tmp
+.sass-cache
+.start.pid
+.tmuxp.*
+
+node_modules
+public

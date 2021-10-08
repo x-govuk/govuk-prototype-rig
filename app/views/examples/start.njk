@@ -1,0 +1,79 @@
+
+{% extends "base.njk" %}
+
+{% set title = "Start page on GOV.UK" %}
+
+{% block header %}
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: "https://www.gov.uk",
+      text: "Home"
+    }, {
+      href: "#",
+      text: "Section"
+    }, {
+      text: "Subsection"
+    }]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ serviceName }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Use this service to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>do something</li>
+        <li>update your name, address or other details</li>
+        <li>do something else</li>
+      </ul>
+      <p>Registering takes around 5 minutes.</p>
+
+      {{ govukButton({
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-9",
+        text: "Start now",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+      <p>You can also <a href="#">register by post</a>.</p>
+      <p>The online service is also available in <a href="#">Welsh (Cymraeg)</a>.</p>
+      <p>You can’t register for this service if you’re in the UK illegally.</p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      {{ appRelatedNavigation({
+        sections: [{
+          items: [{
+            text: "Training and study at work",
+            href: "#"
+          }, {
+            text: "Careers helpline for teenagers",
+            href: "#"
+          }],
+          subsections: [{
+            title: "Explore the topic",
+            items: [{
+              text: "Apprenticeships",
+              href: "#"
+            }, {
+              text: "Finding a job",
+              href: "#"
+            }]
+          }, {
+            title: "Collection",
+            items: [{
+              text: "The future of jobs and skills",
+              href: "#"
+            }]
+          }]
+        }]
+      }) }}
+    </div>
+  </div>
+{% endblock %}
