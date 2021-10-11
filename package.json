@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@rollup/plugin-multi-entry": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.5",
     "basic-auth": "^2.0.0",
     "browser-sync": "^2.11.1",
     "client-sessions": "^0.8.0",
@@ -24,6 +25,7 @@
     "express": "^4.17.1",
     "express-session": "^1.13.0",
     "express-validator": "^6.12.2",
+    "ftdomdelegate": "^5.0.0",
     "govuk-frontend": "^3.14.0",
     "inquirer": "^8.2.0",
     "keypather": "^3.0.0",

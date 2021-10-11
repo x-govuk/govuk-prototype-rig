@@ -1,4 +1,5 @@
 import multi from '@rollup/plugin-multi-entry'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 import scss from 'rollup-plugin-scss'
 import copy from 'rollup-plugin-copy'
 
@@ -31,6 +32,8 @@ export default [{
     multi({
       entryFileName: 'application.js'
     }),
+    // Resolve modules imported from node_modules
+    nodeResolve(),
     // Concatenate govuk-frontend, application and component styles
     scss({
       includePaths: ['node_modules'],
