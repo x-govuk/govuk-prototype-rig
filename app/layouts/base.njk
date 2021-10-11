@@ -51,6 +51,8 @@
   }) }}
 {% endblock %}
 
+{% set bodyAttributes = {"data-module": "edge"} %}
+
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 
 {% block beforeContent %}
