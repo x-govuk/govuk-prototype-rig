@@ -47,7 +47,6 @@
       "**/*.js",
       "**/*.json"
     ],
-    "script": "lib/listen-on-port.js",
     "ignore": [
       "public/*",
       "app/assets/*",
