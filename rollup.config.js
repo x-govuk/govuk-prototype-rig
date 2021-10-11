@@ -38,7 +38,7 @@ export default [{
       quietDeps: true,
       sourceMap: true,
       verbose: false,
-      watch: ['app/stylesheets', 'app/components']
+      watch: ['app/assets/stylesheets', 'app/components']
     })
   ]
 }]
