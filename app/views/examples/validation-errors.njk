@@ -1,6 +1,6 @@
 {% extends "base.njk" %}
 
-{% set title = "Validation errors" %}
+{% set title = "Help users to recover from validation errors" %}
 
 {% block content %}
   <div class="govuk-grid-row">
@@ -11,24 +11,22 @@
           errorList: errorList(errors)
         }) if errors }}
 
+        <h1 class="govuk-heading-l">Personal details</h1>
+
         {{ govukInput(decorate({
-          classes: "govuk-input--width-20",
           label: {
-            text: "Full name",
-            isPageHeading: true,
-            classes: "govuk-label--l"
+            text: "Full name"
           },
-          autocomplete: "name"
+          autocomplete: "name",
+          spellcheck: false
         }, "full-name")) }}
 
         {{ govukInput(decorate({
-          classes: "govuk-input--width-20",
           label: {
-            text: "Email address",
-            isPageHeading: true,
-            classes: "govuk-label--l"
+            text: "Email address"
           },
           autocomplete: "email",
+          spellcheck: false,
           type: "email"
         }, "email")) }}
 
