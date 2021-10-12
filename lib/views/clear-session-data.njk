@@ -4,20 +4,24 @@
 
 {% block content %}
   <form method="post">
-    {{ govukNotificationBanner({
-      html: "The session data has been cleared. <a class=\"govuk-notification-banner__link\" href=\"/\">Prototype home page</a>.",
-      type: "success"
-    }) if success }}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        {{ govukNotificationBanner({
+          html: "Session data has been cleared. <a class=\"govuk-notification-banner__link\" href=\"/\">Return to prototype homepage</a>.",
+          type: "success"
+        }) if success }}
 
-    <h1 class="govuk-heading-xl">{{ title }}</h1>
+        <h1 class="govuk-heading-l">{{ title }}</h1>
 
-    {{ govukWarningText({
-      text: "This will clear all of the data entered in this session",
-      iconFallbackText: "Warning"
-    }) }}
+        {{ govukWarningText({
+          text: "This will clear all of the data entered in this session",
+          iconFallbackText: "Warning"
+        }) }}
 
-    {{ govukButton({
-      text: "Clear the data"
-    }) }}
+        {{ govukButton({
+          text: "Clear the data"
+        }) }}
+      </div>
+    </div>
   </form>
 {% endblock %}
