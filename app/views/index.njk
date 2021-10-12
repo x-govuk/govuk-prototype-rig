@@ -15,6 +15,10 @@
       <p class="govuk-body-l">Rapidly create prototypes of GOV.UK services<p>
       <p>The Prototype Rig contains all you need to prototype anything from simple static pages to complex, data-driven transactions.</p>
 
+      {{ govukInsetText({
+        html: "Congratulations on finding the <a href=\"/feature-flags\">feature flags</a>."
+      }) if data.features.demo.on }}
+
       <h2 class="govuk-heading-m">About this project</h2>
       <p>The Prototype Rig is a minimal and opinionated version of the <a href="https://govuk-prototype-kit.herokuapp.com/docs">GOV.UK Prototype Kit</a>. It is designed to be used by developers familiar with the Nunjucks templating language.</p>
       <p>It drops support for legacy frameworks and undocumented features, and updates the underlying tooling. It also includes Nunjucks helpers that are useful when creating pages and flows.</p>

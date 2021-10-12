@@ -6,4 +6,13 @@
  * useful for testing journeys where users are returning or logging in to an
  * existing application.
  */
-export default {}
+export default {
+  // Set feature flags using the `features` key
+  features: {
+    demo: {
+      on: false,
+      name: 'Demonstration',
+      description: 'Show message about feature flags on the home page.'
+    }
+  }
+}
