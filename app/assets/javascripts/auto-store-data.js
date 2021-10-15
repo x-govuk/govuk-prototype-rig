@@ -14,7 +14,6 @@ if (form) {
 
       if (!names[name]) {
         names[name] = true
-        console.log('names', names)
         const input = document.createElement('input')
         input.setAttribute('name', name)
         input.setAttribute('type', 'hidden')
