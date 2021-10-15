@@ -1,21 +1,29 @@
 /**
- * Filters available for use in Nunjucks templates
+ * Prototype specific filters for use in Nunjucks templates.
+ *
+ * You can override Prototype Rig filters by creating filter methods
+ * with the same name.
+ *
+ * You can delete this file if you don’t need your own filters.
  */
-export default (env) => {
+export default () => {
   const filters = {}
 
   /**
-   * Logs an object in the template to the console in the browser.
+   * Add your methods to the filters object below this comment block.
    *
-   * @example {{ "hello world" | log }}
+   * @example
+   * filters.sayHello = function (name) {
+   *   return `Hello, ${name}!`
+   * }
    *
-   * @param {any} a Any type
-   * @return {string} A script tag with a `console.log` call.
+   * Which in your templates would be used as:
+   *
+   * {{ "World" | sayHello }} => Hello, World!
+   *
+   * @see https://mozilla.github.io/nunjucks/api#custom-filters
    */
-  filters.log = (a) => {
-    const nunjucksSafe = env.getFilter('safe')
-    return nunjucksSafe(`<script>console.log(${JSON.stringify(a, null, '\t')});</script>`)
-  }
 
+  // Keep the following line to return your filters to the app
   return filters
 }
