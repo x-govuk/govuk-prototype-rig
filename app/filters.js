@@ -10,7 +10,7 @@ export default (env) => {
    * @example {{ "hello world" | log }}
    *
    * @param {any} a Any type
-   * @return {String} A script tag with a `console.log` call.
+   * @return {string} A script tag with a `console.log` call.
    */
   filters.log = (a) => {
     const nunjucksSafe = env.getFilter('safe')
