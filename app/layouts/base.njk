@@ -45,7 +45,8 @@
 {% block header %}
   {{ govukHeader({
     homepageUrl: "/",
-    serviceName: serviceName,
+    productName: productName,
+    serviceName: serviceName if not productName,
     serviceUrl: "/",
     containerClasses: "govuk-width-container"
   }) }}

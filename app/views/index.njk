@@ -1,6 +1,6 @@
 {% extends "base.njk" %}
 
-{% set serviceName = "Prototype Rig" %}
+{% set productName = "Prototype Rig" %}
 {% set title = "GOV.UK Prototype Rig" %}
 
 {% block pageTitle %}{{ title }}{% endblock %}
@@ -8,12 +8,12 @@
 {% block beforeContent %}{% endblock %}
 
 {% block content %}
-  <h1 class="govuk-heading-xl">{{ title }}</h1>
+  <style>.govuk-header__logo { width: auto }</style>
+  <h1 class="govuk-heading-xl">Rapidly create prototypes of GOV.UK&nbsp;services</h1>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <p class="govuk-body-l">Rapidly create prototypes of GOV.UK services<p>
-      <p>The Prototype Rig contains all you need to prototype anything from simple static pages to complex, data-driven transactions.</p>
+      <p class="govuk-body-l">The Prototype Rig contains all you need to prototype anything from simple static pages to complex, data-driven transactions.</p>
 
       {{ govukInsetText({
         html: "Congratulations on finding the <a href=\"/feature-flags\">feature flags</a>."
