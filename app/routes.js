@@ -5,7 +5,7 @@ import * as validations from './validations.js'
 const router = express.Router()
 
 /**
- * Example route which validates a form submission
+ * Example route which validates a form submission.
  */
 router.post('/examples/validation-errors', validations.exampleValidation, (req, res) => {
   const errors = validator.validationResult(req)

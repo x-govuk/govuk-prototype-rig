@@ -2,7 +2,7 @@ import validator from 'express-validator'
 const { check } = validator
 
 /**
- * Validation checks
+ * Validation checks.
  *
  * Uses validators from validator.js
  * @see See https://github.com/validatorjs/validator.js

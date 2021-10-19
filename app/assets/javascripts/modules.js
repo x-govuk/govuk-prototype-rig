@@ -1,11 +1,11 @@
 /**
- * Get module name
+ * Get module name.
  *
  * @example _getModuleName(selectable-table) => to SelectableTable
  *
  * @private
- * @param {String} string Original value
- * @returns {String} data Updated data
+ * @param {string} string Original value
+ * @returns {string} data Updated data
  */
 const _getModuleName = (string) => {
   // Convert string to camel case
@@ -18,7 +18,7 @@ const _getModuleName = (string) => {
 }
 
 /**
- * Find and initiate component modules
+ * Find and initiate component modules.
  *
  * @example [data-module="foo-bar"] initiates PrototypeRig.Modules.FooBar()
  */
