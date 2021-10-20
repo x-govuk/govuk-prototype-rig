@@ -26,7 +26,7 @@ What this project takes away with one hand, it gives with another:
 * Assets compiled and bundled using [rollup.js](https://rollupjs.org/)
 * Clearer organisation of files and folders
 * Rewritten using ES modules
-* 404 page
+* 404 and 500 error pages
 * Display of session data in the console
 * Support for form validation
 * A set of Nunjucks component macros, filters and helpers
