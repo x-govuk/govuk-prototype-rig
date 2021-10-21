@@ -16,3 +16,7 @@ export const exampleValidation = [
     .isEmail()
     .withMessage('Enter an email address in the correct format, like name@example.com')
 ]
+
+export const validations = {
+  exampleValidation
+}

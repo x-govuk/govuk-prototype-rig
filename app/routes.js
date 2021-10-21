@@ -1,6 +1,6 @@
 import express from 'express'
 import validator from 'express-validator'
-import * as validations from './validations.js'
+import { validations } from './validations.js'
 
 const router = express.Router()
 
