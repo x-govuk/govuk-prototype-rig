@@ -9,7 +9,6 @@ It drops support for legacy frameworks and undocumented features, and updates th
 The following features have been removed:
 
 * Support for [GOV.UK elements](https://govuk-elements.herokuapp.com/) (superseded by the [GOV.UK Design System](https://design-system.service.gov.uk) in 2018)
-* Bundled documentation
 * Extensions (an undocumented feature of the Prototype Kit)
 * Unbranded template
 * Usage data collection
@@ -24,32 +23,18 @@ What this project takes away with one hand, it gives with another:
 * CSS linting using [Stylelint](https://stylelint.io)
 * Sass compiled using [the Dart library](https://sass-lang.com/dart-sass)
 * Assets compiled and bundled using [rollup.js](https://rollupjs.org/)
+* Fully documented using [JSDoc](https://jsdoc.app)
 * Clearer organisation of files and folders
 * Rewritten using ES modules
 * 404 and 500 error pages
 * Display of session data in the console
 * Support for form validation
-* A set of Nunjucks component macros, filters and helpers
-
-## Nunjucks helpers
-
-### Component macros
-
-The following nunjucks macros are provided for common components not currently in the GOV.UK Design System:
-
-* [Related navigation](/app/components/related-navigation/README.md)
-* [Summary card](/app/components/summary-card/README.md)
-* [Task list](/app/components/task-list/README.md)
-
-### Global helpers
-
-* `checked()`: Checks if a given value exists in session data
-* `decorate()`: Adds `name`, `value`, `id`/`idPrefix` and `checked`/`selected` and `errorMessage` attributes to GOV.UK inputs
-* `errorList()`: Transforms errors provided by [Express Validator](https://express-validator.github.io) into an array that can be consumed by the error summary component
-
-### Filters
-
-* `log`: Logs data to the console
+* [Feature flags](/lib/tutorials/feature-flags.md)
+* A collection of Nunjucks [filters](/lib/tutorials/nunjucks-filters.md) and [helpers](/lib/tutorials/nunjucks-globals.md)
+* A set of Nunjucks component macros:
+  * [Related navigation](/app/components/related-navigation/README.md)
+  * [Summary card](/app/components/summary-card/README.md)
+  * [Task list](/app/components/task-list/README.md)
 
 ## Requirements
 

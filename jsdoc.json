@@ -1,3 +1,13 @@
 {
-  "plugins": ["plugins/markdown"]
+  "opts": {
+    "destination": "docs",
+    "readme": "README.md",
+    "recurse": true,
+    "template": "node_modules/minami",
+    "tutorials": "lib/tutorials"
+  },
+  "plugins": ["plugins/markdown"],
+  "source": {
+    "include": ["lib"]
+  }
 }

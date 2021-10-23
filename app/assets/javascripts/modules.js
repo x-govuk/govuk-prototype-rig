@@ -1,10 +1,11 @@
 /**
  * Get module name.
  *
- * @example _getModuleName(selectable-table) => to SelectableTable
+ * @example
+ * _getModuleName(selectable-table) // SelectableTable
  *
  * @private
- * @param {string} string Original value
+ * @param {string} string - Original value
  * @returns {string} data Updated data
  */
 const _getModuleName = (string) => {
@@ -20,7 +21,8 @@ const _getModuleName = (string) => {
 /**
  * Find and initiate component modules.
  *
- * @example [data-module="foo-bar"] initiates PrototypeRig.Modules.FooBar()
+ * @example
+ * [data-module="foo-bar"] initiates PrototypeRig.Modules.FooBar()
  */
 export default (function () {
   const PrototypeRig = window.PrototypeRig || {}

@@ -8,11 +8,12 @@
     "node": ">=16.0.0"
   },
   "scripts": {
+    "build-docs": "jsdoc --configure jsdoc.json",
     "build-assets": "rollup --config --silent",
     "watch-assets": "rollup --config --silent --watch",
     "serve": "nodemon lib/listen-on-port.js",
-    "start": "npm-run-all --serial build-assets serve",
-    "dev": "npm-run-all --parallel watch-assets serve",
+    "start": "npm-run-all --serial build-docs build-assets serve",
+    "dev": "npm-run-all --parallel build-docs watch-assets serve",
     "lint": "standard && stylelint 'app/**/*.scss'"
   },
   "dependencies": {
@@ -28,8 +29,10 @@
     "ftdomdelegate": "^5.0.0",
     "govuk-frontend": "^3.14.0",
     "inquirer": "^8.2.0",
+    "jsdoc": "^3.6.7",
     "lodash": "^4.17.21",
     "luxon": "^1.28.0",
+    "minami": "^1.2.3",
     "nodemon": "^2.0.13",
     "npm-run-all": "^4.1.5",
     "nunjucks": "^3.2.1",
