@@ -1,29 +1,24 @@
 {% extends "base.njk" %}
 
-{% set productName = "Prototype Rig" %}
 {% set title = "GOV.UK Prototype Rig" %}
 
-{% block pageTitle %}{{ title }}{% endblock %}
-
-{% block pageStyles %}<style>.govuk-header__logo { width: auto }</style>{% endblock %}
-
-{% block beforeContent %}{% endblock %}
-
 {% block content %}
-  <h1 class="govuk-heading-xl">{{ "Rapidly create prototypes of GOV.UK services" | noOrphans | safe }}</h1>
+  {{ govukNotificationBanner({
+    text: "You have switched on the demonstration feature flag. Return to the <a class=\"govuk-notification-banner__link\" href=\"/feature-flags\">feature flags</a> page to turn it off." | safe
+  }) if data.features.demo.on }}
+
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <p class="govuk-body-l">The Prototype Rig contains all you need to prototype anything from simple static pages to complex, data-driven transactions.</p>
+      <p>The rig contains all you need to prototype anything from simple static pages to complex, data-driven transactions.</p>
 
-      {{ govukInsetText({
-        html: "Congratulations on finding the <a href=\"/feature-flags\">feature flags</a>."
-      }) if data.features.demo.on }}
+      <h2 class="govuk-heading-m">About this page</h2>
+      <p>We recommend you add links to your prototype to this page, rather than delete it. You’ll find this page in <code class="app-code app-code--inline">/app/views/index.njk</code>.</p>
+      <p>You can change the service name by changing the <code class="app-code app-code--inline">name</code> value in <code class="app-code app-code--inline">app.json</code>.</p>
 
-      <h2 class="govuk-heading-m">About this project</h2>
-      <p>The Prototype Rig is a minimal and opinionated version of the <a href="https://govuk-prototype-kit.herokuapp.com/docs">GOV.UK Prototype Kit</a>. It is designed to be used by developers familiar with the Nunjucks templating language.</p>
-      <p>It drops support for legacy frameworks and undocumented features, and updates the underlying tooling. It also includes Nunjucks helpers that are useful when creating pages and flows.</p>
-      <p>You can <a href="https://github.com/paulrobertlloyd/govuk-prototype-rig#readme">read more about this project</a> on GitHub.</p>
+      <h2 class="govuk-heading-m">Documentation</h2>
+      <p>The rig includes a number of utilities to help build your prototype. To learn how these work, navigate to <a href="/docs"><code class="app-code app-code--inline">/docs</code></a>, or visit the <a href="https://govuk-prototype-rig.herokuapp.com">GOV.UK Prototype Rig website</a>.</p>
     </div>
 
     <div class="govuk-grid-column-one-third">
