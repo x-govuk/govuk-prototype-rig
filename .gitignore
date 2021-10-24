@@ -5,6 +5,5 @@
 .start.pid
 .tmuxp.*
 
-docs
 node_modules
 public
