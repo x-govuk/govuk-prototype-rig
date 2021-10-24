@@ -1,10 +1,13 @@
-Several global helpers available for use in Nunjucks templates.
+---
+title: Helpers
+tags: Working with templates
+---
 
 ## checked
 
-Check if a property value exists. Note: You do not need to use this helper if you are using the `decorate` helper.
+Check if a property value exists. Note: You do not need to use this helper if you are using the [`decorate`](#decorate) helper.
 
-**Session data**
+Session data
 
 ```js
 {
@@ -12,7 +15,7 @@ Check if a property value exists. Note: You do not need to use this helper if yo
 }
 ```
 
-**Input**
+Input
 
 ```njk
 {{ govukRadios({
@@ -35,7 +38,7 @@ Check if a property value exists. Note: You do not need to use this helper if yo
 }) }}
 ```
 
-**Output**
+Output
 
 ```html
 <div class="govuk-form-group">
@@ -62,7 +65,7 @@ Check if a property value exists. Note: You do not need to use this helper if yo
 
 Add `name`, `value`, `id`, `idPrefix` and `checked`/`selected` attributes to GOV.UK form inputs. Generates attributes based on where they are stored in the session data object.
 
-**Session data**
+Session data
 
 ```js
 {
@@ -72,7 +75,7 @@ Add `name`, `value`, `id`, `idPrefix` and `checked`/`selected` attributes to GOV
 }
 ```
 
-**Input**
+Input
 
 ```njk
 {{ govukInput(decorate({
@@ -82,7 +85,7 @@ Add `name`, `value`, `id`, `idPrefix` and `checked`/`selected` attributes to GOV
 }, "account.email")) }}
 ```
 
-**Output**
+Output
 
 ```html
 <div class="govuk-form-group">
@@ -117,8 +120,18 @@ To save authors needing to override each fields individually, we can enable the 
 }, "date-of-issue")) }}
 ```
 
-## errorMap
+## log
 
-Transform errors provided by [Express Validator](https://express-validator.github.io) into an array that can be consumed by the error summary component.
+Logs an object to the console in the browser.
 
-If a field has multiple errors, return only the first error.
+Input
+
+```njk
+{{ log("{ hello: 'world' }") }}
+```
+
+Output
+
+```html
+<script>console.log("{ hello: 'world' }");</script>
+```

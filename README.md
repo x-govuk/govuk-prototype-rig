@@ -1,40 +1,6 @@
 # GOV.UK Prototype Rig
 
-The Prototype Rig is a minimal and opinionated version of the [GOV.UK Prototype Kit](https://govuk-prototype-kit.herokuapp.com/docs). It is designed to be used by developers familiar with the Nunjucks templating language.
-
-It drops support for legacy frameworks and undocumented features, and updates the underlying tooling. It also includes Nunjucks helpers that are useful when creating pages and flows.
-
-## Differences from the Prototype Kit
-
-The following features have been removed:
-
-* Support for [GOV.UK elements](https://govuk-elements.herokuapp.com/) (superseded by the [GOV.UK Design System](https://design-system.service.gov.uk) in 2018)
-* Extensions (an undocumented feature of the Prototype Kit)
-* Unbranded template
-* Usage data collection
-* A stylesheet for Internet Explorer 8
-* jQuery
-* Gulp
-
-What this project takes away with one hand, it gives with another:
-
-* `.editorconfig`
-* Tasks run via [npm scripts](https://docs.npmjs.com/cli/v7/using-npm/scripts)
-* CSS linting using [Stylelint](https://stylelint.io)
-* Sass compiled using [the Dart library](https://sass-lang.com/dart-sass)
-* Assets compiled and bundled using [rollup.js](https://rollupjs.org/)
-* Fully documented using [JSDoc](https://jsdoc.app)
-* Clearer organisation of files and folders
-* Rewritten using ES modules
-* 404 and 500 error pages
-* Display of session data in the console
-* Support for form validation
-* [Feature flags](/lib/tutorials/feature-flags.md)
-* A collection of Nunjucks [filters](/lib/tutorials/nunjucks-filters.md) and [helpers](/lib/tutorials/nunjucks-globals.md)
-* A set of Nunjucks component macros:
-  * [Related navigation](/app/components/related-navigation/README.md)
-  * [Summary card](/app/components/summary-card/README.md)
-  * [Task list](/app/components/task-list/README.md)
+Go to the [GOV.UK Prototype Rig](https://govuk-prototype-rig.herokuapp.com) website to download the latest version and read the documentation.
 
 ## Requirements
 
