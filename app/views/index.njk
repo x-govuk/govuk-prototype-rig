@@ -5,10 +5,11 @@
 
 {% block pageTitle %}{{ title }}{% endblock %}
 
+{% block pageStyles %}<style>.govuk-header__logo { width: auto }</style>{% endblock %}
+
 {% block beforeContent %}{% endblock %}
 
 {% block content %}
-  <style>.govuk-header__logo { width: auto }</style>
   <h1 class="govuk-heading-xl">{{ "Rapidly create prototypes of GOV.UK services" | noOrphans | safe }}</h1>
 
   <div class="govuk-grid-row">
