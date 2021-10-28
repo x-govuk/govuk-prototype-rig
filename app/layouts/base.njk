@@ -85,7 +85,7 @@
 
 {% block bodyEnd %}
   {% block scripts %}
-    {{ data | log }}
+    {{ log(data) }}
     <script src="/public/javascripts/application.js"></script>
     {% if useAutoStoreData %}
       <script src="/public/javascripts/auto-store-data.js"></script>
