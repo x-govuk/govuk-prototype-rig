@@ -6,7 +6,7 @@
  *
  * You can delete this file if you don’t need your own filters.
  */
-export default () => {
+export default (env) => {
   const filters = {}
 
   /**
