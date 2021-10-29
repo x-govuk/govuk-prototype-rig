@@ -1,33 +1,30 @@
 {% extends "base.njk" %}
 
-{% set title = "Question page" %}
+{% set title = "Asking users for a date" %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form method="post" novalidate>
-        {{ govukRadios(decorate({
+        {{ govukDateInput(decorate({
           fieldset: {
             legend: {
-              text: "Where do you live?",
+              classes: "govuk-fieldset__legend--l",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              text: "When was your passport issued?"
             }
           },
+          hint: {
+            text: "For example, 27 3 2007"
+          },
           items: [{
-            text: "England",
-            value: "england"
+            decorate: "day"
           }, {
-            text: "Scotland",
-            value: "scotland"
+            decorate: "month"
           }, {
-            text: "Wales",
-            value: "wales"
-          }, {
-            text: "Northern Ireland",
-            value: "northern-ireland"
+            decorate: "year"
           }]
-        }, "where-do-you-live")) }}
+        }, "passport-issued")) }}
 
         {{ govukButton({
           text: "Continue"
