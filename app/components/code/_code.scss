@@ -6,6 +6,10 @@
 
 .app-code--inline {
   padding: 2px govuk-spacing(1);
+
+  a:focus & {
+    background: $govuk-focus-colour;
+  }
 }
 
 .app-code--block {
