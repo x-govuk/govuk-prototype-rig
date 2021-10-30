@@ -1,6 +1,6 @@
 .app-code {
   background-color: govuk-colour("light-grey");
-  font-family: monospace, monospace;
+  font-family: ui-monospace, monospace;
   font-size: 16px;
 }
 
@@ -39,7 +39,7 @@
 .app-code__keyword,
 .app-code__selector-tag,
 .app-code__subst {
-  color:  govuk-colour("black");
+  color: govuk-colour("black");
   font-weight: bold;
 }
 
