@@ -1,6 +1,6 @@
 ---
 title: Components
-tags: Working with templates
+tags: Template helpers
 ---
 
 The rig provides a selection of common components not currently in the GOV.UK Design System.
