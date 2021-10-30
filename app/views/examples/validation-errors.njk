@@ -11,7 +11,9 @@
           errorList: errorList(errors)
         }) if errors }}
 
-        <h1 class="govuk-heading-l">Personal details</h1>
+        {{ govukHeading({
+          text: "Personal details"
+        }) }}
 
         {{ govukInput(decorate({
           label: {

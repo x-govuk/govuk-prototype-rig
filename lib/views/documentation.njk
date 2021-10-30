@@ -24,7 +24,10 @@
       }) if sideNavigationItems }}
     </div>
     <div class="govuk-grid-column-three-quarters">
-      <h1 class="govuk-heading-xl">{{ title | noOrphans | safe }}</h1>
+      {{ govukHeading({
+        text: title | noOrphans,
+        size: "xl"
+      }) }}
 
       {% if page.description %}
         <p class="govuk-body-l">{{ page.description }}</p>

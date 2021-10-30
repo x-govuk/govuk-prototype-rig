@@ -5,7 +5,9 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
+      {{ govukHeading({
+        text: "Check your answers before sending your application"
+      }) }}
 
       <h2 class="govuk-heading-m">Personal details</h2>
       {{ govukSummaryList({

@@ -9,9 +9,9 @@
         {{ govukDateInput(decorate({
           fieldset: {
             legend: {
-              classes: "govuk-fieldset__legend--l",
-              isPageHeading: true,
-              text: "When was your passport issued?"
+              html: govukHeading({
+                text: "When was your passport issued?"
+              })
             }
           },
           hint: {

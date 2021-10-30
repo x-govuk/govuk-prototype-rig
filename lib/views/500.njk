@@ -5,7 +5,11 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">{{ title }}</h1>
+      {{ govukHeading({
+        text: title,
+        size: "xl"
+      }) }}
+
       <p class="govuk-body">The prototype encountered the following error:</p>
 
       {{ govukInsetText({

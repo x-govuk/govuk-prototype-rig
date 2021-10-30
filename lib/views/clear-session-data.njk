@@ -11,7 +11,9 @@
           type: "success"
         }) if success }}
 
-        <h1 class="govuk-heading-l">{{ title }}</h1>
+        {{ govukHeading({
+          text: title
+        }) }}
 
         {{ govukWarningText({
           text: "This will clear all of the data entered in this session",

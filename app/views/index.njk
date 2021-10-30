@@ -7,7 +7,10 @@
     text: "You have switched on the demonstration feature flag. Return to the <a class=\"govuk-notification-banner__link\" href=\"/feature-flags\">feature flags</a> page to turn it off." | safe
   }) if data.features.demo.on }}
 
-  <h1 class="govuk-heading-xl">{{ title }}</h1>
+  {{ govukHeading({
+    text: title,
+    size: "xl"
+  }) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">

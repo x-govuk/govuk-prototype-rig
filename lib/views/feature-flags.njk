@@ -18,7 +18,9 @@
           type: "success"
         }) if success }}
 
-        <h1 class="govuk-heading-l">{{ title }}</h1>
+        {{ govukHeading({
+          text: title
+        }) }}
 
         {% for key, flag in data.features %}
           {{ govukRadios(decorate({
