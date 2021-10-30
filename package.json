@@ -1,7 +1,7 @@
 {
   "name": "govuk-prototype-rig",
   "description": "Rapidly create HTML prototypes of GOV.UK services",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "engines": {
