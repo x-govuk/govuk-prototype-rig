@@ -33,7 +33,7 @@
 
 .app-code__comment,
 .app-code__quote {
-  color: govuk-colour("mid-grey");
+  color: govuk-tint(govuk-colour("dark-grey"), 30);
   font-style: italic;
 }
 
