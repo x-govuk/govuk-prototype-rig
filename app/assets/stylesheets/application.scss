@@ -6,7 +6,7 @@ $govuk-assets-path: "/govuk/assets/";
 // Import GOV.UK Frontend
 @import "govuk-frontend/govuk/all";
 
-// Import components
-@import "../app/components/all";
+// Import GOV.UK Prototype Rig components
+@import "govuk-prototype-rig/rig/all";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you

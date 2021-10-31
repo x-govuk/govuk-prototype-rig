@@ -1,4 +1,4 @@
-{% extends "base.njk" %}
+{% extends "layouts/default.njk" %}
 
 {% set title = "Help users to review a collection" %}
 
@@ -7,7 +7,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <h1 class="govuk-heading-l">Contacts</h1>
 
-      {{ appSummaryCard({
+      {{ rigSummaryCard({
         classes: "govuk-!-margin-bottom-9",
         titleText: "Sarah Philips",
         actions: {
@@ -62,7 +62,7 @@
         }]
       }) }}
 
-      {{ appSummaryCard({
+      {{ rigSummaryCard({
         classes: "govuk-!-margin-bottom-9",
         titleText: "David Smith",
         actions: {

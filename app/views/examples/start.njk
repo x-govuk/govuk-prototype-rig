@@ -1,4 +1,4 @@
-{% extends "base.njk" %}
+{% extends "layouts/default.njk" %}
 
 {% set title = "Start page on GOV.UK" %}
 
@@ -46,7 +46,7 @@
     </div>
 
     <div class="govuk-grid-column-one-third">
-      {{ appRelatedNavigation({
+      {{ rigRelatedNavigation({
         sections: [{
           items: [{
             text: "Training and study at work",
