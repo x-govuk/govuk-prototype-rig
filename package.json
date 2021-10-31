@@ -10,7 +10,7 @@
   "scripts": {
     "build-assets": "rollup --config --silent",
     "watch-assets": "rollup --config --silent --watch",
-    "serve": "nodemon lib/listen-on-port.js",
+    "serve": "nodemon lib/server.js",
     "start": "npm-run-all --serial build-assets serve",
     "dev": "npm-run-all --parallel watch-assets serve",
     "lint": "standard && stylelint 'app/**/*.scss'"
