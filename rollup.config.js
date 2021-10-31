@@ -4,12 +4,6 @@ import scss from 'rollup-plugin-scss'
 import copy from 'rollup-plugin-copy'
 
 export default [{
-  input: 'app/assets/javascripts/auto-store-data.js',
-  output: {
-    dir: 'public/javascripts',
-    sourcemap: true
-  }
-}, {
   context: 'window',
   input: [
     'node_modules/govuk-frontend/govuk/all.js',
