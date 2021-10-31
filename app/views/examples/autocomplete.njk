@@ -1,0 +1,77 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "Help users to select from a long list of options" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" novalidate>
+        {{ rigAutocomplete(decorate({
+          allowEmpty: false,
+          label: {
+            classes: "govuk-label--l",
+            isPageHeading: true,
+            text: "Pick a county"
+          },
+          hint: {
+            text: "For example ‘West Sussex’ or ‘Tyne and Wear’"
+          },
+          items: [
+            { text: "Bedfordshire" },
+            { text: "Berkshire" },
+            { text: "Bristol" },
+            { text: "Buckinghamshire" },
+            { text: "Cambridgeshire" },
+            { text: "Cheshire" },
+            { text: "City of London" },
+            { text: "Cornwall" },
+            { text: "County Durham" },
+            { text: "Cumbria" },
+            { text: "Derbyshire" },
+            { text: "Devon" },
+            { text: "Dorset" },
+            { text: "East Riding of Yorkshire" },
+            { text: "East Sussex" },
+            { text: "Essex" },
+            { text: "Gloucestershire" },
+            { text: "Greater London" },
+            { text: "Greater Manchester" },
+            { text: "Hampshire" },
+            { text: "Herefordshire" },
+            { text: "Hertfordshire" },
+            { text: "Isle of Wight" },
+            { text: "Kent" },
+            { text: "Lancashire" },
+            { text: "Leicestershire" },
+            { text: "Lincolnshire" },
+            { text: "Merseyside" },
+            { text: "Norfolk" },
+            { text: "North Yorkshire" },
+            { text: "Northamptonshire" },
+            { text: "Northumberland" },
+            { text: "Nottinghamshire" },
+            { text: "Oxfordshire" },
+            { text: "Rutland" },
+            { text: "Shropshire" },
+            { text: "Somerset" },
+            { text: "South Yorkshire" },
+            { text: "Staffordshire" },
+            { text: "Suffolk" },
+            { text: "Surrey" },
+            { text: "Tyne and Wear" },
+            { text: "Warwickshire" },
+            { text: "West Midlands" },
+            { text: "West Sussex" },
+            { text: "West Yorkshire" },
+            { text: "Wiltshire" },
+            { text: "Worcestershire" }
+          ]
+        }, "county")) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

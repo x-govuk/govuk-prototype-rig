@@ -1,3 +1,4 @@
+import Autocomplete from './autocomplete/autocomplete.js'
 import Edge from './edge/edge.js'
 
 /**
@@ -48,6 +49,7 @@ export const components = (function () {
   }
 
   // Add component modules to GOVUKPrototypeRig object
+  GOVUKPrototypeRig.Autocomplete = Autocomplete
   GOVUKPrototypeRig.Edge = Edge
 
   // Add GOVUKPrototypeRig to window global
