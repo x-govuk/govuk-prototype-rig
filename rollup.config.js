@@ -1,14 +1,11 @@
-import multi from '@rollup/plugin-multi-entry'
+import commonJs from '@rollup/plugin-commonjs'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import scss from 'rollup-plugin-scss'
 import copy from 'rollup-plugin-copy'
 
 export default [{
-  context: 'window',
   input: [
-    'node_modules/govuk-frontend/govuk/all.js',
-    'app/assets/javascripts/application.js',
-    'app/components/**/*.js'
+    'app/assets/javascripts/application.js'
   ],
   output: {
     dir: 'public/javascripts',
@@ -22,12 +19,10 @@ export default [{
         dest: 'public'
       }]
     }),
-    // Bundle govuk-frontend, application and component scripts
-    multi({
-      entryFileName: 'application.js'
-    }),
     // Resolve modules imported from node_modules
     nodeResolve(),
+    // Convert CommonJS modules to ES6
+    commonJs(),
     // Concatenate govuk-frontend, application and component styles
     scss({
       includePaths: ['node_modules'],
@@ -35,7 +30,7 @@ export default [{
       quietDeps: true,
       sourceMap: true,
       verbose: false,
-      watch: ['app/assets/stylesheets', 'app/components']
+      watch: ['app/assets/stylesheets', 'node_modules/govuk-prototype-rig/rig']
     })
   ]
 }]

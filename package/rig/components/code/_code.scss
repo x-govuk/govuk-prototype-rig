@@ -1,0 +1,117 @@
+.rig-code {
+  background-color: govuk-colour("light-grey");
+  font-family: ui-monospace, monospace;
+  font-size: 16px;
+}
+
+.rig-code--inline {
+  padding: 2px govuk-spacing(1);
+
+  a:focus & {
+    background: $govuk-focus-colour;
+  }
+}
+
+.rig-code--block {
+  @include govuk-responsive-margin(4, "bottom");
+  line-height: 1.4;
+  max-width: 38em;
+  overflow: auto;
+  padding: govuk-spacing(4);
+  -webkit-font-smoothing: antialiased;
+
+  + .govuk-heading-l {
+    padding-top: govuk-spacing(4);
+  }
+
+  + .govuk-heading-m,
+  + .govuk-heading-s {
+    padding-top: govuk-spacing(2);
+  }
+}
+
+.rig-code__comment,
+.rig-code__quote {
+  color: govuk-tint(govuk-colour("dark-grey"), 30);
+  font-style: italic;
+}
+
+.rig-code__keyword,
+.rig-code__selector-tag,
+.rig-code__subst {
+  color: govuk-colour("black");
+  font-weight: bold;
+}
+
+.rig-code__number,
+.rig-code__literal,
+.rig-code__variable,
+.rig-code__template-variable,
+.rig-code__tag .rig-code__attr {
+  color: govuk-colour("green");
+}
+
+.rig-code__string,
+.rig-code__doctag {
+  color: govuk-colour("red");
+}
+
+.rig-code__title,
+.rig-code__section,
+.rig-code__selector-id {
+  color: govuk-colour("bright-purple");
+  font-weight: bold;
+}
+
+.rig-code__subst {
+  font-weight: normal;
+}
+
+.rig-code__type,
+.rig-code__class .rig-code__title {
+  color: govuk-colour("light-purple");
+  font-weight: bold;
+}
+
+.rig-code__tag,
+.rig-code__name,
+.rig-code__attribute {
+  color: govuk-colour("dark-blue");
+  font-weight: normal;
+}
+
+.rig-code__regexp,
+.rig-code__link {
+  color: govuk-colour("green");
+}
+
+.rig-code__symbol,
+.rig-code__bullet {
+  color: govuk-colour("purple");
+}
+
+.rig-code__builtin,
+.rig-code__builtin-name {
+  color: govuk-colour("blue");
+}
+
+.rig-code__meta {
+  color: govuk-colour("dark-grey");
+  font-weight: bold;
+}
+
+.rig-code__deletion {
+  background: govuk-tint(govuk-colour("red"), 80);
+}
+
+.rig-code__addition {
+  background: govuk-tint(govuk-colour("green"), 80);
+}
+
+.rig-code__emphasis {
+  font-style: italic;
+}
+
+.rig-code__strong {
+  font-weight: bold;
+}

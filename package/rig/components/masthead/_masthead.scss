@@ -1,0 +1,39 @@
+@import "./button--inverted";
+
+.rig-masthead {
+  @include govuk-responsive-margin(6, "bottom");
+  @include govuk-responsive-padding(6, "top");
+  @include govuk-responsive-padding(6, "bottom");
+  color: govuk-colour("white");
+  background-color: govuk-colour("blue");
+  margin-top: govuk-spacing(-2);
+}
+
+.rig-masthead__title {
+  @include govuk-font($size: 36, $weight: bold);
+  margin-top: 0;
+
+  .rig-masthead--large & {
+    @include govuk-font($size: 48, $weight: "bold");
+  }
+}
+
+.rig-masthead__description {
+  @include govuk-font($size: 19);
+  color: inherit;
+  margin-bottom: 0;
+
+  .rig-masthead--large & {
+    @include govuk-font($size: 24);
+  }
+}
+
+.rig-masthead__image {
+  img {
+    max-width: 100%;
+  }
+
+  @include govuk-media-query($until: desktop) {
+    display: none;
+  }
+}

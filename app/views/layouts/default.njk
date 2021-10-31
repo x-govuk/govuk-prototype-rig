@@ -1,0 +1,45 @@
+{% extends "rig/template.njk" %}
+
+{% block pageTitle %}
+  {{- "Error: " if errors -}}
+  {{- title + " - " if title -}}
+  {{- serviceName + " - GOV.UK" -}}
+{% endblock %}
+
+{% set bodyAttributes = {"data-module": "edge"} %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/",
+    productName: productName,
+    serviceName: serviceName if not productName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    },
+    text: "This is a prototype of a new service. Some parts may not work yet."
+  }) }}
+
+  {% block pageNavigation %}{% endblock %}
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [{
+        text: "Clear session data",
+        href: "/clear-session-data"
+      } if useAutoStoreData, {
+        text: "Feature flags",
+        href: "/feature-flags"
+      }],
+      visuallyHiddenTitle: "Footer links"
+    }
+  }) }}
+{% endblock %}

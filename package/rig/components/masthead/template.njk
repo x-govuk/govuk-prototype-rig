@@ -1,0 +1,35 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+<div class="rig-masthead{%- if params.classes %} {{ params.classes }}{% endif %}">
+  <div class="govuk-width-container">
+    {{- caller() if caller -}}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+      {% if params.title %}
+        <h1 class="rig-masthead__title{%- if params.title.classes %} {{ params.title.classes }}{% endif %}">
+          {{ params.title.html | safe if params.title.html else params.title.text }}
+        </h1>
+      {% endif %}
+      {% if params.description %}
+        <p class="rig-masthead__description{%- if params.description.classes %} {{ params.description.classes }}{% endif %}">
+          {{ params.description.html | safe if params.description.html else params.description.text }}
+        </p>
+      {% endif %}
+      {% if params.startButton %}
+        {{ govukButton({
+          classes: "rig-button--inverted govuk-!-margin-top-6 govuk-!-margin-bottom-0",
+          text: params.startButton.text | default("Get started"),
+          href: params.startButton.href,
+          isStartButton: true
+        }) }}
+      {% endif %}
+      </div>
+      <div class="govuk-grid-column-one-third-from-desktop">
+      {% if params.image %}
+        <div class="rig-masthead__image">
+          <img src="{{ params.image.src }}" alt="{{ params.image.alt }}" role="presentation">
+        </div>
+      {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

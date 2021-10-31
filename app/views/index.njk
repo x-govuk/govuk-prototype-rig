@@ -1,4 +1,4 @@
-{% extends "base.njk" %}
+{% extends "layouts/default.njk" %}
 
 {% set title = "GOV.UK Prototype Rig" %}
 
@@ -14,15 +14,15 @@
       <p>The rig contains all you need to prototype anything from simple static pages to complex, data-driven transactions.</p>
 
       <h2 class="govuk-heading-m">About this page</h2>
-      <p>We recommend you add links to your prototype to this page, rather than delete it. You’ll find this page in <code class="app-code app-code--inline">/app/views/index.njk</code>.</p>
-      <p>You can change the service name by changing the <code class="app-code app-code--inline">name</code> value in <code class="app-code app-code--inline">app.json</code>.</p>
+      <p>We recommend you add links to your prototype to this page, rather than delete it. You’ll find this page in <code class="rig-code rig-code--inline">/app/views/index.njk</code>.</p>
+      <p>You can change the service name by changing the <code class="rig-code rig-code--inline">name</code> value in <code class="rig-code rig-code--inline">app.json</code>.</p>
 
       <h2 class="govuk-heading-m">Documentation</h2>
-      <p>The rig includes a number of utilities to help build your prototype. To learn how these work, navigate to <a href="/docs"><code class="app-code app-code--inline">/docs</code></a>, or visit the <a href="https://govuk-prototype-rig.herokuapp.com">GOV.UK Prototype Rig website</a>.</p>
+      <p>The rig includes a number of utilities to help build your prototype. To learn how these work, navigate to <a href="/docs"><code class="rig-code rig-code--inline">/docs</code></a>, or visit the <a href="https://govuk-prototype-rig.herokuapp.com">GOV.UK Prototype Rig website</a>.</p>
     </div>
 
     <div class="govuk-grid-column-one-third">
-      {{ appRelatedNavigation({
+      {{ rigRelatedNavigation({
         sections: [{
           title: "Example pages",
           subsections: [{

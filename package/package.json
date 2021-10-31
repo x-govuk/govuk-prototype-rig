@@ -1,0 +1,47 @@
+{
+  "name": "govuk-prototype-rig",
+  "description": "Rapidly create HTML prototypes of GOV.UK services.",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "bin": "bin.js",
+  "main": "main.js",
+  "sass": "rig/all.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulrobertlloyd/govuk-prototype-rig.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paulrobertlloyd/govuk-prototype-rig/issues"
+  },
+  "homepage": "https://govuk-prototype-rig.herokuapp.com",
+  "keywords": [
+    "govuk",
+    "design system",
+    "prototyping"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@financial-times/express-markdown-pages": "^1.0.0",
+    "basic-auth": "^2.0.0",
+    "browser-sync": "^2.11.1",
+    "client-sessions": "^0.8.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.13.0",
+    "express-validator": "^6.12.2",
+    "ftdomdelegate": "^5.0.0",
+    "govuk-frontend": "^3.14.0",
+    "highlight.js": "^11.3.1",
+    "inquirer": "^8.2.0",
+    "lodash": "^4.17.21",
+    "luxon": "^2.0.2",
+    "marked": "^3.0.8",
+    "nodemon": "^2.0.13",
+    "nunjucks": "^3.2.1",
+    "portscanner": "^2.1.1"
+  }
+}
