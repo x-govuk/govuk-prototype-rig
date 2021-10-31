@@ -1,4 +1,4 @@
-// Sass entrypoint for rollup.js
+// Sass entry point for rollup.js
 import '../stylesheets/application.scss'
 
 // Import modules
