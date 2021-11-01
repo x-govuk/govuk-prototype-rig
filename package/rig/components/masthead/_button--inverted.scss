@@ -1,6 +1,6 @@
 $rig-button-shadow-size: $govuk-border-width-form-element;
 $rig-button-inverted-background-colour: govuk-colour("white");
-$rig-button-inverted-foreground-colour: govuk-colour("blue");
+$rig-button-inverted-foreground-colour: $govuk-brand-colour;
 $rig-button-inverted-shadow-colour: govuk-shade($rig-button-inverted-foreground-colour, 30%);
 $rig-button-inverted-hover-background-colour: govuk-tint($rig-button-inverted-foreground-colour, 90%);
 
