@@ -1,5 +1,10 @@
 {% extends "rig/template.njk" %}
 
+{% block head %}
+  <link rel="stylesheet" href="/public/stylesheets/application.css" media="all">
+  <script src="/public/javascripts/application.js" defer></script>
+{% endblock %}
+
 {% block pageTitle %}
   {{- "Error: " if errors -}}
   {{- title + " - " if title -}}

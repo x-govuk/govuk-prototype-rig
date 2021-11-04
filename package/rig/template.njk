@@ -39,14 +39,7 @@
 
 {% block head %}
   <link rel="stylesheet" href="/public/stylesheets/application.css" media="all">
-  {% block pageStyles %}{% endblock %}
-
   <script src="/public/javascripts/application.js" defer></script>
-  {% if useAutoStoreData %}
-    <script src="/auto-store-data.js" defer></script>
-  {% endif %}
-  {% block pageScripts %}{% endblock %}
-  {{ log(data) }}
 {% endblock %}
 
 {% block pageTitle %}
@@ -91,4 +84,11 @@
       visuallyHiddenTitle: "Footer links"
     }
   }) }}
+{% endblock %}
+
+{% block bodyEnd %}
+  {% if useAutoStoreData %}
+    <script src="/auto-store-data.js"></script>
+  {% endif %}
+  {{ log(data) }}
 {% endblock %}
