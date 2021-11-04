@@ -70,8 +70,8 @@ export function decorate (params, keyPath) {
   if (params.items) {
     params.idPrefix = params.id
     params.items = params.items.map(item => {
-      // Ignore divider items
-      if (item.divider) {
+      // Ignore dividers or empty items
+      if (item.divider || item === '') {
         return item
       }
 
