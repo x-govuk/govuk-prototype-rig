@@ -3,9 +3,10 @@
 <div class="rig-related-navigation {%- if params.classes %} {{ params.classes }}{% endif -%}"
   {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {% for section in params.sections %}
-    <nav class="rig-related-navigation__nav-section" role="navigation" aria-labelledby="related-nav-{{ "TODO" }}">
-      <h{{ headingLevel }} class="rig-related-navigation__main-heading" id="related-nav-related_items-{{ "TODO" }}">
-        {{ section.title or "Related content" }}
+    {% set sectionTitle = section.title or "Related content" %}
+    <nav class="rig-related-navigation__nav-section" role="navigation" aria-labelledby="related-nav-{{ sectionTitle | slugify }}">
+      <h{{ headingLevel }} class="rig-related-navigation__main-heading" id="related-nav-related_items-{{ sectionTitle | slugify  }}">
+        {{ sectionTitle }}
       </h{{ headingLevel }}>
       {% if section.items %}
         <ul class="rig-related-navigation__link-list">
@@ -17,8 +18,8 @@
         </ul>
       {% endif %}
       {% for subsection in section.subsections %}
-        <nav role="navigation" class="rig-related-navigation__nav-section" aria-labelledby="related-nav-{{ "TODO" }}">
-          <h{{ headingLevel + 1 }} class="rig-related-navigation__sub-heading" id="related-nav-topics-{{ "TODO" }}">
+        <nav role="navigation" class="rig-related-navigation__nav-section" aria-labelledby="related-nav-{{ subsection.title | slugify }}">
+          <h{{ headingLevel + 1 }} class="rig-related-navigation__sub-heading" id="related-nav-topics-{{ subsection.title | slugify }}">
             {{ subsection.title }}
           </h{{ headingLevel + 1 }}>
           <ul class="rig-related-navigation__link-list">
