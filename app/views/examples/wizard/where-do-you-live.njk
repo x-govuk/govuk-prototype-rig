@@ -1,0 +1,40 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "Where do you live?" %}
+
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="{{ paths.current }}" novalidate>
+        {{ govukRadios(decorate({
+          fieldset: {
+            legend: {
+              classes: "govuk-fieldset__legend--l",
+              isPageHeading: true,
+              text: title
+            }
+          },
+          items: [{
+            text: "England"
+          }, {
+            text: "Scotland"
+          }, {
+            text: "Wales"
+          }, {
+            text: "Northern Ireland"
+          }]
+        }, ["wizard", "where-do-you-live"])) }}
+
+        {{ govukButton({
+          html: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

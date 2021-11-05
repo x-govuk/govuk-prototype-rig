@@ -1,0 +1,28 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "Application complete" %}
+
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      {{ govukPanel({
+        titleText: title,
+        html: "Your reference number<br><strong>HDJ2123F</strong>"
+      }) }}
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>This is the end of the example wizard journey.</p>
+
+      {{ govukButton({
+        text: "Finish",
+        href: paths.next
+      }) }}
+    </div>
+  </div>
+{% endblock %}

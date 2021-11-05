@@ -1,0 +1,29 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "What is your name?" %}
+
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="{{ paths.current }}" novalidate>
+        {{ govukInput(decorate({
+          label: {
+            classes: "govuk-label--l",
+            isPageHeading: true,
+            text: title
+          }
+        }, ["wizard", "name"])) }}
+
+        {{ govukButton({
+          html: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

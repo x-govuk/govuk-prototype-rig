@@ -1,0 +1,81 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "Check your answers before confirming" %}
+
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-l">{{ title }}</h1>
+      {{ govukSummaryList({
+        rows: [{
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: data["wizard"].name
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              href: "/examples/wizard/name",
+              visuallyHiddenText: "name"
+            }]
+          }
+        }, {
+          key: {
+            text: "Where do you live"
+          },
+          value: {
+            text: data["wizard"]["where-do-you-live"]
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              href: "/examples/wizard/where-do-you-live",
+              visuallyHiddenText: "where you live"
+            }]
+          }
+        }, {
+          key: {
+            text: "Have you always lived in England?"
+          },
+          value: {
+            text: data["wizard"]["always-england"]
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              href: "/examples/wizard/england",
+              visuallyHiddenText: " if you have always lived in England"
+            }]
+          }
+        } if data["wizard"]["where-do-you-live"] == "England", {
+          key: {
+            text: "Nationality"
+          },
+          value: {
+            text: data["wizard"]["nationality"]
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              href: "/examples/wizard/nationality",
+              visuallyHiddenText: " where you live"
+            }]
+          }
+        }]
+      }) }}
+
+      {{ govukButton({
+        text: "Confirm",
+        href: paths.next
+      }) }}
+    </div>
+  </div>
+{% endblock %}

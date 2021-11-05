@@ -1,0 +1,45 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "What is your nationality?" %}
+
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="{{ paths.current }}" novalidate>
+        {{ govukCheckboxes(decorate({
+          fieldset: {
+            legend: {
+              classes: "govuk-fieldset__legend--l",
+              isPageHeading: true,
+              text: title
+            }
+          },
+          hint: {
+            text: "If you have dual nationality, select all options that are relevant to you."
+          },
+          items: [{
+            text: "British",
+            hint: {
+              text: "including English, Scottish, Welsh and Northern Irish"
+            }
+          }, {
+            text: "Irish"
+          }, {
+            value: "other",
+            text: "Citizen of another country"
+          }]
+        }, ["wizard", "nationality"]) ) }}
+
+        {{ govukButton({
+          html: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
