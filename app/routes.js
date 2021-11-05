@@ -1,13 +1,13 @@
 import express from 'express'
 import validator from 'express-validator'
-import { validations } from './validations.js'
+import { exampleValidation } from './validations.js'
 
 const router = express.Router()
 
 /**
- * Example route which validates a form submission.
+ * Example route to demonstrate form validation.
  */
-router.post('/examples/validation-errors', validations.exampleValidation, (req, res) => {
+router.post('/examples/validation-errors', exampleValidation, (req, res) => {
   const errors = validator.validationResult(req)
   res.render('examples/validation-errors', {
     errors: errors.isEmpty() ? false : errors.mapped()
