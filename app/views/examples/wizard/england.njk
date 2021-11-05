@@ -1,0 +1,36 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "Have you always lived in England?" %}
+
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="{{ paths.current }}" novalidate>
+        {{ govukRadios(decorate({
+          fieldset: {
+            legend: {
+              classes: "govuk-fieldset__legend--l",
+              isPageHeading: true,
+              text: title
+            }
+          },
+          items: [{
+            text: "Yes, I’ve always lived in England"
+          }, {
+            text: "No, I have lived somewhere else too"
+          }]
+        }, ["wizard", "always-england"])) }}
+
+        {{ govukButton({
+          html: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

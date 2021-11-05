@@ -1,0 +1,19 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "An example user journey" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ title }}</h1>
+      <p>The wizard helper makes it easy to build and iterate a ‘one thing per page’ user journey.</p>
+      <p>Rearrange the list of pages in <code class="rig-code rig-code--inline">/app/wizards.js</code> to change the order of pages.
+      <p>You can also edit the fork in the journey, where a different page is shown based on the answer given to ‘Where do you live?’.</p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: paths.next
+      }) }}
+    </div>
+  </div>
+{% endblock %}
