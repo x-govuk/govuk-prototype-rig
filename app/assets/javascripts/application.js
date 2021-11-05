@@ -5,7 +5,7 @@ import '../stylesheets/application.scss'
 import GOVUKFrontend from 'govuk-frontend'
 
 // Import GOV.UK Prototype Rig
-import { components as GOVUKPrototypeRig } from 'govuk-prototype-rig'
+import { components as GOVUKPrototypeRig } from 'govuk-prototype-rig/rig/all.js'
 
 // Initiate scripts on page load
 document.addEventListener('DOMContentLoaded', () => {
