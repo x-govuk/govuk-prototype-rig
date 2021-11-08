@@ -27,7 +27,7 @@ export function _normalize (value, defaultValue) {
 }
 
 /**
- * Add filters and any created by prototype author to Nunjucks environment.
+ * Merge provided filters with any added by the prototype author.
  *
  * @access private
  * @param {Object} nunjucksAppEnv - Nunjucks environment
@@ -62,14 +62,23 @@ async function _addFilters (nunjucksAppEnv) {
 }
 
 /**
- * Add globals to Nunjucks environment.
+ * Merge provided globals with any added by the prototype author.
  *
  * @access private
  * @param {Object} nunjucksAppEnv - Nunjucks environment
  */
 async function _addGlobals (nunjucksAppEnv) {
+  const appGlobalsPath = fileURLToPath(new URL('../../app/globals.js', import.meta.url))
+
+  let appGlobals
+  if (fs.existsSync(appGlobalsPath)) {
+    appGlobals = await import(appGlobalsPath)
+    appGlobals = appGlobals.default()
+  }
+
   const globals = {
-    ...helperGlobals
+    ...helperGlobals,
+    ...appGlobals
   }
 
   for (const global of Object.keys(globals)) {
@@ -94,7 +103,7 @@ export const getNunjucksEnv = (app, env) => {
     watch: env === 'development'
   })
 
-  // Add all Nunjucks filters and globals
+  // Load all Nunjucks filters and globals
   _addFilters(nunjucksEnv)
   _addGlobals(nunjucksEnv)
 
