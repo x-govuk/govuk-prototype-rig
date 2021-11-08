@@ -94,17 +94,7 @@ var firstName = req.session.data['first-name']
 
 ## Inspecting data
 
-To see what data has been stored in the session, use the `log` function. By default [the base layout](https://github.com/paulrobertlloyd/govuk-prototype-rig/blob/d08e474abef5d107fb467afd7aaa403921fa4bff/app/layouts/base.njk#L92) logs all session data:
-
-```njk
-{{ log(data) }}
-```
-
-If too much data is being logged, you can inspect only a certain property:
-
-```njk
-{{ log(data['first-name']) }}
-```
+To see what data has been stored in the session, check the JavaScript console in your web browser.
 
 ## Clearing data
 
