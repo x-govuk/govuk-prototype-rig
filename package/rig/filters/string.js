@@ -22,7 +22,7 @@ export function govukMarkdown (string, options) {
 }
 
 /**
- * Checks if `value` is classified as a `String` primitive or object.
+ * Check if `value` is classified as a `String` primitive or object.
  *
  * @example
  * isString('Number 10') // true
@@ -80,7 +80,7 @@ export function slugify (string) {
 }
 
 /**
- * Checks if `string` starts with `value`.
+ * Check if `string` starts with `value`.
  *
  * @example
  * startsWith('Department of Transport', 'Department') // true

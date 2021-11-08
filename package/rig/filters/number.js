@@ -2,7 +2,7 @@ import _ from 'lodash'
 import { _normalize } from '../../lib/nunjucks.js'
 
 /**
- * Checks if `value` is classified as a `Number` primitive or object.
+ * Check if `value` is classified as a `Number` primitive or object.
  *
  * @example
  * isNumber(1801) // true
