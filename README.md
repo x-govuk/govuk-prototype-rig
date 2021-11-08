@@ -4,7 +4,7 @@ Go to the [GOV.UK Prototype Rig](https://govuk-prototype-rig.herokuapp.com) webs
 
 ## Requirements
 
-* Node.js v14
+* Node.js v16
 
 ## Installation
 
