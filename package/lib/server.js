@@ -94,11 +94,7 @@ if (useCookieSessionStore) {
 // Automatically store all data users enter
 if (useAutoStoreData) {
   app.use(autoStoreData)
-  app.get('/auto-store-data.js', (req, res) => {
-    res.sendFile('auto-store-data.js', {
-      root: './node_modules/govuk-prototype-rig/lib'
-    })
-  })
+  app.use('/auto-store-data.js', express.static('./node_modules/govuk-prototype-rig/lib/auto-store-data.js'))
 }
 
 // Clear all data in session
@@ -108,6 +104,10 @@ app.post('/clear-session-data', (req, res) => {
     success: true
   })
 })
+
+// Form validation
+app.use('/validate.js', express.static('./node_modules/validate.js/validate.js'))
+app.use('/form-validation.js', express.static('./node_modules/govuk-prototype-rig/lib/form-validation.js'))
 
 // Documentation
 app.get('/docs/:view?*', markdownPages.middleware, async (req, res) => {

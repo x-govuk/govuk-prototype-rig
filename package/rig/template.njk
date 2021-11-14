@@ -87,8 +87,23 @@
 {% endblock %}
 
 {% block bodyEnd %}
-  {% if useAutoStoreData %}
-    <script src="/auto-store-data.js"></script>
-  {% endif %}
+  {%- if data.validations %}
+  <template id="govuk-error-summary-template">
+    {{ govukErrorSummary({
+      titleText: "There is a problem"
+    }) | indent(4) }}
+  </template>
+  <template id="govuk-error-message-template">
+    {{ govukErrorMessage() | indent(4) }}
+  </template>
+  <script src="/validate.js"></script>
+  <script src="/form-validation.js"></script>
+  <script type="application/json" id="form-validation">
+    {{ data.validations | dump(2) | safe | indent(4) }}
+  </script>
+  {% endif -%}
+  {%- if useAutoStoreData %}
+  <script src="/auto-store-data.js"></script>
+  {% endif -%}
   <script>console.log({{ data | dump | safe }});</script>
 {% endblock %}
