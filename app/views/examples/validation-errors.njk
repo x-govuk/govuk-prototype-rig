@@ -5,12 +5,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="post" novalidate>
-        {{ govukErrorSummary({
-          titleText: "There is a problem",
-          errorList: errorList(errors)
-        }) if errors }}
-
+      <form method="post" novalidate data-validate>
         <h1 class="govuk-heading-l">Personal details</h1>
 
         {{ govukInput(decorate({
@@ -18,8 +13,13 @@
             text: "Full name"
           },
           autocomplete: "name",
-          spellcheck: false
-        }, "full-name")) }}
+          spellcheck: false,
+          validate: {
+            presence: {
+              message: "Enter your full name"
+            }
+          }
+        }, ["account", "full-name"])) }}
 
         {{ govukInput(decorate({
           label: {
@@ -27,8 +27,16 @@
           },
           autocomplete: "email",
           spellcheck: false,
-          type: "email"
-        }, "email")) }}
+          type: "email",
+          validate: {
+            presence: {
+              message: "Enter your email address"
+            },
+            email: {
+              message: "Enter an email address in the correct format, like name@example.com"
+            }
+          }
+        }, ["account", "email"])) }}
 
         {{ govukButton({
           text: "Continue"

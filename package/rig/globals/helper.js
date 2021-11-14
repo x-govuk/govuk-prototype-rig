@@ -67,12 +67,31 @@ export function decorate (params, keyPath) {
   params.id = (params.id) ? params.id : keyPath.join('-')
   params.name = (params.name) ? params.name : keyPath.map(s => `[${s}]`).join('')
 
+  // Add field validations to session data
+  if (params.validate) {
+    data.validations = data.validations || {}
+    data.validations[params.name] = params.validate
+  }
+
   if (params.items) {
     params.idPrefix = params.id
     params.items = params.items.map(item => {
       // Ignore dividers or empty items
       if (item.divider || item === '') {
         return item
+      }
+
+      // Validating dates
+      // ================
+      // We want to validate a combined date, but validate.js validates
+      // individual fields. The custom `date` validator hooks into the year
+      // value and gets day and month values via its `attributes` object.
+      //
+      // 1. Delete `validations` for all date fields
+      // 2. Add `validations` for year field
+
+      if (item.decorate) {
+        delete data.validations[params.name] // 1.
       }
 
       // Update date input items based on `decorate` value
@@ -97,6 +116,11 @@ export function decorate (params, keyPath) {
           item.name = `${params.name}[year]`
           item.label = item.label || 'Year'
           item.value = storedValue?.year
+
+          if (params.validate) {
+            data.validations[item.name] = params.validate // 2.
+          }
+
           break
         default:
           if (typeof item.value === 'undefined') {
@@ -127,7 +151,7 @@ export function decorate (params, keyPath) {
       return item
     })
   } else {
-    // Check for undefined because the value may exist and be intentionally blank
+    // Check for undefined because value may exist and be intentionally blank
     if (typeof params.value === 'undefined') {
       params.value = storedValue
     }
@@ -143,32 +167,7 @@ export function decorate (params, keyPath) {
   return params
 }
 
-/**
- * Transform errors provided by express-validator into an array that can be
- * consumed by the error summary component.
- *
- * If a field has multiple errors, return only the first error.
- *
- * @param {Object} errorMap - Mapped error response from express-validator
- * @returns {Array} List of errors
- */
-export function errorList (errorMap) {
-  const errorList = []
-  const fieldsWithErrors = Object.entries(errorMap)
-
-  for (const fieldError of fieldsWithErrors) {
-    const fieldErrorId = _.toPath(fieldError[1].param).join('-')
-    errorList.push({
-      text: fieldError[1].msg,
-      href: `#${fieldErrorId}`
-    })
-  }
-
-  return errorList
-}
-
 export const helperGlobals = {
   checked,
-  decorate,
-  errorList
+  decorate
 }
