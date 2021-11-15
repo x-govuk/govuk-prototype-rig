@@ -1,6 +1,13 @@
 {% extends "layouts/default.njk" %}
 
-{% set title = "Asking users for a date" %}
+{% set title = "Find your TRN" %}
+
+
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">

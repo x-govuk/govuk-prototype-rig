@@ -27,3 +27,32 @@ export function exampleWizardForks (req) {
   }]
   return wizard.nextForkPath(forks, req)
 }
+
+export function trnWizardPaths (req) {
+  const paths = [
+    '/wizard',
+    '/wizard/trn-holder',
+    '/wizard/trn-conditions',
+    '/wizard/you-have-a-trn',
+    '/wizard/email',
+    '/wizard/otp',
+    '/wizard/name',
+    '/wizard/dob',
+    '/wizard/ni-number',
+    '/wizard/your-trn-is',
+    '/'
+  ]
+
+  return wizard.nextAndBackPaths(paths, req)
+}
+
+export function trnWizardForks (req) {
+  // Skip the trn conditions if you know you have a trn
+  const forks = [{
+    currentPath: '/wizard/trn-holder',
+    storedData: ['wizard', 'do-you-have-a-trn'],
+    excludedValues: ['Yes'],
+    forkPath: '/wizard/email'
+  }]
+  return wizard.nextForkPath(forks, req)
+}

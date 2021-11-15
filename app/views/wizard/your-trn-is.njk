@@ -1,0 +1,18 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "Confirmation page" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        html: "Your Teacher Reference Number is<br><strong>0000000</strong>"
+      }) }}
+
+      <p>We have sent you a confirmation email.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>
+    </div>
+  </div>
+{% endblock %}

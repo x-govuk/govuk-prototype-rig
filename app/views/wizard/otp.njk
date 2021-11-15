@@ -1,0 +1,37 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "Find your TRN" %}
+
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
+
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{{ govukInsetText({
+  text: "We have emailed a confirmation code to {{data['email-address']}}"
+}) }}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" novalidate>
+        {{ govukInput({
+          label: {
+            text: "Confirm your code",
+            classes: "govuk-label--l",
+            isPageHeading: true
+            },
+            id: "otp",
+            name: "otp"
+          }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          href: paths.next
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

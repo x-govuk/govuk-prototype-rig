@@ -1,5 +1,5 @@
 import express from 'express'
-import { exampleWizardPaths, exampleWizardForks } from './wizards.js'
+import { exampleWizardPaths, exampleWizardForks, trnWizardPaths, trnWizardForks} from './wizards.js'
 
 const router = express.Router()
 

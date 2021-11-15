@@ -1,0 +1,39 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "Find your TRN" %}
+
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" novalidate>
+        {{ govukInput({
+          label: {
+            text: "First name"
+          },
+          id: "first-name",
+          name: "first-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last name"
+          },
+          id: "last-name",
+          name: "last-name"
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

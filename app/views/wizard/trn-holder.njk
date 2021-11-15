@@ -1,0 +1,38 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "Do you have a TRN?" %}
+
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" novalidate>
+              {{ govukRadios(decorate({
+          fieldset: {
+            legend: {
+              classes: "govuk-fieldset__legend--l",
+              isPageHeading: true,
+              text: title
+            }
+          },
+          items: [{
+            text: "Yes"
+          }, {
+            text: "No"
+          }, {
+            text: "I'm not sure"
+          }]
+        }, ["wizard", "do-you-have-a-trn"])) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "Asking users for a date" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" novalidate>
+        {{ govukDateInput(decorate({
+          fieldset: {
+            legend: {
+              classes: "govuk-fieldset__legend--l",
+              isPageHeading: true,
+              text: "What is your date of birth?"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 1987"
+          },
+          items: [{
+            decorate: "day"
+          }, {
+            decorate: "month"
+          }, {
+            decorate: "year"
+          }]
+        }, "date-of-birth")) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

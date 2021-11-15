@@ -1,6 +1,12 @@
 {% extends "layouts/default.njk" %}
 
-{% set title = "Asking users for a date" %}
+{% set title = "Find your TRN" %}
+
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
@@ -8,15 +14,15 @@
       <form method="post" novalidate>
         {{ govukInput({
           label: {
-            text: "Email address",
+            text: "What is your National Insurance Number?",
             classes: "govuk-label--l",
             isPageHeading: true
             },
             hint: {
-              text: "We’ll email you a code to confirm your email address."
+              text: "We’ll use this to look up your TRN record"
             },
-            id: "email-address",
-            name: "email-address"
+            id: "ni-number",
+            name: "ni-number"
           }) }}
 
         {{ govukButton({
