@@ -14,16 +14,16 @@
       <form method="post" novalidate>
         {{ govukInput({
           label: {
-            text: "What is your National Insurance Number?",
-            classes: "govuk-label--l",
-            isPageHeading: true
-            },
-            hint: {
-              text: "We’ll use this to look up your TRN record"
-            },
-            id: "ni-number",
-            name: "ni-number"
-          }) }}
+            text: "National Insurance number"
+          },
+          hint: {
+            text: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+          },
+          classes: "govuk-input--width-10",
+          id: "national-insurance-number",
+          name: "national-insurance-number",
+          spellcheck: false
+        }) }}
 
         {{ govukButton({
           text: "Continue"
