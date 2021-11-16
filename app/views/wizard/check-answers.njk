@@ -2,6 +2,12 @@
 
 {% set title = "Check answers page" %}
 
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
@@ -54,7 +60,7 @@
           }
         }, {
           key: {
-            text: "Teacher Training Provider"
+            text: "Teacher training establishment"
           },
           value: {
             text: "ITT provider" 
@@ -62,7 +68,7 @@
           actions: {
             items: [{
               text: "Change",
-              visuallyHiddenText: "teacher training provider",
+              visuallyHiddenText: "teacher training establishment",
               href: "/wizard/itt-provider"
             }]
           }

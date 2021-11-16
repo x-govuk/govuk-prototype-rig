@@ -14,12 +14,12 @@
       <form method="post" novalidate>
         {{ govukInput({
           label: {
-            text: "Where did you complete your Initial Teacher Training?",
+            text: "Where did you complete your initial teacher training?",
             classes: "govuk-label--l",
             isPageHeading: true
             },
             hint: {
-              text: "If you have ever undertaken a course of Initial Teacher Training, please provide the name of the education establishment"
+              text: "If you have ever undertaken a course of initial teacher training, please provide the name of the education establishment"
             },
             id: "itt-provider",
             name: "itt-provider"
@@ -30,6 +30,7 @@
           href: '/wizard/check-answers'
         }) }}
       </form>
+    <a href="/wizard/check-answers" class="govuk-link">I have never undertaken initial teacher training</a>
     </div>
   </div>
 {% endblock %}
