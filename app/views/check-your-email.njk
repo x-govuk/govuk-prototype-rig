@@ -2,24 +2,12 @@
 
 {% set title = "Check your email to continue" %}
 
-{% set text %}
-# We've sent you a link to confirm your email address
-
-If you do not get an email:
-
-- Check your spam or junk folder.
-- Try entering your email again, making sure your email address does not include any spaces.
-
-[skip to next page]({{paths.next}})
-{% endset %}
-
-
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class='govuk-heading-xl'>Check your email to continue</h1>
 
-      <p class='govuk-body'><a class="app-hidden-link" href="{{ paths.next }}">We’ve sent a sign in link to {{ data['email-address'] or 'your-email@domain.com' }}</a>.</p>
+      <p class='govuk-body'><a class="app-hidden-link" href="{{ paths.next }}">We’ve sent a link to {{ data['email-address'] or 'your-email@domain.com' }}</a>. You will need to click it to continue.</p>
 
       <p>If our email doesn’t arrive within 5 minutes, check your spam and trash folder, or <a href="{{ paths.back }}">try again</a>.</p>
     </div>
