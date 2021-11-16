@@ -24,17 +24,53 @@
   }) }}
 {% endblock %}
 
+{% set beforeYouStart %}
+## Before you start
+
+Only use this service to find your own TRN. You cannot use the service to find out someone else’s TRN.
+
+### Find your TRN on a document
+
+You may be able to find it on your:
+
+* payslip
+* teacher pension statement
+* teacher training records
+
+### Request a TRN reminder by email
+
+Send an email which includes your:
+
+* full name
+* date of birth
+* National Insurance number
+
+> Email <qts.enquiries@education.gov.uk>.
+
+We aim to respond to valid email requests within 5 working days.
+
+---
+
+### Request a TRN reminder by phone
+
+> Call the Teaching Regulation Agency on 020 7593 5394.
+
+Make sure you have your National Insurance number ready before you call.
+
+{% endset %}
+
 {% block content %}
   <h1 class="govuk-heading-xl">{{ serviceName }}</h1>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <p>Use this service to find out:</p>
+      <p body="govuk-body">Use this service to:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>your 7 digit TRN</li>
-        <li>whether or not you have a TRN</li>
+        <li>find your <a href="https://www.gov.uk/guidance/teacher-reference-number-trn" class="govuk-link">teacher reference number (TRN)</a> if you don’t know it or have forgotten it</li>
+        <li>check if you have a TRN or not</li>
       </ul>
-      <p>You cannot use this service to find a TRN on behalf of another person.</p>
+
+      <p body="govuk-body">Make sure you have your National Insurance number ready.</p>
 
       {{ govukButton({
         classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-9",
@@ -43,6 +79,7 @@
         isStartButton: true
       }) }}
 
+      {{ beforeYouStart | govukMarkdown | safe }}
     </div>
 
     <div class="govuk-grid-column-one-third">
