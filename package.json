@@ -8,7 +8,7 @@
     "node": ">=16.0.0"
   },
   "prototype": {
-    "serviceName": "Your service name",
+    "serviceName": "Find your Teacher Reference Number (TRN)",
     "templateExtension": "njk"
   },
   "stylelint": {
