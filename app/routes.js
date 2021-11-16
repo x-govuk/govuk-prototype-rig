@@ -46,8 +46,8 @@ router.get('/start', (req, res) => {
   })
 })
 
-router.get('/=:view', (req, res) => {
-  res.render(`=${req.params.view}`, {
+router.get('/:view', (req, res) => {
+  res.render(req.params.view, {
     paths: trnWizardPaths(req)
   })
 })
