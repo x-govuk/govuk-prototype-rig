@@ -14,7 +14,9 @@
       <form method="post" novalidate>
         {{ govukInput({
           label: {
-            text: "National Insurance number"
+            text: "What is your national insurance number?",
+            classes: "govuk-label--l",
+            isPageHeading: true
           },
           hint: {
             text: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
@@ -30,7 +32,7 @@
         }) }}
 
       </form>
-              <a href="/wizard/itt-provider" class="govuk-link">I don't have a UK National Insurance Number</a>
+              <a href="/wizard/itt-provider" class="govuk-link">I don't have a UK national insurance number</a>
     </div>
   </div>
 {% endblock %}

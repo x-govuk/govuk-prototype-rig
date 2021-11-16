@@ -13,13 +13,18 @@
 
 Think about what to say here.
 
-You can now [look up your TRN](/wizard/email).
 {% endset %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ text | govukMarkdown | safe }}
+      <form method="post" novalidate>
+       {{ text | govukMarkdown | safe }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
     </div>
   </div>
 {% endblock %}
+
