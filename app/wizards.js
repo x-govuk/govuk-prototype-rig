@@ -55,9 +55,9 @@ export function trnWizardForks (req) {
     forkPath: '/wizard/email'
   },{
     currentPath: '/wizard/trn-conditions',
-    storedData: ['wizard', 'do-you-have-a-trn'],
-    includedValues: ["none"],
-    forkPath: '/wizard/dob'
+    storedData: ['wizard','trn-conditions'],
+    values: ["none"],
+    forkPath: '/wizard/you-dont-have-a-trn'
   }]
   return wizard.nextForkPath(forks, req)
 }

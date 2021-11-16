@@ -1,0 +1,24 @@
+{% extends "layouts/default.njk" %}
+
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
+
+{% set title = "You don't have a TRN"%}
+{% set text %}
+# You don't have a TRN
+
+This is a paragraph of text. It explains in more detail what has happened and wraps across several lines.
+
+This paragraph has a link to [find out more about this subject](/url/of/onward/page).
+{% endset %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ text | govukMarkdown | safe }}
+    </div>
+  </div>
+{% endblock %}
