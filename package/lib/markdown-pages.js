@@ -3,7 +3,7 @@ import { MarkdownPages } from '@financial-times/express-markdown-pages'
 /**
  * Create a new instance of the Markdown pages.
  *
- * @returns {object} Markdown pages instance
+ * @returns {Object} Markdown pages instance
  */
 export const markdownPages = new MarkdownPages({
   source: './node_modules/govuk-prototype-rig/docs',
@@ -13,8 +13,8 @@ export const markdownPages = new MarkdownPages({
 /**
  * Create params for `govukBreadcrumbs` component.
  *
- * @param {object} navigation - Markdown pages navigation
- * @returns {object} Params for `govukBreadcrumbs`
+ * @param {Object} navigation - Markdown pages navigation
+ * @returns {Object} Params for `govukBreadcrumbs`
  */
 export function getBreadcrumbItems (navigation) {
   const breadcrumbItems = []
@@ -40,7 +40,7 @@ export function getBreadcrumbItems (navigation) {
  * @access private
  * @param pages - Loki pages database
  * @param page - Parent page
- * @returns {object} Page data
+ * @returns {Object} Page data
  */
 function _getPagesData (pages, page) {
   const items = pages
@@ -61,7 +61,7 @@ function _getPagesData (pages, page) {
 /**
  * Create params for `appSideNavigation` component.
  *
- * @returns {object} Params for `appSideNavigation`
+ * @returns {Object} Params for `appSideNavigation`
  */
 export async function getSideNavigationItems () {
   const db = await markdownPages.init()
