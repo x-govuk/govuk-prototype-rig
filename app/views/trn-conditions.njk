@@ -2,7 +2,6 @@
 
 {% set title = "Find your TRN" %}
 
-
 {% block pageNavigation %}
   {{ govukBackLink({
     href: paths.back
@@ -18,7 +17,7 @@
             legend: {
               text: "Do any of the following apply to you?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              classes: "govuk-fieldset__legend--xl"
             }
           },
           hint: {
@@ -27,28 +26,36 @@
           items: [
             {
               value: "qts",
-              text: "I have Qualified Teacher Status (QTS)"
+              text: "I hold qualified teacher status (QTS) in England or Wales"
+            },
+            {
+              value: "qts-trainee",
+              text: "I am working towards QTS"
             },
             {
               value: "eyts",
-              text: "I have Early Years Teacher Status (EYTS)"
+              text: "I hold early years teacher status (EYTS) in England"
             },
             {
-              value: "trainee",
-              text: "I have previously started a course of Initial Teacher Training"
+              value: "eyts-trainee",
+              text: "I am working towards EYTS"
             },
             {
               value: "npq",
-              text: "I have previously started a National Professional Qualification (NPQ)"
+              text: "I hold a national professional qualification (NPQ)"
+            },
+            {
+              value: "npq-trainee",
+              text: "I am working towards an NPQ"
             },
             {
               value: "pensions",
-              text: "I have a pension with the Teachers' Pension Service"
+              text: "I contribute to the Teachers’ Pensions scheme"
             },
             {
               value: "misconduct",
-              text: "I have been prohibited from teaching by the Teaching Regulation Agency"
-            },    
+              text: "I have been restricted or prohibited from teaching in England"
+            },
             {
               divider: "or"
             },
@@ -57,7 +64,7 @@
               text: "None of the above",
               behaviour: "exclusive"
             }
-          ] 
+          ]
         }, ["wizard", "trn-conditions"])) }}
 
         {{ govukButton({
