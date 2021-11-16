@@ -1,0 +1,70 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "Check answers page" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-l">We didn't find a match for the details you provided</h1>
+
+      <h2 class="govuk-heading-m">Check your answers</h2>
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [{
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Sarah Philips"
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "name",
+              href: "/wizard/name"
+            }]
+          }
+        }, {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            text: "5 January 1978"
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "date of birth",
+              href: "/wizard/dob"
+            }]
+          }
+        }, {
+          key: {
+            text: "National Insurance Number"
+          },
+          value: {
+            html: "QQ 12 34 56 C" | nl2br
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "national insurance number",
+              href: "/wizard/ni-number"
+            }]
+          }
+        }]
+      }) }}
+
+      <h2 class="govuk-heading-m">If your answers are correct, you can submit a helpdesk request</h2>
+      <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct. You will receive a response via email within 5 working days.</p>
+
+      <form method="post" novalidate>
+        <input type="hidden" name="answers-checked" value="true">
+
+        {{ govukButton({
+          text: "Accept and send"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

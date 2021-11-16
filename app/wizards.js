@@ -51,7 +51,7 @@ export function trnWizardForks (req) {
   const forks = [{
     currentPath: '/wizard/trn-holder',
     storedData: ['wizard', 'do-you-have-a-trn'],
-    excludedValues: ["No", "I'm not sure"],
+    excludedValues: ["No, I'm not sure if I have a TRN"],
     forkPath: '/wizard/email'
   }]
   return wizard.nextForkPath(forks, req)

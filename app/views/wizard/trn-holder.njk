@@ -1,6 +1,6 @@
 {% extends "layouts/default.njk" %}
 
-{% set title = "Do you have a TRN?" %}
+{% set title = "Do you know if you have a TRN?" %}
 
 {% block pageNavigation %}
   {{ govukBackLink({
@@ -21,11 +21,9 @@
             }
           },
           items: [{
-            text: "Yes"
+            text: "Yes, I have a TRN"
           }, {
-            text: "No"
-          }, {
-            text: "I'm not sure"
+            text: "No, I'm not sure if I have a TRN"
           }]
         }, ["wizard", "do-you-have-a-trn"])) }}
 
