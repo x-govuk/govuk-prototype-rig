@@ -30,16 +30,16 @@ export function exampleWizardForks (req) {
 
 export function trnWizardPaths (req) {
   const paths = [
-    '/wizard',
-    '/wizard/trn-holder',
-    '/wizard/trn-conditions',
-    '/wizard/you-have-a-trn',
-    '/wizard/email',
-    '/wizard/check-your-email',
-    '/wizard/name',
-    '/wizard/dob',
-    '/wizard/ni-number',
-    '/wizard/your-trn-is',
+    '/start',
+    '/trn-holder',
+    '/trn-conditions',
+    '/you-have-a-trn',
+    '/email',
+    '/check-your-email',
+    '/name',
+    '/dob',
+    '/ni-number',
+    '/your-trn-is',
     '/'
   ]
 
@@ -49,15 +49,15 @@ export function trnWizardPaths (req) {
 export function trnWizardForks (req) {
   // Skip the trn conditions if you know you have a trn
   const forks = [{
-    currentPath: '/wizard/trn-holder',
+    currentPath: '/trn-holder',
     storedData: ['wizard', 'do-you-have-a-trn'],
     excludedValues: ["No, I'm not sure if I have a TRN"],
-    forkPath: '/wizard/email'
+    forkPath: '/email'
   },{
-    currentPath: '/wizard/trn-conditions',
+    currentPath: '/trn-conditions',
     storedData: ['wizard','trn-conditions'],
     values: ["none"],
-    forkPath: '/wizard/you-dont-have-a-trn'
+    forkPath: '/you-dont-have-a-trn'
   }]
   return wizard.nextForkPath(forks, req)
 }
