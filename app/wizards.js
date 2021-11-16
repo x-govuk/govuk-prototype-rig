@@ -53,6 +53,11 @@ export function trnWizardForks (req) {
     storedData: ['wizard', 'do-you-have-a-trn'],
     excludedValues: ["No, I'm not sure if I have a TRN"],
     forkPath: '/wizard/email'
+  },{
+    currentPath: '/wizard/trn-conditions',
+    storedData: ['wizard', 'do-you-have-a-trn'],
+    includedValues: ["none"],
+    forkPath: '/wizard/dob'
   }]
   return wizard.nextForkPath(forks, req)
 }
