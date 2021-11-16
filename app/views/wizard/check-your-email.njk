@@ -1,0 +1,30 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "Find your TRN" %}
+
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
+
+{% set title = "Check your email"%}
+{% set text %}
+# We've sent you a link to confirm your email address
+
+If you do not get an email:
+
+- Check your spam or junk folder.
+- Try entering your email again, making sure your email address does not include any spaces.
+
+[skip to next page]({{paths.next}})
+{% endset %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ text | govukMarkdown | safe }}
+    </div>
+  </div>
+{% endblock %}

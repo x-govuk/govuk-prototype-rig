@@ -35,7 +35,7 @@ export function trnWizardPaths (req) {
     '/wizard/trn-conditions',
     '/wizard/you-have-a-trn',
     '/wizard/email',
-    '/wizard/otp',
+    '/wizard/check-your-email',
     '/wizard/name',
     '/wizard/dob',
     '/wizard/ni-number',
