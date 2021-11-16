@@ -12,18 +12,20 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form method="post" novalidate>
-              {{ govukRadios(decorate({
+        {{ govukRadios(decorate({
           fieldset: {
             legend: {
-              classes: "govuk-fieldset__legend--l",
+              classes: "govuk-fieldset__legend--xl",
               isPageHeading: true,
               text: title
             }
           },
           items: [{
-            text: "Yes, I know I have a TRN"
+            text: "Yes, I have a TRN",
+            value: 'yes'
           }, {
-            text: "No, I'm not sure if I have a TRN"
+            text: "No, I’m not sure if I have a TRN",
+            value: 'dont-know'
           }]
         }, ["wizard", "do-you-have-a-trn"])) }}
 
