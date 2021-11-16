@@ -43,7 +43,7 @@
             text: "National Insurance Number"
           },
           value: {
-            html: "QQ 12 34 56 C" | nl2br
+            text: "QQ 12 34 56 C" 
           },
           actions: {
             items: [{
@@ -52,11 +52,25 @@
               href: "/wizard/ni-number"
             }]
           }
+        }, {
+          key: {
+            text: "Teacher Training Provider"
+          },
+          value: {
+            text: "ITT provider" 
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "teacher training provider",
+              href: "/wizard/itt-provider"
+            }]
+          }
         }]
       }) }}
 
       <h2 class="govuk-heading-m">If your answers are correct, you can submit a helpdesk request</h2>
-      <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct. You will receive a response via email within 5 working days.</p>
+      <p>By submitting this request you are confirming that, to the best of your knowledge, the details you are providing are correct. You will receive a response via email within 5 working days.</p>
 
       <form method="post" novalidate>
         <input type="hidden" name="answers-checked" value="true">
