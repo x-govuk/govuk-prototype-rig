@@ -21,7 +21,7 @@
             text: "Name"
           },
           value: {
-            text: data['first-name'] + ' ' + data['last-name']
+            text: (data['first-name'] + ' ' + data['last-name']) if data['first-name']
           },
           actions: {
             items: [{
@@ -35,7 +35,7 @@
             text: "Date of birth"
           },
           value: {
-            text: data['date-of-birth']['day'] + ' ' + data['date-of-birth']['month'] + ' ' + data['date-of-birth']['year']
+            text: data['date-of-birth'] | dateWithYear if data['date-of-birth']
           },
           actions: {
             items: [{
