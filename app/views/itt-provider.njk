@@ -9,28 +9,42 @@
 {% endblock %}
 
 {% block content %}
+  {% set ittProviderNameHtml %}
+    {{ govukInput({
+      label: {
+        text: "What school, university or other training provider did you complete your training with?"
+      },
+      id: "itt-provider",
+      name: "itt-provider"
+    }) }}
+  {% endset %}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form method="post" novalidate>
-        {{ govukInput({
-          label: {
-            text: "Where did you complete your initial teacher training?",
-            classes: "govuk-label--l",
-            isPageHeading: true
-            },
-            hint: {
-              text: "If you have ever undertaken a course of initial teacher training, please provide the name of the education establishment"
-            },
-            id: "itt-provider",
-            name: "itt-provider"
-          }) }}
+        {{ govukRadios(decorate({
+          fieldset: {
+            legend: {
+              classes: "govuk-fieldset__legend--xl",
+              isPageHeading: true,
+              text: 'Do you hold qualified teacher status (QTS) in England or Wales?'
+            }
+          },
+          items: [{
+            text: "Yes",
+            value: 'yes',
+            conditional: { html: ittProviderNameHtml }
+          }, {
+            text: "No",
+            value: 'no'
+          }]
+        }, ["wizard", "do-you-have-qts"])) }}
 
         {{ govukButton({
           text: "Continue",
           href: '/check-answers'
         }) }}
       </form>
-    <a href="/check-answers" class="govuk-link">I have never undertaken initial teacher training</a>
     </div>
   </div>
 {% endblock %}
