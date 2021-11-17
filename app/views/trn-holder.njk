@@ -12,6 +12,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form method="post" novalidate>
+        {% set trnGuidance %}
+          The TRN has previously been known as a QTS, GTC, DfE, DfES or DCSF number.
+          <br>
+          You may not have a TRN if you are working in further education or qualified outside England or overseas.
+        {% endset %}
+
         {{ govukRadios(decorate({
           fieldset: {
             legend: {
@@ -19,6 +25,9 @@
               isPageHeading: true,
               text: title
             }
+          },
+          hint: {
+            html: trnGuidance
           },
           items: [{
             text: "Yes, I have a TRN",
