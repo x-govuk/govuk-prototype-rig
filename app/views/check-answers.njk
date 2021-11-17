@@ -11,7 +11,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-heading-l">We didn't find a match for the details you provided</h1>
+      <h1 class="govuk-heading-xl">We didn’t find a match for the details you provided</h1>
 
       <h2 class="govuk-heading-m">Check your answers</h2>
       {{ govukSummaryList({
@@ -21,7 +21,7 @@
             text: "Name"
           },
           value: {
-            text: "Sarah Philips"
+            text: data['first-name'] + ' ' + data['last-name']
           },
           actions: {
             items: [{
@@ -35,7 +35,7 @@
             text: "Date of birth"
           },
           value: {
-            text: "5 January 1978"
+            text: data['date-of-birth']['day'] + ' ' + data['date-of-birth']['month'] + ' ' + data['date-of-birth']['year']
           },
           actions: {
             items: [{
@@ -46,33 +46,33 @@
           }
         }, {
           key: {
-            text: "National Insurance Number"
+            text: "National Insurance number"
           },
           value: {
-            text: "QQ 12 34 56 C" 
+            text: data['national-insurance-number']
           },
           actions: {
             items: [{
               text: "Change",
-              visuallyHiddenText: "national insurance number",
+              visuallyHiddenText: "National Insurance number",
               href: "/ni-number"
             }]
           }
         }, {
           key: {
-            text: "Teacher training establishment"
+            text: "Teacher training provider"
           },
           value: {
-            text: "ITT provider" 
+            text: data['itt-provider']
           },
           actions: {
             items: [{
               text: "Change",
-              visuallyHiddenText: "teacher training establishment",
+              visuallyHiddenText: "teacher training provider",
               href: "/itt-provider"
             }]
           }
-        }]
+        } if data['itt-provider']]
       }) }}
 
       <h2 class="govuk-heading-m">If your answers are correct, you can submit a helpdesk request</h2>
