@@ -10,9 +10,17 @@
 
 {% block content %}
   <div class="govuk-grid-row">
+    {% set nameChangeGuidance %}
+If your name has changed and you have not updated your Teaching Regulation Agency record, you can:
+
+* use your previous name to find your TRN
+* use your previous name to find your TRN, and then change it on the Teaching Regulation Agency records at a later date
+    {% endset %}
+
     <div class="govuk-grid-column-two-thirds">
       <form method="post" novalidate>
       <h1 class="govuk-heading-xl">What is your name?</h1>
+        <p class="govuk-body">First and last name exactly as it appears on the Teaching Regulation Agency records</p>
         {{ govukInput({
           label: {
             text: "First name"
@@ -29,6 +37,10 @@
           name: "last-name"
         }) }}
 
+        {{ govukDetails({
+          summaryText: "Help if you have changed your name",
+          html: nameChangeGuidance | govukMarkdown | safe
+        }) }}
 
         {{ govukButton({
           text: "Continue"
