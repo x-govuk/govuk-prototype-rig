@@ -9,8 +9,8 @@
   }
 }
 
-.govuk-accordion__section {
-  .govuk-accordion__section-heading {
+.rig-task-list__section {
+  .rig-task-list__section-heading {
     @include govuk-font($size:24, $weight: bold);
     display: table;
     margin-top: govuk-spacing(0);
@@ -22,7 +22,7 @@
   }
 }
 
-.govuk-accordion__section--numbered {
+.rig-task-list__section--numbered {
   .rig-task-list__section-number {
     @include govuk-media-query($from: tablet) {
       min-width: govuk-spacing(6);

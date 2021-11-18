@@ -29,11 +29,11 @@
 {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {% for section in params.sections %}
     {% set headingLevel = params.headingLevel or 2 %}
-    <li class="govuk-accordion__section{% if params.disableSectionNumbering != true %} govuk-accordion__section--numbered{% endif %}">
+    <li class="rig-task-list__section{% if params.disableSectionNumbering != true %} rig-task-list__section--numbered{% endif %}">
       {% if section.titleHtml %}
         {{ section.titleHtml | safe }}
       {% elif section.titleText %}
-        <h{{ headingLevel }} class="govuk-accordion__section-heading">
+        <h{{ headingLevel }} class="rig-task-list__section-heading">
           {% if params.disableSectionNumbering != true %}
             <span class="rig-task-list__section-number">{{ loop.index }}.</span>
           {% endif %}
