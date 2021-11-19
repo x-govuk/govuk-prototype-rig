@@ -14,5 +14,14 @@ export default {
       name: 'Demonstration',
       description: 'Show message about feature flags on the home page.'
     }
+  },
+  dqt_record: {
+    'email-address': 'jsmith@example.com',
+    'first-name': 'Jane',
+    'last-name': 'Smith',
+    'date-of-birth': { day: 27, month: 3, year: 1987 },
+    'national-insurance-number': 'QQ 12 34 56 C',
+    'itt-provider': 'Gorse SCITT',
+    'trn': '0000000'
   }
 }

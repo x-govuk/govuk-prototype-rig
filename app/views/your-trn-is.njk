@@ -6,7 +6,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {{ govukPanel({
-        html: "Your Teacher Reference Number is<br><strong>0000000</strong>"
+        html: "Your Teacher Reference Number is<br><strong>" + data['dqt_record']['trn'] + "</strong>"
       }) }}
 
       <p>We have sent you a confirmation email.</p>
