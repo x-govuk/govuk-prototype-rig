@@ -21,21 +21,17 @@ If your name has changed and you have not updated your Teaching Regulation Agenc
       <form method="post" novalidate>
       <h1 class="govuk-heading-xl">What is your name?</h1>
         <p class="govuk-body">First and last name exactly as it appears on the Teaching Regulation Agency records</p>
-        {{ govukInput({
+        {{ govukInput(decorate({
           label: {
             text: "First name"
-          },
-          id: "first-name",
-          name: "first-name"
-        }) }}
+          }
+        }, ['first-name'])) }}
 
-        {{ govukInput({
+        {{ govukInput(decorate({
           label: {
             text: "Last name"
-          },
-          id: "last-name",
-          name: "last-name"
-        }) }}
+          }
+        }, ['last-name'])) }}
 
         {{ govukDetails({
           summaryText: "Help if you have changed your name",
