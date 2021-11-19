@@ -9,13 +9,23 @@
 {% endblock %}
 
 {% block content %}
-  {% set ittProviderNameHtml %}
+  {% set formerITTProviderNameHtml %}
     {{ govukInput({
       label: {
         text: "Your school, university or other training provider"
       },
-      id: "itt-provider",
-      name: "itt-provider"
+      id: "former-itt-provider",
+      name: "former-itt-provider"
+    }) }}
+  {% endset %}
+
+  {% set currentITTProviderNameHtml %}
+    {{ govukInput({
+      label: {
+        text: "Your school, university or other training provider"
+      },
+      id: "current-itt-provider",
+      name: "current-itt-provider"
     }) }}
   {% endset %}
 
@@ -34,12 +44,12 @@
             {
               text: "Yes, I completed my training",
               value: 'yes',
-              conditional: { html: ittProviderNameHtml }
+              conditional: { html: formerITTProviderNameHtml }
             },
             {
               text: "Yes, I’m currently in training",
               value: 'yes',
-              conditional: { html: ittProviderNameHtml }
+              conditional: { html: currentITTProviderNameHtml }
             },
             {
               text: "No",

@@ -63,7 +63,7 @@
             text: "Teacher training provider"
           },
           value: {
-            text: data['itt-provider']
+            text: data['former-itt-provider'] or data['current-itt-provider']
           },
           actions: {
             items: [{
@@ -72,8 +72,8 @@
               href: "/itt-provider"
             }]
           }
-        } if data['itt-provider']]
-      }) }}
+        } if data['former-itt-provider'] or data['current-itt-provider']
+      ]}) }}
 
       <h2 class="govuk-heading-m">If your answers are correct, you can submit a helpdesk request</h2>
       <p>By submitting this request you are confirming that, to the best of your knowledge, the details you are providing are correct. You will receive a response via email within 5 working days.</p>
