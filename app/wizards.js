@@ -41,6 +41,7 @@ export function trnWizardPaths (req) {
     '/ni-number',
     '/itt-provider',
     '/check-answers',
+    '/helpdesk-request-submitted',
     '/your-trn-is',
     '/'
   ]
