@@ -74,13 +74,13 @@ export function findAvailablePort (app, callback) {
         // User answers yes
         port = availablePort
         fs.writeFileSync(tmpFile, port.toString())
-        console.log(`Changed to port ${port}`)
+        console.info(`Changed to port ${port}`)
 
         callback(port)
       } else {
         // User answers no - exit
-        console.log('\nYou can set a new default port in server.js, or by running the server with PORT=XXXX')
-        console.log('\nExit by pressing ‘ctrl + c’')
+        console.info('\nYou can set a new default port in server.js, or by running the server with PORT=XXXX')
+        console.info('\nExit by pressing ‘ctrl + c’')
         process.exit(0)
       }
     }

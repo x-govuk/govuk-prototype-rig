@@ -15,7 +15,7 @@ export function forceHttps (req, res, next) {
   }
 
   if (protocol !== 'https') {
-    console.log('Redirecting request to https')
+    console.info('Redirecting request to https')
     // 302 temporary. This is a feature that can be disabled
     return res.redirect(302, 'https://' + req.get('Host') + req.url)
   }
