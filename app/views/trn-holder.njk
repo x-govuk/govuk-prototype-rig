@@ -11,27 +11,29 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ title }}</h1>
+
       <form method="post" novalidate>
         {% set trnGuidance %}
-          You will have a TRN if you:
-            * hold QTS in England or Wales
-            * are working towards QTS
-            * hold early years teacher status (EYTS) in England
-            * are working towards EYTS
-            * hold a national professional qualification (NPQ)
-            * are working towards an NPQ
-            * contribute to the Teachers’ Pensions scheme
-            * have a relevant restriction in relation to teaching in England
+You will have a TRN if you:
+
+* hold QTS in England or Wales
+* are working towards QTS
+* hold early years teacher status (EYTS) in England
+* are working towards EYTS
+* hold a national professional qualification (NPQ)
+* are working towards an NPQ
+* contribute to the Teachers’ Pensions scheme
+* have a relevant restriction in relation to teaching in England
         {% endset %}
 
+        {{ trnGuidance | govukMarkdown | safe }}
 
-        {{ nameChangeGuidance | govukMarkdown | safe }}
         {{ govukRadios(decorate({
           fieldset: {
             legend: {
-              classes: "govuk-fieldset__legend--xl",
-              isPageHeading: true,
-              text: title
+              classes: "govuk-fieldset__legend--l",
+              text: 'Do you have a TRN?'
             }
           },
           items: [{
