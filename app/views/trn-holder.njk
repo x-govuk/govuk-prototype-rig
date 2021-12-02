@@ -1,6 +1,6 @@
 {% extends "layouts/default.njk" %}
 
-{% set title = "Do you know if you have a TRN?" %}
+{% set title = "Check if you have a TRN" %}
 
 {% block pageNavigation %}
   {{ govukBackLink({
@@ -13,11 +13,19 @@
     <div class="govuk-grid-column-two-thirds">
       <form method="post" novalidate>
         {% set trnGuidance %}
-          The TRN has previously been known as a QTS, GTC, DfE, DfES or DCSF number.
-          <br>
-          You may not have a TRN if you are working in further education or qualified outside England or overseas.
+          You will have a TRN if you:
+            * hold QTS in England or Wales
+            * are working towards QTS
+            * hold early years teacher status (EYTS) in England
+            * are working towards EYTS
+            * hold a national professional qualification (NPQ)
+            * are working towards an NPQ
+            * contribute to the Teachers’ Pensions scheme
+            * have a relevant restriction in relation to teaching in England
         {% endset %}
 
+
+        {{ nameChangeGuidance | govukMarkdown | safe }}
         {{ govukRadios(decorate({
           fieldset: {
             legend: {
@@ -26,14 +34,11 @@
               text: title
             }
           },
-          hint: {
-            html: trnGuidance
-          },
           items: [{
-            text: "Yes, I have a TRN",
+            text: "Yes",
             value: 'yes'
           }, {
-            text: "No, I’m not sure if I have a TRN",
+            text: "No",
             value: 'dont-know'
           }]
         }, ["wizard", "do-you-have-a-trn"])) }}
