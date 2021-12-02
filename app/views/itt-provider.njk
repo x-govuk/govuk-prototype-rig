@@ -1,6 +1,6 @@
 {% extends "layouts/default.njk" %}
 
-{% set title = "Find your TRN" %}
+{% set title = "Find out your TRN" %}
 
 {% block pageNavigation %}
   {{ govukBackLink({
@@ -9,23 +9,13 @@
 {% endblock %}
 
 {% block content %}
-  {% set formerITTProviderNameHtml %}
+  {% set ITTProviderNameHtml %}
     {{ govukInput({
       label: {
         text: "Your school, university or other training provider"
       },
-      id: "former-itt-provider",
-      name: "former-itt-provider"
-    }) }}
-  {% endset %}
-
-  {% set currentITTProviderNameHtml %}
-    {{ govukInput({
-      label: {
-        text: "Your school, university or other training provider"
-      },
-      id: "current-itt-provider",
-      name: "current-itt-provider"
+      id: "itt-provider",
+      name: "itt-provider"
     }) }}
   {% endset %}
 
@@ -37,19 +27,14 @@
             legend: {
               classes: "govuk-fieldset__legend--xl",
               isPageHeading: true,
-              text: 'Have you ever trained as a teacher in England or Wales?'
+              text: 'Have you ever been enrolled in a teacher training course in England or Wales?'
             }
           },
           items: [
             {
-              text: "Yes, I completed my training",
+              text: "Yes",
               value: 'yes',
-              conditional: { html: formerITTProviderNameHtml }
-            },
-            {
-              text: "Yes, I’m currently in training",
-              value: 'yes',
-              conditional: { html: currentITTProviderNameHtml }
+              conditional: { html: ITTProviderNameHtml }
             },
             {
               text: "No",

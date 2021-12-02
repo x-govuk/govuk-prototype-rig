@@ -1,6 +1,6 @@
 {% extends "layouts/default.njk" %}
 
-{% set title = "Find your TRN" %}
+{% set title = "Find out your TRN" %}
 
 {% block pageNavigation %}
   {{ govukBackLink({
@@ -19,7 +19,7 @@ If your name has changed and you have not updated your Teaching Regulation Agenc
 
     <div class="govuk-grid-column-two-thirds">
       <form method="post" novalidate>
-      <h1 class="govuk-heading-xl">What is your name?</h1>
+      <h1 class="govuk-heading-xl">Your name</h1>
         <p class="govuk-body">First and last name exactly as it appears on the Teaching Regulation Agency records</p>
         {{ govukInput(decorate({
           label: {

@@ -35,14 +35,13 @@ export function trnWizardPaths (req) {
     '/trn-conditions',
     '/you-have-a-trn',
     '/email',
-    '/check-your-email',
     '/name',
     '/dob',
     '/ni-number',
     '/itt-provider',
     '/check-answers',
     '/helpdesk-request-submitted',
-    '/your-trn-is',
+    '/trn-sent',
     '/'
   ]
 
@@ -70,7 +69,7 @@ const ninoMatchesDQTRecord = (data) => {
 }
 
 const ittProviderMatchesDQTRecord = (data) => {
-  return (data['former-itt-provider'] || data['current-itt-provider']) === data['dqt_record']['itt-provider']
+  return (data['itt-provider']) === data['dqt_record']['itt-provider']
 }
 
 const numberOfMatchingFieldsAgainstDQTRecord = (data) => {
@@ -103,7 +102,7 @@ export function trnWizardForks (req) {
     excludedValues: [],
     forkPath: (value) => {
       if (userMatchesDQTRecord(req.session.data)) {
-        return '/your-trn-is'
+        return '/trn-sent'
       } else {
         return '/itt-provider'
       }
@@ -113,7 +112,7 @@ export function trnWizardForks (req) {
     excludedValues: [],
     forkPath: (value) => {
       if (userMatchesDQTRecord(req.session.data)) {
-        return '/your-trn-is'
+        return '/trn-sent'
       } else {
         return '/check-answers'
       }
