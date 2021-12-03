@@ -37,8 +37,9 @@ export function trnWizardPaths (req) {
     '/dob',
     '/ni-number',
     '/itt-provider',
-    '/check-answers',
+    '/submit-request',
     '/helpdesk-request-submitted',
+    '/check-answers',
     '/trn-sent',
     '/'
   ]
@@ -95,7 +96,7 @@ export function trnWizardForks (req) {
     excludedValues: [],
     forkPath: (value) => {
       if (userMatchesDQTRecord(req.session.data)) {
-        return '/trn-sent'
+        return '/check-answers'
       } else {
         return '/itt-provider'
       }
@@ -105,9 +106,9 @@ export function trnWizardForks (req) {
     excludedValues: [],
     forkPath: (value) => {
       if (userMatchesDQTRecord(req.session.data)) {
-        return '/trn-sent'
-      } else {
         return '/check-answers'
+      } else {
+        return '/submit-request'
       }
     }
   }]

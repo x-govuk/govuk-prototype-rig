@@ -52,7 +52,7 @@ const userEmailMatchesDQTRecord = (data) => {
 
 router.get('/name', (req, res, next) => {
   if (userEmailMatchesDQTRecord(req.session.data)) {
-    res.redirect('/your-trn-is')
+    res.redirect('/check-answers')
   } else {
     next()
   }
