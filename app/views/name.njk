@@ -26,19 +26,22 @@ If your name has changed and you have not updated your Teaching Regulation Agenc
         {{ nameChangeGuidance | govukMarkdown | safe }}
         {{ govukInput(decorate({
           label: {
-            text: "First name"
+            text: "First name",
+            classes: "govuk-label--m"
           }
         }, ['first-name'])) }}
 
         {{ govukInput(decorate({
           label: {
-            text: "Last name"
+            text: "Last name",
+            classes: "govuk-label--m"
           }
         }, ['last-name'])) }}
 
         {{ govukInput(decorate({
           label: {
-            text: "Previous last name (optional)"
+            text: "Previous last name (optional)",
+            classes: "govuk-label--m"
           }
         }, ['previous-last-name'])) }}
 
