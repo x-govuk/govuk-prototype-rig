@@ -13,7 +13,11 @@
   {% set NINumberHtml %}
     {{ govukInput({
       label: {
-        text: "National Insurance number"
+        text: "National Insurance number",
+        classes: "govuk-label--m"
+      },
+      hint: {
+        text: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
       },
       id: "national-insurance-number",
       name: "national-insurance-number"
@@ -29,20 +33,17 @@
             legend: {
               classes: "govuk-fieldset__legend--xl",
               isPageHeading: true,
-              text: 'Do you have a National Insurance number?',
-              hint: {
-                text: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
-              }
+              text: 'Do you have a National Insurance number?'
             }
           },
           items: [
             {
-              text: "Yes",
+              text: "Yes, I have a National Insurance number",
               value: 'yes',
               conditional: { html: NINumberHtml }
             },
             {
-              text: "No",
+              text: "No, I do not",
               value: 'no'
             }]
         } )) }}
