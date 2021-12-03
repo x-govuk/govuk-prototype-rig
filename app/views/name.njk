@@ -9,21 +9,30 @@
 {% endblock %}
 
 {% block content %}
+  {% set PreviousNameHtml %}
+      {{ govukInput(decorate({
+      label: {
+        text: "Previous first name"
+      },
+      id: "previous-first-name",
+      name: "previous-first-name"
+    }, ['previous-first-name'])) }}
+    {{ govukInput(decorate({
+      label: {
+        text: "Previous last name"
+      },
+      id: "previous-last-name",
+      name: "previous-last-name"
+    }, ['previous-last-name'])) }}
+  {% endset %}
+
   <div class="govuk-grid-row">
-    {% set nameChangeGuidance %}
-Enter your first and last name exactly as they appear on the Teaching Regulation Agency records.
-
-If your name has changed and you have not updated your Teaching Regulation Agency record, you can:
-
-* use your previous name to find your TRN
-* use your previous name to find your TRN, and then change it on the Teaching Regulation Agency records at a later date
-    {% endset %}
 
     <div class="govuk-grid-column-two-thirds">
       <form method="post" novalidate>
       <h1 class="govuk-heading-xl">Your name</h1>
         <p class="govuk-body"></p>
-        {{ nameChangeGuidance | govukMarkdown | safe }}
+        <p>We will match your name against the Teaching Regulation Agency records.</p>
         {{ govukInput(decorate({
           label: {
             text: "First name",
@@ -38,12 +47,17 @@ If your name has changed and you have not updated your Teaching Regulation Agenc
           }
         }, ['last-name'])) }}
 
-        {{ govukInput(decorate({
-          label: {
-            text: "Previous last name (optional)",
-            classes: "govuk-label--m"
-          }
-        }, ['previous-last-name'])) }}
+        {{ govukCheckboxes(decorate({
+          idPrefix: "changed-name",
+          name: "changed-name",
+          items: [
+            {
+              value: "changed-name",
+              text: "I have changed my name since I received my TRN",
+              conditional: { html: PreviousNameHtml }
+            }
+          ]
+        }, ['changed-name'])) }}
 
         {{ govukButton({
           text: "Continue"

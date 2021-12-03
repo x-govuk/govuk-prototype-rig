@@ -36,7 +36,6 @@ export function trnWizardPaths (req) {
     '/name',
     '/dob',
     '/ni-number',
-    '/previous-last-name',
     '/itt-provider',
     '/submit-request',
     '/helpdesk-request-submitted',

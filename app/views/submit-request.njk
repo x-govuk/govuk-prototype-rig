@@ -35,7 +35,7 @@
             text: "Name"
           },
           value: {
-            text: (data['first-name'] + ' ' + data['last-name']) if data['first-name']
+            text: (data['first-name'] + ' ' + data['last-name'])
           },
           actions: {
             items: [{
@@ -44,12 +44,26 @@
               href: "/name"
             }]
           }
-        }, {
+        }if data['first-name'], {
+        key: {
+            text: "Previous name"
+          },
+          value: {
+            text: (data['previous-first-name'] + ' ' + data['previous-last-name'])
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "previous name",
+              href: "/name"
+            }]
+          }
+        }if data['previous-last-name'], {
           key: {
             text: "Date of birth"
           },
           value: {
-            text: data['date-of-birth'] | dateWithYear if data['date-of-birth']
+            text: data['date-of-birth'] | dateWithYear
           },
           actions: {
             items: [{
@@ -58,7 +72,7 @@
               href: "/dob"
             }]
           }
-        }, {
+        }if data['date-of-birth'], {
           key: {
             text: "National Insurance number"
           },
@@ -72,7 +86,7 @@
               href: "/ni-number"
             }]
           }
-        }, {
+        }if data['national-insurance-number'], {
           key: {
             text: "Teacher training provider"
           },

@@ -38,7 +38,7 @@ We will send your TRN to the email address you have provided.
             text: "Name"
           },
           value: {
-            text: (data['first-name'] + ' ' + data['last-name']) if data['first-name']
+            text: (data['first-name'] + ' ' + data['last-name'])
           },
           actions: {
             items: [{
@@ -48,11 +48,25 @@ We will send your TRN to the email address you have provided.
             }]
           }
         }if data['first-name'], {
+        key: {
+            text: "Previous name"
+          },
+          value: {
+            text: (data['previous-first-name'] + ' ' + data['previous-last-name'])
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "previous name",
+              href: "/name"
+            }]
+          }
+        }if data['previous-last-name'], {
           key: {
             text: "Date of birth"
           },
           value: {
-            text: data['date-of-birth'] | dateWithYear if data['date-of-birth']
+            text: data['date-of-birth'] | dateWithYear
           },
           actions: {
             items: [{
