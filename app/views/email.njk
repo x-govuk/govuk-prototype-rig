@@ -12,7 +12,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form method="post" novalidate>
-        {{ govukInput({
+        {{ govukInput(decorate({
           label: {
             text: "Your email address",
             classes: "govuk-label--xl",
@@ -23,7 +23,7 @@
             },
             id: "email-address",
             name: "email-address"
-          }) }}
+          }, ['email-address'])) }}
 
         {{ govukButton({
           text: "Continue"
