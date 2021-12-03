@@ -2,71 +2,93 @@
 
 {% set title = "GOV.UK Prototype Rig" %}
 
-{% block content %}
-  {{ govukNotificationBanner({
-    text: "You have switched on the demonstration feature flag. Return to the <a class=\"govuk-notification-banner__link\" href=\"/feature-flags\">feature flags</a> page to turn it off." | safe
-  }) if data.features.demo.on }}
+{% block main %}
+  {{ rigMasthead({
+    classes: "rig-masthead--large",
+    title: {
+      html: serviceName + " prototype" | noOrphans
+    },
+    startButton: {
+      href: "#",
+      text: "View prototype"
+    },
+    image: {
+      src: mastheadImageDataURI
+    }
+  }) }}
 
-  <h1 class="govuk-heading-xl">{{ title }}</h1>
+  <div class="govuk-width-container">
+    {#
+      This notification banner component is used to demostrate feature flags.
+      It can be safely deleted.
+    #}
+    {{ govukNotificationBanner({
+      text: "You have switched on the demonstration feature flag. Return to the <a class=\"govuk-notification-banner__link\" href=\"/feature-flags\">feature flags</a> page to turn it off." | safe
+    }) if data.features.demo.on }}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <p>The rig contains all you need to prototype anything from simple static pages to complex, data-driven transactions.</p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+        <h2 class="govuk-heading-m">About this page</h2>
+        <p>We recommend you add links to your prototype to this page, rather than delete it. You’ll find this page in <code class="rig-code rig-code--inline">/app/views/index.njk</code>.</p>
+        <p>You can change the service name by changing the <code class="rig-code rig-code--inline">name</code> value in <code class="rig-code rig-code--inline">app.json</code>.</p>
 
-      <h2 class="govuk-heading-m">About this page</h2>
-      <p>We recommend you add links to your prototype to this page, rather than delete it. You’ll find this page in <code class="rig-code rig-code--inline">/app/views/index.njk</code>.</p>
-      <p>You can change the service name by changing the <code class="rig-code rig-code--inline">name</code> value in <code class="rig-code rig-code--inline">app.json</code>.</p>
+        <h2 class="govuk-heading-m">Documentation</h2>
+        <p>The rig includes a number of utilities to help build your prototype. To learn how these work, navigate to <a href="/docs"><code class="rig-code rig-code--inline">/docs</code></a>, or visit the <a href="https://govuk-prototype-rig.herokuapp.com">GOV.UK Prototype Rig website</a>.</p>
 
-      <h2 class="govuk-heading-m">Documentation</h2>
-      <p>The rig includes a number of utilities to help build your prototype. To learn how these work, navigate to <a href="/docs"><code class="rig-code rig-code--inline">/docs</code></a>, or visit the <a href="https://govuk-prototype-rig.herokuapp.com">GOV.UK Prototype Rig website</a>.</p>
-    </div>
+        <h2 class="govuk-heading-m">Examples</h2>
+        <p>The rig also includes some example pages. You’ll find them in the <code class="rig-code rig-code--inline">/app/examples</code> folder.
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="/examples/check-answers">Check your answers page</a></li>
+          <li><a href="/examples/confirmation">Confirmation page</a></li>
+          <li><a href="/examples/content">Content page</a></li>
 
-    <div class="govuk-grid-column-one-third">
-      {{ rigRelatedNavigation({
-        sections: [{
-          title: "Examples",
-          subsections: [{
-            title: "Help users to…",
-            items: [{
-              text: "Check answers",
-              href: "/examples/check-answers"
+          <li><a href="/examples/question">Question page</a></li>
+          <li><a href="/examples/autocomplete">Question page with autocomplete</a></li>
+          <li><a href="/examples/validation-errors">Question page with validation</a></li>
+          <li><a href="/examples/start">Start page on GOV.UK</a></li>
+          <li><a href="/examples/summary-cards">Summary page</a></li>
+          <li><a href="/examples/task-list">Task list page</a></li>
+          <li><a href="/examples/wizard">Wizard journey</a></li>
+        </ul>
+      </div>
+
+      <div class="govuk-grid-column-one-third-from-desktop">
+        {#
+          The related navigation component can be used to link to other team
+          resources. See /docs/components/related-navigation for the options
+          this component accepts.
+        #}
+        {{ rigRelatedNavigation({
+          sections: [{
+            title: "Related links",
+            subsections: [{
+              title: "Team resources",
+              items: [{
+                text: "Design history",
+                href: "#"
+              }, {
+                text: "Google drive",
+                href: "#"
+              }, {
+                text: "Trello board",
+                href: "#"
+              }]
             }, {
-              text: "Recover from validation errors",
-              href: "/examples/validation-errors"
-            }, {
-              text: "Select from a long list of options",
-              href: "/examples/autocomplete"
-            }, {
-              text: "Perform an action on a summary",
-              href: "/examples/summary-cards"
-            }]
-          }, {
-            title: "Pages",
-            items: [{
-              text: "Confirmation page",
-              href: "/examples/confirmation"
-            }, {
-              text: "Content page",
-              href: "/examples/content"
-            }, {
-              text: "Question page",
-              href: "/examples/question"
-            }, {
-              text: "Start page on GOV.UK",
-              href: "/examples/start"
-            }, {
-              text: "Task list page",
-              href: "/examples/task-list"
-            }]
-          }, {
-            title: "Wizards",
-            items: [{
-              text: "Example user journey",
-              href: "/examples/wizard"
+              title: "GitHub repositories",
+              items: [{
+                text: "Design history",
+                href: "#"
+              }, {
+                text: "Live service",
+                href: "#"
+              }, {
+                text: "Prototype",
+                href: "#"
+              }]
             }]
           }]
-        }]
-      }) }}
+        }) }}
+      </div>
     </div>
   </div>
 {% endblock %}
