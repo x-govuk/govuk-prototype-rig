@@ -1,6 +1,6 @@
 {% extends "layouts/default.njk" %}
 
-{% set title = "Find your TRN" %}
+{% set title = "Find out your TRN" %}
 
 {% block pageNavigation %}
   {{ govukBackLink({
@@ -8,18 +8,16 @@
   }) }}
 {% endblock %}
 
-
 {% block content %}
-  {% set NINumberHtml %}
+  {% set PreviousLastNameHtml %}
     {{ govukInput({
       label: {
-        text: "National Insurance number"
+        text: "Previous last name"
       },
-      id: "national-insurance-number",
-      name: "national-insurance-number"
+      id: "previous-last-name",
+      name: "previous-last-name"
     }) }}
   {% endset %}
-
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -29,30 +27,24 @@
             legend: {
               classes: "govuk-fieldset__legend--xl",
               isPageHeading: true,
-              text: 'Do you have a National Insurance number?',
-              hint: {
-                text: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
-              }
+              text: 'Have you changed your last name?'
             }
           },
           items: [
             {
               text: "Yes",
               value: 'yes',
-              conditional: { html: NINumberHtml }
+              conditional: { html: PreviousLastNameHtml }
             },
             {
               text: "No",
               value: 'no'
             }]
-        } )) }}
-
+        }, ["wizard", "previous-last-name"])) }}
         {{ govukButton({
           text: "Continue"
         }) }}
-
       </form>
-
     </div>
   </div>
 {% endblock %}

@@ -12,7 +12,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <h1 class="govuk-heading-xl">Check your answers</h1>
+        {% set trnGuidance %}
+We will send your TRN to the email address you have provided.
+        {% endset %}
 
+        {{ trnGuidance | govukMarkdown | safe }}
       {{ govukSummaryList({
         classes: "govuk-!-margin-bottom-9",
         rows: [{
@@ -43,7 +47,7 @@
               href: "/name"
             }]
           }
-        }, {
+        }if data['first-name'], {
           key: {
             text: "Date of birth"
           },
@@ -57,7 +61,7 @@
               href: "/dob"
             }]
           }
-        }, {
+        }if data['date-of-birth'], {
           key: {
             text: "National Insurance number"
           },
@@ -71,7 +75,7 @@
               href: "/ni-number"
             }]
           }
-        }, {
+        }if data['national-insurance-number'], {
           key: {
             text: "Teacher training provider"
           },

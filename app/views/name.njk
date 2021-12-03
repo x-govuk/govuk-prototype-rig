@@ -36,6 +36,12 @@ If your name has changed and you have not updated your Teaching Regulation Agenc
           }
         }, ['last-name'])) }}
 
+        {{ govukInput(decorate({
+          label: {
+            text: "Previous last name (optional)"
+          }
+        }, ['previous-last-name'])) }}
+
         {{ govukButton({
           text: "Continue"
         }) }}
