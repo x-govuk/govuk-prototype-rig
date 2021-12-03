@@ -11,7 +11,7 @@
 
 {% block content %}
   {% set NINumberHtml %}
-    {{ govukInput({
+    {{ govukInput(decorate({
       label: {
         text: "National Insurance number",
         classes: "govuk-label--m"
@@ -21,7 +21,7 @@
       },
       id: "national-insurance-number",
       name: "national-insurance-number"
-    }) }}
+    }, ['national-insurance-number'])) }}
   {% endset %}
 
 
@@ -46,7 +46,7 @@
               text: "No, I do not",
               value: 'no'
             }]
-        } )) }}
+        }, ['has-national-insurance-number'])) }}
 
         {{ govukButton({
           text: "Continue"
