@@ -90,7 +90,7 @@ export function decorate (params, keyPath) {
       // 1. Delete `validations` for all date fields
       // 2. Add `validations` for year field
 
-      if (item.decorate) {
+      if (item.decorate && data.validations) {
         delete data.validations[params.name] // 1.
       }
 
@@ -117,7 +117,7 @@ export function decorate (params, keyPath) {
           item.label = item.label || 'Year'
           item.value = storedValue?.year
 
-          if (params.validate) {
+          if (params.validate && data.validations) {
             data.validations[item.name] = params.validate // 2.
           }
 
