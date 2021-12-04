@@ -7,6 +7,13 @@
   "engines": {
     "node": ">=16.0.0"
   },
+  "prototype": {
+    "serviceName": "Your service name",
+    "templateExtension": "njk"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-gds/scss"
+  },
   "scripts": {
     "build-assets": "rollup --config --silent",
     "watch-assets": "rollup --config --silent --watch",
@@ -29,8 +36,5 @@
     "standard": "^16.0.4",
     "stylelint": "^13.13.1",
     "stylelint-config-gds": "^0.1.0"
-  },
-  "stylelint": {
-    "extends": "stylelint-config-gds/scss"
   }
 }
