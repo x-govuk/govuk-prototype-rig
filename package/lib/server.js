@@ -12,17 +12,20 @@ import { browserSyncConfig } from './browser-sync.js'
 import { findAvailablePort, getEnvBoolean } from './environment.js'
 import { getBreadcrumbItems, getSideNavigationItems, markdownPages } from './markdown-pages.js'
 import { getNunjucksEnv } from './nunjucks.js'
+import { getConfig } from './config.js'
 import routes from '../../app/routes.js'
+
+// Run before other code to make sure variables from .env are available
+dotenv.config()
 
 // Import meta data from app manifest
 const require = createRequire(import.meta.url)
 const appJson = require('../../app.json')
 
-// Run before other code to make sure variables from .env are available
-dotenv.config()
-
 // Set up configuration variables
-const serviceName = appJson.name
+const config = await getConfig()
+const { serviceName } = config
+const templateExtension = config.templateExtension || 'html'
 const glitchEnv = process.env.PROJECT_REMIX_CHAIN ? 'production' : false // glitch.com
 const env = process.env.NODE_ENV || glitchEnv || 'development'
 const promoMode = getEnvBoolean('PROMO_MODE')
@@ -53,8 +56,8 @@ if (isSecure) {
 app.use(authentication)
 
 // Set views engine
-app.engine('njk', getNunjucksEnv(app, env).render)
-app.set('view engine', 'njk')
+app.engine(templateExtension, getNunjucksEnv(app, env).render)
+app.set('view engine', templateExtension)
 
 // Serve static assets
 app.use('/public', express.static('./public'))
@@ -179,7 +182,7 @@ app.post(/^\/([^.]+)$/, (req, res) => {
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {
   res.status(404)
-  res.render('404')
+  res.render('404.njk')
 })
 
 // Display error
@@ -187,7 +190,7 @@ app.use((error, req, res, next) => {
   console.error(error.message)
   const status = error.status || 500
   res.status(status)
-  res.render('500', {
+  res.render('500.njk', {
     error: error.message,
     status
   })
