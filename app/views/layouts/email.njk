@@ -1,0 +1,34 @@
+{% extends "layouts/default.njk" %}
+{% set htmlClasses = "app-email" %}
+{% set bodyClasses = "app-email__body" %}
+{% set containerClasses = "app-email__header-and-message-container" %}
+{% set mainClasses = "app-email__message" %}
+{% set title = subject %}
+{% block skipLink %}{% endblock %}
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block bodyStart %}
+  <div class="govuk-width-container app-email__metadata-container">
+    <dl class="app-email__metadata">
+      <div>
+        <dt class="govuk-visually-hidden">Subject:</dt>
+        <dd><b class="govuk-heading-m govuk-!-margin-bottom-2">{{ subject }}</b></dd>
+      </div>
+      <div>
+        <dt>From:</dt>
+        <dd>{{ from or "GOV.UK <service@gov.uk>" }}<dd>
+      </div>
+      <div>
+        <dt>To:</dt>
+        <dd>{{ to or "Name <name@example.com>" }}</dd>
+      </div>
+    </dl>
+  </div>
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukHeader({
+    containerClasses: "app-email__header"
+  }) }}
+{% endblock %}

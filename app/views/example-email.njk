@@ -1,0 +1,13 @@
+{% extends "layouts/email.njk" %}
+{% set subject = "Example email" %}
+{% set from = "GOV.UK <example@gov.uk>" %}
+{% set to = "Jane Doe <jane.doe@example.com>" %}
+
+{% block content %}
+  <p>Hello Jane Doe,</p>
+  <p>This is an example email you’ve received.</p>
+  <h1 class="govuk-heading-m">Sign in</h1>
+  <p>Use this link to sign in to the service:</p>
+  <p><a href="#">Sign in link</a></p>
+  <p>GOV.UK</p>
+{% endblock %}
