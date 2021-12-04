@@ -1,5 +1,6 @@
 {
   "name": "Your service name",
+  "defaultFileExtension": "html",
   "env": {
     "USE_AUTH": {
       "description": "Enable or disable password protection on production.",

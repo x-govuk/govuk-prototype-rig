@@ -6,6 +6,8 @@
  * @returns {Function} Express middleware
  */
 function _renderPath (path, res, next) {
+  const usingDefaultEngine = res.app.settings['view engine'] === 'njk'
+
   // Try to render the path
   res.render(path, (error, html) => {
     if (!error) {
@@ -21,10 +23,27 @@ function _renderPath (path, res, next) {
       return
     }
 
-    if (!path.endsWith('/index')) {
-      // Maybe it’s a folder. Try to render [path]/index.njk
-      _renderPath(path + '/index', res, next)
-      return
+    if (!usingDefaultEngine) {
+      if (!path.endsWith('.njk')) {
+        // Try `.njk` extension if a different default is being used
+        // path becomes path.njk
+        _renderPath(`${path}.njk`, res, next)
+        return
+      }
+
+      if (!path.endsWith('/index.njk')) {
+        // Maybe it’s a folder. path.njk becomes path/index
+        const indexPath = `${path.replace('.njk', '')}/index`
+        _renderPath(indexPath, res, next)
+        return
+      }
+    } else {
+      if (!path.endsWith('/index')) {
+        // Maybe it’s a folder. path becomes path/index
+        const indexPath = `${path}/index`
+        _renderPath(indexPath, res, next)
+        return
+      }
     }
 
     // Template not found. Call next to trigger 404 page

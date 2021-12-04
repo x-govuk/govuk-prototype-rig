@@ -53,8 +53,13 @@ if (isSecure) {
 app.use(authentication)
 
 // Set views engine
-app.engine('njk', getNunjucksEnv(app, env).render)
-app.set('view engine', 'njk')
+const defaultFileExtension = appJson.defaultFileExtension || 'njk'
+const nunjucks = getNunjucksEnv(app, env).render
+app.engine(defaultFileExtension, nunjucks)
+if (defaultFileExtension !== 'njk') {
+  app.engine('njk', nunjucks)
+}
+app.set('view engine', defaultFileExtension)
 
 // Serve static assets
 app.use('/public', express.static('./public'))
