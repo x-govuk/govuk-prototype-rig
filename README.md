@@ -17,7 +17,7 @@ Go to the [GOV.UK Prototype Rig](https://govuk-prototype-rig.herokuapp.com) webs
 3. Start the application:\
 `npm start`
 
-You can change the service name by changing the `name` value in `app.json`.
+You can change the service name by changing the `prototype.serviceName` value in `package.json`.
 
 ## Developing locally
 
