@@ -8,8 +8,7 @@
     "node": ">=16.0.0"
   },
   "prototype": {
-    "serviceName": "Your service name",
-    "templateExtension": "njk"
+    "serviceName": "Your service name"
   },
   "stylelint": {
     "extends": "stylelint-config-gds/scss"

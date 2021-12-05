@@ -1,6 +1,6 @@
-{% extends "layouts/default.njk" %}
+{% extends "layouts/default.html" %}
 
-{% set title = "Where do you live?" %}
+{% set title = "Have you always lived in England?" %}
 
 {% block pageNavigation %}
   {{ govukBackLink({
@@ -21,15 +21,11 @@
             }
           },
           items: [{
-            text: "England"
+            text: "Yes, I’ve always lived in England"
           }, {
-            text: "Scotland"
-          }, {
-            text: "Wales"
-          }, {
-            text: "Northern Ireland"
+            text: "No, I have lived somewhere else too"
           }]
-        }, ["wizard", "where-do-you-live"])) }}
+        }, ["wizard", "always-england"])) }}
 
         {{ govukButton({
           html: "Continue"
