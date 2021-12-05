@@ -9,4 +9,7 @@ $govuk-assets-path: "/govuk/assets/";
 // Import GOV.UK Prototype Rig components
 @import "govuk-prototype-rig/rig/all";
 
+// Email styles
+@import "email.scss";
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you

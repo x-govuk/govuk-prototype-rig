@@ -1,0 +1,66 @@
+$email-width: 650px;
+
+.app-email,
+.app-email__body {
+  background-color: govuk-colour("light-grey");
+}
+
+.app-email__metadata-container,
+.app-email__header-and-message-container {
+  max-width: $email-width;
+  margin: govuk-spacing(6) auto;
+}
+
+.app-email__header-and-message-container {
+  background-color: govuk-colour("white");
+  border: 1px solid $govuk-border-colour;
+  border-top: govuk-spacing(4) solid $govuk-border-colour;
+  border-radius: 10px 10px 0 0;
+}
+
+.app-email__header,
+.app-email__message {
+  max-width: $email-width - 40px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include govuk-media-query($until: tablet) {
+    margin-left: govuk-spacing(3);
+    margin-right: govuk-spacing(3);
+  }
+}
+
+.app-email__message {
+  * {
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.app-email__metadata {
+  font: caption;
+  margin: 0;
+
+  @include govuk-media-query($until: desktop) {
+    margin-left: govuk-spacing(3);
+    margin-right: govuk-spacing(3);
+  }
+
+  div {
+    display: block;
+    margin-bottom: govuk-spacing(1);
+  }
+
+  dt {
+    display: inline-block;
+    margin-right: govuk-spacing(1);
+  }
+
+  dd {
+    display: inline-block;
+    margin-left: 0;
+  }
+}
