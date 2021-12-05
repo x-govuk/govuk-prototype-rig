@@ -8,8 +8,7 @@
     "node": ">=16.0.0"
   },
   "prototype": {
-    "serviceName": "Find out your teacher reference number (TRN)",
-    "templateExtension": "njk"
+    "serviceName": "Find out your teacher reference number (TRN)"
   },
   "stylelint": {
     "extends": "stylelint-config-gds/scss"

@@ -1,6 +1,6 @@
-{% extends "layouts/default.njk" %}
+{% extends "layouts/default.html" %}
 
-{% set title = "What is your nationality?" %}
+{% set title = "Where do you live?" %}
 
 {% block pageNavigation %}
   {{ govukBackLink({
@@ -12,7 +12,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form method="post" action="{{ paths.current }}" novalidate>
-        {{ govukCheckboxes(decorate({
+        {{ govukRadios(decorate({
           fieldset: {
             legend: {
               classes: "govuk-fieldset__legend--l",
@@ -20,21 +20,16 @@
               text: title
             }
           },
-          hint: {
-            text: "If you have dual nationality, select all options that are relevant to you."
-          },
           items: [{
-            text: "British",
-            hint: {
-              text: "including English, Scottish, Welsh and Northern Irish"
-            }
+            text: "England"
           }, {
-            text: "Irish"
+            text: "Scotland"
           }, {
-            value: "other",
-            text: "Citizen of another country"
+            text: "Wales"
+          }, {
+            text: "Northern Ireland"
           }]
-        }, ["wizard", "nationality"]) ) }}
+        }, ["wizard", "where-do-you-live"])) }}
 
         {{ govukButton({
           html: "Continue"
