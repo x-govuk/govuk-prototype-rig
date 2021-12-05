@@ -19,6 +19,8 @@ Go to the [GOV.UK Prototype Rig](https://govuk-prototype-rig.herokuapp.com) webs
 
 You can change the service name by changing the `prototype.serviceName` value in `package.json`.
 
+By default, the rig expects templates to use the `.html` file extension. You can change this by setting the `prototype.templateExtension` value in `package.json`.
+
 ## Developing locally
 
 To automatically refresh the browser upon updating a file, use `npm run dev`.
