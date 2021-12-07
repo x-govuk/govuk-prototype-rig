@@ -1,9 +1,11 @@
 import fs from 'node:fs'
+import _ from 'lodash'
 import inquirer from 'inquirer'
 import portScanner from 'portscanner'
 
 /**
- * Get environment variable as a Boolean value.
+ * Get environment variable as a Boolean value, defaulting to value
+ * in configuration.
  *
  * @example "true" => true
  * @example "TRUE" => true
@@ -11,22 +13,18 @@ import portScanner from 'portscanner'
  * @example "foo" => false
  *
  * @param {Object|Array} name - Name of variable
- * @param {string|Array} [appJson=false] - App manifest
+ * @param {Object} config - Package configuration
  * @returns {boolean} Returns `true` if `name` evaluates to true
  */
-export const getEnvBoolean = (name, appJson = false) => {
-  let envName
-  if (appJson) {
-    envName = process.env[name] || appJson.env[name].value
+export const getEnvBoolean = (name, config) => {
+  let value
+  if (config) {
+    value = process.env[name] || config[_.camelCase(name)]
   } else {
-    envName = process.env[name]
+    value = process.env[name]
   }
 
-  if (!envName) {
-    return
-  }
-
-  return envName.toLowerCase() === 'true'
+  return String(value).toLowerCase() === 'true'
 }
 
 /**
