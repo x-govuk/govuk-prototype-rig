@@ -28,6 +28,8 @@ const { serviceName } = config
 const templateExtension = config.templateExtension || 'html'
 const glitchEnv = process.env.PROJECT_REMIX_CHAIN ? 'production' : false // glitch.com
 const env = process.env.NODE_ENV || glitchEnv || 'development'
+const isProduction = env === 'production'
+
 const promoMode = getEnvBoolean('PROMO_MODE')
 const useAuth = getEnvBoolean('USE_AUTH', appJson)
 const useAutoStoreData = getEnvBoolean('USE_AUTO_STORE_DATA', appJson)
@@ -45,15 +47,15 @@ app.locals.useAutoStoreData = useAutoStoreData
 app.locals.useCookieSessionStore = useCookieSessionStore
 
 // Force HTTPS on production. Do this before using basicAuth to avoid
-// asking for username/password twice (for `http`, then `https`).
-const isSecure = (env === 'production' && useHttps)
+// asking for username/password twice (for `http`, then `https`)
+const isSecure = (isProduction && useHttps)
 if (isSecure) {
   app.use(forceHttps)
   app.set('trust proxy', 1) // Needed for secure cookies on Heroku
 }
 
 // Authentication
-if (env === 'production' && useAuth) {
+if (isProduction && useAuth) {
   app.use(authentication)
 }
 
@@ -199,7 +201,7 @@ app.use((error, req, res, next) => {
 })
 
 findAvailablePort(app, (port) => {
-  if (process.env.NODE_ENV === 'production') {
+  if (isProduction) {
     console.info(`Listening on port ${port}`)
     app.listen(port)
   } else {
