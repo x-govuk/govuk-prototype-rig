@@ -115,7 +115,7 @@ app.use('/form-validation.js', express.static('./node_modules/govuk-prototype-ri
 // Documentation
 app.get('/docs/:view?*', markdownPages.middleware, async (req, res) => {
   // Use promo layout for documentation landing page
-  const view = req.params.view ? 'documentation' : 'promo'
+  const view = req.params.view ? 'documentation.njk' : 'promo.njk'
   const { page, navigation } = res.locals.markdownPages
 
   res.render(view, {
