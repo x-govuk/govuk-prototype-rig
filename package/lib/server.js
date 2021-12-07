@@ -52,8 +52,10 @@ if (isSecure) {
   app.set('trust proxy', 1) // Needed for secure cookies on Heroku
 }
 
-// Authentication middleware
-app.use(authentication)
+// Authentication
+if (env === 'production' && useAuth) {
+  app.use(authentication)
+}
 
 // Set views engine
 app.engine(templateExtension, getNunjucksEnv(app, env).render)
