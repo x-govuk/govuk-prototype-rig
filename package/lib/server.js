@@ -1,5 +1,3 @@
-import { createRequire } from 'node:module'
-import dotenv from 'dotenv'
 import express from 'express'
 import sessionInCookie from 'client-sessions'
 import sessionInMemory from 'express-session'
@@ -15,38 +13,26 @@ import { getNunjucksEnv } from './nunjucks.js'
 import { getConfig } from './config.js'
 import routes from '../../app/routes.js'
 
-// Run before other code to make sure variables from .env are available
-dotenv.config()
-
-// Import meta data from app manifest
-const require = createRequire(import.meta.url)
-const appJson = require('../../app.json')
-
-// Set up configuration variables
-const config = await getConfig()
-const { serviceName } = config
-const templateExtension = config.templateExtension || 'html'
+// Environment
 const glitchEnv = process.env.PROJECT_REMIX_CHAIN ? 'production' : false // glitch.com
 const env = process.env.NODE_ENV || glitchEnv || 'development'
 const isProduction = env === 'production'
 
-const promoMode = getEnvBoolean('PROMO_MODE')
-const useAuth = getEnvBoolean('USE_AUTH', appJson)
-const useAutoStoreData = getEnvBoolean('USE_AUTO_STORE_DATA', appJson)
-const useCookieSessionStore = getEnvBoolean('USE_COOKIE_SESSION_STORE', appJson)
-const useHttps = getEnvBoolean('USE_HTTPS', appJson)
+// Configuration
+const config = await getConfig()
+const promoMode = getEnvBoolean('PROMO_MODE', config)
+const useAuth = getEnvBoolean('USE_AUTH', config)
+const useAutoStoreData = getEnvBoolean('USE_AUTO_STORE_DATA', config)
+const useCookieSessionStore = getEnvBoolean('USE_COOKIE_SESSION_STORE', config)
+const useHttps = getEnvBoolean('USE_HTTPS', config)
 
 // Set up Express app
 const app = express()
 
-// Add variables that are available in all views
-app.locals.env = env
-app.locals.serviceName = serviceName
-app.locals.useAuth = useAuth
-app.locals.useAutoStoreData = useAutoStoreData
-app.locals.useCookieSessionStore = useCookieSessionStore
+// Make config variables available to all views
+app.locals = { ...app.locals, ...config}
 
-// Force HTTPS on production. Do this before using basicAuth to avoid
+// Force HTTPS on production. Do this before using authentication to avoid
 // asking for username/password twice (for `http`, then `https`)
 const isSecure = (isProduction && useHttps)
 if (isSecure) {
@@ -60,8 +46,8 @@ if (isProduction && useAuth) {
 }
 
 // Set views engine
-app.engine(templateExtension, getNunjucksEnv(app, env).render)
-app.set('view engine', templateExtension)
+app.engine(config.templateExtension, getNunjucksEnv(app, env).render)
+app.set('view engine', config.templateExtension)
 
 // Serve static assets
 app.use('/public', express.static('./public'))
@@ -73,8 +59,9 @@ app.use(express.urlencoded({
   extended: true
 }))
 
-// Session uses `serviceName` to avoid clashes with other prototypes
-const sessionName = 'govuk-prototype-rig-' + (Buffer.from(serviceName, 'utf8')).toString('hex')
+// Session uses `config.serviceName` to avoid clashes with other prototypes
+const uniqueId = (Buffer.from(config.serviceName, 'utf8')).toString('hex')
+const sessionName = `govuk-prototype-rig-${uniqueId}`
 const sessionOptions = {
   secret: sessionName,
   cookie: {
@@ -130,7 +117,7 @@ app.get('/docs/:view?*', markdownPages.middleware, async (req, res) => {
   })
 })
 
-// Redirect root to /docs when in promo mode.
+// Redirect root to /docs when in promo mode
 if (promoMode) {
   app.get('/', (req, res) => res.redirect('/docs'))
 }
