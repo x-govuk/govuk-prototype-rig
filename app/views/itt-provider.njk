@@ -10,13 +10,11 @@
 
 {% block content %}
   {% set ITTProviderNameHtml %}
-    {{ govukInput({
+    {{ govukInput(decorate({
       label: {
         text: "Your school, university or other training provider"
-      },
-      id: "itt-provider",
-      name: "itt-provider"
-    }) }}
+      }
+    }, ["itt-provider"])) }}
   {% endset %}
 
   <div class="govuk-grid-row">
