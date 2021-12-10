@@ -32,11 +32,11 @@ export function trnWizardPaths (req) {
   const paths = [
     '/start',
     '/trn-holder',
-    '/email',
     '/name',
     '/dob',
     '/ni-number',
     '/itt-provider',
+    '/email',
     '/submit-request',
     '/helpdesk-request-submitted',
     '/check-answers',
@@ -96,13 +96,13 @@ export function trnWizardForks (req) {
     excludedValues: [],
     forkPath: (value) => {
       if (userMatchesDQTRecord(req.session.data)) {
-        return '/check-answers'
+        return '/email'
       } else {
         return '/itt-provider'
       }
     }
   },{
-    currentPath: '/itt-provider',
+    currentPath: '/email',
     excludedValues: [],
     forkPath: (value) => {
       if (userMatchesDQTRecord(req.session.data)) {

@@ -46,18 +46,6 @@ router.get('/start', (req, res) => {
   })
 })
 
-const userEmailMatchesDQTRecord = (data) => {
-  return data['email-address'] === data['dqt_record']['email-address']
-}
-
-router.get('/name', (req, res, next) => {
-  if (userEmailMatchesDQTRecord(req.session.data)) {
-    res.redirect('/check-answers')
-  } else {
-    next()
-  }
-})
-
 router.get('/:view', (req, res) => {
   res.render(req.params.view, {
     paths: trnWizardPaths(req)

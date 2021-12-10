@@ -1,6 +1,6 @@
 {% extends "layouts/default.njk" %}
 
-{% set title = "Find out your TRN" %}
+{% set title = "Your email address" %}
 
 {% block pageNavigation %}
   {{ govukBackLink({
@@ -12,15 +12,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form method="post" novalidate>
+      <h1 class="govuk-heading-xl">{{ title }}</h1>
+        <p>We will send your TRN to the email address you provide.</p>
         {{ govukInput(decorate({
-          label: {
-            text: "Your email address",
-            classes: "govuk-label--xl",
-            isPageHeading: true
-            },
-            hint: {
-              text: "We will use your email address to help find your TRN and to send it to you."
-            },
             id: "email-address",
             name: "email-address"
           }, ['email-address'])) }}
