@@ -8,7 +8,6 @@ export default function () {
     accessibleAutocomplete.enhanceSelectElement({
       selectElement: element,
       defaultValue: element.value,
-      name: element.name,
       autoselect: params.autoselect === 'true',
       displayMenu: params.displayMenu,
       minLength: params.minLength ? parseInt(params.minLength) : 0,
