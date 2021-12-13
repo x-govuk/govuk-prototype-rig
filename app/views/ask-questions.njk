@@ -15,7 +15,7 @@ ask-questions{% extends "layouts/default.njk" %}
 
       <form method="post" novalidate>
         {% set trnGuidance %}
-We'll ask for your name, date of birth and National Insurance number. If we don't find your TRN based on these details we may ask you some follow up questions.
+We’ll ask for your name, date of birth and National Insurance number. If we do not find your TRN based on these details, we may ask you some follow-up questions.
         {% endset %}
 
         {{ trnGuidance | govukMarkdown | safe }}
