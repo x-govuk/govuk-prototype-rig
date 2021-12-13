@@ -27,7 +27,21 @@
 {% set beforeYouStart %}
 ## Before you start
 
-Only use this service to find out your own TRN. You cannot use the service to find out someone else’s TRN.
+We'll ask for your name, date of birth and National Insurance number. If we don't find your TRN based on these details we may ask you some follow up questions.
+
+We will send you your TRN by email. 
+
+{% endset %}
+
+{% set whoCanUseThisService %}
+## Who can use this service
+
+You can use this service if you have, or think you might have, a TRN. You cannot use the service to find out someone else's TRN.
+
+{% endset %}
+
+{% set otherWaysToFindOutYourTrn%}
+## Other ways to find out your TRN
 
 ### You may be able to find your TRN on a document
 
@@ -56,11 +70,11 @@ Make sure you have your National Insurance number ready before you call.
     <div class="govuk-grid-column-two-thirds">
       <p body="govuk-body">Use this service to:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>find your <a href="https://www.gov.uk/guidance/teacher-reference-number-trn" class="govuk-link">teacher reference number (TRN)</a> if you do not know it or have forgotten it</li>
+        <li>find out your <a href="https://www.gov.uk/guidance/teacher-reference-number-trn" class="govuk-link">teacher reference number (TRN)</a> if you do not know it or have forgotten it</li>
         <li>check if you have a TRN</li>
       </ul>
-
-      <p body="govuk-body">Make sure you have your National Insurance number ready.</p>
+      {{ whoCanUseThisService | govukMarkdown | safe }}
+      {{ beforeYouStart | govukMarkdown | safe }}
 
       {{ govukButton({
         classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-9",
@@ -69,7 +83,7 @@ Make sure you have your National Insurance number ready before you call.
         isStartButton: true
       }) }}
 
-      {{ beforeYouStart | govukMarkdown | safe }}
+      {{ otherWaysToFindOutYourTrn | govukMarkdown | safe }}
     </div>
 
     <div class="govuk-grid-column-one-third">

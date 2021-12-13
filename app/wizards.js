@@ -32,6 +32,7 @@ export function trnWizardPaths (req) {
   const paths = [
     '/start',
     '/trn-holder',
+    '/ask-questions',
     '/name',
     '/dob',
     '/ni-number',

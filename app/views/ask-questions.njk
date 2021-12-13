@@ -1,0 +1,30 @@
+ask-questions{% extends "layouts/default.njk" %}
+
+{% set title = "We will ask you some questions to help find your TRN" %}
+
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+      <form method="post" novalidate>
+        {% set trnGuidance %}
+We'll ask for your name, date of birth and National Insurance number. If we don't find your TRN based on these details we may ask you some follow up questions.
+        {% endset %}
+
+        {{ trnGuidance | govukMarkdown | safe }}
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
