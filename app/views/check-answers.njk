@@ -1,6 +1,7 @@
 {% extends "layouts/default.njk" %}
 
 {% set title = "Check answers page" %}
+{% set emailAddress = data['email-address'] or 'email@example.com' %}
 
 {% block pageNavigation %}
   {{ govukBackLink({
@@ -13,7 +14,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <h1 class="govuk-heading-xl">Check your answers</h1>
 
-      <p>We will send your TRN to the email address you have provided.</p>
+      <p>We will send your TRN to {{ emailAddress }} if we find one matching your details.</p>
 
       {{ govukSummaryList({
         classes: "govuk-!-margin-bottom-9",
@@ -22,7 +23,7 @@
             text: "Email address"
           },
           value: {
-            text: data['email-address'] or 'email@example.com'
+            text: emailAddress
           },
           actions: {
             items: [{

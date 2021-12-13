@@ -38,10 +38,12 @@ export function trnWizardPaths (req) {
     '/ni-number',
     '/itt-provider',
     '/email',
-    '/submit-request',
-    '/helpdesk-request-submitted',
     '/check-answers',
     '/trn-sent',
+    '/no-match',
+    '/',
+    '/submit-request',
+    '/helpdesk-request-submitted',
     '/'
   ]
 
@@ -86,7 +88,6 @@ const userMatchesDQTRecord = (data) => {
 }
 
 export function trnWizardForks (req) {
-  // Skip the trn conditions if you know you have a trn
   const forks = [{
     currentPath: '/trn-holder',
     storedData: ['wizard', 'do-you-have-a-trn'],
@@ -103,13 +104,13 @@ export function trnWizardForks (req) {
       }
     }
   },{
-    currentPath: '/email',
+    currentPath: '/check-answers',
     excludedValues: [],
     forkPath: (value) => {
       if (userMatchesDQTRecord(req.session.data)) {
-        return '/check-answers'
+        return '/trn-sent'
       } else {
-        return '/submit-request'
+        return '/no-match'
       }
     }
   }]
