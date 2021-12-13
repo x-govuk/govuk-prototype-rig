@@ -1,0 +1,36 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "We could not find your TRN" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+      <p>We could not find your TRN in the Teaching Regulations Agency records using the details provided.</p>
+
+      {% if data['has-national-insurance-number'] === 'forgotten' %}
+        <p><a href="/ni-number">Try again</a> with your National Insurance number.</p>
+      {% endif %}
+
+      <h2 class="govuk-heading-m">Call the TRA Helpdesk</h2>
+
+      {% set contactInformation %}
+        <h3 class="govuk-heading-s">For urgent TRN requests</h3>
+        <ul class="govuk-list">
+          <li>Telephone: 0800 976 239</li>
+          <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+        </ul>
+      {% endset %}
+
+      {{ govukInsetText({
+        html: contactInformation
+      }) }}
+
+      <h2 class="govuk-heading-m">Get a response by email</h2>
+
+      <p><a href="/submit-request">Submit your details</a> to get an email response from the TRA Helpdesk. We aim to respond in 5 working days.</p>
+    </div>
+  </div>
+{% endblock %}
