@@ -72,12 +72,12 @@
               href: "/dob"
             }]
           }
-        }if data['date-of-birth'], {
+        } if data['date-of-birth'], {
           key: {
             text: "National Insurance number"
           },
           value: {
-            text: data['national-insurance-number']
+            text: data['national-insurance-number'] or 'Unavailable'
           },
           actions: {
             items: [{
@@ -86,7 +86,7 @@
               href: "/ni-number"
             }]
           }
-        }if data['national-insurance-number'], {
+        } if data['national-insurance-number'] or data['has-national-insurance-number'] === 'forgotten', {
           key: {
             text: "Teacher training provider"
           },
