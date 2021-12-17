@@ -1,5 +1,5 @@
 import highlightJs from 'highlight.js'
-import marked from 'marked'
+import { marked } from 'marked'
 
 import {
   isInternalLink,
