@@ -6,11 +6,13 @@ import { authentication } from './middleware/authentication.js'
 import { autoStoreData } from './middleware/auto-store-data.js'
 import { forceHttps } from './middleware/force-https.js'
 import { matchRoutes } from './middleware/match-routes.js'
+import { autoStoreDataRoutes } from './routes/auto-store-data.js'
+import { documentationRoutes } from './routes/documentation.js'
+import { featureFlagRoutes } from './routes/feature-flags.js'
 import { browserSyncConfig } from './browser-sync.js'
 import { findAvailablePort, getEnvBoolean } from './environment.js'
-import { getBreadcrumbItems, getSideNavigationItems, markdownPages } from './markdown-pages.js'
-import { getNunjucksEnv } from './nunjucks.js'
 import { getConfig } from './config.js'
+import { getNunjucksEnv } from './nunjucks.js'
 import routes from '../../app/routes.js'
 
 // Environment
@@ -28,6 +30,7 @@ const useHttps = getEnvBoolean('USE_HTTPS', config)
 
 // Set up Express app
 const app = express()
+const router = express.Router()
 
 // Make config variables available to all views
 app.locals = { ...app.locals, ...config}
@@ -52,6 +55,10 @@ app.set('view engine', config.templateExtension)
 // Serve static assets
 app.use('/public', express.static('./public'))
 app.use('/govuk/assets', express.static('./node_modules/govuk-frontend/govuk/assets'))
+
+// Form validation
+app.use('/validate.js', express.static('./node_modules/validate.js/validate.js'))
+app.use('/form-validation.js', express.static('./node_modules/govuk-prototype-rig/lib/form-validation.js'))
 
 // Support parsing data in POSTs
 app.use(express.json())
@@ -87,56 +94,15 @@ if (useCookieSessionStore) {
 
 // Automatically store all data users enter
 if (useAutoStoreData) {
-  app.use(autoStoreData)
+  app.use(autoStoreData, autoStoreDataRoutes(router))
   app.use('/auto-store-data.js', express.static('./node_modules/govuk-prototype-rig/lib/auto-store-data.js'))
 }
 
-// Clear all data in session
-app.post('/clear-session-data', (req, res) => {
-  req.session.data = {}
-  res.render('clear-session-data', {
-    success: true
-  })
-})
-
-// Form validation
-app.use('/validate.js', express.static('./node_modules/validate.js/validate.js'))
-app.use('/form-validation.js', express.static('./node_modules/govuk-prototype-rig/lib/form-validation.js'))
-
 // Documentation
-app.get('/docs/:view?*', markdownPages.middleware, async (req, res) => {
-  // Use promo layout for documentation landing page
-  const view = req.params.view ? 'documentation.njk' : 'promo.njk'
-  const { page, navigation } = res.locals.markdownPages
-
-  res.render(view, {
-    breadcrumbItems: getBreadcrumbItems(navigation),
-    sideNavigationItems: await getSideNavigationItems(),
-    page,
-    current: navigation.current
-  })
-})
-
-// Redirect root to /docs when in promo mode
-if (promoMode) {
-  app.get('/', (req, res) => res.redirect('/docs'))
-}
+app.use(documentationRoutes(router))
 
 // Feature flags
-app.post('/feature-flags', (req, res) => {
-  for (const key in req.body.features) {
-    const flag = req.body.features[key]
-    if (flag.on === 'true') {
-      req.session.data.features[key].on = true
-    } else {
-      req.session.data.features[key].on = false
-    }
-  }
-
-  res.render('feature-flags', {
-    success: true
-  })
-})
+app.use(featureFlagRoutes(router))
 
 // Prevent search indexing
 // Setting headers stops pages being indexed even if indexed pages link to them.
@@ -149,6 +115,11 @@ app.get('/robots.txt', (req, res) => {
   res.type('text/plain')
   res.send('User-agent: *\nDisallow: /')
 })
+
+// Redirect root to /docs when in promo mode
+if (promoMode) {
+  app.get('/', (req, res) => res.redirect('/docs'))
+}
 
 // Load routes (found in app/routes.js)
 app.use('/', routes)
