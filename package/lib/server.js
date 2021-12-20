@@ -1,3 +1,4 @@
+import fs from 'node:fs'
 import express from 'express'
 import sessionInCookie from 'client-sessions'
 import sessionInMemory from 'express-session'
@@ -13,7 +14,6 @@ import { browserSyncConfig } from './browser-sync.js'
 import { findAvailablePort, getEnvBoolean } from './environment.js'
 import { getConfig } from './config.js'
 import { getNunjucksEnv } from './nunjucks.js'
-import routes from '../../app/routes.js'
 
 // Environment
 const glitchEnv = process.env.PROJECT_REMIX_CHAIN ? 'production' : false // glitch.com
@@ -121,8 +121,12 @@ if (promoMode) {
   app.get('/', (req, res) => res.redirect('/docs'))
 }
 
-// Load routes (found in app/routes.js)
-app.use('/', routes)
+// Load routes
+const appRoutesPath = `${process.cwd()}/app/routes.js`
+if (fs.existsSync(appRoutesPath)) {
+  const appRoutes = await import(appRoutesPath)
+  app.use('/', appRoutes.default)
+}
 
 // Strip .html and .htm if provided
 app.get(/\.html?$/i, (req, res) => {

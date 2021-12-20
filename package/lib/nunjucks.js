@@ -1,5 +1,4 @@
 import fs from 'node:fs'
-import { fileURLToPath } from 'node:url'
 import nunjucks from 'nunjucks'
 
 import { arrayFilters } from '../rig/filters/array.js'
@@ -48,7 +47,7 @@ async function _addFilters (nunjucksAppEnv) {
 
   // Add any app filters to Nunjucks environment
   // App filters can access package filters using env.getFilter()
-  const appFiltersPath = fileURLToPath(new URL('../../app/filters.js', import.meta.url))
+  const appFiltersPath = `${process.cwd()}/app/filters.js`
 
   let appFilters
   if (fs.existsSync(appFiltersPath)) {
@@ -68,7 +67,7 @@ async function _addFilters (nunjucksAppEnv) {
  * @param {Object} nunjucksAppEnv - Nunjucks environment
  */
 async function _addGlobals (nunjucksAppEnv) {
-  const appGlobalsPath = fileURLToPath(new URL('../../app/globals.js', import.meta.url))
+  const appGlobalsPath = `${process.cwd()}/app/globals.js`
 
   let appGlobals
   if (fs.existsSync(appGlobalsPath)) {
