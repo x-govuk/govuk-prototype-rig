@@ -51,7 +51,7 @@ const _storeData = (input, data) => {
 export async function autoStoreData (req, res, next) {
   // Get session default data from file
   let sessionDataDefaults = {}
-  const sessionDataDefaultsFile = new URL('../../../app/data.js', import.meta.url).pathname
+  const sessionDataDefaultsFile = `${process.cwd()}/app/data.js`
 
   try {
     sessionDataDefaults = await import(sessionDataDefaultsFile)
