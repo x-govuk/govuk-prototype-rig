@@ -6,8 +6,8 @@ $govuk-assets-path: "/govuk/assets/";
 // Import GOV.UK Frontend
 @import "govuk-frontend/govuk/all";
 
-// Import GOV.UK Prototype Rig components
-@import "govuk-prototype-rig/rig/all";
+// Import GOV.UK Prototype Components
+@import "govuk-prototype-components/proto/all";
 
 // Email styles
 @import "email.scss";
