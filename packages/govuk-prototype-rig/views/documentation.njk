@@ -1,4 +1,4 @@
-{% extends "rig/template.njk" %}
+{% extends "template.njk" %}
 
 {% set productName = "Prototype Rig" %}
 {% set title = page.title %}
@@ -18,7 +18,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
-      {{ rigSideNavigation({
+      {{ protoSideNavigation({
         current: current,
         items: sideNavigationItems
       }) if sideNavigationItems }}
