@@ -12,7 +12,8 @@
   "sass": "rig/all.scss",
   "repository": {
     "type": "git",
-    "url": "https://github.com/paulrobertlloyd/govuk-prototype-rig.git"
+    "url": "https://github.com/paulrobertlloyd/govuk-prototype-rig.git",
+    "directory": "packages/govuk-prototype-kit"
   },
   "bugs": {
     "url": "https://github.com/paulrobertlloyd/govuk-prototype-rig/issues"
