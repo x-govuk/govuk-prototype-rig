@@ -1,15 +1,14 @@
 {
   "name": "govuk-prototype-rig",
-  "description": "Rapidly create HTML prototypes of GOV.UK services.",
+  "description": "Rapidly create HTML prototypes of GOV.UK services",
   "version": "0.2.0",
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "bin": "bin.js",
   "main": "main.js",
-  "sass": "rig/all.scss",
   "repository": {
     "type": "git",
     "url": "https://github.com/paulrobertlloyd/govuk-prototype-rig.git",
@@ -27,7 +26,6 @@
   "license": "MIT",
   "dependencies": {
     "@financial-times/express-markdown-pages": "^1.0.0",
-    "accessible-autocomplete": "^2.0.3",
     "basic-auth": "^2.0.0",
     "browser-sync": "^2.11.1",
     "client-sessions": "^0.8.0",
@@ -35,13 +33,9 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-session": "^1.13.0",
-    "ftdomdelegate": "^5.0.0",
-    "govuk-frontend": "^4.0.0",
-    "highlight.js": "^11.3.1",
+    "govuk-prototype-components": "^0.2.0",
     "inquirer": "^8.2.0",
     "lodash": "^4.17.21",
-    "luxon": "^2.0.2",
-    "marked": "^4.0.7",
     "nodemon": "^2.0.13",
     "nunjucks": "^3.2.1",
     "portscanner": "^2.1.1",
