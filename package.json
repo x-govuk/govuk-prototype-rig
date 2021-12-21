@@ -21,6 +21,9 @@
     "dev": "npm-run-all --parallel watch-assets serve",
     "lint": "standard && stylelint 'app/**/*.scss'"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "dependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.5",
