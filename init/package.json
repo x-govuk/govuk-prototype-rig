@@ -1,0 +1,37 @@
+{
+  "name": "create-govuk-prototype-rig",
+  "version": "0.0.1",
+  "description": "Rapidly create HTML prototypes of GOV.UK services",
+  "keywords": [
+    "govuk",
+    "design system",
+    "prototyping"
+  ],
+  "homepage": "https://x-govuk.github.io/govuk-prototype-rig/",
+  "bugs": {
+    "url": "https://github.com/x-govuk/govuk-prototype-rig/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "files",
+    "utils"
+  ],
+  "bin": "bin.js",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/x-govuk/govuk-prototype-rig.git",
+    "directory": "init"
+  },
+  "dependencies": {
+    "base-create": "^3.0.7",
+    "chalk": "^5.0.0",
+    "cpy": "^9.0.1",
+    "prompts": "^2.4.2"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "type": "module"
+}

@@ -1,0 +1,27 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "GOV.UK Prototype Rig" %}
+
+{% block main %}
+  {{ xGovukMasthead({
+    classes: "x-govuk-masthead--large",
+    title: {
+      html: serviceName + " prototype" | noOrphans
+    },
+    startButton: {
+      href: "#",
+      text: "View prototype"
+    }
+  }) }}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+          <h2 class="govuk-heading-m">About this page</h2>
+          <p>We recommend you add links to your prototype to this page, rather than delete it. You’ll find this page in <code class="x-govuk-code x-govuk-code--inline">/app/views/index.html</code>.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+{% endblock %}
