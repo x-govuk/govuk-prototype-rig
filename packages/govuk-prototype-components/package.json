@@ -42,7 +42,7 @@
     "govuk-frontend": "^4.0.0",
     "highlight.js": "^11.3.1",
     "lodash": "^4.17.21",
-    "luxon": "^2.0.2",
+    "luxon": "^2.3.0",
     "marked": "^4.0.7",
     "nunjucks": "^3.2.1"
   }
