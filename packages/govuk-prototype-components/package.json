@@ -7,11 +7,11 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "main": "proto/all.js",
-  "sass": "proto/all.scss",
+  "main": "x-govuk/all.js",
+  "sass": "x-govuk/all.scss",
   "exports": {
     ".": {
-      "import": "./proto/all.js"
+      "import": "./x-govuk/all.js"
     },
     "./filters": {
       "import": "./filters/index.js"

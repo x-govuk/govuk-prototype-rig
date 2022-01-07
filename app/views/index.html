@@ -3,7 +3,7 @@
 {% set title = "GOV.UK Prototype Rig" %}
 
 {% block main %}
-  {{ protoMasthead({
+  {{ xGovukMasthead({
     classes: "proto-masthead--large",
     title: {
       html: serviceName + " prototype" | noOrphans
@@ -59,7 +59,7 @@
           resources. See /docs/components/related-navigation for the options
           this component accepts.
         #}
-        {{ protoRelatedNavigation({
+        {{ xGovukRelatedNavigation({
           sections: [{
             title: "Related links",
             subsections: [{
