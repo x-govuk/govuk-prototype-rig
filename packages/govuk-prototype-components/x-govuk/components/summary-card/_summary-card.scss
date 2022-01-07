@@ -1,8 +1,8 @@
-.proto-summary-card {
+.x-govuk-summary-card {
   border: 1px solid $govuk-border-colour;
 
   // Card header
-  .proto-summary-card__header {
+  .x-govuk-summary-card__header {
     align-items: center;
     background-color: govuk-colour("light-grey");
     padding: govuk-spacing(3);
@@ -14,28 +14,28 @@
     }
   }
 
-  .proto-summary-card__title {
+  .x-govuk-summary-card__title {
     @include govuk-font($size: 19);
     margin: 0;
   }
 
-  .proto-summary-card__meta {
+  .x-govuk-summary-card__meta {
     @include govuk-font($size: 16);
     display: block;
     margin: 0;
   }
 
-  .proto-summary-card__actions {
+  .x-govuk-summary-card__actions {
     @include govuk-font($size: 19);
   }
 
-  .proto-summary-card__actions-list {
+  .x-govuk-summary-card__actions-list {
     width: 100%;
     margin: 0;
     padding: 0;
   }
 
-  .proto-summary-card__actions-list-item {
+  .x-govuk-summary-card__actions-list-item {
     display: block;
     white-space: nowrap;
 
@@ -46,12 +46,12 @@
     }
   }
 
-  .proto-summary-card__actions-list-item:first-child {
+  .x-govuk-summary-card__actions-list-item:first-child {
     margin-left: 0;
   }
 
   // Card body
-  .proto-summary-card__body {
+  .x-govuk-summary-card__body {
     @include govuk-font($size: 19);
     padding: govuk-spacing(3);
   }
@@ -66,16 +66,16 @@
   }
 }
 
-.proto-summary-card--large-title .proto-summary-card__title {
+.x-govuk-summary-card--large-title .x-govuk-summary-card__title {
   @include govuk-font($size: 24, $weight: bold);
 }
 
 @media print {
-  .proto-summary-card__header {
+  .x-govuk-summary-card__header {
     break-inside: avoid;
   }
 
-  .proto-summary-card__actions {
+  .x-govuk-summary-card__actions {
     display: none;
   }
 }

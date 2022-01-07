@@ -111,7 +111,7 @@ class GovukHTMLRenderer extends Renderer {
   // Block code
   // By not using marked’s `highlight` option, we can add a class to the container
   code (string, language) {
-    highlightJs.configure({ classPrefix: 'proto-code__' })
+    highlightJs.configure({ classPrefix: 'x-govuk-code__' })
 
     if (language) {
       // Code language has been set, or can be determined
@@ -121,16 +121,16 @@ class GovukHTMLRenderer extends Renderer {
       } else {
         code = highlightJs.highlightAuto(string).value
       }
-      return `<pre class="proto-code proto-code--block"><code class="proto-code__language--${language}">${code}</code></pre>`
+      return `<pre class="x-govuk-code x-govuk-code--block"><code class="x-govuk-code__language--${language}">${code}</code></pre>`
     } else {
       // No language found, so render as plain text
-      return `<pre class="proto-code proto-code--block">${string}</pre>`
+      return `<pre class="x-govuk-code x-govuk-code--block">${string}</pre>`
     }
   }
 
   // Inline code
   codespan (code) {
-    return `<code class="proto-code proto-code--inline">${code}</code>`
+    return `<code class="x-govuk-code x-govuk-code--inline">${code}</code>`
   }
 }
 

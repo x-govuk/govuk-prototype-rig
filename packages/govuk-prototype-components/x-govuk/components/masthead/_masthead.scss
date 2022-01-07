@@ -1,6 +1,6 @@
 @import "./button";
 
-.proto-masthead {
+.x-govuk-masthead {
   @include govuk-responsive-margin(6, "bottom");
   @include govuk-responsive-padding(6, "top");
   @include govuk-responsive-padding(6, "bottom");
@@ -9,26 +9,26 @@
   margin-top: govuk-spacing(-2);
 }
 
-.proto-masthead__title {
+.x-govuk-masthead__title {
   @include govuk-font($size: 36, $weight: bold);
   margin-top: 0;
 
-  .proto-masthead--large & {
+  .x-govuk-masthead--large & {
     @include govuk-font($size: 48, $weight: "bold");
   }
 }
 
-.proto-masthead__description {
+.x-govuk-masthead__description {
   @include govuk-font($size: 19);
   color: inherit;
   margin-bottom: 0;
 
-  .proto-masthead--large & {
+  .x-govuk-masthead--large & {
     @include govuk-font($size: 24);
   }
 }
 
-.proto-masthead__image {
+.x-govuk-masthead__image {
   img {
     max-width: 100%;
   }
