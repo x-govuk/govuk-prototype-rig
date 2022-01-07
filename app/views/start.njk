@@ -1,0 +1,74 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "Find your TRN" %}
+
+{% block header %}
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      text: "Home",
+      href: "https://www.gov.uk"
+    }, {
+      text: "Section",
+      href: "#"
+    }, {
+      text: "Subsection"
+    }]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">{{ serviceName }}</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>Use this service to find out:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your 7 digit TRN</li>
+        <li>whether or not you have a TRN</li>
+      </ul>
+      <p>You cannot use this service to find a TRN on behalf of another person.</p>
+
+      {{ govukButton({
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-9",
+        text: "Start now",
+        href: "/trn-holder",
+        isStartButton: true
+      }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      {{ rigRelatedNavigation({
+        sections: [{
+          items: [{
+            text: "Training and study at work",
+            href: "#"
+          }, {
+            text: "Careers helpline for teenagers",
+            href: "#"
+          }],
+          subsections: [{
+            title: "Explore the topic",
+            items: [{
+              text: "Apprenticeships",
+              href: "#"
+            }, {
+              text: "Finding a job",
+              href: "#"
+            }]
+          }, {
+            title: "Collection",
+            items: [{
+              text: "The future of jobs and skills",
+              href: "#"
+            }]
+          }]
+        }]
+      }) }}
+    </div>
+  </div>
+{% endblock %}

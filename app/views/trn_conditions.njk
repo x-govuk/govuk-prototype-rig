@@ -1,0 +1,64 @@
+{% extends "layouts/default.njk" %}
+
+{% set title = "Asking users for a date" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" novalidate>
+        {{ govukCheckboxes({
+          idPrefix: "trn-conditions",
+          name: "trn-conditions",
+          fieldset: {
+            legend: {
+              text: "Do any of the following apply to you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "qts",
+              text: "I have Qualified Teacher Status (QTS)"
+            },
+            {
+              value: "eyts",
+              text: "I have Early Years Teacher Status (EYTS)"
+            },
+            {
+              value: "trainee",
+              text: "I have previously started a course of Initial Teacher Training"
+            },
+            {
+              value: "npq",
+              text: "I have previously started a National Professional Qualification (NPQ)"
+            },
+            {
+              value: "pensions",
+              text: "I have a pension with the Teachers' Pension Service"
+            },
+            {
+              value: "misconduct",
+              text: "I have been prohibited from teaching by the Teaching Regulation Agency"
+            },    
+            {
+              divider: "or"
+            },
+            {
+              value: "none",
+              text: "None of the above",
+              behaviour: "exclusive"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
