@@ -1,0 +1,117 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Check answers page" %}
+{% set emailAddress = data['email-address'] or 'email@example.com' %}
+
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">Check your answers</h1>
+
+      <p>We will send your TRN to {{ emailAddress }} if we find one matching your details.</p>
+
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [{
+            key: {
+            text: "Email address"
+          },
+          value: {
+            text: emailAddress
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "email address",
+              href: "/email"
+            }]
+          }
+        }, {
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: (data['first-name'] + ' ' + data['last-name'])
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "name",
+              href: "/name"
+            }]
+          }
+        } if data['first-name'], {
+        key: {
+            text: "Previous name"
+          },
+          value: {
+            text: (data['previous-first-name'] + ' ' + data['previous-last-name'])
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "previous name",
+              href: "/name"
+            }]
+          }
+        } if data['previous-last-name'], {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            text: data['date-of-birth'] | dateWithYear
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "date of birth",
+              href: "/dob"
+            }]
+          }
+        } if data['date-of-birth'], {
+          key: {
+            text: "National Insurance number"
+          },
+          value: {
+            text: data['national-insurance-number'] or 'Unavailable'
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "National Insurance number",
+              href: "/ni-number"
+            }]
+          }
+        } if data['national-insurance-number'] or data['has-national-insurance-number'] === 'forgotten', {
+          key: {
+            text: "Teacher training provider"
+          },
+          value: {
+            text:  data['itt-provider']
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "teacher training provider",
+              href: "/itt-provider"
+            }]
+          }
+        } if data['itt-provider']
+      ]}) }}
+
+      <form method="post" novalidate>
+        <input type="hidden" name="answers-checked" value="true">
+
+        {{ govukButton({
+          text: "Submit"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

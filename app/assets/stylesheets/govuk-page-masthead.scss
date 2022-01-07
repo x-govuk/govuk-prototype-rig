@@ -1,0 +1,24 @@
+// Prototype index page styles
+.app-masthead {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: govuk-colour("white");
+  background-color: govuk-colour("blue");
+  margin-top: -10px;
+}
+
+@media (min-width: 40.0625em) {
+  .app-masthead {
+    padding-top: 40px;
+  }
+}
+
+.app-masthead__title,
+.app-masthead__subtitle,
+.app-masthead p {
+  color: govuk-colour("white") !important;
+}
+
+.app-masthead__subtitle {
+  font-weight: normal !important;
+}

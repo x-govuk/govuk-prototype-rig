@@ -1,3 +1,5 @@
+import { DateTime } from 'luxon'
+
 /**
  * Prototype specific filters for use in Nunjucks templates.
  *
@@ -23,6 +25,12 @@ export default (env) => {
    *
    * @see https://mozilla.github.io/nunjucks/api#custom-filters
    */
+
+   // example: 7 December 2021
+   filters.dateWithYear = params => {
+     var datetime = DateTime.local(parseInt(params.year), parseInt(params.month), parseInt(params.day))
+     return datetime.toFormat('d MMMM yyyy')
+   }
 
   // Keep the following line to return your filters to the app
   return filters

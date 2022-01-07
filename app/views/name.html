@@ -1,0 +1,69 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Find out your TRN" %}
+
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
+
+{% block content %}
+  {% set PreviousNameHtml %}
+      {{ govukInput(decorate({
+      label: {
+        text: "Previous given name"
+      },
+      id: "previous-first-name",
+      name: "previous-first-name"
+    }, ['previous-first-name'])) }}
+    {{ govukInput(decorate({
+      label: {
+        text: "Previous family name"
+      },
+      id: "previous-last-name",
+      name: "previous-last-name"
+    }, ['previous-last-name'])) }}
+  {% endset %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" novalidate>
+      <h1 class="govuk-heading-xl">Your name</h1>
+        <p class="govuk-body"></p>
+        <p>We will match your name against the Teaching Regulation Agency records.</p>
+        {{ govukInput(decorate({
+          label: {
+            text: "Given name",
+            classes: "govuk-label--m"
+          }
+        }, ['first-name'])) }}
+
+        {{ govukInput(decorate({
+          label: {
+            text: "Family name",
+            classes: "govuk-label--m"
+          }
+        }, ['last-name'])) }}
+
+        {{ govukCheckboxes(decorate({
+          idPrefix: "changed-name",
+          name: "changed-name",
+          items: [
+            {
+              value: "changed-name",
+              text: "I have changed my name since I received my TRN",
+              conditional: { html: PreviousNameHtml }
+            }
+          ]
+        }, ['changed-name'])) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

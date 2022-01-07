@@ -1,0 +1,70 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Find your TRN" %}
+
+{% block pageNavigation %}
+  {{ govukBackLink({
+    href: paths.back
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  {% set NINumberHtml %}
+    {{ govukInput(decorate({
+      label: {
+        text: "National Insurance number",
+        classes: "govuk-label--m"
+      },
+      hint: {
+        text: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+      },
+      id: "national-insurance-number",
+      name: "national-insurance-number"
+    }, ['national-insurance-number'])) }}
+  {% endset %}
+
+  {% set NINumberForgottenHtml %}
+    {{ govukWarningText({
+      text: "You can continue without providing your National Insurance number but we are less likely to find your TRN without it.",
+      iconFallbackText: "Warning"
+    }) }}
+  {% endset %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" novalidate>
+        {{ govukRadios(decorate({
+          fieldset: {
+            legend: {
+              classes: "govuk-fieldset__legend--xl",
+              isPageHeading: true,
+              text: 'Do you have a National Insurance number?'
+            }
+          },
+          items: [
+            {
+              text: "Yes, I have a National Insurance number",
+              value: 'yes',
+              conditional: { html: NINumberHtml }
+            },
+            {
+              text: "I have a National Insurance number but I do not have it available",
+              value: 'forgotten',
+              conditional: { html: NINumberForgottenHtml }
+            },
+            {
+              text: "No, I have never been issued a National Insurance number",
+              value: 'no'
+            }]
+        }, ['has-national-insurance-number'])) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
