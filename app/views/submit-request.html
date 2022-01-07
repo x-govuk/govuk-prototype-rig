@@ -1,7 +1,6 @@
-{% extends "layouts/default.njk" %}
+{% extends "layouts/default.html" %}
 
 {% set title = "Check answers page" %}
-{% set emailAddress = data['email-address'] or 'email@example.com' %}
 
 {% block pageNavigation %}
   {{ govukBackLink({
@@ -12,9 +11,11 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-heading-xl">Check your answers</h1>
+      <h1 class="govuk-heading-xl">Get a response by email</h1>
 
-      <p>We will send your TRN to {{ emailAddress }} if we find one matching your details.</p>
+      <p>Send a request to the Teaching Regulation Agency helpdesk using the details below.</p>
+
+      <p>We aim to respond via email within 5 working days.</p>
 
       {{ govukSummaryList({
         classes: "govuk-!-margin-bottom-9",
@@ -23,7 +24,7 @@
             text: "Email address"
           },
           value: {
-            text: emailAddress
+            text: data['email-address'] or 'email@example.com'
           },
           actions: {
             items: [{
@@ -46,7 +47,7 @@
               href: "/name"
             }]
           }
-        } if data['first-name'], {
+        }if data['first-name'], {
         key: {
             text: "Previous name"
           },
@@ -60,7 +61,7 @@
               href: "/name"
             }]
           }
-        } if data['previous-last-name'], {
+        }if data['previous-last-name'], {
           key: {
             text: "Date of birth"
           },
@@ -109,7 +110,7 @@
         <input type="hidden" name="answers-checked" value="true">
 
         {{ govukButton({
-          text: "Submit"
+          text: "Request TRN"
         }) }}
       </form>
     </div>

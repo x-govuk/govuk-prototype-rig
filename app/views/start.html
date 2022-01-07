@@ -1,4 +1,4 @@
-{% extends "layouts/default.njk" %}
+{% extends "layouts/default.html" %}
 
 {% set title = "Find out your TRN" %}
 
@@ -29,7 +29,7 @@
 
 We’ll ask for your name, date of birth and National Insurance number. If we do not find your TRN based on these details, we may ask you some follow-up questions.
 
-We will send you your TRN by email. 
+We will send you your TRN by email.
 
 {% endset %}
 
@@ -87,7 +87,7 @@ Make sure you have your National Insurance number ready before you call.
     </div>
 
     <div class="govuk-grid-column-one-third">
-      {{ rigRelatedNavigation({
+      {{ protoRelatedNavigation({
         sections: [{
           items: [{
             text: "Teacher reference number (TRN)",
