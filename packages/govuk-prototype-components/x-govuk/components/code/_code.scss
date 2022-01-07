@@ -1,10 +1,10 @@
-.proto-code {
+.x-govuk-code {
   background-color: govuk-colour("light-grey");
   font-family: ui-monospace, monospace;
   font-size: 16px;
 }
 
-.proto-code--inline {
+.x-govuk-code--inline {
   padding: 2px govuk-spacing(1);
 
   a:focus & {
@@ -12,7 +12,7 @@
   }
 }
 
-.proto-code--block {
+.x-govuk-code--block {
   @include govuk-responsive-margin(4, "bottom");
   line-height: 1.4;
   max-width: 38em;
@@ -30,88 +30,88 @@
   }
 }
 
-.proto-code__comment,
-.proto-code__quote {
+.x-govuk-code__comment,
+.x-govuk-code__quote {
   color: govuk-tint(govuk-colour("dark-grey"), 30);
   font-style: italic;
 }
 
-.proto-code__keyword,
-.proto-code__selector-tag,
-.proto-code__subst {
+.x-govuk-code__keyword,
+.x-govuk-code__selector-tag,
+.x-govuk-code__subst {
   color: govuk-colour("black");
   font-weight: bold;
 }
 
-.proto-code__number,
-.proto-code__literal,
-.proto-code__variable,
-.proto-code__template-variable,
-.proto-code__tag .proto-code__attr {
+.x-govuk-code__number,
+.x-govuk-code__literal,
+.x-govuk-code__variable,
+.x-govuk-code__template-variable,
+.x-govuk-code__tag .x-govuk-code__attr {
   color: govuk-colour("green");
 }
 
-.proto-code__string,
-.proto-code__doctag {
+.x-govuk-code__string,
+.x-govuk-code__doctag {
   color: govuk-colour("red");
 }
 
-.proto-code__title,
-.proto-code__section,
-.proto-code__selector-id {
+.x-govuk-code__title,
+.x-govuk-code__section,
+.x-govuk-code__selector-id {
   color: govuk-colour("bright-purple");
   font-weight: bold;
 }
 
-.proto-code__subst {
+.x-govuk-code__subst {
   font-weight: normal;
 }
 
-.proto-code__type,
-.proto-code__class .proto-code__title {
+.x-govuk-code__type,
+.x-govuk-code__class .x-govuk-code__title {
   color: govuk-colour("light-purple");
   font-weight: bold;
 }
 
-.proto-code__tag,
-.proto-code__name,
-.proto-code__attribute {
+.x-govuk-code__tag,
+.x-govuk-code__name,
+.x-govuk-code__attribute {
   color: govuk-colour("dark-blue");
   font-weight: normal;
 }
 
-.proto-code__regexp,
-.proto-code__link {
+.x-govuk-code__regexp,
+.x-govuk-code__link {
   color: govuk-colour("green");
 }
 
-.proto-code__symbol,
-.proto-code__bullet {
+.x-govuk-code__symbol,
+.x-govuk-code__bullet {
   color: govuk-colour("purple");
 }
 
-.proto-code__builtin,
-.proto-code__builtin-name {
+.x-govuk-code__builtin,
+.x-govuk-code__builtin-name {
   color: govuk-colour("blue");
 }
 
-.proto-code__meta {
+.x-govuk-code__meta {
   color: govuk-colour("dark-grey");
   font-weight: bold;
 }
 
-.proto-code__deletion {
+.x-govuk-code__deletion {
   background: govuk-tint(govuk-colour("red"), 80);
 }
 
-.proto-code__addition {
+.x-govuk-code__addition {
   background: govuk-tint(govuk-colour("green"), 80);
 }
 
-.proto-code__emphasis {
+.x-govuk-code__emphasis {
   font-style: italic;
 }
 
-.proto-code__strong {
+.x-govuk-code__strong {
   font-weight: bold;
 }
