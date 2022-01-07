@@ -12,20 +12,12 @@
 .x-govuk-masthead__title {
   @include govuk-font($size: 36, $weight: bold);
   margin-top: 0;
-
-  .x-govuk-masthead--large & {
-    @include govuk-font($size: 48, $weight: "bold");
-  }
 }
 
 .x-govuk-masthead__description {
   @include govuk-font($size: 19);
   color: inherit;
   margin-bottom: 0;
-
-  .x-govuk-masthead--large & {
-    @include govuk-font($size: 24);
-  }
 }
 
 .x-govuk-masthead__image {
@@ -35,5 +27,15 @@
 
   @include govuk-media-query($until: desktop) {
     display: none;
+  }
+}
+
+.x-govuk-masthead--large {
+  .x-govuk-masthead__title {
+    @include govuk-font($size: 48, $weight: "bold");
+  }
+
+  .x-govuk-masthead__description {
+    @include govuk-font($size: 24);
   }
 }
