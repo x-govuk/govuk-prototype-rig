@@ -10,10 +10,11 @@
 
 {% block content %}
   {% set ITTProviderNameHtml %}
-    {{ govukInput(decorate({
+    {{ xGovukAutocomplete(decorate({
       label: {
         text: "Your school, university or other training provider"
-      }
+      },
+      items: ittProviderOptionNames()
     }, ["itt-provider"])) }}
   {% endset %}
 
