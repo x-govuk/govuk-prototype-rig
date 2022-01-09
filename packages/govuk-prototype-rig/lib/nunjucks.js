@@ -66,7 +66,7 @@ async function _addGlobals (nunjucksAppEnv) {
   }
 
   for (const globalName of Object.keys(appGlobals)) {
-    nunjucksAppEnv.addGlobal(global, appGlobals[globalName])
+    nunjucksAppEnv.addGlobal(globalName, appGlobals[globalName])
   }
 }
 
