@@ -14,6 +14,8 @@
     "extends": "stylelint-config-gds/scss"
   },
   "scripts": {
+    "build-docs": "eleventy --config=.eleventy.cjs",
+    "watch-docs": "eleventy --config=.eleventy.cjs --serve",
     "build-assets": "rollup --config --silent",
     "watch-assets": "rollup --config --silent --watch",
     "serve": "govuk-prototype-rig",
@@ -25,8 +27,10 @@
     "packages/*"
   ],
   "dependencies": {
+    "@11ty/eleventy": "^1.0.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.5",
+    "govuk-eleventy-plugin": "paulrobertlloyd/govuk-eleventy-plugin",
     "govuk-prototype-rig": "^0.2.0",
     "npm-run-all": "^4.1.5",
     "rollup": "^2.70.1",

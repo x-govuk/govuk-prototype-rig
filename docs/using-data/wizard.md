@@ -1,7 +1,6 @@
 ---
 title: Using the wizard helper
 description: The wizard helper makes it easy to build and iterate a ‘one thing per page’ user journey.
-tags: Getting started
 ---
 
 ## Importing the wizard helper
@@ -166,7 +165,8 @@ router.post('/examples/wizard/:view?', (req, res) => {
 
 An example Nunjucks layout extending the default rig layout:
 
-```nunjucks
+```njk
+{% raw %}
 {% extends "layouts/default.html" %}
 {% block pageNavigation %}
   {{ govukBackLink({
@@ -187,11 +187,13 @@ An example Nunjucks layout extending the default rig layout:
     </div>
   </div>
 {% endblock %}
+{% endraw %}
 ```
 
 ### Build your question pages
 
-```nunjucks
+```njk
+{% raw %}
 {% extends "layouts/wizard.html" %}
 {% set title = "What is your name?" %}
 {% block pageNavigation %}
@@ -210,4 +212,5 @@ An example Nunjucks layout extending the default rig layout:
     decorate: ["wizard", "name"]
   }) }}
 {% endblock %}
+{% endraw %}
 ```

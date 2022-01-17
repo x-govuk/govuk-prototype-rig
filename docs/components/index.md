@@ -1,6 +1,7 @@
 ---
 title: Components
-tags: Template helpers
+eleventyNavigation:
+  parent: GOV.UK Prototype Rig
 ---
 
 The rig provides a selection of common components not currently in the GOV.UK Design System.

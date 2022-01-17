@@ -1,7 +1,6 @@
 ---
 title: Feature flags
 description: Add features to your prototype and turn them on or off as needed.
-tags: Getting started
 ---
 
 You may have designed a feature which is not ready to be shown during a research session for another feature. Or perhaps you have 2 solutions to a problem and you want to test both with different participants.

@@ -4,7 +4,7 @@
 
 {% block main %}
   {{ xGovukMasthead({
-    classes: "x-govuk-masthead--large",
+    classes: "x-govuk-masthead--large govuk-!-margin-bottom-6",
     title: {
       html: serviceName + " prototype" | noOrphans
     },
@@ -31,7 +31,7 @@
           <p>You can change the service name by changing the <code class="proto-code proto-code--inline">prototype.serviceName</code> value in <code class="proto-code proto-code--inline">package.json</code>.</p>
 
           <h2 class="govuk-heading-m">Documentation</h2>
-          <p>The rig includes a number of utilities to help build your prototype. To learn how these work, navigate to <a href="/docs"><code class="proto-code proto-code--inline">/docs</code></a>, or visit the <a href="https://govuk-prototype-rig.herokuapp.com">GOV.UK Prototype Rig website</a>.</p>
+          <p>The rig includes a number of utilities to help build your prototype. To learn how these work, visit the <a href="https://govuk-prototype-rig.herokuapp.com">GOV.UK Prototype Rig website</a>.</p>
 
           <h2 class="govuk-heading-m">Examples</h2>
           <p>The rig also includes some example pages. You’ll find them in the <code class="proto-code proto-code--inline">/app/examples</code> folder.

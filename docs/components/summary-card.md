@@ -1,6 +1,6 @@
 ---
 title: Summary card
-tags: Template helpers
+order: 4
 ---
 
 This is a component proposed for inclusion in the GOV.UK Design System.
@@ -10,6 +10,7 @@ Find out when to use a summary card in your service on [the GitHub issue where t
 ## Example usage
 
 ```njk
+{% raw %}
 {{ xGovukSummaryCard({
   classes: "govuk-!-margin-bottom-9",
   titleText: "Sarah Philips",
@@ -50,6 +51,7 @@ Find out when to use a summary card in your service on [the GitHub issue where t
     }
   }]
 }) }}
+{% endraw %}
 ```
 
 ## Component options

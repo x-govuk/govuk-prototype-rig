@@ -1,6 +1,6 @@
 ---
 title: Task list
-tags: Template helpers
+order: 5
 ---
 
 The task list page pattern is documented on the GOV.UK Design System, yet the required component is not provided by GOV.UK Frontend, only as [a coded example in the GOV.UK Prototype Kit](https://govuk-prototype-kit.herokuapp.com/docs/templates/task-list).
@@ -10,6 +10,7 @@ Find out when to use a task list in your service in the [GOV.UK Design System](h
 ## Example usage
 
 ```njk
+{% raw %}
 {{ xGovukTaskList({
   sections: [{
     titleText: "Check before you start",
@@ -59,6 +60,7 @@ Find out when to use a task list in your service in the [GOV.UK Design System](h
     }]
   }]
 }) }}
+{% endraw %}
 ```
 
 ## Component options

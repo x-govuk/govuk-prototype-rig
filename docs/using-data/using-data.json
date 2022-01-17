@@ -1,0 +1,7 @@
+{
+  "tags": ["search-index"],
+  "order": 5,
+  "eleventyNavigation": {
+    "parent": "Creating journeys with data"
+  }
+}

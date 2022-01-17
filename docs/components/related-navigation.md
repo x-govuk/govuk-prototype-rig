@@ -1,6 +1,6 @@
 ---
 title: Related navigation
-tags: Template helpers
+order: 3
 ---
 
 The related navigation component is [a GOV.UK Publishing specific component](https://components.publishing.service.gov.uk/component-guide/related_navigation).
@@ -10,6 +10,7 @@ This component may be useful if you are prototyping guidance pages that could be
 ## Example usage
 
 ```njk
+{% raw %}
 {{ xGovukRelatedNavigation({
   sections: [{
     items: [{
@@ -28,6 +29,7 @@ This component may be useful if you are prototyping guidance pages that could be
     }]
   }]
 }) }}
+{% endraw %}
 ```
 
 ## Component options
