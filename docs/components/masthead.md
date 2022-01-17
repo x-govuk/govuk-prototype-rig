@@ -1,6 +1,6 @@
 ---
 title: Masthead
-tags: Template helpers
+order: 2
 ---
 
 The masthead component is based on the component used on [GOV.UK product pages](https://github.com/alphagov/product-page-example).
@@ -10,8 +10,18 @@ This component may be useful if you are prototyping product or marketing pages.
 ## Example usage
 
 ```njk
+{% raw %}
 {{ xGovukMasthead({
   classes: "x-govuk-masthead--large",
+  phaseBanner: {
+    text: "This is a new service"
+  },
+  breadcrumbs: {
+    items: [{
+      href: "/",
+      text: "Home"
+    }]
+  },
   title: {
     text: "Design your service using GOV.UK styles, components and patterns"
   },
@@ -25,6 +35,7 @@ This component may be useful if you are prototyping product or marketing pages.
     src: "/images/homepage-illustration.svg"
   }
 }) }}
+{% endraw %}
 ```
 
 ## Component options
@@ -43,6 +54,9 @@ If you’re using Nunjucks macros in production with `html` options, or ones end
 | **description** | object | Description text shown in the masthead. See [description](#options-for-description). |
 | **startButton** | object | Options for start button. See [startButton](#options-for-startButton). |
 | **image** | object | Options for image displayed on the right of the masthead on desktop layouts. See [image](#options-for-image). |
+| **phaseBanner** | object | Options for the phase banner component. See [phase banner component](https://design-system.service.gov.uk/components/phase-banner/) in the GOV.UK Design System. |
+| **breadcrumbs** | object | Options for the breadcrumbs component. See [breadcrumbs component](https://design-system.service.gov.uk/components/breadcrumbs/) in the GOV.UK Design System. |
+| **caller** | nunjucks-block | Not strictly a parameter but [Nunjucks code convention](https://mozilla.github.io/nunjucks/templating.html#call). Using a `call` block enables you to call a macro with all the text inside the tag. This is helpful if you want to pass a lot of content into a macro. To use it, you will need to wrap the entire masthead component in a `call` block. Content called this way appears between the breadcrumbs (if present) and the title. |
 
 ### Options for title
 

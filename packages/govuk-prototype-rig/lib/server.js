@@ -9,7 +9,6 @@ import { autoStoreData } from './middleware/auto-store-data.js'
 import { forceHttps } from './middleware/force-https.js'
 import { matchRoutes } from './middleware/match-routes.js'
 import { autoStoreDataRoutes } from './routes/auto-store-data.js'
-import { documentationRoutes } from './routes/documentation.js'
 import { featureFlagRoutes } from './routes/feature-flags.js'
 import { browserSyncConfig } from './browser-sync.js'
 import { findAvailablePort, getEnvBoolean } from './environment.js'
@@ -105,9 +104,6 @@ if (useAutoStoreData) {
   app.use(autoStoreData, autoStoreDataRoutes(router))
   app.use('/auto-store-data.js', express.static('./node_modules/govuk-prototype-rig/lib/auto-store-data.js'))
 }
-
-// Documentation
-app.use(documentationRoutes(router))
 
 // Feature flags
 app.use(featureFlagRoutes(router))

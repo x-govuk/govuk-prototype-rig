@@ -1,7 +1,8 @@
 ---
 title: Creating journeys with data
 description: Use and display data a user has entered over a few screens.
-tags: Getting started
+eleventyNavigation:
+  parent: GOV.UK Prototype Rig
 ---
 
 The Prototype Rig includes a simple way of saving data entered in forms, as well as displaying the saved data. Data is stored locally on the computer running the prototype and disappears at the end of the session, when the browser window is closed.
@@ -19,7 +20,7 @@ For example, if you have this input:
 You can show what the user entered later on like this:
 
 ```html
-<p>{{ data['first-name'] }}</p>
+<p>{% raw %}{{ data['first-name'] }}{% endraw %}</p>
 ```
 
 ### Showing answers in inputs
@@ -29,13 +30,13 @@ If a user goes back to a page where they entered data, they would expect to see 
 For a text input:
 
 ```html
-<input name="first-name" value="{{ data['first-name'] }}">
+<input name="first-name" value="{% raw %}{{ data['first-name'] }}{% endraw %}">
 ```
 
 For a radio or checkbox input you need to use the `checked` function:
 
 ```html
-<input type="radio" name="over-18" value="yes" {{ checked("over-18", "yes") }}>
+<input type="radio" name="over-18" value="yes" {% raw %}{{ checked("over-18", "yes") }}{% endraw %}>
 ```
 
 If `data['over-18']` has the value `yes`, the function will return `checked`.
@@ -53,7 +54,7 @@ To prevent an input being stored, use an underscore at the start of the name.
 Example using the `checked` function in a checkbox component:
 
 ```njk
-{{ govukCheckboxes({
+{% raw %}{{ govukCheckboxes({
   name: "vehicle-features",
   fieldset: {
     legend: {
@@ -79,7 +80,7 @@ Example using the `checked` function in a checkbox component:
     id: "vehicle-features-radio",
     checked: checked("vehicle-features", "Radio")
   }]
-}) }}
+}) }}{% endraw %}
 ```
 
 ### Using data in routes

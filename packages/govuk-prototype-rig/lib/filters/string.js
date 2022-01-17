@@ -1,7 +1,7 @@
 import _ from 'lodash'
+import GovukHTMLRenderer from 'govuk-markdown'
 import { marked } from 'marked'
 import { _normalize } from '../nunjucks.js'
-import { MarkdownPagesRenderer } from '../marked.js'
 
 /**
   * Convert a Markdown formatted string to HTML decorated with typography
@@ -27,7 +27,7 @@ export function govukMarkdown (string, options) {
   marked.setOptions({
     ...defaults,
     ...options,
-    renderer: new MarkdownPagesRenderer()
+    renderer: new GovukHTMLRenderer()
   })
 
   return marked(string)

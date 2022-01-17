@@ -1,7 +1,6 @@
 ---
 title: Download and install
 description: Get up and running in minutes.
-tags: Getting started
 ---
 
 Like the GOV.UK Prototype Kit, the rig is built on the [Express](http://expressjs.com/) framework, and uses [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend).

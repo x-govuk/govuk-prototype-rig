@@ -1,6 +1,6 @@
 ---
 title: Autocomplete
-tags: Template helpers
+order: 1
 ---
 
 The autocomplete component implements the [Accessible autocomplete pattern](https://github.com/alphagov/accessible-autocomplete) to enhance a fixed list of options provided by a `<select>` element.
@@ -10,6 +10,7 @@ This component may be useful if you want users to pick from a number of options.
 ## Example usage
 
 ```njk
+{% raw %}
 {{ xGovukAutocomplete({
   id: "country",
   name: "country",
@@ -49,6 +50,7 @@ This component may be useful if you want users to pick from a number of options.
     { text: "Sweden" }
   ]
 }) }}
+{% endraw %}
 ```
 
 ## Component options

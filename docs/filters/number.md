@@ -1,6 +1,6 @@
 ---
 title: Numbers
-tags: Template helpers
+order: 3
 ---
 
 ## isNumber
@@ -10,8 +10,10 @@ Checks if a value is classified as a [`Number`](https://developer.mozilla.org/en
 Input
 
 ```njk
+{% raw %}
 {{ 1801 | isNumber }}
 {{ "1801" | isNumber }}
+{% endraw %}
 ```
 
 Output
@@ -28,7 +30,9 @@ Convert a number into a string formatted as pound sterling. This can be useful f
 Input
 
 ```njk
+{% raw %}
 {{ 81932 | sterling }}
+{% endraw %}
 ```
 
 Output

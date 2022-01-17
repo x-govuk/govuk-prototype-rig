@@ -1,6 +1,6 @@
 ---
 title: Objects
-tags: Template helpers
+order: 4
 ---
 
 ## isObject
@@ -10,9 +10,11 @@ Checks if a value is the language type of [`Object`](https://developer.mozilla.o
 Input
 
 ```njk
+{% raw %}
 {{ { country: "england" } | isObject }}
 {{ ["england", "scotland", "wales"] | isObject }}
 {{ "great britain" | isObject }}
+{% endraw %}
 ```
 
 Output
@@ -30,11 +32,13 @@ Transforms an object to an array, using each object’s key as the value for `id
 Input
 
 ```njk
+{% raw %}
 {{ {
   "a": { name: "Sir Robert Walpole" },
   "b": { name: "Spencer Compton" },
   "c": { name: "Henry Pelham" },
 } | objectToArray | dump }}
+{% endraw %}
 ```
 
 Output
