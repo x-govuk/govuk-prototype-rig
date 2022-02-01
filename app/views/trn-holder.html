@@ -18,11 +18,9 @@
 You will have a TRN if you:
 
 * hold qualified teacher status (QTS) in England or Wales
-* are working towards QTS
 * hold early years teacher status (EYTS) in England
-* are working towards EYTS
 * hold a national professional qualification (NPQ)
-* are working towards an NPQ
+* are working towards QTS, EYTS or an NPQ
 * contribute to the Teachers’ Pensions scheme
 * have a relevant restriction in relation to teaching in England
         {% endset %}
@@ -32,8 +30,8 @@ You will have a TRN if you:
         {{ govukRadios(decorate({
           fieldset: {
             legend: {
-              classes: "govuk-fieldset__legend--l",
-              text: 'Do you have a TRN?'
+              classes: "govuk-fieldset__legend--m",
+              text: 'Do you think you have a TRN?'
             }
           },
           items: [{

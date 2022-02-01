@@ -1,6 +1,6 @@
 ask-questions{% extends "layouts/default.html" %}
 
-{% set title = "We will ask you some questions to help find your TRN" %}
+{% set title = "We’ll ask some questions to help find your TRN" %}
 
 {% block pageNavigation %}
   {{ govukBackLink({
@@ -16,12 +16,11 @@ ask-questions{% extends "layouts/default.html" %}
       <form method="post" novalidate>
         <p>
           {% if data.features.helpdeskOnly.on %}
-            We’ll ask for your name, date of birth and National Insurance number. If you do not have your National Insurance number available, we may ask you some follow-up questions.
+            We’ll ask for your name, date of birth and National Insurance number. If you do not have your National Insurance number available, we may ask some follow-up questions.
           {% else %}
-            We’ll ask for your name, date of birth and National Insurance number. If we do not find your TRN based on these details, we may ask you some follow-up questions.
+            We’ll ask for your name, date of birth and National Insurance number. If we do not find your TRN based on these details, we may ask some follow-up questions.
           {% endif %}
         </p>
-
 
         {{ govukButton({
           text: "Continue"

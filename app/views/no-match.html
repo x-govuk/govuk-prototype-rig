@@ -14,6 +14,11 @@
         <p><a href="/ni-number">Try again</a> with your National Insurance number.</p>
       {% endif %}
 
+      <h2 class="govuk-heading-m">Get a response by email</h2>
+
+      <p><a href="/submit-request">Submit a support request</a> using the details you’ve already given.</p>
+      <p>We aim to respond within 5 working days.</p>
+
       <h2 class="govuk-heading-m">Call the TRA Helpdesk</h2>
 
       {% set contactInformation %}
@@ -27,11 +32,6 @@
       {{ govukInsetText({
         html: contactInformation
       }) }}
-
-      <h2 class="govuk-heading-m">Get a response by email</h2>
-
-      <p><a href="/submit-request">Submit a support request</a> using the details you have already provided.</p>
-      <p>We aim to respond within 5 working days.</p>
     </div>
   </div>
 {% endblock %}

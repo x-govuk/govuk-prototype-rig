@@ -27,12 +27,11 @@
   {% endset %}
 
   <div class="govuk-grid-row">
-
     <div class="govuk-grid-column-two-thirds">
       <form method="post" novalidate>
       <h1 class="govuk-heading-xl">Your name</h1>
         <p class="govuk-body"></p>
-        <p>We will match your name against the Teaching Regulation Agency records.</p>
+        <p>We’ll match your name against the Teaching Regulation Agency records.</p>
         {{ govukInput(decorate({
           label: {
             text: "Given name",
@@ -53,7 +52,7 @@
           items: [
             {
               value: "changed-name",
-              text: "I have changed my name since I received my TRN",
+              text: "I’ve changed my name since I received my TRN",
               conditional: { html: PreviousNameHtml }
             }
           ]
@@ -62,7 +61,6 @@
         {{ govukButton({
           text: "Continue"
         }) }}
-
       </form>
     </div>
   </div>

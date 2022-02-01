@@ -27,10 +27,7 @@
 {% set beforeYouStart %}
 ## Before you start
 
-We’ll ask for your name, date of birth and National Insurance number. If we do not find your TRN based on these details, we may ask you some follow-up questions.
-
-We will send you your TRN by email.
-
+Have your National Insurance number ready, as we’ll ask for this.
 {% endset %}
 
 {% set beforeYouStartHelpdeskOnly %}
@@ -43,28 +40,23 @@ We will send you your TRN by email.
 {% endset %}
 
 {% set whoCanUseThisService %}
-## Who can use this service
-
-You can use this service if you have, or think you might have, a TRN. You cannot use the service to find out someone else's TRN.
-
+You can use this service to check your own TRN. You cannot use it to find out someone else’s TRN.
 {% endset %}
 
 {% set otherWaysToFindOutYourTrn%}
 ## Other ways to find out your TRN
 
-### You may be able to find your TRN on a document
-
-Your TRN may be shown on one of the following documents:
+Your TRN may be shown on a:
 
 * payslip
 * teacher pension statement
 * teacher training records
 
-The TRN has previously been known as a QTS, GTC, DfE, DfES or DCSF number.
+The TRN has previously been known as a QTS, GTC, DfE, DfES and DCSF number.
 
 ---
 
-### Find out your TRN by phone
+### Find your TRN by phone
 
 > Call the Teaching Regulation Agency on 020 7593 5394.
 
@@ -82,15 +74,11 @@ Make sure you have your National Insurance number ready before you call.
     <div class="govuk-grid-column-two-thirds">
       <p body="govuk-body">Use this service to:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>find out your <a href="https://www.gov.uk/guidance/teacher-reference-number-trn" class="govuk-link">teacher reference number (TRN)</a> if you do not know it or have forgotten it</li>
+        <li>find your <a href="https://www.gov.uk/guidance/teacher-reference-number-trn" class="govuk-link">teacher reference number (TRN)</a> if you do not know it or have forgotten it</li>
         <li>check if you have a TRN</li>
       </ul>
       {{ whoCanUseThisService | govukMarkdown | safe }}
-      {% if data.features.helpdeskOnly.on %}
-        {{ beforeYouStartHelpdeskOnly | govukMarkdown | safe }}
-      {% else %}
-        {{ beforeYouStart | govukMarkdown | safe }}
-      {% endif %}
+      {{ beforeYouStart | govukMarkdown | safe }}
 
       {{ govukButton({
         classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-9",
