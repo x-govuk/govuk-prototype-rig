@@ -13,6 +13,11 @@ export default {
       on: false,
       name: 'Demonstration',
       description: 'Show message about feature flags on the home page.'
+    },
+    helpdeskOnly: {
+      on: false,
+      name: 'Straight to Helpdesk flow',
+      description: 'Disable any functionality that requires a backend data lookup.'
     }
   },
   dqt_record: {

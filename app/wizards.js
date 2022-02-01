@@ -106,7 +106,9 @@ export function trnWizardForks (req) {
     currentPath: '/check-answers',
     excludedValues: [],
     forkPath: (value) => {
-      if (userMatchesDQTRecord(req.session.data)) {
+      if (req.session.data.features.helpdeskOnly.on) {
+        return 'helpdesk-request-submitted'
+      } else if (userMatchesDQTRecord(req.session.data)) {
         return '/trn-sent'
       } else {
         return '/no-match'
