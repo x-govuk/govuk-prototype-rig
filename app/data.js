@@ -13,6 +13,11 @@ export default {
       on: false,
       name: 'Demonstration',
       description: 'Show message about feature flags on the home page.'
+    },
+    helpdeskOnly: {
+      on: false,
+      name: 'Straight to Helpdesk flow',
+      description: 'Disable any functionality that requires a backend data lookup.'
     }
   },
   dqt_record: {
@@ -22,7 +27,7 @@ export default {
     'date-of-birth': { day: 27, month: 3, year: 1987 },
     'national-insurance-number': 'QQ 12 34 56 C',
     'itt-provider': 'Gorse SCITT',
-    'trn': '0000000'
+    trn: '0000000'
   }
   // 'email-address': 'jsmith@example.com',
   // 'email-address': 'jsmith@myschool.gov.uk',
@@ -34,7 +39,7 @@ export default {
   // 'date-of-birth': { day: 27, month: 3, year: 1987 },
   // 'national-insurance-number': 'QQ 12 34 56 C',
   // 'itt-provider': 'Gorse SCITT',
-  // 'trn': '0000000',
+  // trn: '0000000',
   // 'has-national-insurance-number': 'yes',
   // 'wizard': {
   //   'has-done-itt': 'yes'

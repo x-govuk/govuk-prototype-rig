@@ -14,11 +14,13 @@ ask-questions{% extends "layouts/default.html" %}
       <h1 class="govuk-heading-xl">{{ title }}</h1>
 
       <form method="post" novalidate>
-        {% set trnGuidance %}
-We’ll ask for your name, date of birth and National Insurance number. If we do not find your TRN based on these details, we may ask you some follow-up questions.
-        {% endset %}
-
-        {{ trnGuidance | govukMarkdown | safe }}
+        <p>
+          {% if data.features.helpdeskOnly.on %}
+            We’ll ask for your name, date of birth and National Insurance number. If you do not have your National Insurance number available, we may ask you some follow-up questions.
+          {% else %}
+            We’ll ask for your name, date of birth and National Insurance number. If we do not find your TRN based on these details, we may ask you some follow-up questions.
+          {% endif %}
+        </p>
 
 
         {{ govukButton({

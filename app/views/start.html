@@ -33,6 +33,15 @@ We will send you your TRN by email.
 
 {% endset %}
 
+{% set beforeYouStartHelpdeskOnly %}
+## Before you start
+
+We’ll ask for your name, date of birth and National Insurance number. If you do not have your National Insurance number available, we may ask you some follow-up questions.
+
+We will send you your TRN by email.
+
+{% endset %}
+
 {% set whoCanUseThisService %}
 ## Who can use this service
 
@@ -77,7 +86,11 @@ Make sure you have your National Insurance number ready before you call.
         <li>check if you have a TRN</li>
       </ul>
       {{ whoCanUseThisService | govukMarkdown | safe }}
-      {{ beforeYouStart | govukMarkdown | safe }}
+      {% if data.features.helpdeskOnly.on %}
+        {{ beforeYouStartHelpdeskOnly | govukMarkdown | safe }}
+      {% else %}
+        {{ beforeYouStart | govukMarkdown | safe }}
+      {% endif %}
 
       {{ govukButton({
         classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-9",
