@@ -25,8 +25,7 @@ export default () => {
    */
 
   globals.ittProviderOptionNames = function () {
-    providers.map(name => { text: name })
-    return providers.map(name => Object({ text: name }))
+    return providers.map(name => { return { text: name } })
   }
 
   // Keep the following line to return your globals to the app

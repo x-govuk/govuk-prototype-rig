@@ -1,5 +1,5 @@
 import express from 'express'
-import { exampleWizardPaths, exampleWizardForks, trnWizardPaths, trnWizardForks} from './wizards.js'
+import { exampleWizardPaths, exampleWizardForks, trnWizardPaths, trnWizardForks } from './wizards.js'
 
 const router = express.Router()
 
@@ -35,7 +35,6 @@ router.post('/examples/wizard/:view?', (req, res) => {
   const paths = exampleWizardPaths(req)
   fork ? res.redirect(fork) : res.redirect(paths.next)
 })
-
 
 /**
  * TRN wizard routes
