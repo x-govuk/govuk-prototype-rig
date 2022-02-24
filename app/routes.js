@@ -1,39 +1,35 @@
 import express from 'express'
-import { exampleWizardPaths, exampleWizardForks } from './wizards.js'
+import { exampleWizard } from './wizards.js'
 
 const router = express.Router()
 
 /**
  * Example routes to demonstrate using wizard helper.
  */
-router.get('/examples/wizard', (req, res) => {
-  res.render('examples/wizard/index', {
-    paths: exampleWizardPaths(req)
-  })
+router.all('/examples/wizard/:view?', (req, res, next) => {
+  res.locals.paths = exampleWizard(req)
+  next()
 })
 
-router.get('/examples/wizard/:view', (req, res) => {
-  const { view } = req.params
+router.get('/examples/wizard/:view?', (req, res, next) => {
+  const view = req.params.view || 'index'
   const views = [
     'check-answers',
     'confirm',
     'england',
+    'index',
     'name',
     'nationality',
     'where-do-you-live'
   ]
 
   if (views.includes(view)) {
-    res.render(`examples/wizard/${view}`, {
-      paths: exampleWizardPaths(req)
-    })
+    res.render(`examples/wizard/${view}`)
   }
 })
 
 router.post('/examples/wizard/:view?', (req, res) => {
-  const fork = exampleWizardForks(req)
-  const paths = exampleWizardPaths(req)
-  fork ? res.redirect(fork) : res.redirect(paths.next)
+  res.redirect(res.locals.paths.next)
 })
 
 export default router
