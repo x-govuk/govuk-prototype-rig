@@ -1,7 +1,6 @@
 import { wizard } from 'govuk-prototype-rig'
 
 export function exampleWizard (req) {
-  const { data } = req.session
   const journey = {
     '/examples/wizard': {},
     '/examples/wizard/name': {},
@@ -9,7 +8,10 @@ export function exampleWizard (req) {
       // Example fork in the journey
       // Go to nationality page if answer to the question ‘Where do you live?’
       // is not England
-      '/examples/wizard/nationality': () => data.wizard['where-do-you-live'] !== 'England'
+      '/examples/wizard/nationality': {
+        data: 'wizard.where-do-you-live',
+        excludedValue: 'England'
+      }
     },
     '/examples/wizard/england': {},
     '/examples/wizard/nationality': {},
