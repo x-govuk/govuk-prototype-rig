@@ -1,1 +1,3 @@
-export { wizard } from './lib/wizard.js'
+import wizard from 'govuk-prototype-wizard'
+
+export { wizard }
