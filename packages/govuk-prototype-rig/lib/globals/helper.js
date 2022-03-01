@@ -47,9 +47,10 @@ export function checked (keyPath, value) {
  *
  * @param {string} params - Component parameters
  * @param {string} keyPath - Path to key (using dot/bracket notation)
+ * @param {string} [componentName] - Name of component calling decorate
  * @returns {Object} Updated component parameters
  */
-export function decorate (params, keyPath) {
+export function decorate (params, keyPath, componentName) {
   if (typeof keyPath === 'undefined') {
     return params
   }
@@ -75,6 +76,14 @@ export function decorate (params, keyPath) {
   if (params.validate) {
     data.validations = data.validations || {}
     data.validations[params.name] = params.validate
+  }
+
+  if (componentName === 'govukDateInput' && !params.items) {
+    params.items = [
+      { decorate: 'day' },
+      { decorate: 'month' },
+      { decorate: 'year' }
+    ]
   }
 
   if (params.items) {
