@@ -1,0 +1,4 @@
+{% from "govuk/components/file-upload/macro.njk" import govukFileUpload as source %}
+{% macro govukFileUpload(params) %}
+  {{ source(decorate(params, params.decorate)) }}
+{% endmacro %}

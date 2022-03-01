@@ -50,6 +50,10 @@ export function checked (keyPath, value) {
  * @returns {Object} Updated component parameters
  */
 export function decorate (params, keyPath) {
+  if (typeof keyPath === 'undefined') {
+    return params
+  }
+
   keyPath = _.toPath(keyPath)
 
   const { data, errors } = this.ctx
