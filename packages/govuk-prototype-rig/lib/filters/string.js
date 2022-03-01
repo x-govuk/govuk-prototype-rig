@@ -1,6 +1,6 @@
 import _ from 'lodash'
-import { _normalize } from '../lib/utils.js'
-import { markedConfig } from '../lib/marked.js'
+import { _normalize } from '../nunjucks.js'
+import { markedConfig } from '../marked.js'
 
 /**
   * Convert a Markdown formatted string to HTML decorated with typography

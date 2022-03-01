@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import { _normalize } from '../lib/utils.js'
+import { _normalize } from '../nunjucks.js'
 
 /**
  * Check if `value` is classified as a `Number` primitive or object.

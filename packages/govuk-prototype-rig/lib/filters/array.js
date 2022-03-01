@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import { _normalize } from '../lib/utils.js'
+import { _normalize } from '../nunjucks.js'
 
 /**
  * Convert array to a list formatted as a sentence.

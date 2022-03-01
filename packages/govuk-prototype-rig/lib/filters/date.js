@@ -1,5 +1,5 @@
 import { DateTime, Settings } from 'luxon'
-import { _normalize } from '../lib/utils.js'
+import { _normalize } from '../nunjucks.js'
 
 Settings.throwOnInvalid = true
 

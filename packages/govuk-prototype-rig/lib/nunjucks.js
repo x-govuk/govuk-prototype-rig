@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import nunjucks from 'nunjucks'
-import { filters } from 'govuk-prototype-components/filters'
-import { globals } from 'govuk-prototype-components/globals'
+import { filters } from './filters/index.js'
+import { globals } from './globals/index.js'
 
 /**
  * Normalise value provided to a filter. Checks that a given value exists

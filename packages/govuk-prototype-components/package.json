@@ -12,12 +12,6 @@
   "exports": {
     ".": {
       "import": "./x-govuk/all.js"
-    },
-    "./filters": {
-      "import": "./filters/index.js"
-    },
-    "./globals": {
-      "import": "./globals/index.js"
     }
   },
   "repository": {
@@ -39,11 +33,6 @@
   "dependencies": {
     "accessible-autocomplete": "^2.0.4",
     "ftdomdelegate": "^5.0.0",
-    "govuk-frontend": "^4.0.1",
-    "highlight.js": "^11.3.1",
-    "lodash": "^4.17.21",
-    "luxon": "^2.0.2",
-    "marked": "^4.0.12",
-    "nunjucks": "^3.2.1"
+    "govuk-frontend": "^4.0.1"
   }
 }
