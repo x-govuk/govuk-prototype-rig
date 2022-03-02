@@ -12,7 +12,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form method="post" action="{{ paths.current }}" novalidate>
-        {{ govukRadios(decorate({
+        {{ govukRadios({
           fieldset: {
             legend: {
               classes: "govuk-fieldset__legend--l",
@@ -24,8 +24,9 @@
             text: "Yes, I’ve always lived in England"
           }, {
             text: "No, I have lived somewhere else too"
-          }]
-        }, ["wizard", "always-england"])) }}
+          }],
+          decorate: ["wizard", "always-england"]
+        }) }}
 
         {{ govukButton({
           html: "Continue"

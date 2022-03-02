@@ -12,13 +12,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form method="post" action="{{ paths.current }}" novalidate>
-        {{ govukInput(decorate({
+        {{ govukInput({
           label: {
             classes: "govuk-label--l",
             isPageHeading: true,
             text: title
-          }
-        }, ["wizard", "name"])) }}
+          },
+          decorate: ["wizard", "name"]
+        }) }}
 
         {{ govukButton({
           html: "Continue"

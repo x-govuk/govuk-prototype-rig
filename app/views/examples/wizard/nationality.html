@@ -12,7 +12,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form method="post" action="{{ paths.current }}" novalidate>
-        {{ govukCheckboxes(decorate({
+        {{ govukCheckboxes({
           fieldset: {
             legend: {
               classes: "govuk-fieldset__legend--l",
@@ -33,8 +33,9 @@
           }, {
             value: "other",
             text: "Citizen of another country"
-          }]
-        }, ["wizard", "nationality"]) ) }}
+          }],
+          decorate: ["wizard", "nationality"]
+        }) }}
 
         {{ govukButton({
           html: "Continue"

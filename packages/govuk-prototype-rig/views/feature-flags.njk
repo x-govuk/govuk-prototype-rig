@@ -21,7 +21,7 @@
         <h1 class="govuk-heading-l">{{ title }}</h1>
 
         {% for key, flag in data.features %}
-          {{ govukRadios(decorate({
+          {{ govukRadios({
             classes: "govuk-radios--inline",
             fieldset: {
               legend: {
@@ -38,8 +38,9 @@
             }, {
               text: "Off",
               value: false
-            }]
-          }, ["features", key, "on"])) }}
+            }],
+            decorate: ["features", key, "on"]
+          }) }}
         {% else %}
           <p>Create a feature flag by adding an object to the <code>features</code> property in the default session data file:</p>
           <pre class="govuk-!-font-size-19">{{ preCode }}</pre>

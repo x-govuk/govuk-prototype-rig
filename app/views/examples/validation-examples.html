@@ -9,21 +9,22 @@
         <h1 class="govuk-heading-l">{{ title }}</h1>
 
         <h2 class="govuk-heading-m">Text input</h2>
-        {{ govukInput(decorate({
+        {{ govukInput({
           label: {
             text: "Full name"
           },
           autocomplete: "name",
           spellcheck: false,
+          decorate: "full-name",
           validate: {
             presence: {
               message: "Enter your full name"
             }
           }
-        }, ["full-name"])) }}
+        }) }}
 
         <h2 class="govuk-heading-m">Radio buttons</h2>
-        {{ govukRadios(decorate({
+        {{ govukRadios({
           classes: "govuk-radios--inline",
           fieldset: {
             legend: {
@@ -40,15 +41,16 @@
             value: "no",
             text: "No"
           }],
+          decorate: "changed-name",
           validate: {
             presence: {
               message: "Select if you have changed your name"
             }
           }
-        }, ["changed-name"])) }}
+        }) }}
 
         <h2 class="govuk-heading-m">Checkboxes</h2>
-        {{ govukCheckboxes(decorate({
+        {{ govukCheckboxes({
           fieldset: {
             legend: {
               text: "Which types of waste do you transport?"
@@ -67,30 +69,32 @@
             value: "farm",
             text: "Farm or agricultural waste"
           }],
+          decorate: "waste",
           validate: {
             presence: {
               message: "Select a type of waste"
             }
           }
-        }, ["waste"])) }}
+        }) }}
 
         <h2 class="govuk-heading-m">Textarea</h2>
-        {{ govukTextarea(decorate({
+        {{ govukTextarea({
           label: {
             text: "Can you provide more detail?"
           },
           hint: {
             text: "Do not include personal or financial information, like your National Insurance number or credit card details."
           },
+          decorate: "more-detail",
           validate: {
             presence: {
               message: "Enter more details"
             }
           }
-        }, ["more-detail"])) }}
+        }) }}
 
         <h2 class="govuk-heading-m">Date input</h2>
-        {{ govukDateInput(decorate({
+        {{ govukDateInput({
           fieldset: {
             legend: {
               text: "When was your passport issued?"
@@ -99,13 +103,7 @@
           hint: {
             text: "For example, 12 11 2007"
           },
-          items: [{
-            decorate: "day"
-          }, {
-            decorate: "month"
-          }, {
-            decorate: "year"
-          }],
+          decorate: "passport-issued",
           validate: {
             presence: {
               message: "Enter the date your passport was issued"
@@ -114,10 +112,10 @@
               message: "Passport issued should be a valid date"
             }
           }
-        }, ["passport-issued"])) }}
+        }) }}
 
         <h2 class="govuk-heading-m">Select</h2>
-        {{ govukSelect(decorate({
+        {{ govukSelect({
           label: {
             text: "Sort by"
           },
@@ -138,12 +136,13 @@
             value: "comments",
             text: "Most comments"
           }],
+          decorate: "sort",
           validate: {
             presence: {
               message: "Select a sort method"
             }
           }
-        }, ["sort"])) }}
+        }) }}
 
         <h2 class="govuk-heading-m">Fieldset</h2>
         {% call govukFieldset({
@@ -152,56 +151,44 @@
             text: "What is your address?"
           }
         }) %}
-          {{ govukInput(decorate({
+          {{ govukInput({
             label: {
               html: "Building and street <span class=\"govuk-visually-hidden\">line 1 of 2</span>"
-            }
-          }, ["address-line-1"])) }}
+            },
+            decorate: "address-line-1"
+          }) }}
 
-          {{ govukInput(decorate({
+          {{ govukInput({
             label: {
               html: "<span class=\"govuk-visually-hidden\">Building and street line 2 of 2</span>"
-            }
-          }, ["address-line-2"])) }}
+            },
+            decorate: "address-line-2"
+          }) }}
 
-          {{ govukInput(decorate({
+          {{ govukInput({
             classes: "govuk-!-width-two-thirds",
             label: {
               text: "Town or city"
-            }
-          }, ["address-town"])) }}
-
-          {{ govukInput(decorate({
-            classes: "govuk-!-width-two-thirds",
-            label: {
-              text: "County"
             },
-            validate: {
-              presence: {
-                message: "Enter your county"
-              },
-              length: {
-                minimum: 3,
-                tooShort: "Enter a real county name"
-              }
-            }
-          }, ["address-county"])) }}
+            decorate: "address-town"
+          }) }}
 
-          {{ govukInput(decorate({
+          {{ govukInput({
             classes: "govuk-input--width-10",
             label: {
               text: "Postcode"
             },
+            decorate: "address-postcode",
             validate: {
               presence: {
                 message: "Enter your postcode"
               }
             }
-          }, ["address-postcode"])) }}
+          }) }}
         {% endcall %}
 
         <h2 class="govuk-heading-m">Conditional answers</h2>
-        {{ govukRadios(decorate({
+        {{ govukRadios({
           fieldset: {
             legend: {
               classes: "govuk-fieldset__legend--s",
@@ -215,13 +202,14 @@
             value: "email",
             text: "Email",
             conditional: {
-              html: govukInput(decorate({
+              html: govukInput({
                 classes: "govuk-!-width-one-third",
                 label: {
                   text: "Email address"
                 },
                 type: "email",
                 spellcheck: "false",
+                decorate: "contact-by-email",
                 validate: {
                   conditional: {
                     dependentOn: {
@@ -231,18 +219,19 @@
                     message: "Please enter your email address"
                   }
                 }
-              }, ["contact-by-email"]))
+              })
             }
           }, {
             value: "phone",
             text: "Phone",
             conditional: {
-              html: govukInput(decorate({
+              html: govukInput({
                 classes: "govuk-!-width-one-third",
                 label: {
                   text: "Phone number"
                 },
                 type: "tel",
+                decorate: "contact-by-phone",
                 validate: {
                   conditional: {
                     dependentOn: {
@@ -252,18 +241,19 @@
                     message: "Please enter your phone number"
                   }
                 }
-              }, ["contact-by-phone"]))
+              })
             }
           }, {
             value: "sms",
             text: "Text message",
             conditional: {
-              html: govukInput(decorate({
+              html: govukInput({
                 classes: "govuk-!-width-one-third",
                 label: {
                   text: "Mobile phone number"
                 },
                 type: "tel",
+                decorate: "contact-by-sms",
                 validate: {
                   conditional: {
                     dependentOn: {
@@ -273,15 +263,16 @@
                     message: "Please enter your mobile phone number"
                   }
                 }
-              }, ["contact-by-sms"]))
+              })
             }
           }],
+          decorate: "how-contacted",
           validate: {
             presence: {
               message: "Select a contact method"
             }
           }
-        }, ["how-contacted"])) }}
+        }) }}
 
         {{ govukButton({
           text: "Continue"
