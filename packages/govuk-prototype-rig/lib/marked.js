@@ -10,24 +10,14 @@ import {
 
 const { Renderer } = marked
 
-const defaults = {
-  headingsStartWith: 'xl'
-}
-
 /**
  * Creates a new marked Renderer. Adds GOV.UK typography classes to block
  * quotes, headings, paragraphs, links, lists, section breaks and tables and
  * updates references to local files in links and images to friendly URLs.
  *
  * @class
- * @param {Object} options - Rendering options
  */
-class GovukHTMLRenderer extends Renderer {
-  constructor (options = {}) {
-    super()
-    this.options = { ...defaults, ...options }
-  }
-
+export class GovukHTMLRenderer extends Renderer {
   // Block quotes
   blockquote (quote) {
     return `<blockquote class="govuk-inset-text govuk-!-margin-left-0">${quote}</blockquote>`
@@ -132,21 +122,4 @@ class GovukHTMLRenderer extends Renderer {
   codespan (code) {
     return `<code class="x-govuk-code x-govuk-code--inline">${code}</code>`
   }
-}
-
-/**
-  * Convert a Markdown formatted string to HTML decorated with typography
-  * classes from the GOV.UK Design System.
-  *
-  * @param {string} string - Value to convert
-  * @param {Object} options - Markdown options
-  * @return {string} `string` rendered as HTML
-  */
-export function markedConfig (string, options) {
-  marked.setOptions({
-    renderer: new GovukHTMLRenderer(options),
-    smartypants: true
-  })
-
-  return marked(string)
 }
