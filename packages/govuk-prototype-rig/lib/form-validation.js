@@ -165,20 +165,22 @@ function showErrorMessage (form, name, error) {
 
   // Create a new error message
   const template = document.querySelector('#govuk-error-message-template')
+
   const govukErrorMessage = template.content.cloneNode(true)
-  const newErrorMessage = govukErrorMessage.querySelector('span')
-  newErrorMessage.id = `${nameToId(name)}-error`
-  newErrorMessage.innerHTML = newErrorMessage.innerHTML + error
+  govukErrorMessage.firstElementChild.id = `${nameToId(name)}-error`
+
+  const visuallyHiddenPrefix = govukErrorMessage.querySelector('span')
+  visuallyHiddenPrefix.insertAdjacentHTML('afterend', error)
 
   // Insert error message above the field input
   if (element.classList.contains('govuk-radios__input')) {
-    element.closest('.govuk-radios').before(newErrorMessage)
+    element.closest('.govuk-radios').before(govukErrorMessage)
   } else if (element.classList.contains('govuk-date-input__input')) {
-    element.closest('.govuk-date-input').before(newErrorMessage)
+    element.closest('.govuk-date-input').before(govukErrorMessage)
   } else if (element.classList.contains('govuk-checkboxes__input')) {
-    element.closest('.govuk-checkboxes').before(newErrorMessage)
+    element.closest('.govuk-checkboxes').before(govukErrorMessage)
   } else {
-    formGroup.insertBefore(newErrorMessage, form[name])
+    formGroup.insertBefore(govukErrorMessage, form[name])
   }
 }
 
