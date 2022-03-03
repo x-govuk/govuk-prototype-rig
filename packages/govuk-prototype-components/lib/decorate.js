@@ -1,46 +1,6 @@
 import _ from 'lodash'
 
 /**
- * Check if a property value exists.
- *
- * Note: You do not need to use this helper if you are using the
- * `decorate` helper.
- *
- * @param {string} keyPath - Path to key (using dot/bracket notation)
- * @param {string} value - Value to check
- * @returns {boolean} Returns `true` if `value` exists, else `false`
- */
-export function checked (keyPath, value) {
-  keyPath = _.toPath(keyPath)
-
-  const { data } = this.ctx
-  if (!data) {
-    return ''
-  }
-
-  const storedValue = data[keyPath]
-  if (!storedValue) {
-    return ''
-  }
-
-  let checkedValue = ''
-
-  if (Array.isArray(storedValue)) {
-    // Stored value is an array, check it exists in the array
-    if (storedValue.indexOf(value) !== -1) {
-      checkedValue = 'checked'
-    }
-  } else {
-    // Stored value is a simple value, check it matches
-    if (storedValue === value) {
-      checkedValue = 'checked'
-    }
-  }
-
-  return checkedValue
-}
-
-/**
  * Add `name`, `value`, `id`, `idPrefix` and `checked`/`selected` attributes
  * to GOV.UK form inputs. Generates attributes based on where they are stored
  * in the session data object.
@@ -178,9 +138,4 @@ export function decorate (params, keyPath, componentName) {
   }
 
   return params
-}
-
-export const helperGlobals = {
-  checked,
-  decorate
 }
