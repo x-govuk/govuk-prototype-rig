@@ -1,9 +1,9 @@
-import Delegate from 'ftdomdelegate/main.js'
+const events = require('eventslibjs')
 
-export default function () {
+module.exports = function () {
   this.start = (element) => {
-    const delegate = new Delegate(element)
-    delegate.on('click', 'a[href="#"]', alertUser)
+    const nodes = element.querySelectorAll('a[href="#"]')
+    nodes.forEach(node => { events.on('click', node, alertUser) })
 
     function alertUser (event) {
       event.preventDefault()

@@ -1,6 +1,6 @@
-import accessibleAutocomplete from 'accessible-autocomplete'
+const accessibleAutocomplete = require('accessible-autocomplete')
 
-export default function () {
+module.exports = function () {
   this.start = (element) => {
     // Autocomplete options get passed from Nunjucks params to data attributes
     const params = element.dataset

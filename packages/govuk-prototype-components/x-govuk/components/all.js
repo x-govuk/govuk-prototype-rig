@@ -1,5 +1,5 @@
-import Autocomplete from './autocomplete/autocomplete.js'
-import Edge from './edge/edge.js'
+const Autocomplete = require('./autocomplete/autocomplete.js')
+const Edge = require('./edge/edge.js')
 
 /**
  * Get module name.
@@ -27,7 +27,7 @@ const _getModuleName = (string) => {
  * @example
  * [data-module="foo-bar"] initiates GOVUKPrototypeRig.FooBar()
  */
-export const components = (function () {
+module.exports = (function () {
   const GOVUKPrototypeRig = window.GOVUKPrototypeRig || {}
 
   // Initiate all component modules

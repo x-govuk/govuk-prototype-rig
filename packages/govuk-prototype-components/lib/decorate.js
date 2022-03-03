@@ -1,4 +1,4 @@
-import _ from 'lodash'
+const _ = require('lodash')
 
 /**
  * Add `name`, `value`, `id`, `idPrefix` and `checked`/`selected` attributes
@@ -10,7 +10,7 @@ import _ from 'lodash'
  * @param {string} [componentName] - Name of component calling decorate
  * @returns {Object} Updated component parameters
  */
-export function decorate (params, keyPath, componentName) {
+exports.decorate = function (params, keyPath, componentName) {
   if (typeof keyPath === 'undefined') {
     return params
   }

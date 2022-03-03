@@ -3,18 +3,19 @@
   "description": "Commonly used components not currently in the GOV.UK Design System",
   "version": "0.2.0",
   "private": true,
-  "type": "module",
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "main": "x-govuk/all.js",
   "sass": "x-govuk/all.scss",
   "exports": {
     ".": {
-      "import": "./x-govuk/all.js"
+      "import": "./x-govuk/all.js",
+      "require": "./x-govuk/all.js"
     },
     "./decorate": {
-      "import": "./lib/decorate.js"
+      "import": "./lib/decorate.js",
+      "require": "./lib/decorate.js"
     }
   },
   "repository": {
@@ -35,7 +36,7 @@
   "license": "MIT",
   "dependencies": {
     "accessible-autocomplete": "^2.0.4",
-    "ftdomdelegate": "^5.0.0",
+    "eventslibjs": "^1.2.0",
     "govuk-frontend": "^4.0.1",
     "lodash": "^4.17.21"
   }

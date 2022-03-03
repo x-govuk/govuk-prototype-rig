@@ -1,1 +1,1 @@
-export { components as GOVUKPrototypeComponents } from './components/all.js'
+module.exports = require('./components/all.js')
