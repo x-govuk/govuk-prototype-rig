@@ -21,7 +21,7 @@ export default (env) => {
    *
    * {{ "World" | sayHello }} => Hello, World!
    *
-   * @see https://mozilla.github.io/nunjucks/api#custom-filters
+   * @see {@link https://mozilla.github.io/nunjucks/api#custom-filters}
    */
 
   // Keep the following line to return your filters to the app
