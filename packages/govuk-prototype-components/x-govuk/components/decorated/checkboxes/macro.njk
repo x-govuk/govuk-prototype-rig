@@ -1,0 +1,4 @@
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes as source %}
+{% macro govukCheckboxes(params) %}
+  {{ source(decorate(params, params.decorate)) }}
+{% endmacro %}

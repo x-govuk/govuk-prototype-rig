@@ -1,4 +1,5 @@
 {% from "govuk/components/select/macro.njk" import govukSelect %}
+{% set params = decorate(params, params.decorate) %}
 
 {# Only select the first item if a value hasn’t already been given #}
 {% set selectFirstItem = true %}

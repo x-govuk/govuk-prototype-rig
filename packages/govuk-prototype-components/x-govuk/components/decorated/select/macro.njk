@@ -1,0 +1,4 @@
+{% from "govuk/components/select/macro.njk" import govukSelect as source %}
+{% macro govukSelect(params) %}
+  {{ source(decorate(params, params.decorate)) }}
+{% endmacro %}

@@ -1,0 +1,4 @@
+{% from "govuk/components/input/macro.njk" import govukInput as source %}
+{% macro govukInput(params) %}
+  {{ source(decorate(params, params.decorate)) }}
+{% endmacro %}

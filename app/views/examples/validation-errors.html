@@ -8,26 +8,28 @@
       <form method="post" novalidate data-validate>
         <h1 class="govuk-heading-l">Personal details</h1>
 
-        {{ govukInput(decorate({
+        {{ govukInput({
           label: {
             text: "Full name"
           },
           autocomplete: "name",
           spellcheck: false,
+          decorate: ["account", "full-name"],
           validate: {
             presence: {
               message: "Enter your full name"
             }
           }
-        }, ["account", "full-name"])) }}
+        }) }}
 
-        {{ govukInput(decorate({
+        {{ govukInput({
           label: {
             text: "Email address"
           },
           autocomplete: "email",
           spellcheck: false,
           type: "email",
+          decorate: ["account", "email"],
           validate: {
             presence: {
               message: "Enter your email address"
@@ -36,7 +38,7 @@
               message: "Enter an email address in the correct format, like name@example.com"
             }
           }
-        }, ["account", "email"])) }}
+        }) }}
 
         {{ govukButton({
           text: "Continue"

@@ -12,6 +12,9 @@
   "exports": {
     ".": {
       "import": "./x-govuk/all.js"
+    },
+    "./decorate": {
+      "import": "./lib/decorate.js"
     }
   },
   "repository": {

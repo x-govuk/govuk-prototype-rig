@@ -6,7 +6,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form method="post" novalidate>
-        {{ govukDateInput(decorate({
+        {{ govukDateInput({
           fieldset: {
             legend: {
               classes: "govuk-fieldset__legend--l",
@@ -17,14 +17,8 @@
           hint: {
             text: "For example, 27 3 2007"
           },
-          items: [{
-            decorate: "day"
-          }, {
-            decorate: "month"
-          }, {
-            decorate: "year"
-          }]
-        }, "passport-issued")) }}
+          decorate: "passport-issued"
+        }) }}
 
         {{ govukButton({
           text: "Continue"
