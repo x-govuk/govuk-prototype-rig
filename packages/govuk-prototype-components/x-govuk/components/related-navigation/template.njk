@@ -1,6 +1,6 @@
 {% set headingLevel = params.headingLevel or 2 %}
 
-<div class="x-govuk-related-navigation {%- if params.classes %} {{ params.classes }}{% endif -%}"
+<div class="x-govuk-related-navigation{%- if params.classes %} {{ params.classes }}{% endif -%}"
   {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {% for section in params.sections %}
     {% set sectionTitle = section.title or "Related content" %}

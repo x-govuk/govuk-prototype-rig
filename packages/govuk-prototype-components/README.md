@@ -4,12 +4,12 @@ GOV.UK Prototype Components contains the code you need to use common or experime
 
 | Component | Description |
 | - | - |
-| `xGovukAutocomplete` | Implements the [Accessible autocomplete pattern](https://github.com/alphagov/accessible-autocomplete) to enhance a fixed list of options provided by a `<select>` element. |
-| `xGovukMasthead` | Implements the masthead component [used on many GOV.UK product pages](https://github.com/alphagov/product-page-example). |
-| `xGovukRelatedNavigation` | Implements [related navigation component](https://components.publishing.service.gov.uk/component-guide/related_navigation) found in the `govuk_publishing_components`  gem. |
+| [`xGovukAutocomplete`](x-govuk/components/autocomplete/README.md) | Implements the [Accessible autocomplete pattern](https://github.com/alphagov/accessible-autocomplete) to enhance a fixed list of options provided by a `<select>` element. |
+| [`xGovukMasthead`](x-govuk/components/masthead/README.md) | Implements the masthead component [used on many GOV.UK product pages](https://github.com/alphagov/product-page-example). |
+| [`xGovukRelatedNavigation`](x-govuk/components/related-navigation/README.md) | Implements [related navigation component](https://components.publishing.service.gov.uk/component-guide/related_navigation) found in the `govuk_publishing_components`  gem. |
 | `xGovukSideNavigation` | Implements the side navigation component used on the GOV.UK Design System website. |
-| `xGovukSummaryCard` | Implements a component [proposed for inclusion in the GOV.UK Design System](https://github.com/alphagov/govuk-design-system-backlog/issues/210). |
-| `xGovukTaskList` | Implements the [task list page pattern documented on the GOV.UK Design System](https://design-system.service.gov.uk/patterns/task-list-pages/). |
+| [`xGovukSummaryCard`](x-govuk/components/summary-card/README.md) | Implements a component [proposed for inclusion in the GOV.UK Design System](https://github.com/alphagov/govuk-design-system-backlog/issues/210). |
+| [`xGovukTaskList`](x-govuk/components/task-list/README.md) | Implements the [task list page pattern documented on the GOV.UK Design System](https://design-system.service.gov.uk/patterns/task-list-pages/). |
 
 These components are currently experimental and more research is needed to validate them.
 
