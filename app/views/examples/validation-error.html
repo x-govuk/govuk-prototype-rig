@@ -1,0 +1,30 @@
+{% extends "layouts/default.html" %}
+{% set title = "Help users to recover from validation errors" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" novalidate data-validate>
+        {{ govukInput({
+          label: {
+            text: "Full name",
+            isPageHeading: true,
+            classes: "govuk-label--xl"
+          },
+          autocomplete: "name",
+          spellcheck: false,
+          decorate: ["account", "full-name"],
+          validate: {
+            presence: {
+              message: "Enter your full name"
+            }
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
