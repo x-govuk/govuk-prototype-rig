@@ -232,8 +232,8 @@ function showErrorSummary (errors) {
     }
   }
 
-  // Insert error summary above the page title
-  document.querySelector('h1').before(govukErrorSummary)
+  // Insert error summary at the top of the page
+  document.querySelector('main').prepend(govukErrorSummary)
 
   // Place focus on the error summary
   const newErrorSummary = document.querySelector('.govuk-error-summary')

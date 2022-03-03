@@ -90,9 +90,13 @@
 {% block bodyEnd %}
   {%- if data.validations %}
   <template id="govuk-error-summary-template">
-    {{ govukErrorSummary({
-      titleText: "There is a problem"
-    }) | indent(4) }}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        {{ govukErrorSummary({
+          titleText: "There is a problem"
+        }) | indent(4) }}
+      </div>
+    </div>
   </template>
   <template id="govuk-error-message-template">
     {{ govukErrorMessage() | indent(4) }}
