@@ -237,7 +237,7 @@ function showErrorSummary (errors) {
 
   // Place focus on the error summary
   const newErrorSummary = document.querySelector('.govuk-error-summary')
-  newErrorSummary.focus()
+  new window.GOVUKFrontend.ErrorSummary(newErrorSummary).init()
 }
 
 forms.forEach(form => {
