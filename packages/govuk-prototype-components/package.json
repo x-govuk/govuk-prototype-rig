@@ -36,6 +36,7 @@
   "dependencies": {
     "accessible-autocomplete": "^2.0.4",
     "ftdomdelegate": "^5.0.0",
-    "govuk-frontend": "^4.0.1"
+    "govuk-frontend": "^4.0.1",
+    "lodash": "^4.17.21"
   }
 }
