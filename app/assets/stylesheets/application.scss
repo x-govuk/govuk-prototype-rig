@@ -6,6 +6,9 @@ $govuk-assets-path: "/govuk/assets/";
 // Import GOV.UK Frontend
 @import "govuk-frontend/govuk/all";
 
+// Import GOV.UK Markdown styles
+@import "govuk-markdown/x-govuk/all";
+
 // Import GOV.UK Prototype Components
 @import "govuk-prototype-components/x-govuk/all";
 
