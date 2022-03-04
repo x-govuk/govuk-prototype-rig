@@ -6,37 +6,41 @@
  */
 const _storeData = (input, data) => {
   for (const i in input) {
+    // Prevent prototype pollution
+    if (!Object.prototype.hasOwnProperty.call(input, i)) continue
+    if (i === '__proto__' || i === 'constructor') continue
+
     // Any input where the name starts with `_` is ignored
     if (i.indexOf('_') === 0) {
       continue
     }
 
-    const val = input[i]
+    const value = input[i]
 
     // Delete values when users unselect checkboxes
-    if (val === '_unchecked' || val === ['_unchecked']) {
+    if (value === '_unchecked' || value === ['_unchecked']) {
       delete data[i]
       continue
     }
 
     // Remove `_unchecked` from arrays of checkboxes
-    if (Array.isArray(val) && typeof val !== 'string') {
-      const index = val.indexOf('_unchecked')
+    if (Array.isArray(value) && typeof value !== 'string') {
+      const index = value.indexOf('_unchecked')
       if (index !== -1) {
-        val.splice(index, 1)
+        value.splice(index, 1)
       }
-    } else if (typeof val === 'object') {
+    } else if (typeof value === 'object') {
       // Store nested objects that aren’t arrays
       if (typeof data[i] !== 'object') {
         data[i] = {}
       }
 
       // Add nested values
-      _storeData(val, data[i])
+      _storeData(value, data[i])
       continue
     }
 
-    data[i] = val
+    data[i] = value
   }
 }
 
