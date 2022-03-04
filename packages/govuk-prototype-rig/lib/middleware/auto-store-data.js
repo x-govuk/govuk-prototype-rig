@@ -20,13 +20,13 @@ const _storeData = (input, data) => {
     }
 
     // Remove `_unchecked` from arrays of checkboxes
-    if (Array.isArray(val)) {
+    if (Array.isArray(val) && typeof val !== 'string') {
       const index = val.indexOf('_unchecked')
       if (index !== -1) {
         val.splice(index, 1)
       }
     } else if (typeof val === 'object') {
-      // Store nested objects that aren‘t arrays
+      // Store nested objects that aren’t arrays
       if (typeof data[i] !== 'object') {
         data[i] = {}
       }
