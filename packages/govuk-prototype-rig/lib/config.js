@@ -10,7 +10,7 @@ const defaultConfig = {
   useAuth: false,
   useAutoStoreData: true,
   useCookieSessionStore: false,
-  useHttps: false
+  useHttps: true
 }
 
 /**
