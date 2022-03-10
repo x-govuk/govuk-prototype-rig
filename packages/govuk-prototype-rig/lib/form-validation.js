@@ -80,6 +80,7 @@ function getSubmitHandler (form) {
     if (!errors) {
       form.removeEventListener('submit', submitHandler)
       form.submit()
+      return
     }
 
     // Remove previous error messages and summary
