@@ -34,7 +34,7 @@
     "express": "^4.17.3",
     "express-rate-limit": "^6.3.0",
     "express-session": "^1.13.0",
-    "govuk-markdown": "^0.1.0",
+    "govuk-markdown": "^0.2.1",
     "govuk-prototype-components": "^0.1.3",
     "govuk-prototype-wizard": "^0.1.0",
     "inquirer": "^8.2.0",
