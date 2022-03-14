@@ -27,7 +27,7 @@
   "dependencies": {
     "@financial-times/express-markdown-pages": "^1.0.0",
     "basic-auth": "^2.0.0",
-    "browser-sync": "^2.11.1",
+    "browser-sync": "^2.27.8",
     "client-sessions": "^0.8.0",
     "cosmiconfig": "^7.0.1",
     "dotenv": "^16.0.0",
