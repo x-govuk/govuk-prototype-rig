@@ -37,7 +37,7 @@
     "govuk-markdown": "^0.1.0",
     "govuk-prototype-components": "^0.1.3",
     "govuk-prototype-wizard": "^0.1.0",
-    "inquirer": "^8.2.0",
+    "inquirer": "^8.2.1",
     "lodash": "^4.17.21",
     "luxon": "^2.0.2",
     "marked": "^4.0.12",
