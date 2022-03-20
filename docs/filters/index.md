@@ -1,5 +1,10 @@
 ---
+order: 5
 title: Filters
+description: A collection of Nunjucks template filters and helpers to manipulate and transform data.
+action: Browse filters
+tags:
+  - homepage
 eleventyNavigation:
   parent: GOV.UK Prototype Rig
 ---

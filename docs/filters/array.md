@@ -10,9 +10,7 @@ Convert array to a list formatted as a sentence.
 Input
 
 ```njk
-{% raw %}
-{{ ["England", "Scotland", "Wales"] | formatList }}
-{% endraw %}
+{% raw %}{{ ["England", "Scotland", "Wales"] | formatList }}{% endraw %}
 ```
 
 Output
@@ -26,9 +24,7 @@ To format the list using a disjunction:
 Input
 
 ```njk
-{% raw %}
-{{ ["England", "Scotland", "Wales"] | formatList("disjunction") }}
-{% endraw %}
+{% raw %}{{ ["England", "Scotland", "Wales"] | formatList("disjunction") }}{% endraw %}
 ```
 
 Output
@@ -44,10 +40,8 @@ Checks if a value is classified as an [`Array`](https://developer.mozilla.org/en
 Input
 
 ```njk
-{% raw %}
-{{ ["england", "scotland", "wales"] | isArray }}
-{{ "great britain" | isArray }}
-{% endraw %}
+{% raw %}{{ ["england", "scotland", "wales"] | isArray }}
+{{ "great britain" | isArray }}{% endraw %}
 ```
 
 Output
@@ -64,15 +58,13 @@ Reject items in an array that have a key with a given value.
 Input
 
 ```njk
-{% raw %}
-{{ [{
+{% raw %}{{ [{
   name: "Sally Smith"
   role: "admin"
 }, {
   name: "David Jones"
   role: "user"
-}] | rejectFromArray("role", "admin") | dump }}
-{% endraw %}
+}] | rejectFromArray("role", "admin") | dump }}{% endraw %}
 ```
 
 Output
@@ -91,15 +83,13 @@ Select items in an array that have a key with a given value.
 Input
 
 ```njk
-{% raw %}
-{{ [{
+{% raw %}{{ [{
   name: "Sally Smith"
   role: "admin"
 }, {
   name: "David Jones"
   role: "user"
-}] | selectFromArray("role", "admin") | dump }}
-{% endraw %}
+}] | selectFromArray("role", "admin") | dump }}{% endraw %}
 ```
 
 Output
