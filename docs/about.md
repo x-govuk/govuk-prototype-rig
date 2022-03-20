@@ -1,7 +1,13 @@
 ---
-title: About
-description: The GOV.UK Prototype Rig provides all you need to build interactive prototypes that look like pages on GOV.UK. These can be used to show ideas to people you work with, and during user research.
+order: 1
+title: About this project
+description: The rig provides all you need to build interactive prototypes that look like pages on GOV.UK.
+action: Learn more about this project
+tags:
+  - homepage
 ---
+
+Prototypes can be used to show ideas to people you work with, and during user research.
 
 ## Differences from the Prototype Kit
 
@@ -16,14 +22,14 @@ Unbranded templates, jQuery and stylesheets for Internet Explorer 8 are also not
 ## Features
 
 * 404 and 500 error pages
-* [Feature flags](feature-flags.md)
+* [Feature flags](/using-data/feature-flags)
 * Session data output to the JavaScript console
 * Ability to use `async` functions for session daa
 * Support for form validation
-* Form [component helper](using-data/form-components.md)
-* Nunjucks [template filters](filters/index.md)
-* Common [components](components/index.md) not currently in the GOV.UK Design System
-* A [wizard helper](using-data/wizard.md) to help create user journeys with branching logic
+* Form [component helper](/using-data/form-components)
+* Nunjucks [template filters](/filters)
+* Common [components](/components) not currently in the GOV.UK Design System
+* A [wizard helper](/using-data/wizard) to help create user journeys with branching logic
 * Full documentation
 
 The underlying tooling has also been updated:

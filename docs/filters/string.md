@@ -10,9 +10,7 @@ Convert a Markdown formatted string to HTML decorated with [typography classes f
 Input
 
 ```njk
-{% raw %}
-{{ "Visit [GOV.UK](https://gov.uk)." | govukMarkdown | safe }}
-{% endraw %}
+{% raw %}{{ "Visit [GOV.UK](https://gov.uk)." | govukMarkdown | safe }}{% endraw %}
 ```
 
 Output
@@ -28,16 +26,14 @@ By default, headings start using the class `govuk-heading-xl`.
 Input
 
 ```njk
-{% raw %}
-{% set headings %}
+{% raw %}{% set headings %}
 # Heading level 1
 ## Heading level 2
 ### Heading level 3
 #### Heading level 4
 {% endset %}
 
-{{ headings | govukMarkdown | safe }}
-{% endraw %}
+{{ headings | govukMarkdown | safe }}{% endraw %}
 ```
 
 Output
@@ -54,9 +50,7 @@ The [GOV.UK Design System recommends changing this](https://design-system.servic
 Input
 
 ```njk
-{% raw %}
-{{ headings | govukMarkdown({ headingsStartWith: "l" }) | safe }}
-{% endraw %}
+{% raw %}{{ headings | govukMarkdown({ headingsStartWith: "l" }) | safe }}{% endraw %}
 ```
 
 Output
@@ -75,10 +69,8 @@ Checks if a value is classified as a [`String`](https://developer.mozilla.org/en
 Input
 
 ```njk
-{% raw %}
-{{ "Number 10" | isString }}
-{{ 10 | isString }}
-{% endraw %}
+{% raw %}{{ "Number 10" | isString }}
+{{ 10 | isString }}{% endraw %}
 ```
 
 Output
@@ -95,9 +87,7 @@ Add a non-breaking space between the last two words of a string. This prevents a
 Input
 
 ```njk
-{% raw %}
-{{ "Department for Business, Energy & Industrial Strategy" | noOrphans | safe }}
-{% endraw %}
+{% raw %}{{ "Department for Business, Energy & Industrial Strategy" | noOrphans | safe }}{% endraw %}
 ```
 
 Output
@@ -113,9 +103,7 @@ Convert a string to kebab-case. This can be useful to slugify titles for use in 
 Input
 
 ```njk
-{% raw %}
-{{ "Department for Education" | slugify }}
-{% endraw %}
+{% raw %}{{ "Department for Education" | slugify }}{% endraw %}
 ```
 
 Output
@@ -131,9 +119,7 @@ Checks if string starts with a value.
 Input
 
 ```njk
-{% raw %}
-{{ "Department for Transport" | startsWith("Department") }}
-{% endraw %}
+{% raw %}{{ "Department for Transport" | startsWith("Department") }}{% endraw %}
 ```
 
 Output

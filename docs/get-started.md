@@ -1,5 +1,6 @@
 ---
-title: Download and install
+order: 2
+title: Get started
 description: Get up and running in minutes.
 ---
 
@@ -23,7 +24,7 @@ There are few different ways you can get the rig:
 
 * In the terminal, clone the Prototype Rig GitHub repository:
 
-    ```bash
+    ```shell
     git clone git@github.com:paulrobertlloyd/govuk-prototype-rig.git
     ```
 
