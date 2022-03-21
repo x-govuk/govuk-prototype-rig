@@ -46,6 +46,7 @@
   },
   "standard": {
     "ignore": [
+      "packages/govuk-prototype-rig/lib/server.js",
       "!.eleventy.cjs"
     ]
   },
