@@ -22,14 +22,14 @@ Unbranded templates, jQuery and stylesheets for Internet Explorer 8 are also not
 ## Features
 
 * 404 and 500 error pages
-* [Feature flags](/using-data/feature-flags)
+* [Feature flags](../using-data/feature-flags)
 * Session data output to the JavaScript console
 * Ability to use `async` functions for session daa
 * Support for form validation
-* Form [component helper](/using-data/form-components)
-* Nunjucks [template filters](/filters)
-* Common [components](/components) not currently in the GOV.UK Design System
-* A [wizard helper](/using-data/wizard) to help create user journeys with branching logic
+* Form [component helper](../using-data/form-components)
+* Nunjucks [template filters](../filters)
+* Common [components](../components) not currently in the GOV.UK Design System
+* A [wizard helper](../using-data/wizard) to help create user journeys with branching logic
 * Full documentation
 
 The underlying tooling has also been updated:
