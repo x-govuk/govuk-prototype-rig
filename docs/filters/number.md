@@ -10,8 +10,8 @@ Checks if a value is classified as a [`Number`](https://developer.mozilla.org/en
 Input
 
 ```njk
-{% raw %}{{ 1801 | isNumber }}
-{{ "1801" | isNumber }}{% endraw %}
+{{ 1801 | isNumber }}
+{{ "1801" | isNumber }}
 ```
 
 Output
@@ -28,7 +28,7 @@ Convert a number into a string formatted as pound sterling. This can be useful f
 Input
 
 ```njk
-{% raw %}{{ 81932 | sterling }}{% endraw %}
+{{ 81932 | sterling }}
 ```
 
 Output
