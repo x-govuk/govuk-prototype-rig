@@ -11,85 +11,84 @@
     startButton: {
       href: "#",
       text: "View prototype"
-    },
-    image: {
-      src: mastheadImageDataURI
     }
   }) }}
 
   <div class="govuk-width-container">
     {#
-      This notification banner component is used to demostrate feature flags.
+      This notification banner component is used to demonstrate feature flags.
       It can be safely deleted.
     #}
     {{ govukNotificationBanner({
       text: "You have switched on the demonstration feature flag. Return to the <a class=\"govuk-notification-banner__link\" href=\"/feature-flags\">feature flags</a> page to turn it off." | safe
     }) if data.features.demo.on }}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds-from-desktop">
-        <h2 class="govuk-heading-m">About this page</h2>
-        <p>We recommend you add links to your prototype to this page, rather than delete it. You’ll find this page in <code class="proto-code proto-code--inline">/app/views/index.njk</code>.</p>
-        <p>You can change the service name by changing the <code class="proto-code proto-code--inline">prototype.serviceName</code> value in <code class="proto-code proto-code--inline">package.json</code>.</p>
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+          <h2 class="govuk-heading-m">About this page</h2>
+          <p>We recommend you add links to your prototype to this page, rather than delete it. You’ll find this page in <code class="proto-code proto-code--inline">/app/views/index.njk</code>.</p>
+          <p>You can change the service name by changing the <code class="proto-code proto-code--inline">prototype.serviceName</code> value in <code class="proto-code proto-code--inline">package.json</code>.</p>
 
-        <h2 class="govuk-heading-m">Documentation</h2>
-        <p>The rig includes a number of utilities to help build your prototype. To learn how these work, navigate to <a href="/docs"><code class="proto-code proto-code--inline">/docs</code></a>, or visit the <a href="https://govuk-prototype-rig.herokuapp.com">GOV.UK Prototype Rig website</a>.</p>
+          <h2 class="govuk-heading-m">Documentation</h2>
+          <p>The rig includes a number of utilities to help build your prototype. To learn how these work, navigate to <a href="/docs"><code class="proto-code proto-code--inline">/docs</code></a>, or visit the <a href="https://govuk-prototype-rig.herokuapp.com">GOV.UK Prototype Rig website</a>.</p>
 
-        <h2 class="govuk-heading-m">Examples</h2>
-        <p>The rig also includes some example pages. You’ll find them in the <code class="proto-code proto-code--inline">/app/examples</code> folder.
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="/examples/check-answers">Check your answers page</a></li>
-          <li><a href="/examples/confirmation">Confirmation page</a></li>
-          <li><a href="/examples/content">Content page</a></li>
-          <li><a href="/examples/email">Email page</a></li>
+          <h2 class="govuk-heading-m">Examples</h2>
+          <p>The rig also includes some example pages. You’ll find them in the <code class="proto-code proto-code--inline">/app/examples</code> folder.
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/examples/check-answers">Check your answers page</a></li>
+            <li><a href="/examples/confirmation">Confirmation page</a></li>
+            <li><a href="/examples/content">Content page</a></li>
+            <li><a href="/examples/email">Email page</a></li>
 
-          <li><a href="/examples/question">Question page</a></li>
-          <li><a href="/examples/autocomplete">Question page with autocomplete</a></li>
-          <li><a href="/examples/validation-errors">Question page with validation</a></li>
-          <li><a href="/examples/start">Start page on GOV.UK</a></li>
-          <li><a href="/examples/summary-cards">Summary page</a></li>
-          <li><a href="/examples/task-list">Task list page</a></li>
-          <li><a href="/examples/wizard">Wizard journey</a></li>
-        </ul>
-      </div>
+            <li><a href="/examples/question">Question page</a></li>
+            <li><a href="/examples/autocomplete">Question page with autocomplete</a></li>
+            <li><a href="/examples/validation-errors">Question page with validation</a></li>
+            <li><a href="/examples/start">Start page on GOV.UK</a></li>
+            <li><a href="/examples/summary-cards">Summary page</a></li>
+            <li><a href="/examples/task-list">Task list page</a></li>
+            <li><a href="/examples/wizard">Wizard journey</a></li>
+          </ul>
+        </div>
 
-      <div class="govuk-grid-column-one-third-from-desktop">
-        {#
-          The related navigation component can be used to link to other team
-          resources. See /docs/components/related-navigation for the options
-          this component accepts.
-        #}
-        {{ xGovukRelatedNavigation({
-          sections: [{
-            title: "Related links",
-            subsections: [{
-              title: "Team resources",
-              items: [{
-                text: "Design history",
-                href: "#"
+        <div class="govuk-grid-column-one-third-from-desktop">
+          {#
+            The related navigation component can be used to link to other team
+            resources. See /docs/components/related-navigation for the options
+            this component accepts.
+          #}
+          {{ xGovukRelatedNavigation({
+            sections: [{
+              title: "Related links",
+              subsections: [{
+                title: "Team resources",
+                items: [{
+                  text: "Design history",
+                  href: "#"
+                }, {
+                  text: "Google drive",
+                  href: "#"
+                }, {
+                  text: "Trello board",
+                  href: "#"
+                }]
               }, {
-                text: "Google drive",
-                href: "#"
-              }, {
-                text: "Trello board",
-                href: "#"
-              }]
-            }, {
-              title: "GitHub repositories",
-              items: [{
-                text: "Design history",
-                href: "#"
-              }, {
-                text: "Live service",
-                href: "#"
-              }, {
-                text: "Prototype",
-                href: "#"
+                title: "GitHub repositories",
+                items: [{
+                  text: "Design history",
+                  href: "#"
+                }, {
+                  text: "Live service",
+                  href: "#"
+                }, {
+                  text: "Prototype",
+                  href: "#"
+                }]
               }]
             }]
-          }]
-        }) }}
+          }) }}
+        </div>
       </div>
-    </div>
+    </main>
   </div>
 {% endblock %}
