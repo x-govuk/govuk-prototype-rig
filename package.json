@@ -2,9 +2,28 @@
   "name": "govuk-prototype-rig",
   "version": "0.3.0",
   "description": "Rapidly create prototypes of GOV.UK services",
+  "keywords": [
+    "govuk",
+    "design system",
+    "prototyping"
+  ],
+  "homepage": "https://x-govuk.github.io/govuk-prototype-rig/",
+  "bugs": {
+    "url": "https://github.com/x-govuk/govuk-prototype-rig/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "bin": "bin.js",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/x-govuk/govuk-prototype-rig.git"
+  },
   "scripts": {
-    "build-docs": "eleventy --config=.eleventy.cjs",
-    "watch-docs": "eleventy --config=.eleventy.cjs --serve",
+    "build-docs": "eleventy --config .eleventy.cjs",
+    "watch-docs": "eleventy --config .eleventy.cjs --serve",
     "build-assets": "rollup --config --silent",
     "watch-assets": "rollup --config --silent --watch",
     "serve": "govuk-prototype-rig",
@@ -12,26 +31,38 @@
     "dev": "npm-run-all --parallel watch-assets serve",
     "lint": "standard && stylelint 'app/**/*.scss'"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/x-govuk/govuk-prototype-rig.git"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
   "dependencies": {
-    "@11ty/eleventy": "^1.0.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.5",
-    "govuk-eleventy-plugin": "^2.0.0-beta.2",
-    "govuk-prototype-rig": "^0.2.0",
+    "basic-auth": "^2.0.0",
+    "browser-sync": "^2.27.8",
+    "client-sessions": "^0.8.0",
+    "cosmiconfig": "^7.0.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-rate-limit": "^6.3.0",
+    "express-session": "^1.13.0",
+    "govuk-markdown": "^0.2.1",
+    "govuk-prototype-components": "^0.1.3",
+    "govuk-prototype-rig": "file:./",
+    "govuk-prototype-wizard": "^0.1.0",
+    "inquirer": "^8.2.1",
+    "lodash": "^4.17.21",
+    "luxon": "^2.0.2",
+    "marked": "^4.0.12",
+    "nodemon": "^2.0.13",
     "npm-run-all": "^4.1.5",
+    "nunjucks": "^3.2.1",
+    "portscanner": "^2.2.0",
     "rollup": "^2.70.1",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-scss": "^3.0.0",
-    "sass": "^1.49.9"
+    "sass": "^1.49.9",
+    "validate.js": "^0.13.1"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "govuk-eleventy-plugin": "^2.0.0-beta",
     "standard": "^16.0.4",
     "stylelint": "^13.13.1",
     "stylelint-config-gds": "^0.1.0"
@@ -46,7 +77,7 @@
   },
   "standard": {
     "ignore": [
-      "packages/govuk-prototype-rig/lib/server.js",
+      "lib/server.js",
       "!.eleventy.cjs"
     ]
   },
