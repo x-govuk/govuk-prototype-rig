@@ -74,10 +74,10 @@
   <h2 class="govuk-visually-hidden" id="x-govuk-side-navigation-heading">Pages in this section</h2>
     <ul class="x-govuk-side-navigation__section">
         <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/about/">About this project</a>
+          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/404.html">Page not found</a>
         </li>
         <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/404.html">Page not found</a>
+          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/about/">About this project</a>
         </li>
         <li class="x-govuk-side-navigation__section-item">
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/get-started/">Get started</a>
@@ -86,13 +86,13 @@
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/">Creating journeys with data</a>
             <ul class="x-govuk-side-navigation__section x-govuk-side-navigation__section--nested">
                 <li class="x-govuk-side-navigation__section-item">
-                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/feature-flags/">Feature flags</a>
-                </li>
-                <li class="x-govuk-side-navigation__section-item">
                   <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/form-components/">Using form components</a>
                 </li>
                 <li class="x-govuk-side-navigation__section-item">
                   <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/wizard/">Using the wizard helper</a>
+                </li>
+                <li class="x-govuk-side-navigation__section-item">
+                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/feature-flags/">Feature flags</a>
                 </li>
             </ul>
         </li>
@@ -130,6 +130,7 @@
   value: data.account[&#x27;email-address&#x27;]
 }) }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">3 separate parameters are needed to store and display data. Each uses the same value, but formatted in a slightly different way:</p>
 <ul class="govuk-list govuk-list--bullet">
 <li><code class="x-govuk-code x-govuk-code--inline">id</code>, which uses kebab case</li>
@@ -147,12 +148,14 @@
   decorate: <span class="x-govuk-code__string">&quot;account.email-address&quot;</span>
 }) }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">This would generate the following HTML:</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code><span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">div</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">&quot;govuk-form-group&quot;</span>&gt;</span>
   <span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">label</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">&quot;govuk-label&quot;</span> <span class="x-govuk-code__attr">for</span>=<span class="x-govuk-code__string">&quot;account-email-address&quot;</span>&gt;</span>Email address<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">label</span>&gt;</span>
   <span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">input</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">&quot;govuk-input&quot;</span> <span class="x-govuk-code__attr">id</span>=<span class="x-govuk-code__string">&quot;account-email-address&quot;</span> <span class="x-govuk-code__attr">name</span>=<span class="x-govuk-code__string">&quot;[account][email-address]&quot;</span> <span class="x-govuk-code__attr">type</span>=<span class="x-govuk-code__string">&quot;text&quot;</span> <span class="x-govuk-code__attr">value</span>=<span class="x-govuk-code__string">&quot;jane.doe@example.com&quot;</span>&gt;</span>
 <span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">div</span>&gt;</span>
 </code></pre>
+
 <h3 id="date-inputs" tabindex="-1" class="govuk-heading-m"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#date-inputs" class="govuk-link">Date inputs</a></h3>
 <p class="govuk-body"><a href="https://design-system.service.gov.uk/components/date-input/" class="govuk-link">The date input component</a> accepts an optional <code class="x-govuk-code x-govuk-code--inline">items</code> parameter.</p>
 <p class="govuk-body">If no value is given, day, month and year fields are shown by default. This works with the decorate attribute too:</p>
@@ -165,6 +168,7 @@
   decorate: <span class="x-govuk-code__string">&quot;date-of-issue&quot;</span>
 }) }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">If you need custom attributes on the day, month or year inputs you need to use a <code class="x-govuk-code x-govuk-code--inline">decorate</code> param for each field:</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span><span class="x-govuk-code__punctuation">{</span> govukDateInput(<span class="x-govuk-code__punctuation">{</span>
 <span class="x-govuk-code__symbol">  fieldset:</span> <span class="x-govuk-code__punctuation">{</span>
@@ -185,6 +189,7 @@
 <span class="x-govuk-code__symbol">  decorate:</span> <span class="x-govuk-code__string">&quot;date-of-birth&quot;</span>
 <span class="x-govuk-code__punctuation">}</span>) <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">}</span>
 </code></pre>
+
 
 </div>
 </article>

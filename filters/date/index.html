@@ -74,10 +74,10 @@
   <h2 class="govuk-visually-hidden" id="x-govuk-side-navigation-heading">Pages in this section</h2>
     <ul class="x-govuk-side-navigation__section">
         <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/about/">About this project</a>
+          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/404.html">Page not found</a>
         </li>
         <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/404.html">Page not found</a>
+          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/about/">About this project</a>
         </li>
         <li class="x-govuk-side-navigation__section-item">
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/get-started/">Get started</a>
@@ -127,23 +127,29 @@
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">&quot;2021-08-17&quot;</span> | govukDate }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>17 August 2021
 </code></pre>
+
 <p class="govuk-body">You can also output a date with a truncated month:</p>
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">&quot;2021-08-17&quot;</span> | govukDate(<span class="x-govuk-code__name">&quot;truncate&quot;</span>) }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>17 Aug 2021
 </code></pre>
+
 <p class="govuk-body">To get the today’s date, pass the special word <code class="x-govuk-code x-govuk-code--inline">&quot;today&quot;</code> (or <code class="x-govuk-code x-govuk-code--inline">&quot;now&quot;</code>):</p>
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="language-xml">This page was last updated on </span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">&quot;today&quot;</span> | govukDate }}</span><span class="language-xml">.
 </span></code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>This page was last updated on 22 October 2021.
 </code></pre>
+
 <h2 id="govuktime" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#govuktime" class="govuk-link">govukTime</a></h2>
 <p class="govuk-body">Format an ISO 8601 datetime or time to a human readable time that follows <a href="https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#times" class="govuk-link">the GOV.UK style</a>.</p>
 <p class="govuk-body">Input</p>
@@ -151,34 +157,42 @@
 </span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">&quot;2021-08-17T12:00:59&quot;</span> | govukTime }}</span><span class="language-xml">
 </span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">&quot;2021-08-17T18:30:00&quot;</span> | govukTime }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>midnight
 midday
 6:30pm
 </code></pre>
+
 <p class="govuk-body">You can also pass in a time:</p>
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">&quot;08:15&quot;</span> | govukTime }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>8:15am
 </code></pre>
+
 <p class="govuk-body">To get the current time, pass the special word <code class="x-govuk-code x-govuk-code--inline">&quot;now&quot;</code> (or <code class="x-govuk-code x-govuk-code--inline">&quot;today&quot;</code>):</p>
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="language-xml">You submitted your application at </span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">&quot;now&quot;</span> | govukTime }}</span><span class="language-xml">.
 </span></code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>You submitted your application at 4:32pm.
 </code></pre>
+
 <h2 id="isodatefromdateinput" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#isodatefromdateinput" class="govuk-link">isoDateFromDateInput</a></h2>
 <p class="govuk-body">Convert decorated <code class="x-govuk-code x-govuk-code--inline">govukDateInput</code> field values to an ISO 8601 date.</p>
 <p class="govuk-body">The <code class="x-govuk-code x-govuk-code--inline">decorate()</code> method applied to a <code class="x-govuk-code x-govuk-code--inline">govukDateInput</code> creates an object with <code class="x-govuk-code x-govuk-code--inline">day</code>, <code class="x-govuk-code x-govuk-code--inline">month</code> and <code class="x-govuk-code x-govuk-code--inline">year</code> values. This filter will convert this into an ISO 8601 formatted date.</p>
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ { <span class="x-govuk-code__name">day:</span> <span class="x-govuk-code__string">&#x27;17&#x27;</span>, month: <span class="x-govuk-code__string">&#x27;08&#x27;</span>, year: <span class="x-govuk-code__string">&#x27;2021&#x27;</span> } | isoDateFromDateInput }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>2021-08-17
 </code></pre>
+
 
 </div>
 </article>

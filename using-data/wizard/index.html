@@ -74,10 +74,10 @@
   <h2 class="govuk-visually-hidden" id="x-govuk-side-navigation-heading">Pages in this section</h2>
     <ul class="x-govuk-side-navigation__section">
         <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/about/">About this project</a>
+          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/404.html">Page not found</a>
         </li>
         <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/404.html">Page not found</a>
+          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/about/">About this project</a>
         </li>
         <li class="x-govuk-side-navigation__section-item">
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/get-started/">Get started</a>
@@ -86,13 +86,13 @@
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/">Creating journeys with data</a>
             <ul class="x-govuk-side-navigation__section x-govuk-side-navigation__section--nested">
                 <li class="x-govuk-side-navigation__section-item">
-                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/feature-flags/">Feature flags</a>
-                </li>
-                <li class="x-govuk-side-navigation__section-item">
                   <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/form-components/">Using form components</a>
                 </li>
                 <li class="x-govuk-side-navigation__section-item">
                   <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/wizard/">Using the wizard helper</a>
+                </li>
+                <li class="x-govuk-side-navigation__section-item">
+                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/feature-flags/">Feature flags</a>
                 </li>
             </ul>
         </li>
@@ -122,6 +122,7 @@
         <h2 id="importing-the-wizard-helper" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#importing-the-wizard-helper" class="govuk-link">Importing the wizard helper</a></h2>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code><span class="x-govuk-code__keyword">import</span> { wizard } <span class="x-govuk-code__keyword">from</span> <span class="x-govuk-code__string">&#x27;govuk-prototype-rig&#x27;</span>
 </code></pre>
+
 <h2 id="usage" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#usage" class="govuk-link">Usage</a></h2>
 <p class="govuk-body">The <code class="x-govuk-code x-govuk-code--inline">wizard</code> helper takes two parameters:</p>
 <table tabindex="0" class="govuk-table">
@@ -155,8 +156,10 @@
   <span class="x-govuk-code__string">&#x27;/check-answers&#x27;</span>: {},
   <span class="x-govuk-code__string">&#x27;/confirm&#x27;</span>: {}
 }
-<p class="govuk-body"><span class="x-govuk-code__title function_">wizard</span>(journey, req)<br>
-</code></pre></p>
+
+<span class="x-govuk-code__title function_">wizard</span>(journey, req)
+</code></pre>
+
 <p class="govuk-body">If the request was made from <code class="x-govuk-code x-govuk-code--inline">/nationality</code>, the helper returns:</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code>{
   <span class="x-govuk-code__attr">back</span>: <span class="x-govuk-code__string">&#x27;/where-do-you-live&#x27;</span>,
@@ -164,6 +167,7 @@
   <span class="x-govuk-code__attr">next</span>: <span class="x-govuk-code__string">&#x27;/check-answers&#x27;</span>
 }
 </code></pre>
+
 <h3 id="forking-a-journey" tabindex="-1" class="govuk-heading-m"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#forking-a-journey" class="govuk-link">Forking a journey</a></h3>
 <p class="govuk-body">By default a user will progress through the journey in the order set out.</p>
 <p class="govuk-body">You can fork from that journey by giving a list of paths and conditions – if the conditions are met the user will follow the fork.</p>
@@ -171,26 +175,27 @@
   <span class="x-govuk-code__string">&#x27;/path&#x27;</span>: {
     <span class="x-govuk-code__comment">// Redirect if session.data.key equals &#x27;Some value&#x27;</span>
     <span class="x-govuk-code__string">&#x27;/path-to-fork-to&#x27;</span>: { <span class="x-govuk-code__attr">data</span>: <span class="x-govuk-code__string">&#x27;key&#x27;</span>, <span class="x-govuk-code__attr">value</span>: <span class="x-govuk-code__string">&#x27;Some value&#x27;</span> },
-<pre class="govuk-inset-text govuk-!-margin-left-0"><code>&lt;span class=&quot;x-govuk-code__comment&quot;&gt;// Redirect if session.data.key is in the given array&lt;/span&gt;
-&lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;/path-to-fork-to&amp;#x27;&lt;/span&gt;: { &lt;span class=&quot;x-govuk-code__attr&quot;&gt;data&lt;/span&gt;: &lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;key&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;x-govuk-code__attr&quot;&gt;values&lt;/span&gt;: [&lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;A value&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;Another value&amp;#x27;&lt;/span&gt;] },
 
-&lt;span class=&quot;x-govuk-code__comment&quot;&gt;// Redirect if session.data.key does not equal &amp;#x27;Some value&amp;#x27;&lt;/span&gt;
-&lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;/path-to-fork-to&amp;#x27;&lt;/span&gt;: { &lt;span class=&quot;x-govuk-code__attr&quot;&gt;data&lt;/span&gt;: &lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;key&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;x-govuk-code__attr&quot;&gt;excludedValue&lt;/span&gt;: &lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;Some value&amp;#x27;&lt;/span&gt; },
+    <span class="x-govuk-code__comment">// Redirect if session.data.key is in the given array</span>
+    <span class="x-govuk-code__string">&#x27;/path-to-fork-to&#x27;</span>: { <span class="x-govuk-code__attr">data</span>: <span class="x-govuk-code__string">&#x27;key&#x27;</span>, <span class="x-govuk-code__attr">values</span>: [<span class="x-govuk-code__string">&#x27;A value&#x27;</span>, <span class="x-govuk-code__string">&#x27;Another value&#x27;</span>] },
 
-&lt;span class=&quot;x-govuk-code__comment&quot;&gt;// Redirect if session.data.key is not in the given array&lt;/span&gt;
-&lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;/path-to-fork-to&amp;#x27;&lt;/span&gt;: { &lt;span class=&quot;x-govuk-code__attr&quot;&gt;data&lt;/span&gt;: &lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;key&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;x-govuk-code__attr&quot;&gt;excludedValues&lt;/span&gt;: [&lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;A value&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;Another value&amp;#x27;&lt;/span&gt;] },
+    <span class="x-govuk-code__comment">// Redirect if session.data.key does not equal &#x27;Some value&#x27;</span>
+    <span class="x-govuk-code__string">&#x27;/path-to-fork-to&#x27;</span>: { <span class="x-govuk-code__attr">data</span>: <span class="x-govuk-code__string">&#x27;key&#x27;</span>, <span class="x-govuk-code__attr">excludedValue</span>: <span class="x-govuk-code__string">&#x27;Some value&#x27;</span> },
 
-&lt;span class=&quot;x-govuk-code__comment&quot;&gt;// Redirect if the given function evaluates to true&lt;/span&gt;
-&lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;/path-to-fork-to&amp;#x27;&lt;/span&gt;: &lt;span class=&quot;x-govuk-code__function&quot;&gt;() =&amp;gt;&lt;/span&gt; {
-  &lt;span class=&quot;x-govuk-code__keyword&quot;&gt;return&lt;/span&gt; req.&lt;span class=&quot;x-govuk-code__property&quot;&gt;session&lt;/span&gt;.&lt;span class=&quot;x-govuk-code__property&quot;&gt;data&lt;/span&gt;.&lt;span class=&quot;x-govuk-code__property&quot;&gt;key&lt;/span&gt; == &lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;Something else&amp;#x27;&lt;/span&gt;
-},
+    <span class="x-govuk-code__comment">// Redirect if session.data.key is not in the given array</span>
+    <span class="x-govuk-code__string">&#x27;/path-to-fork-to&#x27;</span>: { <span class="x-govuk-code__attr">data</span>: <span class="x-govuk-code__string">&#x27;key&#x27;</span>, <span class="x-govuk-code__attr">excludedValues</span>: [<span class="x-govuk-code__string">&#x27;A value&#x27;</span>, <span class="x-govuk-code__string">&#x27;Another value&#x27;</span>] },
 
-&lt;span class=&quot;x-govuk-code__comment&quot;&gt;// Shorthand&lt;/span&gt;
-&lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;/path-to-fork-to&amp;#x27;&lt;/span&gt;: &lt;span class=&quot;x-govuk-code__function&quot;&gt;() =&amp;gt;&lt;/span&gt; req.&lt;span class=&quot;x-govuk-code__property&quot;&gt;session&lt;/span&gt;.&lt;span class=&quot;x-govuk-code__property&quot;&gt;data&lt;/span&gt;.&lt;span class=&quot;x-govuk-code__property&quot;&gt;key&lt;/span&gt; == &lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;Something else&amp;#x27;&lt;/span&gt;
+    <span class="x-govuk-code__comment">// Redirect if the given function evaluates to true</span>
+    <span class="x-govuk-code__string">&#x27;/path-to-fork-to&#x27;</span>: <span class="x-govuk-code__function">() =&gt;</span> {
+      <span class="x-govuk-code__keyword">return</span> req.<span class="x-govuk-code__property">session</span>.<span class="x-govuk-code__property">data</span>.<span class="x-govuk-code__property">key</span> == <span class="x-govuk-code__string">&#x27;Something else&#x27;</span>
+    },
+
+    <span class="x-govuk-code__comment">// Shorthand</span>
+    <span class="x-govuk-code__string">&#x27;/path-to-fork-to&#x27;</span>: <span class="x-govuk-code__function">() =&gt;</span> req.<span class="x-govuk-code__property">session</span>.<span class="x-govuk-code__property">data</span>.<span class="x-govuk-code__property">key</span> == <span class="x-govuk-code__string">&#x27;Something else&#x27;</span>
+  }
+}
 </code></pre>
-<p class="govuk-body">}<br>
-}<br>
-</code></pre></p>
+
 <p class="govuk-body">Each path can have multiple forks, they are evaluated in order – the user will be redirected to the first page that meets the conditions.</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code>{
   <span class="x-govuk-code__comment">// Go to different pages based on the country chosen</span>
@@ -202,6 +207,7 @@
   }
 }
 </code></pre>
+
 <h2 id="an-example" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#an-example" class="govuk-link">An example</a></h2>
 <p class="govuk-body">In this example we:</p>
 <ul class="govuk-list govuk-list--bullet">
@@ -223,30 +229,34 @@
   <span class="x-govuk-code__string">&#x27;/email&#x27;</span>: {}
 }
 </code></pre>
+
 <h2 id="how-to-get-a-wizard-working" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#how-to-get-a-wizard-working" class="govuk-link">How to get a wizard working</a></h2>
 <h3 id="create-a-user-journey" tabindex="-1" class="govuk-heading-m"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#create-a-user-journey" class="govuk-link">Create a user journey</a></h3>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code><span class="x-govuk-code__keyword">import</span> { wizard } <span class="x-govuk-code__keyword">from</span> <span class="x-govuk-code__string">&#x27;govuk-prototype-rig&#x27;</span>
-<p class="govuk-body"><span class="x-govuk-code__keyword">export</span> <span class="x-govuk-code__keyword">function</span> <span class="x-govuk-code__title function_">exampleWizard</span> (req) {<br>
-<span class="x-govuk-code__keyword">const</span> journey = {<br>
-<span class="x-govuk-code__string">‘/examples/wizard’</span>: {},<br>
-<span class="x-govuk-code__string">‘/examples/wizard/name’</span>: {},<br>
-<span class="x-govuk-code__string">‘/examples/wizard/where-do-you-live’</span>: {<br>
-<span class="x-govuk-code__comment">// Example fork in the journey:</span><br>
-<span class="x-govuk-code__comment">// Go to nationality page if answer to the question ‘Where do you live?’ is not England</span><br>
-<span class="x-govuk-code__string">‘/examples/wizard/nationality’</span>: {<br>
-<span class="x-govuk-code__attr">data</span>: <span class="x-govuk-code__string">‘wizard.where-do-you-live’</span>,<br>
-<span class="x-govuk-code__attr">excludedValue</span>: <span class="x-govuk-code__string">‘England’</span><br>
-}<br>
-},<br>
-<span class="x-govuk-code__string">‘/examples/wizard/england’</span>: {},<br>
-<span class="x-govuk-code__string">‘/examples/wizard/nationality’</span>: {},<br>
-<span class="x-govuk-code__string">‘/examples/wizard/check-answers’</span>: {},<br>
-<span class="x-govuk-code__string">‘/examples/wizard/confirm’</span>: {},<br>
-<span class="x-govuk-code__string">‘/’</span>: {}<br>
-}</p>
-<p class="govuk-body"><span class="x-govuk-code__keyword">return</span> <span class="x-govuk-code__title function_">wizard</span>(journey, req)<br>
-}<br>
-</code></pre></p>
+
+<span class="x-govuk-code__keyword">export</span> <span class="x-govuk-code__keyword">function</span> <span class="x-govuk-code__title function_">exampleWizard</span> (req) {
+  <span class="x-govuk-code__keyword">const</span> journey = {
+    <span class="x-govuk-code__string">&#x27;/examples/wizard&#x27;</span>: {},
+    <span class="x-govuk-code__string">&#x27;/examples/wizard/name&#x27;</span>: {},
+    <span class="x-govuk-code__string">&#x27;/examples/wizard/where-do-you-live&#x27;</span>: {
+      <span class="x-govuk-code__comment">// Example fork in the journey:</span>
+      <span class="x-govuk-code__comment">// Go to nationality page if answer to the question ‘Where do you live?’ is not England</span>
+      <span class="x-govuk-code__string">&#x27;/examples/wizard/nationality&#x27;</span>: {
+        <span class="x-govuk-code__attr">data</span>: <span class="x-govuk-code__string">&#x27;wizard.where-do-you-live&#x27;</span>,
+        <span class="x-govuk-code__attr">excludedValue</span>: <span class="x-govuk-code__string">&#x27;England&#x27;</span>
+      }
+    },
+    <span class="x-govuk-code__string">&#x27;/examples/wizard/england&#x27;</span>: {},
+    <span class="x-govuk-code__string">&#x27;/examples/wizard/nationality&#x27;</span>: {},
+    <span class="x-govuk-code__string">&#x27;/examples/wizard/check-answers&#x27;</span>: {},
+    <span class="x-govuk-code__string">&#x27;/examples/wizard/confirm&#x27;</span>: {},
+    <span class="x-govuk-code__string">&#x27;/&#x27;</span>: {}
+  }
+
+  <span class="x-govuk-code__keyword">return</span> <span class="x-govuk-code__title function_">wizard</span>(journey, req)
+}
+</code></pre>
+
 <h3 id="set-up-the-routes" tabindex="-1" class="govuk-heading-m"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#set-up-the-routes" class="govuk-link">Set up the routes</a></h3>
 <ol class="govuk-list govuk-list--number">
 <li>Make the paths available in the view using routes</li>
@@ -254,14 +264,17 @@
 </ol>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code><span class="x-govuk-code__keyword">import</span> { exampleWizard } <span class="x-govuk-code__keyword">from</span> <span class="x-govuk-code__string">&#x27;./wizards.js&#x27;</span>
 <span class="x-govuk-code__keyword">const</span> router = express.<span class="x-govuk-code__title class_">Router</span>()
-<p class="govuk-body">router.<span class="x-govuk-code__title function_">all</span>(<span class="x-govuk-code__string">‘/examples/wizard/:view?’</span>, <span class="x-govuk-code__function">(<span class="x-govuk-code__params">req, res, next</span>) =&gt;</span> {<br>
-res.<span class="x-govuk-code__property">locals</span>.<span class="x-govuk-code__property">paths</span> = <span class="x-govuk-code__title function_">exampleWizard</span>(req)<br>
-<span class="x-govuk-code__title function_">next</span>()<br>
-})</p>
-<p class="govuk-body">router.<span class="x-govuk-code__title function_">post</span>(<span class="x-govuk-code__string">‘/examples/wizard/:view?’</span>, <span class="x-govuk-code__function">(<span class="x-govuk-code__params">req, res</span>) =&gt;</span> {<br>
-res.<span class="x-govuk-code__title function_">redirect</span>(res.<span class="x-govuk-code__property">locals</span>.<span class="x-govuk-code__property">paths</span>.<span class="x-govuk-code__property">next</span>)<br>
-})<br>
-</code></pre></p>
+
+router.<span class="x-govuk-code__title function_">all</span>(<span class="x-govuk-code__string">&#x27;/examples/wizard/:view?&#x27;</span>, <span class="x-govuk-code__function">(<span class="x-govuk-code__params">req, res, next</span>) =&gt;</span> {
+  res.<span class="x-govuk-code__property">locals</span>.<span class="x-govuk-code__property">paths</span> = <span class="x-govuk-code__title function_">exampleWizard</span>(req)
+  <span class="x-govuk-code__title function_">next</span>()
+})
+
+router.<span class="x-govuk-code__title function_">post</span>(<span class="x-govuk-code__string">&#x27;/examples/wizard/:view?&#x27;</span>, <span class="x-govuk-code__function">(<span class="x-govuk-code__params">req, res</span>) =&gt;</span> {
+  res.<span class="x-govuk-code__title function_">redirect</span>(res.<span class="x-govuk-code__property">locals</span>.<span class="x-govuk-code__property">paths</span>.<span class="x-govuk-code__property">next</span>)
+})
+</code></pre>
+
 <h3 id="use-a-layout-which-uses-the-paths-object" tabindex="-1" class="govuk-heading-m"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#use-a-layout-which-uses-the-paths-object" class="govuk-link">Use a layout which uses the paths object</a></h3>
 <p class="govuk-body">An example Nunjucks layout extending the default rig layout:</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">extends</span></span> &quot;layouts/default.html&quot; %}</span><span class="language-xml">
@@ -270,20 +283,22 @@ res.<span class="x-govuk-code__title function_">redirect</span>(res.<span class=
     href: paths.back
   }) }}</span><span class="language-xml">
 </span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">endblock</span></span> %}</span><span class="language-xml">
-<p class="govuk-body"></span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">block</span></span> content %}</span><span class="language-xml"><br>
-<span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">div</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">“govuk-grid-row”</span>&gt;</span><br>
-<span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">div</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">“govuk-grid-column-two-thirds”</span>&gt;</span><br>
-</span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">block</span></span> beforeForm %}</span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">endblock</span></span> %}</span><span class="language-xml"><br>
-<span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">form</span> <span class="x-govuk-code__attr">method</span>=<span class="x-govuk-code__string">“post”</span> <span class="x-govuk-code__attr">novalidate</span>&gt;</span><br>
-</span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">block</span></span> form %}</span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">endblock</span></span> %}</span><span class="language-xml"><br>
-</span><span class="x-govuk-code__template-variable">{{ govukButton({<br>
-html: buttonText if buttonText else ‘Continue’<br>
-}) }}</span><span class="language-xml"><br>
-<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">form</span>&gt;</span><br>
-<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">div</span>&gt;</span><br>
-<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">div</span>&gt;</span><br>
-</span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">endblock</span></span> %}</span><span class="language-xml"><br>
-</span></code></pre></p>
+
+</span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">block</span></span> content %}</span><span class="language-xml">
+  <span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">div</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">&quot;govuk-grid-row&quot;</span>&gt;</span>
+    <span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">div</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">&quot;govuk-grid-column-two-thirds&quot;</span>&gt;</span>
+      </span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">block</span></span> beforeForm %}</span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">endblock</span></span> %}</span><span class="language-xml">
+      <span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">form</span> <span class="x-govuk-code__attr">method</span>=<span class="x-govuk-code__string">&quot;post&quot;</span> <span class="x-govuk-code__attr">novalidate</span>&gt;</span>
+        </span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">block</span></span> form %}</span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">endblock</span></span> %}</span><span class="language-xml">
+        </span><span class="x-govuk-code__template-variable">{{ govukButton({
+          html: buttonText if buttonText else &#x27;Continue&#x27;
+        }) }}</span><span class="language-xml">
+      <span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">form</span>&gt;</span>
+    <span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">div</span>&gt;</span>
+  <span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">div</span>&gt;</span>
+</span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">endblock</span></span> %}</span><span class="language-xml">
+</span></code></pre>
+
 <h3 id="build-your-question-pages" tabindex="-1" class="govuk-heading-m"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#build-your-question-pages" class="govuk-link">Build your question pages</a></h3>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="language-xml">{% extends &quot;layouts/wizard.html&quot; %}
 {% set title = &quot;What is your name?&quot; %}
@@ -292,17 +307,19 @@ html: buttonText if buttonText else ‘Continue’<br>
     <span class="x-govuk-code__name">href:</span> paths.back
   }) }}</span><span class="language-xml">
 {% endblock %}
-<p class="govuk-body">{% block form %}<br>
-</span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">govukInput</span>({<br>
-<span class="x-govuk-code__name">label:</span> {<br>
-classes: <span class="x-govuk-code__string">“govuk-label–l”</span>,<br>
-isPageHeading: <span class="x-govuk-code__literal">true</span>,<br>
-text: title<br>
-},<br>
-decorate: [“wizard”, “name”]<br>
-}) }}</span><span class="language-xml"><br>
-{% endblock %}<br>
-</span></code></pre></p>
+
+{% block form %}
+  </span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">govukInput</span>({
+    <span class="x-govuk-code__name">label:</span> {
+      classes: <span class="x-govuk-code__string">&quot;govuk-label--l&quot;</span>,
+      isPageHeading: <span class="x-govuk-code__literal">true</span>,
+      text: title
+    },
+    decorate: [&quot;wizard&quot;, &quot;name&quot;]
+  }) }}</span><span class="language-xml">
+{% endblock %}
+</span></code></pre>
+
 
 </div>
 </article>

@@ -74,10 +74,10 @@
   <h2 class="govuk-visually-hidden" id="x-govuk-side-navigation-heading">Pages in this section</h2>
     <ul class="x-govuk-side-navigation__section">
         <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/about/">About this project</a>
+          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/404.html">Page not found</a>
         </li>
         <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/404.html">Page not found</a>
+          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/about/">About this project</a>
         </li>
         <li class="x-govuk-side-navigation__section-item">
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/get-started/">Get started</a>
@@ -129,11 +129,13 @@
 </span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">[&quot;england&quot;, &quot;scotland&quot;, &quot;wales&quot;]</span> | isObject }}</span><span class="language-xml">
 </span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">&quot;great britain&quot;</span> | isObject }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>true
 true
 false
 </code></pre>
+
 <h2 id="objecttoarray" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#objecttoarray" class="govuk-link">objectToArray</a></h2>
 <p class="govuk-body">Transforms an object to an array, using each object’s key as the value for <code class="x-govuk-code x-govuk-code--inline">id</code>.</p>
 <p class="govuk-body">Input</p>
@@ -143,6 +145,7 @@ false
   <span class="x-govuk-code__string">&quot;c&quot;</span>: { name: <span class="x-govuk-code__string">&quot;Henry Pelham&quot;</span> },
 } | objectToArray | dump }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>[
   { id: &quot;a&quot;, name: &quot;Sir Robert Walpole&quot; },
@@ -150,6 +153,7 @@ false
   { id: &quot;c&quot;, name: &quot;Henry Pelham&quot; },
 ]
 </code></pre>
+
 
 </div>
 </article>

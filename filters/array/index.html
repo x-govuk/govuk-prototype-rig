@@ -74,10 +74,10 @@
   <h2 class="govuk-visually-hidden" id="x-govuk-side-navigation-heading">Pages in this section</h2>
     <ul class="x-govuk-side-navigation__section">
         <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/about/">About this project</a>
+          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/404.html">Page not found</a>
         </li>
         <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/404.html">Page not found</a>
+          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/about/">About this project</a>
         </li>
         <li class="x-govuk-side-navigation__section-item">
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/get-started/">Get started</a>
@@ -127,26 +127,32 @@
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code>{{ [<span class="x-govuk-code__string">&quot;England&quot;</span>, <span class="x-govuk-code__string">&quot;Scotland&quot;</span>, <span class="x-govuk-code__string">&quot;Wales&quot;</span>] <span class="x-govuk-code__string">| formatList }}</span>
 </code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>England, Scotland and Wales
 </code></pre>
+
 <p class="govuk-body">To format the list using a disjunction:</p>
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">[&quot;England&quot;, &quot;Scotland&quot;, &quot;Wales&quot;]</span> | formatList(<span class="x-govuk-code__name">&quot;disjunction&quot;</span>) }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>England, Scotland or Wales
 </code></pre>
+
 <h2 id="isarray" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#isarray" class="govuk-link">isArray</a></h2>
 <p class="govuk-body">Checks if a value is classified as an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="govuk-link"><code class="x-govuk-code x-govuk-code--inline">Array</code></a> object.</p>
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">[&quot;england&quot;, &quot;scotland&quot;, &quot;wales&quot;]</span> | isArray }}</span><span class="language-xml">
 </span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">&quot;great britain&quot;</span> | isArray }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>true
 false
 </code></pre>
+
 <h2 id="rejectfromarray" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#rejectfromarray" class="govuk-link">rejectFromArray</a></h2>
 <p class="govuk-body">Reject items in an array that have a key with a given value.</p>
 <p class="govuk-body">Input</p>
@@ -158,12 +164,14 @@ false
 <span class="x-govuk-code__symbol">  role:</span> <span class="x-govuk-code__string">&quot;user&quot;</span>
 <span class="x-govuk-code__punctuation">}</span>] | rejectFromArray(<span class="x-govuk-code__string">&quot;role&quot;</span>, <span class="x-govuk-code__string">&quot;admin&quot;</span>) | dump <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">}</span>
 </code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>[{
   name: &quot;David Jones&quot;
   role: &quot;user&quot;
 }]
 </code></pre>
+
 <h2 id="selectfromarray" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#selectfromarray" class="govuk-link">selectFromArray</a></h2>
 <p class="govuk-body">Select items in an array that have a key with a given value.</p>
 <p class="govuk-body">Input</p>
@@ -175,12 +183,14 @@ false
 <span class="x-govuk-code__symbol">  role:</span> <span class="x-govuk-code__string">&quot;user&quot;</span>
 <span class="x-govuk-code__punctuation">}</span>] | selectFromArray(<span class="x-govuk-code__string">&quot;role&quot;</span>, <span class="x-govuk-code__string">&quot;admin&quot;</span>) | dump <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">}</span>
 </code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>[{
   name: &quot;Sally Smith&quot;
   role: &quot;admin&quot;
 }]
 </code></pre>
+
 
 </div>
 </article>

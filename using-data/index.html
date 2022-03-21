@@ -71,10 +71,10 @@
   <h2 class="govuk-visually-hidden" id="x-govuk-side-navigation-heading">Pages in this section</h2>
     <ul class="x-govuk-side-navigation__section">
         <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/about/">About this project</a>
+          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/404.html">Page not found</a>
         </li>
         <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/404.html">Page not found</a>
+          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/about/">About this project</a>
         </li>
         <li class="x-govuk-side-navigation__section-item">
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/get-started/">Get started</a>
@@ -83,13 +83,13 @@
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/" aria-current="true">Creating journeys with data</a>
             <ul class="x-govuk-side-navigation__section x-govuk-side-navigation__section--nested">
                 <li class="x-govuk-side-navigation__section-item">
-                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/feature-flags/">Feature flags</a>
-                </li>
-                <li class="x-govuk-side-navigation__section-item">
                   <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/form-components/">Using form components</a>
                 </li>
                 <li class="x-govuk-side-navigation__section-item">
                   <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/wizard/">Using the wizard helper</a>
+                </li>
+                <li class="x-govuk-side-navigation__section-item">
+                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/feature-flags/">Feature flags</a>
                 </li>
             </ul>
         </li>
@@ -122,22 +122,27 @@
 <p class="govuk-body">For example, if you have this input:</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code><span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">input</span> <span class="x-govuk-code__attr">name</span>=<span class="x-govuk-code__string">&quot;first-name&quot;</span>&gt;</span>
 </code></pre>
+
 <p class="govuk-body">You can show what the user entered later on like this:</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code><span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">p</span>&gt;</span>{{ data[&#x27;first-name&#x27;] }}<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">p</span>&gt;</span>
 </code></pre>
+
 <h3 id="showing-answers-in-inputs" tabindex="-1" class="govuk-heading-m"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#showing-answers-in-inputs" class="govuk-link">Showing answers in inputs</a></h3>
 <p class="govuk-body">If a user goes back to a page where they entered data, they would expect to see the answer they gave.</p>
 <p class="govuk-body">For a text input:</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code><span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">input</span> <span class="x-govuk-code__attr">name</span>=<span class="x-govuk-code__string">&quot;first-name&quot;</span> <span class="x-govuk-code__attr">value</span>=<span class="x-govuk-code__string">&quot;{{ data[&#x27;first-name&#x27;] }}&quot;</span>&gt;</span>
 </code></pre>
+
 <p class="govuk-body">For a radio or checkbox input you need to use the <code class="x-govuk-code x-govuk-code--inline">checked</code> function:</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code><span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">input</span> <span class="x-govuk-code__attr">type</span>=<span class="x-govuk-code__string">&quot;radio&quot;</span> <span class="x-govuk-code__attr">name</span>=<span class="x-govuk-code__string">&quot;over-18&quot;</span> <span class="x-govuk-code__attr">value</span>=<span class="x-govuk-code__string">&quot;yes&quot;</span> {{ <span class="x-govuk-code__attr">checked</span>(&quot;<span class="x-govuk-code__attr">over-18</span>&quot;, &quot;<span class="x-govuk-code__attr">yes</span>&quot;) }}&gt;</span>
 </code></pre>
+
 <p class="govuk-body">If <code class="x-govuk-code x-govuk-code--inline">data['over-18']</code> has the value <code class="x-govuk-code x-govuk-code--inline">yes</code>, the function will return <code class="x-govuk-code x-govuk-code--inline">checked</code>.</p>
 <h3 id="ignoring-inputs" tabindex="-1" class="govuk-heading-m"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#ignoring-inputs" class="govuk-link">Ignoring inputs</a></h3>
 <p class="govuk-body">To prevent an input being stored, use an underscore at the start of the name.</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code><span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">input</span> <span class="x-govuk-code__attr">name</span>=<span class="x-govuk-code__string">&quot;_secret&quot;</span>&gt;</span>
 </code></pre>
+
 <h3 id="using-data-in-nunjucks-components" tabindex="-1" class="govuk-heading-m"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#using-data-in-nunjucks-components" class="govuk-link">Using data in Nunjucks components</a></h3>
 <p class="govuk-body">Example using the <code class="x-govuk-code x-govuk-code--inline">checked</code> function in a checkbox component:</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span><span class="x-govuk-code__punctuation">{</span> govukCheckboxes(<span class="x-govuk-code__punctuation">{</span>
@@ -168,11 +173,13 @@
   <span class="x-govuk-code__punctuation">}</span>]
 <span class="x-govuk-code__punctuation">}</span>) <span class="x-govuk-code__punctuation">}</span><span class="x-govuk-code__punctuation">}</span>
 </code></pre>
+
 <h3 id="using-data-in-routes" tabindex="-1" class="govuk-heading-m"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#using-data-in-routes" class="govuk-link">Using data in routes</a></h3>
 <p class="govuk-body">You can access the data on the server in a route function.</p>
 <p class="govuk-body">For example for an input with <code class="x-govuk-code x-govuk-code--inline">name=&quot;first-name&quot;</code>:</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code><span class="x-govuk-code__keyword">var</span> firstName = req.<span class="x-govuk-code__property">session</span>.<span class="x-govuk-code__property">data</span>[<span class="x-govuk-code__string">&#x27;first-name&#x27;</span>]
 </code></pre>
+
 <h2 id="inspecting-data" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#inspecting-data" class="govuk-link">Inspecting data</a></h2>
 <p class="govuk-body">To see what data has been stored in the session, check the JavaScript console in your web browser.</p>
 <h2 id="clearing-data" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#clearing-data" class="govuk-link">Clearing data</a></h2>

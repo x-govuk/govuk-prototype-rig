@@ -74,10 +74,10 @@
   <h2 class="govuk-visually-hidden" id="x-govuk-side-navigation-heading">Pages in this section</h2>
     <ul class="x-govuk-side-navigation__section">
         <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/about/">About this project</a>
+          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/404.html">Page not found</a>
         </li>
         <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/404.html">Page not found</a>
+          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/about/">About this project</a>
         </li>
         <li class="x-govuk-side-navigation__section-item">
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/get-started/">Get started</a>
@@ -127,9 +127,11 @@
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">&quot;Visit [GOV.UK](https://gov.uk).&quot;</span> | govukMarkdown | safe }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code><span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">p</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">&quot;govuk-body&quot;</span>&gt;</span>Visit <span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">a</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">&quot;govuk-link&quot;</span> <span class="x-govuk-code__attr">href</span>=<span class="x-govuk-code__string">&quot;https://www.gov.uk&quot;</span>&gt;</span>GOV.UK<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">a</span>&gt;</span>.<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">p</span>&gt;</span>
 </code></pre>
+
 <h3 id="heading-sizes" tabindex="-1" class="govuk-heading-m"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#heading-sizes" class="govuk-link">Heading sizes</a></h3>
 <p class="govuk-body">By default, headings start using the class <code class="x-govuk-code x-govuk-code--inline">govuk-heading-xl</code>.</p>
 <p class="govuk-body">Input</p>
@@ -139,58 +141,71 @@
 ### Heading level <span class="x-govuk-code__number">3</span>
 #### Heading level <span class="x-govuk-code__number">4</span>
 {% endset %}
-<p class="govuk-body">{{ headings | govukMarkdown | safe }}<br>
-</code></pre></p>
+
+{{ headings | govukMarkdown | safe }}
+</code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code><span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">h1</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">&quot;govuk-heading-xl&quot;</span>&gt;</span>Heading level 1<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">h1</span>&gt;</span>
 <span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">h2</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">&quot;govuk-heading-l&quot;</span>&gt;</span>Heading level 2<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">h2</span>&gt;</span>
 <span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">h3</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">&quot;govuk-heading-m&quot;</span>&gt;</span>Heading level 3<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">h3</span>&gt;</span>
 <span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">h4</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">&quot;govuk-heading-s&quot;</span>&gt;</span>Heading level 4<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">h4</span>&gt;</span>
 </code></pre>
+
 <p class="govuk-body">The <a href="https://design-system.service.gov.uk/styles/typography/#headings" class="govuk-link">GOV.UK Design System recommends changing this</a> if a page feels unbalanced (heading classes don’t always need to correspond to the heading level). You can start headings using the smaller size by setting the <code class="x-govuk-code x-govuk-code--inline">headingsStartWith</code> option.</p>
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">headings</span> | govukMarkdown({ <span class="x-govuk-code__name">headingsStartWith:</span> <span class="x-govuk-code__string">&quot;l&quot;</span> }) | safe }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code><span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">h1</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">&quot;govuk-heading-l&quot;</span>&gt;</span>Heading level 1<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">h1</span>&gt;</span>
 <span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">h2</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">&quot;govuk-heading-m&quot;</span>&gt;</span>Heading level 2<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">h2</span>&gt;</span>
 <span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">h3</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">&quot;govuk-heading-s&quot;</span>&gt;</span>Heading level 3<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">h3</span>&gt;</span>
 <span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">h4</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">&quot;govuk-heading-s&quot;</span>&gt;</span>Heading level 4<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">h4</span>&gt;</span>
 </code></pre>
+
 <h2 id="isstring" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#isstring" class="govuk-link">isString</a></h2>
 <p class="govuk-body">Checks if a value is classified as a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="govuk-link"><code class="x-govuk-code x-govuk-code--inline">String</code></a> primitive or object.</p>
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">&quot;Number 10&quot;</span> | isString }}</span><span class="language-xml">
 </span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">10</span> | isString }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>true
 false
 </code></pre>
+
 <h2 id="noorphans" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#noorphans" class="govuk-link">noOrphans</a></h2>
 <p class="govuk-body">Add a non-breaking space between the last two words of a string. This prevents an orphaned word appearing by itself at the end of a paragraph. This can be useful for improving the appearance of headings and titles.</p>
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">&quot;Department for Business, Energy &amp; Industrial Strategy&quot;</span> | noOrphans | safe }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>Department for Business, Energy &amp; Industrial<span class="x-govuk-code__symbol">&amp;amp;</span>nbsp;Strategy
 </code></pre>
+
 <h2 id="slugify" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#slugify" class="govuk-link">slugify</a></h2>
 <p class="govuk-body">Convert a string to kebab-case. This can be useful to slugify titles for use in URLs or fragment identifiers.</p>
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">&quot;Department for Education&quot;</span> | slugify }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>department-for-education
 </code></pre>
+
 <h2 id="startswith" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#startswith" class="govuk-link">startsWith</a></h2>
 <p class="govuk-body">Checks if string starts with a value.</p>
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">&quot;Department for Transport&quot;</span> | startsWith(<span class="x-govuk-code__name">&quot;Department&quot;</span>) }}</span><span class="language-xml">
 </span></code></pre>
+
 <p class="govuk-body">Output</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>true
 </code></pre>
+
 
 </div>
 </article>
