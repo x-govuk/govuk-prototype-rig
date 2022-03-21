@@ -1,0 +1,66 @@
+[  {
+    "title": "About this project",
+"description": "The rig provides all you need to build interactive prototypes that look like pages on GOV.UK.","section": "GOV.UK Prototype Rig",    "layout": "side-navigation",
+    "templateContent": "prototypes can used show ideas people work with during user research differences from prototype kit rig re imagined version gov.uk aimed developers familiar nunjucks template language works exactly same way stores data session uses frontend components supports hosting services like heroku unlike provide support elements superseded by design system 2018 extensions feature unbranded templates jquery stylesheets internet explorer 8 are also included added required features 404 500 error pages flags output javascript console ability use async functions daa form validation component helper filters common currently wizard help create journeys branching logic full documentation underlying tooling been updated: rewritten using es modules tasks run npm scripts css linting stylelint sass compiled dart library assets bundled rollup.js all code documented jsdoc privacy must protect times even when made look have security provisions always make sure handling appropriately production framework things may likely fully accessible base service",
+    "url": "/about/"
+  },  {
+    "title": "Components",
+"description": "A selection of commonly used components not currently in the GOV.UK Design System.","section": "GOV.UK Prototype Rig",    "layout": "side-navigation",
+    "templateContent": "rig incorporates gov.uk prototype components selection common currently design system: autocomplete masthead related navigation summary card task list while these may already use across different services they should considered experimental until research validated their accessibility been audited",
+    "url": "/components/"
+  },  {
+    "title": "Arrays",
+"section": "Filters",    "layout": "side-navigation",
+    "templateContent": "formatlist convert array list formatted sentence input {{ &quot england&quot scotland&quot wales&quot | }} output england scotland wales format using disjunction: disjunction&quot isarray checks value classified object great britain&quot true false rejectfromarray reject items that have key with given { name: sally smith&quot role: admin&quot } david jones&quot user&quot role&quot dump selectfromarray select",
+    "url": "/filters/array/"
+  },  {
+    "title": "Dates",
+"section": "Filters",    "layout": "side-navigation",
+    "templateContent": "govukdate convert iso 8601 datetime human readable date that follows gov.uk style input {{ &quot 2021 08 17&quot | }} output 17 august can also with truncated month: truncate&quot aug get pass special word today&quot now&quot : this page last updated 22 october govuktime format time 17t00:00:31&quot 17t12:00:59&quot 17t18:30:00&quot midnight midday 6:30pm time: 08:15&quot 8:15am current submitted your application 4:32pm isodatefromdateinput decorated govukdateinput field values decorate method applied creates object day month year filter will into formatted { day: &#x27 17&#x27 08&#x27 year: 2021&#x27 }",
+    "url": "/filters/date/"
+  },  {
+    "title": "Filters",
+"description": "A collection of Nunjucks template filters and helpers to manipulate and transform data.","section": "GOV.UK Prototype Rig",    "layout": "side-navigation",
+    "templateContent": "variables can modified by filters are separated from variable pipe symbol | may have optional arguments parentheses multiple chained output one filter applied next example {{ name striptags title }} will remove all html tags case that accept around like function call example: list join &quot with commas examples built into nunjucks rig provides collection used alongside these",
+    "url": "/filters/"
+  },  {
+    "title": "Numbers",
+"section": "Filters",    "layout": "side-navigation",
+    "templateContent": "isnumber checks value classified number primitive object input {{ 1801 | }} &quot 1801&quot output true false sterling convert into string formatted pound this can useful converting numbers human readable price 81932 £81 932",
+    "url": "/filters/number/"
+  },  {
+    "title": "Objects",
+"section": "Filters",    "layout": "side-navigation",
+    "templateContent": "isobject checks value language type object input {{ { country: &quot england&quot } | }} scotland&quot wales&quot great britain&quot output true false objecttoarray transforms array using each key id : name: sir robert walpole&quot b&quot spencer compton&quot c&quot henry pelham&quot dump id:",
+    "url": "/filters/object/"
+  },  {
+    "title": "Strings",
+"section": "Filters",    "layout": "side-navigation",
+    "templateContent": "govukmarkdown convert markdown formatted string html decorated with typography classes from gov.uk design system input {{ &quot visit https: .&quot | safe }} output &lt p class = govuk body&quot &gt link&quot href www.gov.uk&quot heading sizes by default headings start using xl {% set %} # level 1 ## 2 ### 3 #### 4 endset h1 xl&quot h2 l&quot h3 m&quot h4 s&quot recommends changing this page feels unbalanced always need correspond can smaller size setting headingsstartwith option { headingsstartwith: } isstring checks value classified primitive object number 10&quot 10 true false noorphans add non breaking space between last two words prevents orphaned word appearing itself end paragraph useful improving appearance titles department business energy industrial strategy&quot amp nbsp strategy slugify kebab case use urls fragment identifiers education&quot education startswith starts transport&quot department&quot",
+    "url": "/filters/string/"
+  },  {
+    "title": "Get started",
+"description": "Get up and running in minutes.","section": "GOV.UK Prototype Rig",    "layout": "side-navigation",
+    "templateContent": "like gov.uk prototype kit rig built express framework uses frontend requirements node.js v16 node version manager recommended are working across multiple projects that use different versions downloading there few ways can get rig: download zip visit github repository click this will create copy rather than fork means start your project single commit history learn more about creating from template terminal clone repository: git git@github.com:paulrobertlloyd govuk rig.git unlike using include installation open directory downloaded install dependencies: npm application: go http: localhost:3000 browser",
+    "url": "/get-started/"
+  },  {
+    "title": "Feature flags",
+"description": "Add features to your prototype and turn them on or off as needed.","section": "Creating journeys with data",    "layout": "side-navigation",
+    "templateContent": "may have designed feature which ready shown during research session another perhaps 2 solutions problem want test both with different participants prototype rig lets describe these includes way turn theme part page complete user journey adding flag can create new by object features property default data file . app data.js : { &#x27 name&#x27 true name feature&#x27 description brief feature.&#x27 } toggling click link footer",
+    "url": "/using-data/feature-flags/"
+  },  {
+    "title": "Using form components",
+"description": "The decorate helper makes it easy to build forms to collect data.","section": "Creating journeys with data",    "layout": "side-navigation",
+    "templateContent": "with session data can build complex driven transactions yet adding different values form components repetitive especially are using nested collect email address would normally write: {{ govukinput { label: text: &quot address&quot } id: name: account &#x27 address&#x27 value: data.account }} 3 separate parameters needed store display each uses same value formatted slightly way: id which kebab case name object notation also proceeded by radios checkboxes select need add checked selected attribute any option that matches stored date inputs individual day month year fields decorating forms decorate removes this overhead adds idprefix attributes gov.uk component based where above example rewritten : decorate: account.email generate following html: &lt div class = govuk group&quot &gt label label&quot input input&quot type text&quot jane.doe@example.com&quot accepts optional items parameter given shown default works too: govukdateinput fieldset: legend: when your passport issued issue&quot custom use param field: what birth items: day&quot autocomplete: bday month&quot year&quot birth&quot",
+    "url": "/using-data/form-components/"
+  },  {
+    "title": "Creating journeys with data",
+"description": "Use and display data a user has entered over a few screens.","section": "GOV.UK Prototype Rig",    "layout": "side-navigation",
+    "templateContent": "prototype rig includes simple way saving data entered forms well displaying saved stored locally computer running disappears end session when browser window closed how use stores from inputs using name attribute input example have this input: &lt = &quot first name&quot &gt can show what user later like this: p {{ &#x27 name&#x27 }} showing answers goes back page where they would expect see answer gave text value }}&quot radio checkbox need checked function: type radio&quot over 18&quot yes&quot 18 yes }}&gt 'over 18' function will return ignoring prevent being underscore start _secret&quot nunjucks components component: { govukcheckboxes name: vehicle features&quot fieldset: legend: text: which these applies your } hint: select all that apply&quot items: value: heated seats&quot id: features checked: gps&quot routes access server route with name=&quot : var firstname req inspecting been check javascript console web clearing clear research click link footer",
+    "url": "/using-data/"
+  },  {
+    "title": "Using the wizard helper",
+"description": "The wizard helper makes it easy to build and iterate a ‘one thing per page’ user journey.","section": "Creating journeys with data",    "layout": "side-navigation",
+    "templateContent": "importing wizard helper import { } from &#x27 govuk prototype rig&#x27 usage takes two parameters: name type description journey object required which defines default user any branching rules req express request returns paths with next back current pages following journey: const = : {} name&#x27 where live&#x27 nationality&#x27 check answers&#x27 confirm&#x27 made nationality returns: forking by will progress through order set out can fork that giving list conditions are met follow path&#x27 redirect session.data.key equals some value&#x27 path data key&#x27 value &lt span class=&quot x code__comment&quot &gt given array&lt span&gt code__string&quot #x27 code__attr&quot data&lt key values&lt another does equal excludedvalue&lt excludedvalues&lt function evaluates true&lt code__function&quot gt code__keyword&quot return&lt req.&lt code__property&quot session&lt .&lt key&lt == something else shorthand&lt each have multiple forks they evaluated redirected first page meets go different based country chosen pick country&#x27 scotland&#x27 wales&#x27 ireland&#x27 values northern asia&#x27 =&gt iscountryinasia session example this ask their national insurance number then: skip what your question continue email address number&#x27 email&#x27 nino&#x27 how get working create export examplewizard answer england . excludedvalue return routes make available view using post form itself evaluate calculated wizards.js&#x27 router all res locals use layout uses nunjucks extending rig layout: {% extends &quot layouts default.html&quot %} block pagenavigation {{ govukbacklink href: paths.back }} endblock content div class grid row column thirds beforeform method novalidate govukbutton html: buttontext build wizard.html&quot title govukinput label: classes: label l ispageheading: true text: decorate:",
+    "url": "/using-data/wizard/"
+  }]

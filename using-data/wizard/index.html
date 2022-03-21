@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Using the wizard helper - Prototype Rig - X-GOVUK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0c0c"> 
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="https://github.com/x-govuk/logo/blob/f27cadde0d65ea8d8355fe07eef4988cd1b16c1e/images/x-govuk-favicon.ico?raw=true" type="image/x-icon">
+  <link rel="mask-icon" href="https://raw.githubusercontent.com/x-govuk/logo/f27cadde0d65ea8d8355fe07eef4988cd1b16c1e/images/x-govuk-mask-icon.svg?raw=true" color="#0b0c0c">
+  <link rel="apple-touch-icon" href="https://github.com/x-govuk/logo/blob/f27cadde0d65ea8d8355fe07eef4988cd1b16c1e/images/x-govuk-apple-touch-icon.png?raw=true">
+
+  <link rel="stylesheet" href="/assets/govuk.css">
+
+  <meta property="og:url" content=".">
+  <meta property="og:title" content="Using the wizard helper">
+<meta property="og:description" name="description" content="The wizard helper makes it easy to build and iterate a ‘one thing per page’ user journey.">    
+    
+    <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
+  </head>
+  <body class="govuk-template__body ">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+      <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+
+  <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container app-header__container">
+    <div class="govuk-header__logo app-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+<svg class="app-header__logotype--large" aria-hidden="true" focusable="false" height="35" width="35" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <path fill="currentColor" d="M180 251v1c-17 7-26 12-26 16s19 6 19-5c4 18-11 21-20 13 4 7 6 18-4 23-11-5-9-16-5-23-10 8-24 4-20-12v-1c0 11 18 9 19 5 0-4-9-9-26-16v-1c11 3 21 4 32 4 10 0 20-1 31-4Zm61-52 1 1c-6 18-8 29-5 34 6-6 11-14 11-24l19 9c-11 5-20 10-27 17 5 2 15-1 21-4l-32 32c3-6 6-16 4-21-7 6-12 16-16 27l-10-19c11 0 18-5 24-11-5-3-16-2-34 5v-1c10-6 18-12 25-19 8-8 14-15 19-26Zm-186 0c6 10 12 18 20 25 7 8 15 14 25 20h-1c-17-6-29-7-33-4 6 5 13 11 24 11l-10 19c-4-12-10-21-16-28-2 5 1 16 3 21l-31-31c5 2 16 5 21 3-7-6-16-12-28-16l19-10c0 11 6 18 11 24 3-5 2-16-4-33Zm152-5a15 15 0 0 1 10 25 15 15 0 0 1-25-10 15 15 0 0 1 15-15Zm-115 0a15 15 0 0 1 11 25 15 15 0 0 1-25-10 15 15 0 0 1 14-15Zm88-27a15 15 0 0 1 10 25 15 15 0 0 1-25-10 15 15 0 0 1 15-15Zm-63 0a15 15 0 0 1 10 25 15 15 0 0 1-25-10 15 15 0 0 1 15-15Zm133-48c7 17 12 26 16 26s6-19-5-19c18-4 21 11 13 20 7-4 18-6 23 5-5 10-16 8-23 4 8 9 5 24-13 20 11 0 9-19 5-19s-9 9-16 26h-1c3-11 4-21 4-31 0-11-1-21-4-32h1Zm-202 0c-3 11-4 21-4 32 0 10 1 20 4 31h-1c-7-17-12-26-15-26-5 0-7 19 4 19-18 4-21-11-13-20-7 4-18 6-23-4 5-11 16-9 23-5-8-9-5-24 13-20-11 0-9 19-4 19 3 0 8-9 15-26Zm101 11a20 20 0 1 1-1 41 20 20 0 0 1 1-41Zm-32-26a15 15 0 0 1 10 25 15 15 0 0 1-25-10 15 15 0 0 1 15-15Zm63 0a15 15 0 0 1 10 25 15 15 0 0 1-25-10 15 15 0 0 1 15-15ZM92 80a15 15 0 0 1 11 25 15 15 0 0 1-25-11 15 15 0 0 1 14-14Zm115 0a15 15 0 0 1 10 25 15 15 0 0 1-25-11 15 15 0 0 1 15-14ZM80 32l9 19c-10 0-18 5-24 11 5 3 16 1 34-5l1 1c-11 5-18 11-26 19-7 7-13 15-19 25h-1c7-18 8-29 5-34-6 6-11 13-11 24L29 82c11-4 21-9 27-16-5-2-15 1-21 4l32-32c-3 6-6 16-4 21 7-7 12-16 17-27Zm137-1c4 12 10 21 16 28 2-5-1-16-3-21l31 31c-5-2-16-5-21-3 7 6 16 12 28 16l-19 10c0-11-6-18-11-24-3 4-2 16 4 33v1c-6-10-12-18-20-25-7-8-15-14-25-20h1c17 6 28 7 33 4-6-5-13-11-24-11l10-19ZM149 2c10 5 8 16 4 23 9-8 24-5 20 13 0-11-19-9-19-4 0 3 9 8 26 15v1c-11-3-21-4-31-4-11 0-21 1-32 4v-1c17-7 26-12 26-15 0-5-19-7-19 4-4-17 10-21 20-13-4-7-6-18 5-23Z"/>
+</svg>
+          <span class="govuk-header__logotype-text">
+            X-GOVUK
+          </span>
+        </span>
+        <span class="govuk-header__product-name">
+          Prototype Rig
+        </span>
+      </a>
+    </div>
+    <div class="app-site-search govuk-!-display-none-print" data-module="app-search" data-search-index="/search.json">
+  <label class="govuk-visually-hidden" for="app-site-search__input">Search site</label>
+  <a class="app-site-search__link govuk-link-no-visited" href="/sitemap">Sitemap</a>
+</div>
+
+  </div>
+</header>
+
+
+      <div class="govuk-width-container ">
+  <div class="govuk-breadcrumbs govuk-!-display-none-print">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://x-govuk.github.io">X-GOVUK shared projects</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/">GOV.UK Prototype Rig</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/using-data/">Creating journeys with data</a>
+    </li>
+  </ol>
+</div>
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <nav class="x-govuk-side-navigation" aria-labelledby="x-govuk-side-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="x-govuk-side-navigation-heading">Pages in this section</h2>
+    <ul class="x-govuk-side-navigation__section">
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/about/">About this project</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/get-started/">Get started</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item x-govuk-side-navigation__section-item--current">
+          <a class="x-govuk-side-navigation__link" href="/using-data/">Creating journeys with data</a>
+            <ul class="x-govuk-side-navigation__section x-govuk-side-navigation__section--nested">
+                <li class="x-govuk-side-navigation__section-item">
+                  <a class="x-govuk-side-navigation__link" href="/using-data/feature-flags/">Feature flags</a>
+                </li>
+                <li class="x-govuk-side-navigation__section-item">
+                  <a class="x-govuk-side-navigation__link" href="/using-data/form-components/">Using form components</a>
+                </li>
+                <li class="x-govuk-side-navigation__section-item">
+                  <a class="x-govuk-side-navigation__link" href="/using-data/wizard/" aria-current="true">Using the wizard helper</a>
+                </li>
+            </ul>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/components/">Components</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/filters/">Filters</a>
+        </li>
+    </ul>
+</nav>
+
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+<article class="app-article">
+  <header class="app-article__header">
+    <h1 class="app-article__title govuk-heading-xl">
+      Using the wizard helper
+    </h1>
+      <div class="govuk-body-l">
+        The wizard helper makes it easy to build and iterate a ‘one thing per page’ user journey.
+      </div>
+  </header>
+
+
+  <div class="app-article__body">
+        <h2 id="importing-the-wizard-helper" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#importing-the-wizard-helper" class="govuk-link">Importing the wizard helper</a></h2>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code><span class="x-govuk-code__keyword">import</span> { wizard } <span class="x-govuk-code__keyword">from</span> <span class="x-govuk-code__string">&#x27;govuk-prototype-rig&#x27;</span>
+</code></pre>
+<h2 id="usage" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#usage" class="govuk-link">Usage</a></h2>
+<p class="govuk-body">The <code class="x-govuk-code x-govuk-code--inline">wizard</code> helper takes two parameters:</p>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th style="text-align:left" class="govuk-table__header">Name</th>
+<th style="text-align:left" class="govuk-table__header">Type</th>
+<th style="text-align:left" class="govuk-table__header">Description</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>journey</strong></td>
+<td style="text-align:left" class="govuk-table__cell">object</td>
+<td style="text-align:left" class="govuk-table__cell"><strong>Required.</strong> A journey object, which defines the default user journey and any branching rules</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>req</strong></td>
+<td style="text-align:left" class="govuk-table__cell">object</td>
+<td style="text-align:left" class="govuk-table__cell"><strong>Required.</strong> The express request object</td>
+</tr>
+</tbody>
+</table>
+<p class="govuk-body">It returns a <code class="x-govuk-code x-govuk-code--inline">paths</code> object with paths for the next, back and the current pages.</p>
+<p class="govuk-body">For the following journey:</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code><span class="x-govuk-code__keyword">const</span> journey = {
+  <span class="x-govuk-code__string">&#x27;/&#x27;</span>: {},
+  <span class="x-govuk-code__string">&#x27;/name&#x27;</span>: {},
+  <span class="x-govuk-code__string">&#x27;/where-do-you-live&#x27;</span>: {},
+  <span class="x-govuk-code__string">&#x27;/nationality&#x27;</span>: {},
+  <span class="x-govuk-code__string">&#x27;/check-answers&#x27;</span>: {},
+  <span class="x-govuk-code__string">&#x27;/confirm&#x27;</span>: {}
+}
+<p class="govuk-body"><span class="x-govuk-code__title function_">wizard</span>(journey, req)<br>
+</code></pre></p>
+<p class="govuk-body">If the request was made from <code class="x-govuk-code x-govuk-code--inline">/nationality</code>, the helper returns:</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code>{
+  <span class="x-govuk-code__attr">back</span>: <span class="x-govuk-code__string">&#x27;/where-do-you-live&#x27;</span>,
+  <span class="x-govuk-code__attr">current</span>: <span class="x-govuk-code__string">&#x27;/nationality&#x27;</span>,
+  <span class="x-govuk-code__attr">next</span>: <span class="x-govuk-code__string">&#x27;/check-answers&#x27;</span>
+}
+</code></pre>
+<h3 id="forking-a-journey" tabindex="-1" class="govuk-heading-m"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#forking-a-journey" class="govuk-link">Forking a journey</a></h3>
+<p class="govuk-body">By default a user will progress through the journey in the order set out.</p>
+<p class="govuk-body">You can fork from that journey by giving a list of paths and conditions – if the conditions are met the user will follow the fork.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code>{
+  <span class="x-govuk-code__string">&#x27;/path&#x27;</span>: {
+    <span class="x-govuk-code__comment">// Redirect if session.data.key equals &#x27;Some value&#x27;</span>
+    <span class="x-govuk-code__string">&#x27;/path-to-fork-to&#x27;</span>: { <span class="x-govuk-code__attr">data</span>: <span class="x-govuk-code__string">&#x27;key&#x27;</span>, <span class="x-govuk-code__attr">value</span>: <span class="x-govuk-code__string">&#x27;Some value&#x27;</span> },
+<pre class="govuk-inset-text govuk-!-margin-left-0"><code>&lt;span class=&quot;x-govuk-code__comment&quot;&gt;// Redirect if session.data.key is in the given array&lt;/span&gt;
+&lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;/path-to-fork-to&amp;#x27;&lt;/span&gt;: { &lt;span class=&quot;x-govuk-code__attr&quot;&gt;data&lt;/span&gt;: &lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;key&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;x-govuk-code__attr&quot;&gt;values&lt;/span&gt;: [&lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;A value&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;Another value&amp;#x27;&lt;/span&gt;] },
+
+&lt;span class=&quot;x-govuk-code__comment&quot;&gt;// Redirect if session.data.key does not equal &amp;#x27;Some value&amp;#x27;&lt;/span&gt;
+&lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;/path-to-fork-to&amp;#x27;&lt;/span&gt;: { &lt;span class=&quot;x-govuk-code__attr&quot;&gt;data&lt;/span&gt;: &lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;key&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;x-govuk-code__attr&quot;&gt;excludedValue&lt;/span&gt;: &lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;Some value&amp;#x27;&lt;/span&gt; },
+
+&lt;span class=&quot;x-govuk-code__comment&quot;&gt;// Redirect if session.data.key is not in the given array&lt;/span&gt;
+&lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;/path-to-fork-to&amp;#x27;&lt;/span&gt;: { &lt;span class=&quot;x-govuk-code__attr&quot;&gt;data&lt;/span&gt;: &lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;key&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;x-govuk-code__attr&quot;&gt;excludedValues&lt;/span&gt;: [&lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;A value&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;Another value&amp;#x27;&lt;/span&gt;] },
+
+&lt;span class=&quot;x-govuk-code__comment&quot;&gt;// Redirect if the given function evaluates to true&lt;/span&gt;
+&lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;/path-to-fork-to&amp;#x27;&lt;/span&gt;: &lt;span class=&quot;x-govuk-code__function&quot;&gt;() =&amp;gt;&lt;/span&gt; {
+  &lt;span class=&quot;x-govuk-code__keyword&quot;&gt;return&lt;/span&gt; req.&lt;span class=&quot;x-govuk-code__property&quot;&gt;session&lt;/span&gt;.&lt;span class=&quot;x-govuk-code__property&quot;&gt;data&lt;/span&gt;.&lt;span class=&quot;x-govuk-code__property&quot;&gt;key&lt;/span&gt; == &lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;Something else&amp;#x27;&lt;/span&gt;
+},
+
+&lt;span class=&quot;x-govuk-code__comment&quot;&gt;// Shorthand&lt;/span&gt;
+&lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;/path-to-fork-to&amp;#x27;&lt;/span&gt;: &lt;span class=&quot;x-govuk-code__function&quot;&gt;() =&amp;gt;&lt;/span&gt; req.&lt;span class=&quot;x-govuk-code__property&quot;&gt;session&lt;/span&gt;.&lt;span class=&quot;x-govuk-code__property&quot;&gt;data&lt;/span&gt;.&lt;span class=&quot;x-govuk-code__property&quot;&gt;key&lt;/span&gt; == &lt;span class=&quot;x-govuk-code__string&quot;&gt;&amp;#x27;Something else&amp;#x27;&lt;/span&gt;
+</code></pre>
+<p class="govuk-body">}<br>
+}<br>
+</code></pre></p>
+<p class="govuk-body">Each path can have multiple forks, they are evaluated in order – the user will be redirected to the first page that meets the conditions.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code>{
+  <span class="x-govuk-code__comment">// Go to different pages based on the country chosen</span>
+  <span class="x-govuk-code__string">&#x27;/pick-a-country&#x27;</span>: {
+    <span class="x-govuk-code__string">&#x27;/scotland&#x27;</span>: { <span class="x-govuk-code__attr">data</span>: <span class="x-govuk-code__string">&#x27;country&#x27;</span>, <span class="x-govuk-code__attr">value</span>: <span class="x-govuk-code__string">&#x27;Scotland&#x27;</span> },
+    <span class="x-govuk-code__string">&#x27;/wales&#x27;</span>: { <span class="x-govuk-code__attr">data</span>: <span class="x-govuk-code__string">&#x27;country&#x27;</span>, <span class="x-govuk-code__attr">value</span>: <span class="x-govuk-code__string">&#x27;Wales&#x27;</span> },
+    <span class="x-govuk-code__string">&#x27;/ireland&#x27;</span>: { <span class="x-govuk-code__attr">data</span>: <span class="x-govuk-code__string">&#x27;country&#x27;</span>, <span class="x-govuk-code__attr">values</span>: [<span class="x-govuk-code__string">&#x27;Ireland&#x27;</span>, <span class="x-govuk-code__string">&#x27;Northern Ireland&#x27;</span>] },
+    <span class="x-govuk-code__string">&#x27;/asia&#x27;</span>: <span class="x-govuk-code__function">() =&gt;</span> <span class="x-govuk-code__title function_">isCountryInAsia</span>(req.<span class="x-govuk-code__property">session</span>.<span class="x-govuk-code__property">data</span>.<span class="x-govuk-code__property">country</span>)
+  }
+}
+</code></pre>
+<h2 id="an-example" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#an-example" class="govuk-link">An example</a></h2>
+<p class="govuk-body">In this example we:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>ask the user their name</li>
+<li>ask if they have a National Insurance number, then:
+<ul class="govuk-list govuk-list--bullet">
+<li>skip the ‘What is your National Insurance number?’ question if they do not have a number</li>
+<li>continue to the ‘What is your National Insurance number?’ question if they do</li>
+</ul>
+</li>
+<li>ask for their email address</li>
+</ul>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code>{
+  <span class="x-govuk-code__string">&#x27;/name&#x27;</span>: {},
+  <span class="x-govuk-code__string">&#x27;/do-you-have-a-national-insurance-number&#x27;</span>: {
+    <span class="x-govuk-code__string">&#x27;/email&#x27;</span>: { <span class="x-govuk-code__attr">data</span>: <span class="x-govuk-code__string">&#x27;have-nino&#x27;</span>, <span class="x-govuk-code__attr">value</span>: <span class="x-govuk-code__string">&#x27;No&#x27;</span> }
+  },
+  <span class="x-govuk-code__string">&#x27;/what-is-your-national-insurance-number&#x27;</span>: {},
+  <span class="x-govuk-code__string">&#x27;/email&#x27;</span>: {}
+}
+</code></pre>
+<h2 id="how-to-get-a-wizard-working" tabindex="-1" class="govuk-heading-l"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#how-to-get-a-wizard-working" class="govuk-link">How to get a wizard working</a></h2>
+<h3 id="create-a-user-journey" tabindex="-1" class="govuk-heading-m"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#create-a-user-journey" class="govuk-link">Create a user journey</a></h3>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code><span class="x-govuk-code__keyword">import</span> { wizard } <span class="x-govuk-code__keyword">from</span> <span class="x-govuk-code__string">&#x27;govuk-prototype-rig&#x27;</span>
+<p class="govuk-body"><span class="x-govuk-code__keyword">export</span> <span class="x-govuk-code__keyword">function</span> <span class="x-govuk-code__title function_">exampleWizard</span> (req) {<br>
+<span class="x-govuk-code__keyword">const</span> journey = {<br>
+<span class="x-govuk-code__string">‘/examples/wizard’</span>: {},<br>
+<span class="x-govuk-code__string">‘/examples/wizard/name’</span>: {},<br>
+<span class="x-govuk-code__string">‘/examples/wizard/where-do-you-live’</span>: {<br>
+<span class="x-govuk-code__comment">// Example fork in the journey:</span><br>
+<span class="x-govuk-code__comment">// Go to nationality page if answer to the question ‘Where do you live?’ is not England</span><br>
+<span class="x-govuk-code__string">‘/examples/wizard/nationality’</span>: {<br>
+<span class="x-govuk-code__attr">data</span>: <span class="x-govuk-code__string">‘wizard.where-do-you-live’</span>,<br>
+<span class="x-govuk-code__attr">excludedValue</span>: <span class="x-govuk-code__string">‘England’</span><br>
+}<br>
+},<br>
+<span class="x-govuk-code__string">‘/examples/wizard/england’</span>: {},<br>
+<span class="x-govuk-code__string">‘/examples/wizard/nationality’</span>: {},<br>
+<span class="x-govuk-code__string">‘/examples/wizard/check-answers’</span>: {},<br>
+<span class="x-govuk-code__string">‘/examples/wizard/confirm’</span>: {},<br>
+<span class="x-govuk-code__string">‘/’</span>: {}<br>
+}</p>
+<p class="govuk-body"><span class="x-govuk-code__keyword">return</span> <span class="x-govuk-code__title function_">wizard</span>(journey, req)<br>
+}<br>
+</code></pre></p>
+<h3 id="set-up-the-routes" tabindex="-1" class="govuk-heading-m"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#set-up-the-routes" class="govuk-link">Set up the routes</a></h3>
+<ol class="govuk-list govuk-list--number">
+<li>Make the paths available in the view using routes</li>
+<li>Post each form back to itself, evaluate the paths and redirect to the calculated next page</li>
+</ol>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code><span class="x-govuk-code__keyword">import</span> { exampleWizard } <span class="x-govuk-code__keyword">from</span> <span class="x-govuk-code__string">&#x27;./wizards.js&#x27;</span>
+<span class="x-govuk-code__keyword">const</span> router = express.<span class="x-govuk-code__title class_">Router</span>()
+<p class="govuk-body">router.<span class="x-govuk-code__title function_">all</span>(<span class="x-govuk-code__string">‘/examples/wizard/:view?’</span>, <span class="x-govuk-code__function">(<span class="x-govuk-code__params">req, res, next</span>) =&gt;</span> {<br>
+res.<span class="x-govuk-code__property">locals</span>.<span class="x-govuk-code__property">paths</span> = <span class="x-govuk-code__title function_">exampleWizard</span>(req)<br>
+<span class="x-govuk-code__title function_">next</span>()<br>
+})</p>
+<p class="govuk-body">router.<span class="x-govuk-code__title function_">post</span>(<span class="x-govuk-code__string">‘/examples/wizard/:view?’</span>, <span class="x-govuk-code__function">(<span class="x-govuk-code__params">req, res</span>) =&gt;</span> {<br>
+res.<span class="x-govuk-code__title function_">redirect</span>(res.<span class="x-govuk-code__property">locals</span>.<span class="x-govuk-code__property">paths</span>.<span class="x-govuk-code__property">next</span>)<br>
+})<br>
+</code></pre></p>
+<h3 id="use-a-layout-which-uses-the-paths-object" tabindex="-1" class="govuk-heading-m"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#use-a-layout-which-uses-the-paths-object" class="govuk-link">Use a layout which uses the paths object</a></h3>
+<p class="govuk-body">An example Nunjucks layout extending the default rig layout:</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">extends</span></span> &quot;layouts/default.html&quot; %}</span><span class="language-xml">
+</span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">block</span></span> pageNavigation %}</span><span class="language-xml">
+  </span><span class="x-govuk-code__template-variable">{{ govukBackLink({
+    href: paths.back
+  }) }}</span><span class="language-xml">
+</span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">endblock</span></span> %}</span><span class="language-xml">
+<p class="govuk-body"></span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">block</span></span> content %}</span><span class="language-xml"><br>
+<span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">div</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">“govuk-grid-row”</span>&gt;</span><br>
+<span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">div</span> <span class="x-govuk-code__attr">class</span>=<span class="x-govuk-code__string">“govuk-grid-column-two-thirds”</span>&gt;</span><br>
+</span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">block</span></span> beforeForm %}</span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">endblock</span></span> %}</span><span class="language-xml"><br>
+<span class="x-govuk-code__tag">&lt;<span class="x-govuk-code__name">form</span> <span class="x-govuk-code__attr">method</span>=<span class="x-govuk-code__string">“post”</span> <span class="x-govuk-code__attr">novalidate</span>&gt;</span><br>
+</span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">block</span></span> form %}</span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">endblock</span></span> %}</span><span class="language-xml"><br>
+</span><span class="x-govuk-code__template-variable">{{ govukButton({<br>
+html: buttonText if buttonText else ‘Continue’<br>
+}) }}</span><span class="language-xml"><br>
+<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">form</span>&gt;</span><br>
+<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">div</span>&gt;</span><br>
+<span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">div</span>&gt;</span><br>
+</span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">endblock</span></span> %}</span><span class="language-xml"><br>
+</span></code></pre></p>
+<h3 id="build-your-question-pages" tabindex="-1" class="govuk-heading-m"><a class="govuk-link govuk-link--no-underline govuk-link--text-colour" href="#build-your-question-pages" class="govuk-link">Build your question pages</a></h3>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="language-xml">{% extends &quot;layouts/wizard.html&quot; %}
+{% set title = &quot;What is your name?&quot; %}
+{% block pageNavigation %}
+  </span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">govukBackLink</span>({
+    <span class="x-govuk-code__name">href:</span> paths.back
+  }) }}</span><span class="language-xml">
+{% endblock %}
+<p class="govuk-body">{% block form %}<br>
+</span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">govukInput</span>({<br>
+<span class="x-govuk-code__name">label:</span> {<br>
+classes: <span class="x-govuk-code__string">“govuk-label–l”</span>,<br>
+isPageHeading: <span class="x-govuk-code__literal">true</span>,<br>
+text: title<br>
+},<br>
+decorate: [“wizard”, “name”]<br>
+}) }}</span><span class="language-xml"><br>
+{% endblock %}<br>
+</span></code></pre></p>
+
+</div>
+</article>
+
+      
+    </div>
+  </div>
+        </main>
+      </div>
+
+  <footer class="govuk-footer app-footer " role="contentinfo">
+  <div class="govuk-width-container ">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <span class="govuk-footer__licence-description">
+            Licensed under the <a href="https://github.com/x-govuk/govuk-eleventy-plugin/blob/main/LICENSE.txt" class="govuk-footer__link">MIT Licence</a>, except where otherwise stated
+          </span>
+      </div>
+      <div class="govuk-footer__meta-item">
+        © X-GOVUK
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/govuk.js"></script>
+  <script>
+    document.documentElement.classList.remove('no-js')
+    const searchContainer = document.querySelector('[data-module="app-search"]')
+    new GOVUK11ty.SiteSearch(searchContainer).init()
+  </script>
+  </body>
+</html>
