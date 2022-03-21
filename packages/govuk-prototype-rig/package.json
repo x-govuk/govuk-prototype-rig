@@ -42,7 +42,7 @@
     "marked": "^4.0.12",
     "nodemon": "^2.0.13",
     "nunjucks": "^3.2.1",
-    "portscanner": "^2.1.1",
+    "portscanner": "^2.2.0",
     "validate.js": "^0.13.1"
   }
 }
