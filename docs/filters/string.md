@@ -1,4 +1,5 @@
 ---
+templateEngineOverride: md
 title: Strings
 order: 5
 ---

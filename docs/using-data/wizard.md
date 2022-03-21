@@ -1,4 +1,5 @@
 ---
+templateEngineOverride: md
 title: Using the wizard helper
 description: The wizard helper makes it easy to build and iterate a ‘one thing per page’ user journey.
 ---

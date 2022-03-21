@@ -1,4 +1,5 @@
 ---
+templateEngineOverride: md
 title: Arrays
 order: 1
 ---

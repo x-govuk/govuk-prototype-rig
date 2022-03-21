@@ -1,4 +1,5 @@
 ---
+templateEngineOverride: md
 title: Using form components
 description: The decorate helper makes it easy to build forms to collect data.
 ---

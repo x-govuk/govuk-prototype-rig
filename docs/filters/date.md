@@ -1,4 +1,5 @@
 ---
+templateEngineOverride: md
 title: Dates
 order: 2
 ---
