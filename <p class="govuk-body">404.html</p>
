@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template no-js">
   <head>
     <meta charset="utf-8">
-    <title>Filters - Prototype Rig - X-GOVUK</title>
+    <title>Page not found - Prototype Rig - X-GOVUK</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c"> 
     
@@ -15,8 +15,8 @@
   <link rel="stylesheet" href="/govuk-prototype-rig/assets/govuk.css">
 
   <meta property="og:url" content="https://x-govuk.github.io/govuk-prototype-rig/">
-  <meta property="og:title" content="Filters">
-<meta property="og:description" name="description" content="A collection of Nunjucks template filters and helpers to manipulate and transform data.">    
+  <meta property="og:title" content="Page not found">
+    
     
     <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
   </head>
@@ -66,73 +66,23 @@
 
         <main class="govuk-main-wrapper " id="main-content" role="main">
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-quarter">
-      <nav class="x-govuk-side-navigation" aria-labelledby="x-govuk-side-navigation-heading">
-  <h2 class="govuk-visually-hidden" id="x-govuk-side-navigation-heading">Pages in this section</h2>
-    <ul class="x-govuk-side-navigation__section">
-        <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/<p class="govuk-body">404.html</p>
-">Page not found</a>
-        </li>
-        <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/about/">About this project</a>
-        </li>
-        <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/get-started/">Get started</a>
-        </li>
-        <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/">Creating journeys with data</a>
-        </li>
-        <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/components/">Components</a>
-        </li>
-        <li class="x-govuk-side-navigation__section-item x-govuk-side-navigation__section-item--current">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/filters/" aria-current="true">Filters</a>
-            <ul class="x-govuk-side-navigation__section x-govuk-side-navigation__section--nested">
-                <li class="x-govuk-side-navigation__section-item">
-                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/filters/array/">Arrays</a>
-                </li>
-                <li class="x-govuk-side-navigation__section-item">
-                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/filters/date/">Dates</a>
-                </li>
-                <li class="x-govuk-side-navigation__section-item">
-                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/filters/number/">Numbers</a>
-                </li>
-                <li class="x-govuk-side-navigation__section-item">
-                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/filters/object/">Objects</a>
-                </li>
-                <li class="x-govuk-side-navigation__section-item">
-                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/filters/string/">Strings</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</nav>
-
-    </div>
-    <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-column-two-thirds">
 <article class="app-article">
   <header class="app-article__header">
     <h1 class="app-article__title govuk-heading-xl">
-      Filters
+      Page not found
     </h1>
-      <div class="govuk-body-l">
-        A collection of Nunjucks template filters and helpers to manipulate and transform data.
-      </div>
   </header>
 
 
   <div class="app-article__body">
-        <p class="govuk-body">Variables can be modified by filters. Filters are separated from the variable by a pipe symbol (<code class="x-govuk-code x-govuk-code--inline">|</code>) and may have optional arguments in parentheses. Multiple filters can be chained. The output of one filter is applied to the next.</p>
-<p class="govuk-body">For example, <code class="x-govuk-code x-govuk-code--inline">{{ name | striptags | title }}</code> will remove all HTML tags from variable <em>name</em> and title-case the output.</p>
-<p class="govuk-body">Filters that accept arguments have parentheses around the arguments, like a function call. For example: <code class="x-govuk-code x-govuk-code--inline">{{ list | join(&quot;, &quot;) }}</code> will join a list with commas.</p>
-<p class="govuk-body"><code class="x-govuk-code x-govuk-code--inline">striptags</code>, <code class="x-govuk-code x-govuk-code--inline">title</code> and <code class="x-govuk-code x-govuk-code--inline">join</code> are examples of <a href="https://mozilla.github.io/nunjucks/templating.html#builtin-filters" class="govuk-link">filters built into Nunjucks</a>. The rig provides a collection of filters that can be used alongside these.</p>
+        <p class="govuk-body">If you entered a web address please check it was correct.</p>
+<p class="govuk-body">You can browse from [the homepage]({{ “/” | url }}) or use the [sitemap]({{ “/sitemap” | url }}) to find the information you need.</p>
 
 </div>
 </article>
-
-      
     </div>
+
   </div>
         </main>
       </div>
