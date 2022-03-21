@@ -1,8 +1,8 @@
 [  {
     "title": "Page not found",
 "section": "GOV.UK Prototype Rig",    "layout": "post",
-    "templateContent": "entered web address please check correct can browse from homepage {{ | url }} use sitemap find information need",
-    "url": "/govuk-prototype-rig/<p class=\"govuk-body\">404</p>\n"
+    "templateContent": "entered web address please check correct can browse from homepage govuk prototype rig use sitemap find information need",
+    "url": "/govuk-prototype-rig/404"
   },  {
     "title": "About this project",
 "description": "The rig provides all you need to build interactive prototypes that look like pages on GOV.UK.","section": "GOV.UK Prototype Rig",    "layout": "side-navigation",
