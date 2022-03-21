@@ -15,15 +15,14 @@
   }) }}
 
   <div class="govuk-width-container">
-    {#
-      This notification banner component is used to demonstrate feature flags.
-      It can be safely deleted.
-    #}
-    {{ govukNotificationBanner({
-      text: "You have switched on the demonstration feature flag. Return to the <a class=\"govuk-notification-banner__link\" href=\"/feature-flags\">feature flags</a> page to turn it off." | safe
-    }) if data.features.demo.on }}
-
     <main class="govuk-main-wrapper" id="main-content" role="main">
+      {#
+        This notification banner component is used to demonstrate feature flags.
+        It can be safely deleted.
+      #}
+      {{ govukNotificationBanner({
+        text: "You have switched on the demonstration feature flag. Return to the <a class=\"govuk-notification-banner__link\" href=\"/feature-flags\">feature flags</a> page to turn it off." | safe
+      }) if data.features.demo.on }}
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds-from-desktop">
           <h2 class="govuk-heading-m">About this page</h2>
