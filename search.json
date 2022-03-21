@@ -41,7 +41,7 @@
   },  {
     "title": "Get started",
 "description": "Get up and running in minutes.","section": "GOV.UK Prototype Rig",    "layout": "side-navigation",
-    "templateContent": "like gov.uk prototype kit rig built express framework uses frontend requirements node.js v16 node version manager recommended are working across multiple projects that use different versions downloading there few ways can get rig: download zip visit github repository click this will create copy rather than fork means start your project single commit history learn more about creating from template terminal clone repository: git git@github.com:paulrobertlloyd govuk rig.git unlike using include installation open directory downloaded install dependencies: npm application: go http: localhost:3000 browser",
+    "templateContent": "like gov.uk prototype kit rig built express framework uses frontend requirements node.js v16 node version manager recommended are working across multiple projects that use different versions downloading there few ways can get rig: download zip visit github repository click this will create copy rather than fork means start your project single commit history learn more about creating from template terminal clone repository: git git@github.com:x govuk rig.git unlike using include installation open directory downloaded install dependencies: npm application: go http: localhost:3000 browser",
     "url": "/govuk-prototype-rig/get-started/"
   },  {
     "title": "Feature flags",
