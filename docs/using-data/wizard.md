@@ -95,11 +95,11 @@ Each path can have multiple forks, they are evaluated in order – the user will
 
 In this example we:
 
-- ask the user their name
-- ask if they have a National Insurance number, then:
-  - skip the ‘What is your National Insurance number?’ question if they do not have a number
-  - continue to the ‘What is your National Insurance number?’ question if they do
-- ask for their email address
+* ask the user their name
+* ask if they have a National Insurance number, then:
+  * skip the ‘What is your National Insurance number?’ question if they do not have a number
+  * continue to the ‘What is your National Insurance number?’ question if they do
+* ask for their email address
 
 ```js
 {
@@ -166,7 +166,6 @@ router.post('/examples/wizard/:view?', (req, res) => {
 An example Nunjucks layout extending the default rig layout:
 
 ```njk
-{% raw %}
 {% extends "layouts/default.html" %}
 {% block pageNavigation %}
   {{ govukBackLink({
@@ -187,13 +186,11 @@ An example Nunjucks layout extending the default rig layout:
     </div>
   </div>
 {% endblock %}
-{% endraw %}
 ```
 
 ### Build your question pages
 
 ```njk
-{% raw %}
 {% extends "layouts/wizard.html" %}
 {% set title = "What is your name?" %}
 {% block pageNavigation %}
@@ -212,5 +209,4 @@ An example Nunjucks layout extending the default rig layout:
     decorate: ["wizard", "name"]
   }) }}
 {% endblock %}
-{% endraw %}
 ```

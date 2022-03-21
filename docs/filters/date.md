@@ -10,7 +10,7 @@ Convert an ISO 8601 datetime to a human readable date that follows [the GOV.UK s
 Input
 
 ```njk
-{% raw %}{{ "2021-08-17" | govukDate }}{% endraw %}
+{{ "2021-08-17" | govukDate }}
 ```
 
 Output
@@ -24,7 +24,7 @@ You can also output a date with a truncated month:
 Input
 
 ```njk
-{% raw %}{{ "2021-08-17" | govukDate("truncate") }}{% endraw %}
+{{ "2021-08-17" | govukDate("truncate") }}
 ```
 
 Output
@@ -38,7 +38,7 @@ To get the today’s date, pass the special word `"today"` (or `"now"`):
 Input
 
 ```njk
-{% raw %}This page was last updated on {{ "today" | govukDate }}.{% endraw %}
+This page was last updated on {{ "today" | govukDate }}.
 ```
 
 Output
@@ -54,9 +54,9 @@ Format an ISO 8601 datetime or time to a human readable time that follows [the G
 Input
 
 ```njk
-{% raw %}{{ "2021-08-17T00:00:31" | govukTime }}
+{{ "2021-08-17T00:00:31" | govukTime }}
 {{ "2021-08-17T12:00:59" | govukTime }}
-{{ "2021-08-17T18:30:00" | govukTime }}{% endraw %}
+{{ "2021-08-17T18:30:00" | govukTime }}
 ```
 
 Output
@@ -72,7 +72,7 @@ You can also pass in a time:
 Input
 
 ```njk
-{% raw %}{{ "08:15" | govukTime }}{% endraw %}
+{{ "08:15" | govukTime }}
 ```
 
 Output
@@ -86,7 +86,7 @@ To get the current time, pass the special word `"now"` (or `"today"`):
 Input
 
 ```njk
-{% raw %}You submitted your application at {{ "now" | govukTime }}.{% endraw %}
+You submitted your application at {{ "now" | govukTime }}.
 ```
 
 Output
@@ -104,7 +104,7 @@ The `decorate()` method applied to a `govukDateInput` creates an object with `da
 Input
 
 ```njk
-{% raw %}{{ { day: '17', month: '08', year: '2021' } | isoDateFromDateInput }}{% endraw %}
+{{ { day: '17', month: '08', year: '2021' } | isoDateFromDateInput }}
 ```
 
 Output

@@ -8,7 +8,6 @@ With session data, you can build complex, data-driven transactions. Yet adding d
 To collect a user’s email address, you would normally write:
 
 ```njk
-{% raw %}
 {{ govukInput({
   label: {
     text: "Email address"
@@ -17,7 +16,6 @@ To collect a user’s email address, you would normally write:
   name: "account['email-address']"
   value: data.account['email-address']
 }) }}
-{% endraw %}
 ```
 
 3 separate parameters are needed to store and display data. Each uses the same value, but formatted in a slightly different way:
@@ -35,14 +33,12 @@ The `decorate` attribute removes this overhead. It adds `name`, `value`, `id` (o
 The above example can be rewritten as:
 
 ```njk
-{% raw %}
 {{ govukInput({
   label: {
     text: "Email address"
   },
   decorate: "account.email-address"
 }) }}
-{% endraw %}
 ```
 
 This would generate the following HTML:
@@ -61,7 +57,6 @@ This would generate the following HTML:
 If no value is given, day, month and year fields are shown by default. This works with the decorate attribute too:
 
 ```njk
-{% raw %}
 {{ govukDateInput({
   fieldset: {
     legend: {
@@ -70,13 +65,11 @@ If no value is given, day, month and year fields are shown by default. This work
   },
   decorate: "date-of-issue"
 }) }}
-{% endraw %}
 ```
 
 If you need custom attributes on the day, month or year inputs you need to use a `decorate` param for each field:
 
 ```njk
-{% raw %}
 {{ govukDateInput({
   fieldset: {
     legend: {
@@ -95,5 +88,4 @@ If you need custom attributes on the day, month or year inputs you need to use a
   }],
   decorate: "date-of-birth"
 }) }}
-{% endraw %}
 ```

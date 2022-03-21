@@ -21,7 +21,7 @@ For example, if you have this input:
 You can show what the user entered later on like this:
 
 ```html
-<p>{% raw %}{{ data['first-name'] }}{% endraw %}</p>
+<p>{{ data['first-name'] }}</p>
 ```
 
 ### Showing answers in inputs
@@ -31,13 +31,13 @@ If a user goes back to a page where they entered data, they would expect to see 
 For a text input:
 
 ```html
-<input name="first-name" value="{% raw %}{{ data['first-name'] }}{% endraw %}">
+<input name="first-name" value="{{ data['first-name'] }}">
 ```
 
 For a radio or checkbox input you need to use the `checked` function:
 
 ```html
-<input type="radio" name="over-18" value="yes" {% raw %}{{ checked("over-18", "yes") }}{% endraw %}>
+<input type="radio" name="over-18" value="yes" {{ checked("over-18", "yes") }}>
 ```
 
 If `data['over-18']` has the value `yes`, the function will return `checked`.
@@ -55,7 +55,7 @@ To prevent an input being stored, use an underscore at the start of the name.
 Example using the `checked` function in a checkbox component:
 
 ```njk
-{% raw %}{{ govukCheckboxes({
+{{ govukCheckboxes({
   name: "vehicle-features",
   fieldset: {
     legend: {
@@ -81,7 +81,7 @@ Example using the `checked` function in a checkbox component:
     id: "vehicle-features-radio",
     checked: checked("vehicle-features", "Radio")
   }]
-}) }}{% endraw %}
+}) }}
 ```
 
 ### Using data in routes
