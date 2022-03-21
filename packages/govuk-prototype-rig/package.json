@@ -11,13 +11,13 @@
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/paulrobertlloyd/govuk-prototype-rig.git",
+    "url": "https://github.com/x-govuk/govuk-prototype-rig.git",
     "directory": "packages/govuk-prototype-rig"
   },
   "bugs": {
-    "url": "https://github.com/paulrobertlloyd/govuk-prototype-rig/issues"
+    "url": "https://github.com/x-govuk/govuk-prototype-rig/issues"
   },
-  "homepage": "https://govuk-prototype-rig.herokuapp.com",
+  "homepage": "https://x-govuk.github.io/govuk-prototype-rig/",
   "keywords": [
     "govuk",
     "design system",

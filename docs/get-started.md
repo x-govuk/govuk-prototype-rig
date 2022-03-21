@@ -16,16 +16,16 @@ Like the GOV.UK Prototype Kit, the rig is built on the [Express](http://expressj
 
 There are few different ways you can get the rig:
 
-* [Download the Prototype Rig (zip)](https://github.com/paulrobertlloyd/govuk-prototype-rig/archive/refs/heads/main.zip)
+* [Download the Prototype Rig (zip)](https://github.com/x-govuk/govuk-prototype-rig/archive/refs/heads/main.zip)
 
-* [Visit the Prototype Rig GitHub repository](https://github.com/paulrobertlloyd/govuk-prototype-rig/) and click ‘Use this template’.
+* [Visit the Prototype Rig GitHub repository](https://github.com/x-govuk/govuk-prototype-rig/) and click ‘Use this template’.
 
   This will create a copy of the repository rather than a fork. This means you can start your project will a single commit, rather than the Prototype Rig’s commit history. Learn more about [creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 
 * In the terminal, clone the Prototype Rig GitHub repository:
 
     ```shell
-    git clone git@github.com:paulrobertlloyd/govuk-prototype-rig.git
+    git clone git@github.com:x-govuk/govuk-prototype-rig.git
     ```
 
   Unlike using a template, this will include the commit history of the Prototype Rig.

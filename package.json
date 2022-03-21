@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/paulrobertlloyd/govuk-prototype-rig.git"
+    "url": "https://github.com/x-govuk/govuk-prototype-rig.git"
   },
   "workspaces": [
     "packages/*"
