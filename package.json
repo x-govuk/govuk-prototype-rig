@@ -67,11 +67,13 @@
     "stylelint": "^13.13.1",
     "stylelint-config-gds": "^0.1.0"
   },
-  "private": true,
-  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=16.0.0"
   },
+  "type": "module",
   "prototype": {
     "serviceName": "Your service name"
   },
