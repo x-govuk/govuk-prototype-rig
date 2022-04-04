@@ -12,7 +12,7 @@
   <link rel="mask-icon" href="https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-mask-icon.svg?raw=true" color="#0b0c0c">
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-apple-touch-icon.png">
 
-  <link rel="stylesheet" href="/govuk-prototype-rig/assets/govuk.css">
+  <link rel="stylesheet" href="https://x-govuk.github.io/govuk-prototype-rig/assets/govuk.css">
 
   <meta property="og:url" content="https://x-govuk.github.io/govuk-prototype-rig/">
   <meta property="og:title" content="Using the wizard helper">
@@ -89,7 +89,7 @@
                   <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/form-components/">Using form components</a>
                 </li>
                 <li class="x-govuk-side-navigation__section-item">
-                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/wizard/">Using the wizard helper</a>
+                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/wizard/" aria-current="true">Using the wizard helper</a>
                 </li>
             </ul>
         </li>
@@ -116,11 +116,11 @@
 
 
   <div class="app-article__body">
-        <h2 id="importing-the-wizard-helper" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#importing-the-wizard-helper" class="govuk-link">Importing the wizard helper</a></h2>
+        <h2 id="importing-the-wizard-helper" tabindex="-1" class="govuk-heading-l">Importing the wizard helper</h2>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code><span class="x-govuk-code__keyword">import</span> { wizard } <span class="x-govuk-code__keyword">from</span> <span class="x-govuk-code__string">&#x27;govuk-prototype-rig&#x27;</span>
 </code></pre>
 
-<h2 id="usage" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#usage" class="govuk-link">Usage</a></h2>
+<h2 id="usage" tabindex="-1" class="govuk-heading-l">Usage</h2>
 <p class="govuk-body">The <code class="x-govuk-code x-govuk-code--inline">wizard</code> helper takes two parameters:</p>
 <table tabindex="0" class="govuk-table">
 <thead class="govuk-table__head">
@@ -165,7 +165,7 @@
 }
 </code></pre>
 
-<h3 id="forking-a-journey" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#forking-a-journey" class="govuk-link">Forking a journey</a></h3>
+<h3 id="forking-a-journey" tabindex="-1" class="govuk-heading-m">Forking a journey</h3>
 <p class="govuk-body">By default a user will progress through the journey in the order set out.</p>
 <p class="govuk-body">You can fork from that journey by giving a list of paths and conditions – if the conditions are met the user will follow the fork.</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code>{
@@ -205,7 +205,7 @@
 }
 </code></pre>
 
-<h2 id="an-example" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#an-example" class="govuk-link">An example</a></h2>
+<h2 id="an-example" tabindex="-1" class="govuk-heading-l">An example</h2>
 <p class="govuk-body">In this example we:</p>
 <ul class="govuk-list govuk-list--bullet">
 <li>ask the user their name</li>
@@ -227,8 +227,8 @@
 }
 </code></pre>
 
-<h2 id="how-to-get-a-wizard-working" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#how-to-get-a-wizard-working" class="govuk-link">How to get a wizard working</a></h2>
-<h3 id="create-a-user-journey" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#create-a-user-journey" class="govuk-link">Create a user journey</a></h3>
+<h2 id="how-to-get-a-wizard-working" tabindex="-1" class="govuk-heading-l">How to get a wizard working</h2>
+<h3 id="create-a-user-journey" tabindex="-1" class="govuk-heading-m">Create a user journey</h3>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--js" tabindex="0"><code><span class="x-govuk-code__keyword">import</span> { wizard } <span class="x-govuk-code__keyword">from</span> <span class="x-govuk-code__string">&#x27;govuk-prototype-rig&#x27;</span>
 
 <span class="x-govuk-code__keyword">export</span> <span class="x-govuk-code__keyword">function</span> <span class="x-govuk-code__title function_">exampleWizard</span> (req) {
@@ -254,7 +254,7 @@
 }
 </code></pre>
 
-<h3 id="set-up-the-routes" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#set-up-the-routes" class="govuk-link">Set up the routes</a></h3>
+<h3 id="set-up-the-routes" tabindex="-1" class="govuk-heading-m">Set up the routes</h3>
 <ol class="govuk-list govuk-list--number">
 <li>Make the paths available in the view using routes</li>
 <li>Post each form back to itself, evaluate the paths and redirect to the calculated next page</li>
@@ -272,7 +272,7 @@ router.<span class="x-govuk-code__title function_">post</span>(<span class="x-go
 })
 </code></pre>
 
-<h3 id="use-a-layout-which-uses-the-paths-object" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#use-a-layout-which-uses-the-paths-object" class="govuk-link">Use a layout which uses the paths object</a></h3>
+<h3 id="use-a-layout-which-uses-the-paths-object" tabindex="-1" class="govuk-heading-m">Use a layout which uses the paths object</h3>
 <p class="govuk-body">An example Nunjucks layout extending the default rig layout:</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">extends</span></span> &quot;layouts/default.html&quot; %}</span><span class="language-xml">
 </span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">block</span></span> pageNavigation %}</span><span class="language-xml">
@@ -296,7 +296,7 @@ router.<span class="x-govuk-code__title function_">post</span>(<span class="x-go
 </span><span class="x-govuk-code__template-tag">{% <span class="x-govuk-code__name"><span class="x-govuk-code__name">endblock</span></span> %}</span><span class="language-xml">
 </span></code></pre>
 
-<h3 id="build-your-question-pages" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#build-your-question-pages" class="govuk-link">Build your question pages</a></h3>
+<h3 id="build-your-question-pages" tabindex="-1" class="govuk-heading-m">Build your question pages</h3>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="language-xml">{% extends &quot;layouts/wizard.html&quot; %}
 {% set title = &quot;What is your name?&quot; %}
 {% block pageNavigation %}

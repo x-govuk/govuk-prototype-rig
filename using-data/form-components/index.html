@@ -12,7 +12,7 @@
   <link rel="mask-icon" href="https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-mask-icon.svg?raw=true" color="#0b0c0c">
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-apple-touch-icon.png">
 
-  <link rel="stylesheet" href="/govuk-prototype-rig/assets/govuk.css">
+  <link rel="stylesheet" href="https://x-govuk.github.io/govuk-prototype-rig/assets/govuk.css">
 
   <meta property="og:url" content="https://x-govuk.github.io/govuk-prototype-rig/">
   <meta property="og:title" content="Using form components">
@@ -86,7 +86,7 @@
                   <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/feature-flags/">Feature flags</a>
                 </li>
                 <li class="x-govuk-side-navigation__section-item">
-                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/form-components/">Using form components</a>
+                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/form-components/" aria-current="true">Using form components</a>
                 </li>
                 <li class="x-govuk-side-navigation__section-item">
                   <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/wizard/">Using the wizard helper</a>
@@ -135,7 +135,7 @@
 <li><code class="x-govuk-code x-govuk-code--inline">value</code>, which also uses object notation, but proceeded by <code class="x-govuk-code x-govuk-code--inline">data.</code></li>
 </ul>
 <p class="govuk-body">Radios, checkboxes and select components also need to add a <code class="x-govuk-code x-govuk-code--inline">checked</code> or <code class="x-govuk-code x-govuk-code--inline">selected</code> attribute to any option that matches the stored value, and date inputs need individual values for day, month and year fields.</p>
-<h2 id="decorating-forms" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#decorating-forms" class="govuk-link">Decorating forms</a></h2>
+<h2 id="decorating-forms" tabindex="-1" class="govuk-heading-l">Decorating forms</h2>
 <p class="govuk-body">The <code class="x-govuk-code x-govuk-code--inline">decorate</code> attribute removes this overhead. It adds <code class="x-govuk-code x-govuk-code--inline">name</code>, <code class="x-govuk-code x-govuk-code--inline">value</code>, <code class="x-govuk-code x-govuk-code--inline">id</code> (or <code class="x-govuk-code x-govuk-code--inline">idPrefix</code>) and <code class="x-govuk-code x-govuk-code--inline">checked</code>/<code class="x-govuk-code x-govuk-code--inline">selected</code> attributes to a GOV.UK form component, with values based on where the data is stored.</p>
 <p class="govuk-body">The above example can be rewritten as:</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">govukInput</span>({
@@ -153,7 +153,7 @@
 <span class="x-govuk-code__tag">&lt;/<span class="x-govuk-code__name">div</span>&gt;</span>
 </code></pre>
 
-<h3 id="date-inputs" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#date-inputs" class="govuk-link">Date inputs</a></h3>
+<h3 id="date-inputs" tabindex="-1" class="govuk-heading-m">Date inputs</h3>
 <p class="govuk-body"><a href="https://design-system.service.gov.uk/components/date-input/" class="govuk-link">The date input component</a> accepts an optional <code class="x-govuk-code x-govuk-code--inline">items</code> parameter.</p>
 <p class="govuk-body">If no value is given, day, month and year fields are shown by default. This works with the decorate attribute too:</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">govukDateInput</span>({

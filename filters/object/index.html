@@ -12,7 +12,7 @@
   <link rel="mask-icon" href="https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-mask-icon.svg?raw=true" color="#0b0c0c">
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-apple-touch-icon.png">
 
-  <link rel="stylesheet" href="/govuk-prototype-rig/assets/govuk.css">
+  <link rel="stylesheet" href="https://x-govuk.github.io/govuk-prototype-rig/assets/govuk.css">
 
   <meta property="og:url" content="https://x-govuk.github.io/govuk-prototype-rig/">
   <meta property="og:title" content="Objects">
@@ -98,7 +98,7 @@
                   <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/filters/number/">Numbers</a>
                 </li>
                 <li class="x-govuk-side-navigation__section-item">
-                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/filters/object/">Objects</a>
+                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/filters/object/" aria-current="true">Objects</a>
                 </li>
                 <li class="x-govuk-side-navigation__section-item">
                   <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/filters/string/">Strings</a>
@@ -119,7 +119,7 @@
 
 
   <div class="app-article__body">
-        <h2 id="isobject" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#isobject" class="govuk-link">isObject</a></h2>
+        <h2 id="isobject" tabindex="-1" class="govuk-heading-l">isObject</h2>
 <p class="govuk-body">Checks if a value is the language type of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="govuk-link"><code class="x-govuk-code x-govuk-code--inline">Object</code></a>.</p>
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ { <span class="x-govuk-code__name">country:</span> <span class="x-govuk-code__string">&quot;england&quot;</span> } | isObject }}</span><span class="language-xml">
@@ -133,7 +133,7 @@ true
 false
 </code></pre>
 
-<h2 id="objecttoarray" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#objecttoarray" class="govuk-link">objectToArray</a></h2>
+<h2 id="objecttoarray" tabindex="-1" class="govuk-heading-l">objectToArray</h2>
 <p class="govuk-body">Transforms an object to an array, using each object’s key as the value for <code class="x-govuk-code x-govuk-code--inline">id</code>.</p>
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ {
