@@ -73,7 +73,10 @@ You can fork from that journey by giving a list of paths and conditions – if t
     },
 
     // Shorthand
-    '/path-to-fork-to': () => req.session.data.key == 'Something else'
+    '/path-to-fork-to': () => req.session.data.key == 'Something else',
+
+    // Always redirect
+    '/path-to-fork-to': true
   }
 }
 ```
@@ -87,7 +90,8 @@ Each path can have multiple forks, they are evaluated in order – the user will
     '/scotland': { data: 'country', value: 'Scotland' },
     '/wales': { data: 'country', value: 'Wales' },
     '/ireland': { data: 'country', values: ['Ireland', 'Northern Ireland'] },
-    '/asia': () => isCountryInAsia(req.session.data.country)
+    '/asia': () => isCountryInAsia(req.session.data.country),
+    '/other-countries': true
   }
 }
 ```
