@@ -188,7 +188,10 @@
     },
 
     <span class="x-govuk-code__comment">// Shorthand</span>
-    <span class="x-govuk-code__string">&#x27;/path-to-fork-to&#x27;</span>: <span class="x-govuk-code__function">() =&gt;</span> req.<span class="x-govuk-code__property">session</span>.<span class="x-govuk-code__property">data</span>.<span class="x-govuk-code__property">key</span> == <span class="x-govuk-code__string">&#x27;Something else&#x27;</span>
+    <span class="x-govuk-code__string">&#x27;/path-to-fork-to&#x27;</span>: <span class="x-govuk-code__function">() =&gt;</span> req.<span class="x-govuk-code__property">session</span>.<span class="x-govuk-code__property">data</span>.<span class="x-govuk-code__property">key</span> == <span class="x-govuk-code__string">&#x27;Something else&#x27;</span>,
+
+    <span class="x-govuk-code__comment">// Always redirect</span>
+    <span class="x-govuk-code__string">&#x27;/path-to-fork-to&#x27;</span>: <span class="x-govuk-code__literal">true</span>
   }
 }
 </code></pre>
@@ -200,7 +203,8 @@
     <span class="x-govuk-code__string">&#x27;/scotland&#x27;</span>: { <span class="x-govuk-code__attr">data</span>: <span class="x-govuk-code__string">&#x27;country&#x27;</span>, <span class="x-govuk-code__attr">value</span>: <span class="x-govuk-code__string">&#x27;Scotland&#x27;</span> },
     <span class="x-govuk-code__string">&#x27;/wales&#x27;</span>: { <span class="x-govuk-code__attr">data</span>: <span class="x-govuk-code__string">&#x27;country&#x27;</span>, <span class="x-govuk-code__attr">value</span>: <span class="x-govuk-code__string">&#x27;Wales&#x27;</span> },
     <span class="x-govuk-code__string">&#x27;/ireland&#x27;</span>: { <span class="x-govuk-code__attr">data</span>: <span class="x-govuk-code__string">&#x27;country&#x27;</span>, <span class="x-govuk-code__attr">values</span>: [<span class="x-govuk-code__string">&#x27;Ireland&#x27;</span>, <span class="x-govuk-code__string">&#x27;Northern Ireland&#x27;</span>] },
-    <span class="x-govuk-code__string">&#x27;/asia&#x27;</span>: <span class="x-govuk-code__function">() =&gt;</span> <span class="x-govuk-code__title function_">isCountryInAsia</span>(req.<span class="x-govuk-code__property">session</span>.<span class="x-govuk-code__property">data</span>.<span class="x-govuk-code__property">country</span>)
+    <span class="x-govuk-code__string">&#x27;/asia&#x27;</span>: <span class="x-govuk-code__function">() =&gt;</span> <span class="x-govuk-code__title function_">isCountryInAsia</span>(req.<span class="x-govuk-code__property">session</span>.<span class="x-govuk-code__property">data</span>.<span class="x-govuk-code__property">country</span>),
+    <span class="x-govuk-code__string">&#x27;/other-countries&#x27;</span>: <span class="x-govuk-code__literal">true</span>
   }
 }
 </code></pre>
