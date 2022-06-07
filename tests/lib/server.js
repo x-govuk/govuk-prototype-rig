@@ -52,19 +52,51 @@ test('Shows feature flags confirmation page', async t => {
   const response = await request(app).post('/feature-flags')
     .send({
       features: {
-        foo: {
-          name: 'Foo',
-          on: 'true'
-        },
-        bar: {
-          name: 'Bar',
-          on: 'false'
-        }
+        foo: { name: 'Foo', on: 'true' },
+        bar: { name: 'Bar', on: 'false' }
       }
     })
 
   t.is(response.status, 200)
   t.regex(response.text, /Feature flags updated/)
+})
+
+test('Shows password page', async t => {
+  const response = await request(app).get('/prototype-password')
+
+  t.is(response.status, 200)
+  t.regex(response.text, /This is a prototype used for research/)
+})
+
+test('Shows password page with validation error', async t => {
+  process.env.NODE_ENV = 'production'
+  process.env.PASSWORD = 'test'
+  const response = await request(app).post('/prototype-password')
+    .send({ _password: 'incorrect' })
+
+  t.is(response.status, 422)
+  t.regex(response.text, /The password is not correct/)
+})
+
+test('Redirects authenticated user to previous page', async t => {
+  process.env.NODE_ENV = 'production'
+  process.env.PASSWORD = 'test'
+  const response = await request(app).post('/prototype-password')
+    .send({ _password: 'test' })
+    .send({ returnUrl: '/' })
+
+  t.is(response.status, 302)
+})
+
+test('Throws error if trying to redirect to an external site', async t => {
+  process.env.NODE_ENV = 'production'
+  process.env.PASSWORD = 'test'
+  const response = await request(app).post('/prototype-password')
+    .send({ _password: 'test' })
+    .send({ returnUrl: 'https://gov.uk' })
+
+  t.is(response.status, 500)
+  t.regex(response.text, /Return URL must be a page in this prototype/)
 })
 
 test('Shows 404 not found page', async t => {

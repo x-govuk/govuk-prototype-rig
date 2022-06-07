@@ -28,7 +28,7 @@ The following options can be set in your configuration file:
 | :--- | :--- | :---------- |
 | **serviceName** | string | The name of your service. Default is `'Your service name'`. |
 | **templateExtension** | string | The file extension used for your templates. Default is `'html'`. |
-| **useAuth** | boolean | Enable or disable password protection on production. Default is `false`. |
+| **useAuth** | boolean | Enable or disable password protection on production. Default is `true`. |
 | **useAutoStoreData** | boolean | Automatically store form data and send to all views. Default is `true`. |
 | **useCookieSessionStore** | boolean | Enable cookie-based session store (persists on restart). Please note 4KB cookie limit per domain, cookies too large will silently be ignored. Default is `false`. |
 | **useHttps** | boolean | Force HTTP to redirect to HTTPS on production. Default is `true`. |
