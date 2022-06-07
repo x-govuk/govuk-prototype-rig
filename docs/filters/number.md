@@ -22,6 +22,24 @@ true
 false
 ```
 
+## ordinal
+
+Convert a number into an ordinal numeral that follows [the GOV.UK style](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#ordinal-numbers).
+
+Input
+
+```njk
+{{ 4 | ordinal }}
+{{ 22 | ordinal }}
+```
+
+Output
+
+```html
+fourth
+22nd
+```
+
 ## sterling
 
 Convert a number into a string formatted as pound sterling. This can be useful for converting numbers into a human readable price.
