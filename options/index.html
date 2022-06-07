@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template no-js">
   <head>
     <meta charset="utf-8">
-    <title>Objects - Prototype Rig - X-GOVUK</title>
+    <title>Configuration - Prototype Rig - X-GOVUK</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c"> 
     
@@ -15,8 +15,8 @@
   <link rel="stylesheet" href="https://x-govuk.github.io/govuk-prototype-rig/assets/govuk.css">
 
   <meta property="og:url" content="https://x-govuk.github.io/govuk-prototype-rig/">
-  <meta property="og:title" content="Objects">
-    
+  <meta property="og:title" content="Configuration">
+<meta property="og:description" name="description" content="The rig has a number of options that allow you to customise the behaviour of your prototype.">    
     
     <meta property="og:image" content="https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-opengraph-image.png">
   </head>
@@ -61,9 +61,6 @@
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="/govuk-prototype-rig/">GOV.UK Prototype Rig</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/govuk-prototype-rig/filters/">Filters</a>
-    </li>
   </ol>
 </div>
 
@@ -79,8 +76,8 @@
         <li class="x-govuk-side-navigation__section-item">
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/get-started/">Get started</a>
         </li>
-        <li class="x-govuk-side-navigation__section-item">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/options/">Configuration</a>
+        <li class="x-govuk-side-navigation__section-item x-govuk-side-navigation__section-item--current">
+          <a class="x-govuk-side-navigation__link" href="" aria-current="true">Configuration</a>
         </li>
         <li class="x-govuk-side-navigation__section-item">
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/">Creating journeys with data</a>
@@ -88,25 +85,8 @@
         <li class="x-govuk-side-navigation__section-item">
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/components/">Components</a>
         </li>
-        <li class="x-govuk-side-navigation__section-item x-govuk-side-navigation__section-item--current">
+        <li class="x-govuk-side-navigation__section-item">
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/filters/">Filters</a>
-            <ul class="x-govuk-side-navigation__section x-govuk-side-navigation__section--nested">
-                <li class="x-govuk-side-navigation__section-item">
-                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/filters/array/">Arrays</a>
-                </li>
-                <li class="x-govuk-side-navigation__section-item">
-                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/filters/date/">Dates</a>
-                </li>
-                <li class="x-govuk-side-navigation__section-item">
-                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/filters/number/">Numbers</a>
-                </li>
-                <li class="x-govuk-side-navigation__section-item">
-                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/filters/object/" aria-current="true">Objects</a>
-                </li>
-                <li class="x-govuk-side-navigation__section-item">
-                  <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/filters/string/">Strings</a>
-                </li>
-            </ul>
         </li>
     </ul>
 </nav>
@@ -115,44 +95,72 @@
     <div class="govuk-grid-column-three-quarters-from-desktop">
       <header class="app-document-header">
   <h1 class="app-document-header__title govuk-heading-xl">
-    Objects
+    Configuration
   </h1>
+    <p class="app-document-header__description govuk-body-l">
+      The rig has a number of options that allow you to customise the behaviour of your prototype.
+    </p>
 </header>
 
 
 
-      <div class="app-prose-scope"><h2 id="isobject" tabindex="-1" class="govuk-heading-l">isObject</h2>
-<p class="govuk-body">Checks if a value is the language type of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="govuk-link"><code class="x-govuk-code x-govuk-code--inline">Object</code></a>.</p>
-<p class="govuk-body">Input</p>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ { <span class="x-govuk-code__name">country:</span> <span class="x-govuk-code__string">&quot;england&quot;</span> } | isObject }}</span><span class="language-xml">
-</span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">[&quot;england&quot;, &quot;scotland&quot;, &quot;wales&quot;]</span> | isObject }}</span><span class="language-xml">
-</span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">&quot;great britain&quot;</span> | isObject }}</span><span class="language-xml">
-</span></code></pre>
-
-<p class="govuk-body">Output</p>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>true
-true
-false
-</code></pre>
-
-<h2 id="objecttoarray" tabindex="-1" class="govuk-heading-l">objectToArray</h2>
-<p class="govuk-body">Transforms an object to an array, using each object’s key as the value for <code class="x-govuk-code x-govuk-code--inline">id</code>.</p>
-<p class="govuk-body">Input</p>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ {
-  <span class="x-govuk-code__name">&quot;a&quot;</span>: { name: <span class="x-govuk-code__string">&quot;Sir Robert Walpole&quot;</span> },
-  <span class="x-govuk-code__string">&quot;b&quot;</span>: { name: <span class="x-govuk-code__string">&quot;Spencer Compton&quot;</span> },
-  <span class="x-govuk-code__string">&quot;c&quot;</span>: { name: <span class="x-govuk-code__string">&quot;Henry Pelham&quot;</span> },
-} | objectToArray | dump }}</span><span class="language-xml">
-</span></code></pre>
-
-<p class="govuk-body">Output</p>
-<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>[
-  { id: &quot;a&quot;, name: &quot;Sir Robert Walpole&quot; },
-  { id: &quot;b&quot;, name: &quot;Spencer Compton&quot; },
-  { id: &quot;c&quot;, name: &quot;Henry Pelham&quot; },
-]
-</code></pre>
-
+      <div class="app-prose-scope"><p class="govuk-body">The rig uses <a href="https://github.com/davidtheclark/cosmiconfig" class="govuk-link">cosmiconfig</a> to find and load a configuration file. Starting from the current working directory, it looks for the following possible sources:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>a <code class="x-govuk-code x-govuk-code--inline">prototype</code> property in <code class="x-govuk-code x-govuk-code--inline">package.json</code></li>
+<li>a <code class="x-govuk-code x-govuk-code--inline">.prototyperc</code> file</li>
+<li>a <code class="x-govuk-code x-govuk-code--inline">prototype.config.js</code> file exporting a JavaScript object</li>
+<li>a <code class="x-govuk-code x-govuk-code--inline">prototype.config.cjs</code> file exporting a JavaScript object (if you have <code class="x-govuk-code x-govuk-code--inline">&quot;type&quot;: &quot;module&quot;</code> set in <code class="x-govuk-code x-govuk-code--inline">package.json</code>)</li>
+</ul>
+<p class="govuk-body">The search stops when one of these is found. You can use the <code class="x-govuk-code x-govuk-code--inline">--config</code> CLI option to short-circuit this search.</p>
+<p class="govuk-body">The <code class="x-govuk-code x-govuk-code--inline">.prototyperc</code> file (without extension) can be in JSON or YAML format. Add a filename extension to help your text editor provide syntax checking and highlighting:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li><code class="x-govuk-code x-govuk-code--inline">.prototyperc.json</code></li>
+<li><code class="x-govuk-code x-govuk-code--inline">.prototyperc.yaml</code> / <code class="x-govuk-code x-govuk-code--inline">.prototyperc.yml</code></li>
+<li><code class="x-govuk-code x-govuk-code--inline">.prototyperc.js</code></li>
+</ul>
+<h2 id="options" tabindex="-1" class="govuk-heading-l">Options</h2>
+<p class="govuk-body">The following options can be set in your configuration file:</p>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th style="text-align:left" class="govuk-table__header">Name</th>
+<th style="text-align:left" class="govuk-table__header">Type</th>
+<th style="text-align:left" class="govuk-table__header">Description</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>serviceName</strong></td>
+<td style="text-align:left" class="govuk-table__cell">string</td>
+<td style="text-align:left" class="govuk-table__cell">The name of your service. Default is <code class="x-govuk-code x-govuk-code--inline">'Your service name'</code>.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>templateExtension</strong></td>
+<td style="text-align:left" class="govuk-table__cell">string</td>
+<td style="text-align:left" class="govuk-table__cell">The file extension used for your templates. Default is <code class="x-govuk-code x-govuk-code--inline">'html'</code>.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>useAuth</strong></td>
+<td style="text-align:left" class="govuk-table__cell">boolean</td>
+<td style="text-align:left" class="govuk-table__cell">Enable or disable password protection on production. Default is <code class="x-govuk-code x-govuk-code--inline">false</code>.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>useAutoStoreData</strong></td>
+<td style="text-align:left" class="govuk-table__cell">boolean</td>
+<td style="text-align:left" class="govuk-table__cell">Automatically store form data and send to all views. Default is <code class="x-govuk-code x-govuk-code--inline">true</code>.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>useCookieSessionStore</strong></td>
+<td style="text-align:left" class="govuk-table__cell">boolean</td>
+<td style="text-align:left" class="govuk-table__cell">Enable cookie-based session store (persists on restart). Please note 4KB cookie limit per domain, cookies too large will silently be ignored. Default is <code class="x-govuk-code x-govuk-code--inline">false</code>.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>useHttps</strong></td>
+<td style="text-align:left" class="govuk-table__cell">boolean</td>
+<td style="text-align:left" class="govuk-table__cell">Force HTTP to redirect to HTTPS on production. Default is <code class="x-govuk-code x-govuk-code--inline">true</code>.</td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
