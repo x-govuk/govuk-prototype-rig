@@ -97,6 +97,30 @@ Output
 Department for Business, Energy & Industrial&amp;nbsp;Strategy
 ```
 
+## pluralise
+
+Get the plural form for an item for a given number of items.
+
+> This filter currently only works with English words.
+
+```njk
+{{ 1 | pluralise("mouse") }}
+{{ 2 | pluralise("house") }}
+{{ 2 | pluralise("house", { number: false }) }}
+{{ 2 | pluralise("mouse", { plural: "mice" }) }}
+{{ 2 | pluralise("mouse", { plural: "mice", number: false }) }}
+```
+
+Output
+
+```html
+1 mouse
+2 houses
+houses
+2 mice
+mice
+```
+
 ## slugify
 
 Convert a string to kebab-case. This can be useful to slugify titles for use in URLs or fragment identifiers.
