@@ -209,14 +209,14 @@
                 },
                 type: "email",
                 spellcheck: "false",
-                decorate: "contact-by-email",
+                decorate: "email-address",
                 validate: {
                   conditional: {
                     dependentOn: {
-                      name: "[how-contacted]",
+                      name: "[contact-method]",
                       value: "email"
                     },
-                    message: "Please enter your email address"
+                    message: "Enter your email address"
                   }
                 }
               })
@@ -231,42 +231,20 @@
                   text: "Phone number"
                 },
                 type: "tel",
-                decorate: "contact-by-phone",
+                decorate: "phone-number",
                 validate: {
                   conditional: {
                     dependentOn: {
-                      name: "[how-contacted]",
+                      name: "[contact-method]",
                       value: "phone"
                     },
-                    message: "Please enter your phone number"
-                  }
-                }
-              })
-            }
-          }, {
-            value: "sms",
-            text: "Text message",
-            conditional: {
-              html: govukInput({
-                classes: "govuk-!-width-one-third",
-                label: {
-                  text: "Mobile phone number"
-                },
-                type: "tel",
-                decorate: "contact-by-sms",
-                validate: {
-                  conditional: {
-                    dependentOn: {
-                      name: "[how-contacted]",
-                      value: "sms"
-                    },
-                    message: "Please enter your mobile phone number"
+                    message: "Enter your phone number"
                   }
                 }
               })
             }
           }],
-          decorate: "how-contacted",
+          decorate: "contact-method",
           validate: {
             presence: {
               message: "Select a contact method"
