@@ -25,7 +25,7 @@ Unbranded templates, jQuery and stylesheets for Internet Explorer 8 are also not
 * [Feature flags](../using-data/feature-flags)
 * Session data output to the JavaScript console
 * Ability to use `async` functions for session data
-* Support for form validation
+* Support for [form validation](../using-data/form-validation)
 * Form [component helper](../using-data/form-components)
 * Nunjucks [template filters](../filters)
 * Common [components](../components) not currently in the GOV.UK Design System
