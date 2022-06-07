@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 1
 title: Get started
 description: Get up and running in minutes.
 ---

@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 0
 title: About this project
 description: The rig provides all you need to build interactive prototypes that look like pages on GOV.UK.
 action: Learn more about this project
