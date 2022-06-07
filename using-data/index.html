@@ -43,7 +43,7 @@
         </span>
       </a>
     </div>
-    <div class="app-site-search govuk-!-display-none-print" data-module="app-search" data-search-index="/govuk-prototype-rig/search.json">
+    <div class="app-site-search govuk-!-display-none-print" data-module="app-site-search" data-search-index="/govuk-prototype-rig/search.json">
   <label class="govuk-visually-hidden" for="app-site-search__input">Search site</label>
   <a class="app-site-search__link govuk-link-no-visited" href="/govuk-prototype-rig/sitemap">Sitemap</a>
 </div>
@@ -66,7 +66,7 @@
 
         <main class="govuk-main-wrapper " id="main-content" role="main">
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-quarter">
+    <div class="govuk-grid-column-one-quarter-from-desktop">
       <nav class="x-govuk-side-navigation" aria-labelledby="x-govuk-side-navigation-heading">
   <h2 class="govuk-visually-hidden" id="x-govuk-side-navigation-heading">Pages in this section</h2>
     <ul class="x-govuk-side-navigation__section">
@@ -77,7 +77,7 @@
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/get-started/">Get started</a>
         </li>
         <li class="x-govuk-side-navigation__section-item x-govuk-side-navigation__section-item--current">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/" aria-current="true">Creating journeys with data</a>
+          <a class="x-govuk-side-navigation__link" href="" aria-current="true">Creating journeys with data</a>
             <ul class="x-govuk-side-navigation__section x-govuk-side-navigation__section--nested">
                 <li class="x-govuk-side-navigation__section-item">
                   <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/feature-flags/">Feature flags</a>
@@ -100,20 +100,19 @@
 </nav>
 
     </div>
-    <div class="govuk-grid-column-three-quarters">
-<article class="app-article">
-  <header class="app-article__header">
-    <h1 class="app-article__title govuk-heading-xl">
-      Creating journeys with data
-    </h1>
-      <div class="govuk-body-l">
-        Use and display data a user has entered over a few screens.
-      </div>
-  </header>
+    <div class="govuk-grid-column-three-quarters-from-desktop">
+      <header class="app-document-header">
+  <h1 class="app-document-header__title govuk-heading-xl">
+    Creating journeys with data
+  </h1>
+    <p class="app-document-header__description govuk-body-l">
+      Use and display data a user has entered over a few screens.
+    </p>
+</header>
 
 
-  <div class="app-article__body">
-        <p class="govuk-body">The Prototype Rig includes a simple way of saving data entered in forms, as well as displaying the saved data. Data is stored locally on the computer running the prototype and disappears at the end of the session, when the browser window is closed.</p>
+
+      <div class="app-prose-scope"><p class="govuk-body">The Prototype Rig includes a simple way of saving data entered in forms, as well as displaying the saved data. Data is stored locally on the computer running the prototype and disappears at the end of the session, when the browser window is closed.</p>
 <h2 id="how-to-use" tabindex="-1" class="govuk-heading-l">How to use</h2>
 <p class="govuk-body">The rig stores data from inputs using the name attribute of the input.</p>
 <p class="govuk-body">For example, if you have this input:</p>
@@ -181,11 +180,10 @@
 <p class="govuk-body">To see what data has been stored in the session, check the JavaScript console in your web browser.</p>
 <h2 id="clearing-data" tabindex="-1" class="govuk-heading-l">Clearing data</h2>
 <p class="govuk-body">To clear the data (for example at the end of a user research session) click the ‘Clear session data’ link in the footer.</p>
-
 </div>
-</article>
 
-      
+
+
     </div>
   </div>
         </main>
@@ -208,10 +206,6 @@
 
 
   <script src="/govuk-prototype-rig/assets/govuk.js"></script>
-  <script>
-    document.documentElement.classList.remove('no-js')
-    const searchContainer = document.querySelector('[data-module="app-search"]')
-    new GOVUK11ty.SiteSearch(searchContainer).init()
-  </script>
+  <script>document.documentElement.classList.remove('no-js')</script>
   </body>
 </html>

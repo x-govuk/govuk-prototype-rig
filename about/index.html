@@ -43,7 +43,7 @@
         </span>
       </a>
     </div>
-    <div class="app-site-search govuk-!-display-none-print" data-module="app-search" data-search-index="/govuk-prototype-rig/search.json">
+    <div class="app-site-search govuk-!-display-none-print" data-module="app-site-search" data-search-index="/govuk-prototype-rig/search.json">
   <label class="govuk-visually-hidden" for="app-site-search__input">Search site</label>
   <a class="app-site-search__link govuk-link-no-visited" href="/govuk-prototype-rig/sitemap">Sitemap</a>
 </div>
@@ -66,12 +66,12 @@
 
         <main class="govuk-main-wrapper " id="main-content" role="main">
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-quarter">
+    <div class="govuk-grid-column-one-quarter-from-desktop">
       <nav class="x-govuk-side-navigation" aria-labelledby="x-govuk-side-navigation-heading">
   <h2 class="govuk-visually-hidden" id="x-govuk-side-navigation-heading">Pages in this section</h2>
     <ul class="x-govuk-side-navigation__section">
         <li class="x-govuk-side-navigation__section-item x-govuk-side-navigation__section-item--current">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/about/" aria-current="true">About this project</a>
+          <a class="x-govuk-side-navigation__link" href="" aria-current="true">About this project</a>
         </li>
         <li class="x-govuk-side-navigation__section-item">
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/get-started/">Get started</a>
@@ -89,20 +89,19 @@
 </nav>
 
     </div>
-    <div class="govuk-grid-column-three-quarters">
-<article class="app-article">
-  <header class="app-article__header">
-    <h1 class="app-article__title govuk-heading-xl">
-      About this project
-    </h1>
-      <div class="govuk-body-l">
-        The rig provides all you need to build interactive prototypes that look like pages on GOV.UK.
-      </div>
-  </header>
+    <div class="govuk-grid-column-three-quarters-from-desktop">
+      <header class="app-document-header">
+  <h1 class="app-document-header__title govuk-heading-xl">
+    About this project
+  </h1>
+    <p class="app-document-header__description govuk-body-l">
+      The rig provides all you need to build interactive prototypes that look like pages on GOV.UK.
+    </p>
+</header>
 
 
-  <div class="app-article__body">
-        <p class="govuk-body">Prototypes can be used to show ideas to people you work with, and during user research.</p>
+
+      <div class="app-prose-scope"><p class="govuk-body">Prototypes can be used to show ideas to people you work with, and during user research.</p>
 <h2 id="differences-from-the-prototype-kit" tabindex="-1" class="govuk-heading-l">Differences from the Prototype Kit</h2>
 <p class="govuk-body">The rig is a re-imagined version of the <a href="https://govuk-prototype-kit.herokuapp.com/docs" class="govuk-link">GOV.UK Prototype Kit</a> aimed at developers familiar with the Nunjucks template language.</p>
 <p class="govuk-body">The Prototype Rig works in exactly the same way as the kit. It stores data in the session, uses <a href="https://github.com/alphagov/govuk-frontend" class="govuk-link">GOV.UK Frontend</a> components, and supports hosting prototypes on services like <a href="https://www.heroku.com" class="govuk-link">Heroku</a>.</p>
@@ -134,11 +133,10 @@
 <p class="govuk-body">You must protect user privacy at all times, even when using prototypes. Prototypes made with the rig look like GOV.UK, but do not have the same security provisions. Always make sure you are handling user data appropriately.</p>
 <h2 id="the-rig-is-not-a-production-framework" tabindex="-1" class="govuk-heading-l">The rig is not a production framework</h2>
 <p class="govuk-body">Things made with the rig may look like GOV.UK, but do not have production code and likely aren’t fully accessible. Don’t use the rig as a base for a production service.</p>
-
 </div>
-</article>
 
-      
+
+
     </div>
   </div>
         </main>
@@ -161,10 +159,6 @@
 
 
   <script src="/govuk-prototype-rig/assets/govuk.js"></script>
-  <script>
-    document.documentElement.classList.remove('no-js')
-    const searchContainer = document.querySelector('[data-module="app-search"]')
-    new GOVUK11ty.SiteSearch(searchContainer).init()
-  </script>
+  <script>document.documentElement.classList.remove('no-js')</script>
   </body>
 </html>

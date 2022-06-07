@@ -43,7 +43,7 @@
         </span>
       </a>
     </div>
-    <div class="app-site-search govuk-!-display-none-print" data-module="app-search" data-search-index="/govuk-prototype-rig/search.json">
+    <div class="app-site-search govuk-!-display-none-print" data-module="app-site-search" data-search-index="/govuk-prototype-rig/search.json">
   <label class="govuk-visually-hidden" for="app-site-search__input">Search site</label>
   <a class="app-site-search__link govuk-link-no-visited" href="/govuk-prototype-rig/sitemap">Sitemap</a>
 </div>
@@ -66,7 +66,7 @@
 
         <main class="govuk-main-wrapper " id="main-content" role="main">
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-quarter">
+    <div class="govuk-grid-column-one-quarter-from-desktop">
       <nav class="x-govuk-side-navigation" aria-labelledby="x-govuk-side-navigation-heading">
   <h2 class="govuk-visually-hidden" id="x-govuk-side-navigation-heading">Pages in this section</h2>
     <ul class="x-govuk-side-navigation__section">
@@ -80,7 +80,7 @@
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/using-data/">Creating journeys with data</a>
         </li>
         <li class="x-govuk-side-navigation__section-item x-govuk-side-navigation__section-item--current">
-          <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/components/" aria-current="true">Components</a>
+          <a class="x-govuk-side-navigation__link" href="" aria-current="true">Components</a>
         </li>
         <li class="x-govuk-side-navigation__section-item">
           <a class="x-govuk-side-navigation__link" href="/govuk-prototype-rig/filters/">Filters</a>
@@ -89,20 +89,19 @@
 </nav>
 
     </div>
-    <div class="govuk-grid-column-three-quarters">
-<article class="app-article">
-  <header class="app-article__header">
-    <h1 class="app-article__title govuk-heading-xl">
-      Components
-    </h1>
-      <div class="govuk-body-l">
-        A selection of commonly used components not currently in the GOV.UK Design System.
-      </div>
-  </header>
+    <div class="govuk-grid-column-three-quarters-from-desktop">
+      <header class="app-document-header">
+  <h1 class="app-document-header__title govuk-heading-xl">
+    Components
+  </h1>
+    <p class="app-document-header__description govuk-body-l">
+      A selection of commonly used components not currently in the GOV.UK Design System.
+    </p>
+</header>
 
 
-  <div class="app-article__body">
-        <p class="govuk-body">The rig incorporates <a href="https://x-govuk.github.io/govuk-prototype-components/" class="govuk-link">GOV.UK Prototype Components</a>, a selection of common components not currently in the GOV.UK Design System:</p>
+
+      <div class="app-prose-scope"><p class="govuk-body">The rig incorporates <a href="https://x-govuk.github.io/govuk-prototype-components/" class="govuk-link">GOV.UK Prototype Components</a>, a selection of common components not currently in the GOV.UK Design System:</p>
 <ul class="govuk-list govuk-list--bullet">
 <li>
 <p class="govuk-body"><a href="https://x-govuk.github.io/govuk-prototype-components/autocomplete/" class="govuk-link">Autocomplete</a></p>
@@ -121,11 +120,10 @@
 </li>
 </ul>
 <p class="govuk-body">While these may already be in use across different services, they should be considered experimental until research has validated their design and their accessibility has been audited.</p>
-
 </div>
-</article>
 
-      
+
+
     </div>
   </div>
         </main>
@@ -148,10 +146,6 @@
 
 
   <script src="/govuk-prototype-rig/assets/govuk.js"></script>
-  <script>
-    document.documentElement.classList.remove('no-js')
-    const searchContainer = document.querySelector('[data-module="app-search"]')
-    new GOVUK11ty.SiteSearch(searchContainer).init()
-  </script>
+  <script>document.documentElement.classList.remove('no-js')</script>
   </body>
 </html>

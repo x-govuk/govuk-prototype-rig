@@ -43,7 +43,7 @@
         </span>
       </a>
     </div>
-    <div class="app-site-search govuk-!-display-none-print" data-module="app-search" data-search-index="/govuk-prototype-rig/search.json">
+    <div class="app-site-search govuk-!-display-none-print" data-module="app-site-search" data-search-index="/govuk-prototype-rig/search.json">
   <label class="govuk-visually-hidden" for="app-site-search__input">Search site</label>
   <a class="app-site-search__link govuk-link-no-visited" href="/govuk-prototype-rig/sitemap">Sitemap</a>
 </div>
@@ -61,9 +61,7 @@
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="https://x-govuk.github.io/#shared-projects">X-GOVUK shared projects</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/govuk-prototype-rig/">GOV.UK Prototype Rig</a>
-    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">GOV.UK Prototype Rig</li>
   </ol>
 </div>
 <div class="govuk-grid-row">
@@ -92,11 +90,7 @@
 
   <div class="govuk-width-container">
     <main class="govuk-main-wrapper " id="main-content" role="main">
-<article class="app-article">
-
-
-  <div class="app-article__body">
-        <div class="govuk-grid-row">
+        <div class="app-prose-scope"><div class="govuk-grid-row">
   <section class="govuk-grid-column-one-third-from-desktop govuk-!-margin-bottom-8">
     <h2 class="govuk-heading-m govuk-!-font-size-27">About this project</h2>
     <p class="govuk-body">The rig provides all you need to build interactive prototypes that look like pages on GOV.UK.</p>
@@ -119,11 +113,10 @@
     <p class="govuk-body"><a class="govuk-link govuk-!-font-weight-bold" href="https://github.com/x-govuk/govuk-prototype-rig">View this project on GitHub</a></p>
   </section>
 </div>
-
 </div>
-</article>
 
-    
+
+
     </main>
   </div>
 
@@ -144,10 +137,6 @@
 
 
   <script src="/govuk-prototype-rig/assets/govuk.js"></script>
-  <script>
-    document.documentElement.classList.remove('no-js')
-    const searchContainer = document.querySelector('[data-module="app-search"]')
-    new GOVUK11ty.SiteSearch(searchContainer).init()
-  </script>
+  <script>document.documentElement.classList.remove('no-js')</script>
   </body>
 </html>

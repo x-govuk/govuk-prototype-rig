@@ -43,7 +43,7 @@
         </span>
       </a>
     </div>
-    <div class="app-site-search govuk-!-display-none-print" data-module="app-search" data-search-index="/govuk-prototype-rig/search.json">
+    <div class="app-site-search govuk-!-display-none-print" data-module="app-site-search" data-search-index="/govuk-prototype-rig/search.json">
   <label class="govuk-visually-hidden" for="app-site-search__input">Search site</label>
   <a class="app-site-search__link govuk-link-no-visited" href="/govuk-prototype-rig/sitemap">Sitemap</a>
 </div>
@@ -69,7 +69,7 @@
 
         <main class="govuk-main-wrapper " id="main-content" role="main">
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-quarter">
+    <div class="govuk-grid-column-one-quarter-from-desktop">
       <nav class="x-govuk-side-navigation" aria-labelledby="x-govuk-side-navigation-heading">
   <h2 class="govuk-visually-hidden" id="x-govuk-side-navigation-heading">Pages in this section</h2>
     <ul class="x-govuk-side-navigation__section">
@@ -109,17 +109,16 @@
 </nav>
 
     </div>
-    <div class="govuk-grid-column-three-quarters">
-<article class="app-article">
-  <header class="app-article__header">
-    <h1 class="app-article__title govuk-heading-xl">
-      Numbers
-    </h1>
-  </header>
+    <div class="govuk-grid-column-three-quarters-from-desktop">
+      <header class="app-document-header">
+  <h1 class="app-document-header__title govuk-heading-xl">
+    Numbers
+  </h1>
+</header>
 
 
-  <div class="app-article__body">
-        <h2 id="isnumber" tabindex="-1" class="govuk-heading-l">isNumber</h2>
+
+      <div class="app-prose-scope"><h2 id="isnumber" tabindex="-1" class="govuk-heading-l">isNumber</h2>
 <p class="govuk-body">Checks if a value is classified as a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="govuk-link"><code class="x-govuk-code x-govuk-code--inline">Number</code></a> primitive or object.</p>
 <p class="govuk-body">Input</p>
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">1801</span> | isNumber }}</span><span class="language-xml">
@@ -141,11 +140,10 @@ false
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>£81,932
 </code></pre>
 
-
 </div>
-</article>
 
-      
+
+
     </div>
   </div>
         </main>
@@ -168,10 +166,6 @@ false
 
 
   <script src="/govuk-prototype-rig/assets/govuk.js"></script>
-  <script>
-    document.documentElement.classList.remove('no-js')
-    const searchContainer = document.querySelector('[data-module="app-search"]')
-    new GOVUK11ty.SiteSearch(searchContainer).init()
-  </script>
+  <script>document.documentElement.classList.remove('no-js')</script>
   </body>
 </html>

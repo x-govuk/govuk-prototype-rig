@@ -43,7 +43,7 @@
         </span>
       </a>
     </div>
-    <div class="app-site-search govuk-!-display-none-print" data-module="app-search" data-search-index="/govuk-prototype-rig/search.json">
+    <div class="app-site-search govuk-!-display-none-print" data-module="app-site-search" data-search-index="/govuk-prototype-rig/search.json">
   <label class="govuk-visually-hidden" for="app-site-search__input">Search site</label>
   <a class="app-site-search__link govuk-link-no-visited" href="/govuk-prototype-rig/sitemap">Sitemap</a>
 </div>
@@ -56,21 +56,28 @@
   
         <main class="govuk-main-wrapper " id="main-content" role="main">
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-<article class="app-article">
-  <header class="app-article__header">
-    <h1 class="app-article__title govuk-heading-xl">
-      Page not found
-    </h1>
-  </header>
+    <div class="govuk-grid-column-full">
+      <header class="app-document-header">
+  <h1 class="app-document-header__title govuk-heading-xl">
+    Page not found
+  </h1>
+</header>
 
 
-  <div class="app-article__body">
+
+      <footer class="app-document-footer">
+  <p class="app-document-footer__metadata">
+  </p>
+</footer>
+
+    </div>
+
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+<div class="app-prose-scope">
         <p class="govuk-body">If you entered a web address please check it was correct.</p>
 <p class="govuk-body">You can browse from <a href="/govuk-prototype-rig/" class="govuk-link">the homepage</a> or use the <a href="/govuk-prototype-rig/sitemap" class="govuk-link">sitemap</a> to find the information you need.</p>
 
 </div>
-</article>
     </div>
 
   </div>
@@ -94,10 +101,6 @@
 
 
   <script src="/govuk-prototype-rig/assets/govuk.js"></script>
-  <script>
-    document.documentElement.classList.remove('no-js')
-    const searchContainer = document.querySelector('[data-module="app-search"]')
-    new GOVUK11ty.SiteSearch(searchContainer).init()
-  </script>
+  <script>document.documentElement.classList.remove('no-js')</script>
   </body>
 </html>
