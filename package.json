@@ -74,9 +74,6 @@
     "node": ">=16.0.0"
   },
   "type": "module",
-  "prototype": {
-    "serviceName": "Your service name"
-  },
   "standard": {
     "ignore": [
       "lib/server.js",
