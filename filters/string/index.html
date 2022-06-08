@@ -185,6 +185,26 @@ false
 <pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>Department for Business, Energy &amp; Industrial<span class="x-govuk-code__symbol">&amp;amp;</span>nbsp;Strategy
 </code></pre>
 
+<h2 id="pluralise" tabindex="-1" class="govuk-heading-l">pluralise</h2>
+<p class="govuk-body">Get the plural form for an item for a given number of items.</p>
+<blockquote class="govuk-inset-text govuk-!-margin-left-0">
+<p class="govuk-body">This filter currently only works with English words.</p>
+</blockquote>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--njk" tabindex="0"><code><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">1</span> | pluralise(<span class="x-govuk-code__name">&quot;mouse&quot;</span>) }}</span><span class="language-xml">
+</span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">2</span> | pluralise(<span class="x-govuk-code__name">&quot;house&quot;</span>) }}</span><span class="language-xml">
+</span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">2</span> | pluralise(<span class="x-govuk-code__name">&quot;house&quot;</span>, { number: <span class="x-govuk-code__literal">false</span> }) }}</span><span class="language-xml">
+</span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">2</span> | pluralise(<span class="x-govuk-code__name">&quot;mouse&quot;</span>, { plural: <span class="x-govuk-code__string">&quot;mice&quot;</span> }) }}</span><span class="language-xml">
+</span><span class="x-govuk-code__template-variable">{{ <span class="x-govuk-code__name">2</span> | pluralise(<span class="x-govuk-code__name">&quot;mouse&quot;</span>, { plural: <span class="x-govuk-code__string">&quot;mice&quot;</span>, number: <span class="x-govuk-code__literal">false</span> }) }}</span><span class="language-xml">
+</span></code></pre>
+
+<p class="govuk-body">Output</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--html" tabindex="0"><code>1 mouse
+2 houses
+houses
+2 mice
+mice
+</code></pre>
+
 <h2 id="slugify" tabindex="-1" class="govuk-heading-l">slugify</h2>
 <p class="govuk-body">Convert a string to kebab-case. This can be useful to slugify titles for use in URLs or fragment identifiers.</p>
 <p class="govuk-body">Input</p>
