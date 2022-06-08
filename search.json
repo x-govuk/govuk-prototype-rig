@@ -26,7 +26,7 @@
   },  {
     "title": "Numbers",
 "section": "Filters",    "layout": "side-navigation",
-    "templateContent": "isnumber checks value classified number primitive object input {{ 1801 | }} &quot 1801&quot output true false sterling convert into string formatted pound this can useful converting numbers human readable price 81932 £81 932",
+    "templateContent": "isnumber checks value classified number primitive object input {{ 1801 | }} &quot 1801&quot output true false ordinal convert into numeral that follows gov.uk style 4 22 fourth 22nd sterling string formatted pound this can useful converting numbers human readable price 81932 £81 932",
     "url": "/govuk-prototype-rig/filters/number/"
   },  {
     "title": "Objects",
