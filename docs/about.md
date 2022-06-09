@@ -21,7 +21,8 @@ Unbranded templates, jQuery and stylesheets for Internet Explorer 8 are also not
 
 ## Features
 
-* 404 and 500 error pages
+* Default 404 page
+* Error page that shows the cause of the error
 * [Feature flags](../using-data/feature-flags)
 * Session data output to the JavaScript console
 * Ability to use `async` functions for session data
