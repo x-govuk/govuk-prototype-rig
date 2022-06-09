@@ -1,18 +1,22 @@
 {% extends "template.njk" %}
 
 {% set title = "Sorry, there is a problem with the prototype" %}
+{% set stackHtml %}
+<pre class="x-govuk-code x-govuk-code--block govuk-!-margin-0" tabindex="0"><code class="govuk-!-font-size-14">{{ error.stack }}</code></pre>
+{% endset %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">{{ title }}</h1>
-      <p class="govuk-body">The prototype encountered the following error:</p>
 
-      {{ govukInsetText({
-        html: "<code>" + error + "</code>"
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">{{ error.name }}</h2>
+      <p class="govuk-body"><code>{{ error.message | nl2br | nl2br | safe }}</code></p>
+      {{ govukDetails({
+        summaryHtml: "<code>Stack trace</code>",
+        html: stackHtml
       }) }}
 
-      <p class="govuk-body"><a href="/">Return to prototype homepage</a>.</p>
       <pre class="govuk-!-margin-top-8">Status code: {{ status }}</pre>
     </div>
   </div>
