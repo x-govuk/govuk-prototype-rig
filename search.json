@@ -16,7 +16,7 @@
   },  {
     "title": "Dates",
 "section": "Filters",    "layout": "side-navigation",
-    "templateContent": "govukdate convert iso 8601 datetime human readable date that follows gov.uk style input {{ &quot 2021 08 17&quot | }} output 17 august can also with truncated month: truncate&quot aug get pass special word today&quot now&quot : this page last updated 22 october govuktime format time 17t00:00:31&quot 17t12:00:59&quot 17t18:30:00&quot midnight midday 6:30pm time: 08:15&quot 8:15am current submitted your application 4:32pm isodatefromdateinput decorated govukdateinput field values decorate method applied creates object day month year filter will into formatted { day: &#x27 17&#x27 08&#x27 year: 2021&#x27 }",
+    "templateContent": "govukdate convert iso 8601 datetime human readable date that follows gov.uk style input {{ &quot 2021 08 17&quot | }} output 17 august can also with truncated month: truncate&quot aug get pass special word today&quot now&quot : this page last updated 22 october govuktime format time 17t00:00:31&quot 17t12:00:59&quot 17t18:30:00&quot midnight midday 6:30pm time: 08:15&quot 8:15am current submitted your application 4:32pm isodatefromdateinput decorated govukdateinput values decorate method applied creates object day month year filter will into formatted { day: &#x27 17&#x27 08&#x27 year: 2021&#x27 }",
     "url": "/govuk-prototype-rig/filters/date/"
   },  {
     "title": "Filters",
@@ -26,7 +26,7 @@
   },  {
     "title": "Numbers",
 "section": "Filters",    "layout": "side-navigation",
-    "templateContent": "isnumber checks value classified number primitive object input {{ 1801 | }} &quot 1801&quot output true false ordinal convert into numeral that follows gov.uk style 4 22 fourth 22nd sterling string formatted pound this can useful converting numbers human readable price 81932 £81 932",
+    "templateContent": "isnumber checks value classified number primitive object input {{ 1801 | }} &quot 1801&quot output true false ordinal convert into numeral that follows gov.uk style 4 22 fourth 22nd sterling string formatted pound this can useful converting numbers human readable price 81932 133.66667 6.83 £81 932.00 £133.67 £6.83",
     "url": "/govuk-prototype-rig/filters/number/"
   },  {
     "title": "Objects",
