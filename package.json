@@ -29,7 +29,9 @@
     "serve": "govuk-prototype-rig",
     "start": "npm-run-all --serial build-assets serve",
     "dev": "npm-run-all --parallel watch-assets serve",
-    "lint": "standard && stylelint 'app/**/*.scss'"
+    "lint": "standard && stylelint 'app/**/*.scss'",
+    "test": "ava",
+    "coverage": "c8 ava"
   },
   "dependencies": {
     "@rollup/plugin-commonjs": "^22.0.0",
@@ -63,6 +65,8 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
+    "ava": "^4.0.1",
+    "c8": "^7.11.0",
     "govuk-eleventy-plugin": "^2.0.0-beta",
     "standard": "^17.0.0",
     "stylelint": "^14.6.1",
@@ -70,6 +74,12 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "c8": {
+    "reporter": [
+      "text",
+      "lcovonly"
+    ]
   },
   "engines": {
     "node": ">=16.0.0"
