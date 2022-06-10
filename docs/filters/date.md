@@ -98,7 +98,7 @@ You submitted your application at 4:32pm.
 
 ## isoDateFromDateInput
 
-Convert decorated `govukDateInput` field values to an ISO 8601 date.
+Convert decorated `govukDateInput` values to an ISO 8601 date.
 
 The `decorate()` method applied to a `govukDateInput` creates an object with `day`, `month` and `year` values. This filter will convert this into an ISO 8601 formatted date.
 

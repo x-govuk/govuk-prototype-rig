@@ -139,7 +139,7 @@ department-for-education
 
 ## startsWith
 
-Checks if string starts with a value.
+Checks if a string starts with a value.
 
 Input
 
