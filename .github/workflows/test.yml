@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+env:
+  LANG: "en_GB.UTF-8"
+
 jobs:
   test:
     name: Run tests
