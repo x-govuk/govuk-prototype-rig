@@ -14,10 +14,10 @@ test('Converts an ISO 8601 datetime to a date using the GOV.UK style', t => {
   t.is(govukDate('2021-08', 'truncate'), 'Aug 2021')
 
   const govukDateToday = String(Date.parse(govukDate('today')))
-  t.is(String(govukDateToday).slice(0, 5), String(now).slice(0, 5))
+  t.is(String(govukDateToday).slice(0, 4), String(now).slice(0, 4))
 
   const govukDateTodayTruncated = Date.parse(govukDate('today', 'truncate'))
-  t.is(String(govukDateTodayTruncated).slice(0, 5), String(now).slice(0, 5))
+  t.is(String(govukDateTodayTruncated).slice(0, 4), String(now).slice(0, 4))
 })
 
 test('Returns error converting an ISO 8601 datetime to a date using the GOV.UK style', t => {
