@@ -48,10 +48,14 @@ Input
 
 ```njk
 {{ 81932 | sterling }}
+{{ 133.66667 | sterling }}
+{{ 6.83 | sterling }}
 ```
 
 Output
 
 ```html
-£81,932
+£81,932.00
+£133.67
+£6.83
 ```
