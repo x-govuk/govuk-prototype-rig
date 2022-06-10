@@ -1,0 +1,24 @@
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  fieldset: {
+    legend: {
+      text: "What is your nationality?"
+    }
+  },
+  name: "nationality",
+  idPrefix: "nationality",
+  items: [{
+    value: "british",
+    text: "British",
+    checked: checked("nationality", "british")
+  }, {
+    value: "irish",
+    text: "Irish",
+    checked: checked("nationality", "irish")
+  }, {
+    value: "other",
+    text: "Citizen of another country",
+    checked: checked("nationality", "other")
+  }]
+}) }}
