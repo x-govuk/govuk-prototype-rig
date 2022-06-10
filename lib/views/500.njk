@@ -11,9 +11,9 @@
       <h1 class="govuk-heading-xl">{{ title }}</h1>
 
       <h2 class="govuk-heading-m govuk-!-margin-bottom-2">{{ error.name }}</h2>
-      <p class="govuk-body"><code>{{ error.message | nl2br | nl2br | safe }}</code></p>
+      <p class="govuk-body">{{ error.message | nl2br | nl2br | safe }}</p>
       {{ govukDetails({
-        summaryHtml: "<code>Stack trace</code>",
+        summaryHtml: "Stack trace",
         html: stackHtml
       }) }}
 
