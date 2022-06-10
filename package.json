@@ -85,12 +85,6 @@
     "node": ">=16.0.0"
   },
   "type": "module",
-  "standard": {
-    "ignore": [
-      "lib/server.js",
-      "!.eleventy.cjs"
-    ]
-  },
   "stylelint": {
     "extends": "stylelint-config-gds/scss"
   }
