@@ -15,7 +15,9 @@
   "files": [
     "lib"
   ],
-  "bin": "bin.js",
+  "bin": {
+    "govuk-prototype-rig": "./bin.js"
+  },
   "main": "main.js",
   "repository": {
     "type": "git",
