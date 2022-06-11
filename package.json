@@ -18,7 +18,7 @@
   "bin": {
     "govuk-prototype-rig": "./bin.js"
   },
-  "main": "main.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/x-govuk/govuk-prototype-rig.git"
