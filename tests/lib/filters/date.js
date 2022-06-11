@@ -47,6 +47,10 @@ test('Converts decorated `govukDateInput` values to an ISO 8601 date', t => {
   }), '2021-08')
 })
 
+test('Doesn’t covert value to an ISO 8601 date if not an object', t => {
+  t.is(isoDateFromDateInput('2021-08-17T12:49:05'), '2021-08-17T12:49:05')
+})
+
 test('Returns error converting decorated `govukDateInput` values to an ISO 8601 date', t => {
   t.is(isoDateFromDateInput({ foo: 'bar' }), 'Invalid DateTime')
 })
