@@ -159,6 +159,11 @@
 <td style="text-align:left" class="govuk-table__cell">boolean</td>
 <td style="text-align:left" class="govuk-table__cell">Force HTTP to redirect to HTTPS on production. Default is <code class="x-govuk-code x-govuk-code--inline">true</code>.</td>
 </tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>defaultRigLayout</strong></td>
+<td style="text-align:left" class="govuk-table__cell">string</td>
+<td style="text-align:left" class="govuk-table__cell">Use a layout from your prototype for the views provided by the rig. So, for example the ‘Clear session data’ and password pages can use a layout that matches the rest of your prototype. If no option is given rig pages will use the default <code class="x-govuk-code x-govuk-code--inline">template.njk</code> layout. Example: <code class="x-govuk-code x-govuk-code--inline">layouts/default.html</code>, if your prototype has a <code class="x-govuk-code x-govuk-code--inline">default</code> layout in the <code class="x-govuk-code x-govuk-code--inline">app/views/layouts</code> directory. Always include the file extension, <code class="x-govuk-code x-govuk-code--inline">.html</code> or <code class="x-govuk-code x-govuk-code--inline">.njk</code>.</td>
+</tr>
 </tbody>
 </table>
 </div>
