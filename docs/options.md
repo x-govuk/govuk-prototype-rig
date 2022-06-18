@@ -32,3 +32,4 @@ The following options can be set in your configuration file:
 | **useAutoStoreData** | boolean | Automatically store form data and send to all views. Default is `true`. |
 | **useCookieSessionStore** | boolean | Enable cookie-based session store (persists on restart). Please note 4KB cookie limit per domain, cookies too large will silently be ignored. Default is `false`. |
 | **useHttps** | boolean | Force HTTP to redirect to HTTPS on production. Default is `true`. |
+| **defaultRigLayout** | string | Use a layout from your prototype for the views provided by the rig. So, for example the ‘Clear session data’ and password pages can use a layout that matches the rest of your prototype. If no option is given rig pages will use the default `template.njk` layout. Example: `layouts/default.html`, if your prototype has a `default` layout in the `app/views/layouts` directory. Always include the file extension, `.html` or `.njk`. |
