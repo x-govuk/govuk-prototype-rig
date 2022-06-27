@@ -30,12 +30,6 @@
     })
   }
 
-  var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
-
-  function getDefaultExportFromCjs (x) {
-  	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
-  }
-
   (function(undefined$1) {
 
   // Detection from https://github.com/Financial-Times/polyfill-service/blob/master/packages/polyfill-library/polyfills/Object/defineProperty/detect.js
@@ -121,7 +115,7 @@
   	};
   }(Object.defineProperty));
   })
-  .call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof commonjsGlobal && commonjsGlobal || {});
+  .call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
 
   (function(undefined$1) {
     // Detection from https://github.com/Financial-Times/polyfill-service/blob/master/packages/polyfill-library/polyfills/Function/prototype/bind/detect.js
@@ -544,7 +538,7 @@
 
       }(this));
 
-  }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof commonjsGlobal && commonjsGlobal || {});
+  }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
 
   (function(undefined$1) {
 
@@ -571,7 +565,7 @@
 
 
   })
-  .call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof commonjsGlobal && commonjsGlobal || {});
+  .call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
 
   (function(undefined$1) {
 
@@ -1147,7 +1141,7 @@
   }
 
   })
-  .call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof commonjsGlobal && commonjsGlobal || {});
+  .call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
 
   (function(undefined$1) {
 
@@ -2026,7 +2020,7 @@
       return !!elements[index];
     };
 
-  }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof commonjsGlobal && commonjsGlobal || {});
+  }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
 
   (function(undefined$1) {
 
@@ -2890,6 +2884,10 @@
     nodeListForEach($tabs, function ($tabs) {
       new Tabs($tabs).init();
     });
+  }
+
+  function getDefaultExportFromCjs (x) {
+  	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
   }
 
   var accessibleAutocomplete_min = {exports: {}};
