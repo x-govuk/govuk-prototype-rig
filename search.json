@@ -6,7 +6,7 @@
   },  {
     "title": "Components",
 "description": "A selection of commonly used components not currently in the GOV.UK Design System.","section": "GOV.UK Prototype Rig",    "layout": "side-navigation",
-    "templateContent": "rig incorporates gov.uk prototype components selection common currently design system: autocomplete masthead related navigation summary card task list while these may already use across different services they should considered experimental until research validated their accessibility been audited",
+    "templateContent": "rig incorporates gov.uk prototype components selection common currently design system: autocomplete masthead related navigation sub summary card task list while these may already use across different services they should considered experimental until research validated their accessibility been audited",
     "url": "/govuk-prototype-rig/components/"
   },  {
     "title": "Arrays",
