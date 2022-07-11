@@ -53,7 +53,7 @@
     "govuk-prototype-wizard": "^0.2.0",
     "inquirer": "^9.0.0",
     "lodash": "^4.17.21",
-    "luxon": "^2.0.2",
+    "luxon": "^3.0.1",
     "marked": "^4.0.12",
     "mock-req-res": "^1.2.0",
     "nodemon": "^2.0.13",
