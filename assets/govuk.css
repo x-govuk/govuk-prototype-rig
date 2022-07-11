@@ -109,7 +109,7 @@ a:focus, .govuk-link:focus {
   color: #0b0c0c;
 }
 
-.app-pagination__list, .app-footnotes-list, .app-definition-list, .app-contents-list ul, .app-contents-list, .govuk-list {
+.app-footnotes-list, .app-definition-list, .app-contents-list ul, .app-contents-list, .govuk-list {
   font-family: system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -124,38 +124,38 @@ a:focus, .govuk-link:focus {
   list-style-type: none;
 }
 @media print {
-  .app-pagination__list, .app-footnotes-list, .app-definition-list, .app-contents-list ul, .app-contents-list, .govuk-list {
+  .app-footnotes-list, .app-definition-list, .app-contents-list ul, .app-contents-list, .govuk-list {
     font-family: sans-serif;
   }
 }
 @media (min-width: 40.0625em) {
-  .app-pagination__list, .app-footnotes-list, .app-definition-list, .app-contents-list ul, .app-contents-list, .govuk-list {
+  .app-footnotes-list, .app-definition-list, .app-contents-list ul, .app-contents-list, .govuk-list {
     font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.3157894737;
   }
 }
 @media print {
-  .app-pagination__list, .app-footnotes-list, .app-definition-list, .app-contents-list ul, .app-contents-list, .govuk-list {
+  .app-footnotes-list, .app-definition-list, .app-contents-list ul, .app-contents-list, .govuk-list {
     font-size: 14pt;
     line-height: 1.15;
   }
 }
 @media print {
-  .app-pagination__list, .app-footnotes-list, .app-definition-list, .app-contents-list ul, .app-contents-list, .govuk-list {
+  .app-footnotes-list, .app-definition-list, .app-contents-list ul, .app-contents-list, .govuk-list {
     color: #000000;
   }
 }
 @media (min-width: 40.0625em) {
-  .app-pagination__list, .app-footnotes-list, .app-definition-list, .app-contents-list ul, .app-contents-list, .govuk-list {
+  .app-footnotes-list, .app-definition-list, .app-contents-list ul, .app-contents-list, .govuk-list {
     margin-bottom: 20px;
   }
 }
-.app-pagination__list .app-pagination__list, .app-footnotes-list .app-pagination__list, .app-pagination__list .app-footnotes-list, .app-footnotes-list .app-footnotes-list, .app-definition-list .app-pagination__list, .app-definition-list .app-footnotes-list, .app-pagination__list .app-definition-list, .app-footnotes-list .app-definition-list, .app-definition-list .app-definition-list, .app-contents-list .app-pagination__list, .app-contents-list .app-footnotes-list, .app-contents-list .app-definition-list, .app-contents-list ul, .app-pagination__list .app-contents-list, .app-footnotes-list .app-contents-list, .app-definition-list .app-contents-list, .app-contents-list .app-contents-list, .govuk-list .app-pagination__list, .govuk-list .app-footnotes-list, .govuk-list .app-definition-list, .govuk-list .app-contents-list, .app-pagination__list .govuk-list, .app-footnotes-list .govuk-list, .app-definition-list .govuk-list, .app-contents-list .govuk-list, .govuk-list .govuk-list {
+.app-footnotes-list .app-footnotes-list, .app-definition-list .app-footnotes-list, .app-footnotes-list .app-definition-list, .app-definition-list .app-definition-list, .app-contents-list .app-footnotes-list, .app-contents-list .app-definition-list, .app-contents-list ul, .app-footnotes-list .app-contents-list, .app-definition-list .app-contents-list, .app-contents-list .app-contents-list, .govuk-list .app-footnotes-list, .govuk-list .app-definition-list, .govuk-list .app-contents-list, .app-footnotes-list .govuk-list, .app-definition-list .govuk-list, .app-contents-list .govuk-list, .govuk-list .govuk-list {
   margin-top: 10px;
 }
 
-.app-pagination__list > li, .app-footnotes-list > li, .app-definition-list > li, .app-contents-list ul > li, .app-contents-list > li, .govuk-list > li {
+.app-footnotes-list > li, .app-definition-list > li, .app-contents-list ul > li, .app-contents-list > li, .govuk-list > li {
   margin-bottom: 5px;
 }
 
@@ -629,7 +629,6 @@ p, .govuk-body, .govuk-body-m {
 
 p + .govuk-heading-l, .govuk-body-m + .govuk-heading-l, .govuk-body + .govuk-heading-l,
 .govuk-body-s + .govuk-heading-l,
-.app-pagination__list + .govuk-heading-l,
 .app-footnotes-list + .govuk-heading-l,
 .app-definition-list + .govuk-heading-l,
 .app-contents-list ul + .govuk-heading-l,
@@ -640,7 +639,6 @@ p + .govuk-heading-l, .govuk-body-m + .govuk-heading-l, .govuk-body + .govuk-hea
 @media (min-width: 40.0625em) {
   p + .govuk-heading-l, .govuk-body-m + .govuk-heading-l, .govuk-body + .govuk-heading-l,
 .govuk-body-s + .govuk-heading-l,
-.app-pagination__list + .govuk-heading-l,
 .app-footnotes-list + .govuk-heading-l,
 .app-definition-list + .govuk-heading-l,
 .app-contents-list ul + .govuk-heading-l,
@@ -652,7 +650,6 @@ p + .govuk-heading-l, .govuk-body-m + .govuk-heading-l, .govuk-body + .govuk-hea
 
 p + .govuk-heading-m, .govuk-body-m + .govuk-heading-m, .govuk-body + .govuk-heading-m,
 .govuk-body-s + .govuk-heading-m,
-.app-pagination__list + .govuk-heading-m,
 .app-footnotes-list + .govuk-heading-m,
 .app-definition-list + .govuk-heading-m,
 .app-contents-list ul + .govuk-heading-m,
@@ -662,7 +659,6 @@ p + .govuk-heading-s,
 .govuk-body-m + .govuk-heading-s,
 .govuk-body + .govuk-heading-s,
 .govuk-body-s + .govuk-heading-s,
-.app-pagination__list + .govuk-heading-s,
 .app-footnotes-list + .govuk-heading-s,
 .app-definition-list + .govuk-heading-s,
 .app-contents-list ul + .govuk-heading-s,
@@ -673,7 +669,6 @@ p + .govuk-heading-s,
 @media (min-width: 40.0625em) {
   p + .govuk-heading-m, .govuk-body-m + .govuk-heading-m, .govuk-body + .govuk-heading-m,
 .govuk-body-s + .govuk-heading-m,
-.app-pagination__list + .govuk-heading-m,
 .app-footnotes-list + .govuk-heading-m,
 .app-definition-list + .govuk-heading-m,
 .app-contents-list ul + .govuk-heading-m,
@@ -683,7 +678,6 @@ p + .govuk-heading-s,
 .govuk-body-m + .govuk-heading-s,
 .govuk-body + .govuk-heading-s,
 .govuk-body-s + .govuk-heading-s,
-.app-pagination__list + .govuk-heading-s,
 .app-footnotes-list + .govuk-heading-s,
 .app-definition-list + .govuk-heading-s,
 .app-contents-list ul + .govuk-heading-s,
@@ -8903,124 +8897,6 @@ a[aria-describedby=footnotes-label]:after {
 
 [class^=govuk-heading][tabindex] {
   outline: none;
-}
-
-@media (min-width: 48.0625em) {
-  .app-pagination {
-    text-align: justify;
-  }
-  .app-pagination:after {
-    content: "";
-    display: inline-block;
-    width: 100%;
-  }
-}
-
-.app-pagination__list {
-  border-top: 1px solid #b1b4b6;
-  padding-top: 10px;
-  width: 100%;
-}
-@media (min-width: 48.0625em) {
-  .app-pagination__list {
-    display: inline-block;
-    margin-bottom: 0;
-    vertical-align: middle;
-  }
-}
-
-.app-pagination__results {
-  padding: 5px;
-}
-@media (min-width: 48.0625em) {
-  .app-pagination__results {
-    display: inline-block;
-    margin-bottom: 0;
-    vertical-align: middle;
-  }
-}
-
-.app-pagination__item {
-  font-family: system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.25;
-  display: inline-block;
-}
-@media print {
-  .app-pagination__item {
-    font-family: sans-serif;
-  }
-}
-@media (min-width: 40.0625em) {
-  .app-pagination__item {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.3157894737;
-  }
-}
-@media print {
-  .app-pagination__item {
-    font-size: 14pt;
-    line-height: 1.15;
-  }
-}
-
-.app-pagination__item--active,
-.app-pagination__item--dots {
-  font-weight: bold;
-  height: 25px;
-  padding: 5px 10px;
-  text-align: center;
-}
-
-.app-pagination__item--dots {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.app-pagination__item--prev .app-pagination__link:before,
-.app-pagination__item--next .app-pagination__link:after {
-  display: inline-block;
-  height: 10px;
-  width: 10px;
-  border-style: solid;
-  color: #0b0c0c;
-  background: transparent;
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  content: "";
-}
-
-.app-pagination__item--prev .app-pagination__link:before {
-  border-width: 3px 0 0 3px;
-  margin-right: 5px;
-}
-
-.app-pagination__item--next .app-pagination__link:after {
-  border-width: 0 3px 3px 0;
-  margin-left: 5px;
-}
-
-.app-pagination__link {
-  display: block;
-  padding: 5px;
-  text-align: center;
-  text-decoration: none;
-  min-width: 25px;
-}
-.app-pagination__link:link, .app-pagination__link:visited {
-  color: #1d70b8;
-}
-.app-pagination__link:hover {
-  color: #5694ca;
-}
-.app-pagination__link:focus {
-  color: #0b0c0c;
 }
 
 .app-prose-scope {
