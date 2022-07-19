@@ -1,5 +1,5 @@
 ---
-layout: side-navigation
+layout: sub-navigation
 order: 2
 title: Configuration
 description: The rig has a number of options that allow you to customise the behaviour of your prototype.

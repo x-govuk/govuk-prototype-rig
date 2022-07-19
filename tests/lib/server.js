@@ -2,7 +2,7 @@ import test from 'ava'
 import request from 'supertest'
 import app from '../../lib/server.js'
 
-test('Serves an HTML files', async t => {
+test('Serves an HTML file', async t => {
   const response = await request(app).get('/')
 
   t.is(response.type, 'text/html')
