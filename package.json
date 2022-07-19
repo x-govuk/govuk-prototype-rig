@@ -1,6 +1,6 @@
 {
   "name": "govuk-prototype-rig",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Rapidly create prototypes of GOV.UK services",
   "keywords": [
     "govuk",
