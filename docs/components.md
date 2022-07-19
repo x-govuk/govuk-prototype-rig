@@ -15,6 +15,8 @@ The rig incorporates [GOV.UK Prototype Components](https://x-govuk.github.io/gov
 
 * [Masthead](https://x-govuk.github.io/govuk-prototype-components/masthead/)
 
+* [Primary navigation](https://x-govuk.github.io/govuk-prototype-components/primary-navigation/)
+
 * [Related navigation](https://x-govuk.github.io/govuk-prototype-components/related-navigation/)
 
 * [Sub navigation](https://x-govuk.github.io/govuk-prototype-components/sub-navigation/)
