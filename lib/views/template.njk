@@ -5,8 +5,6 @@
 {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
-{% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 {% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 {% from "govuk/components/error-message/macro.njk" import govukErrorMessage %}
@@ -24,6 +22,8 @@
 {% from "govuk/components/tag/macro.njk" import govukTag %}
 {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
+{% from "x-govuk/components/decorated/button/macro.njk" import govukButton with context %}
+{% from "x-govuk/components/decorated/character-count/macro.njk" import govukCharacterCount with context %}
 {% from "x-govuk/components/decorated/checkboxes/macro.njk" import govukCheckboxes with context %}
 {% from "x-govuk/components/decorated/date-input/macro.njk" import govukDateInput with context %}
 {% from "x-govuk/components/decorated/file-upload/macro.njk" import govukFileUpload with context %}
