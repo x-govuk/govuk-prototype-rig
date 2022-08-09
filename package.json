@@ -48,7 +48,7 @@
     "express-session": "^1.13.0",
     "govuk-frontend": "^4.2.0",
     "govuk-markdown": "^0.2.1",
-    "govuk-prototype-components": "^0.5.0",
+    "govuk-prototype-components": "^0.6.0",
     "govuk-prototype-rig": "file:./",
     "govuk-prototype-wizard": "^0.2.0",
     "inquirer": "^9.0.0",
