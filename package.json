@@ -46,6 +46,7 @@
     "express": "^4.17.3",
     "express-rate-limit": "^6.4.0",
     "express-session": "^1.13.0",
+    "govuk-decorated-components": "^1.0.0",
     "govuk-frontend": "^4.3.0",
     "govuk-markdown": "^0.3.0",
     "govuk-prototype-components": "^0.6.0",
