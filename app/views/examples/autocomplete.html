@@ -7,8 +7,8 @@
     <div class="govuk-grid-column-two-thirds">
       <form method="post" novalidate>
         {{ xGovukAutocomplete({
-          id: "country",
-          name: "country",
+          id: "county",
+          name: "county",
           allowEmpty: false,
           label: {
             classes: "govuk-label--l",
@@ -67,8 +67,7 @@
             { text: "West Yorkshire" },
             { text: "Wiltshire" },
             { text: "Worcestershire" }
-          ],
-          decorate: "county"
+          ]
         }) }}
 
         {{ govukButton({
