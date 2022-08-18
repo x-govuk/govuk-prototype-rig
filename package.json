@@ -49,7 +49,7 @@
     "govuk-decorated-components": "^1.0.0",
     "govuk-frontend": "^4.3.0",
     "govuk-markdown": "^0.3.0",
-    "govuk-prototype-components": "^0.6.0",
+    "govuk-prototype-components": "^1.0.0",
     "govuk-prototype-rig": "file:./",
     "govuk-prototype-wizard": "^0.2.0",
     "inquirer": "^9.0.0",
