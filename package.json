@@ -72,7 +72,7 @@
     "ava": "^4.0.1",
     "c8": "^7.11.0",
     "govuk-eleventy-plugin": "^3.0.0",
-    "sinon": "^14.0.0",
+    "sinon": "^15.0.0",
     "standard": "^17.0.0",
     "stylelint": "^14.6.1",
     "stylelint-config-gds": "^0.2.0",
