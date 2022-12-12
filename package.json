@@ -36,7 +36,7 @@
     "coverage": "c8 ava"
   },
   "dependencies": {
-    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-commonjs": "^23.0.4",
     "@rollup/plugin-node-resolve": "^13.0.5",
     "browser-sync": "^2.27.8",
     "client-sessions": "^0.8.0",
