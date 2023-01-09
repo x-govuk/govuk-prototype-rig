@@ -5,6 +5,7 @@
 .start.pid
 .tmuxp.*
 
+_site
 coverage
 node_modules
 public
