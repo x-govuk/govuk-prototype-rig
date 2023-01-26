@@ -1,12 +1,10 @@
 ---
 order: 4
 title: Components
-description: A selection of commonly used components not currently in the GOV.UK Design System.
+description: Common and experimental components that are not yet part of the GOV.UK Design System.
 action: Browse components
 tags:
   - homepage
-eleventyNavigation:
-  parent: GOV.UK Prototype Rig
 ---
 
 The rig incorporates [GOV.UK Prototype Components](https://x-govuk.github.io/govuk-prototype-components/), a selection of common components not currently in the GOV.UK Design System:
