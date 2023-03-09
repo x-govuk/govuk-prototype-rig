@@ -19,8 +19,4 @@ The rig incorporates [GOV.UK Prototype Components](https://x-govuk.github.io/gov
 
 * [Sub navigation](https://x-govuk.github.io/govuk-prototype-components/sub-navigation/)
 
-* [Summary card](https://x-govuk.github.io/govuk-prototype-components/summary-card/)
-
-* [Task list](https://x-govuk.github.io/govuk-prototype-components/task-list/)
-
 While these may already be in use across different services, they should be considered experimental until research has validated their design and their accessibility has been audited.

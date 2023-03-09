@@ -30,7 +30,7 @@ export default [{
       quietDeps: true,
       sourceMap: true,
       verbose: false,
-      watch: ['app/assets/stylesheets', 'node_modules/govuk-prototype-components/x-govuk']
+      watch: ['app/assets/stylesheets', 'node_modules/@x-govuk/govuk-prototype-components/x-govuk']
     })
   ]
 }]

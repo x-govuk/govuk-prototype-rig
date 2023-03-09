@@ -38,6 +38,7 @@
   "dependencies": {
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
+    "@x-govuk/govuk-prototype-components": "^2.0.0",
     "browser-sync": "^2.27.8",
     "client-sessions": "^0.8.0",
     "cookie-parser": "^1.4.6",
@@ -48,7 +49,6 @@
     "express-session": "^1.13.0",
     "govuk-decorated-components": "^1.0.0",
     "govuk-frontend": "^4.3.0",
-    "govuk-prototype-components": "^1.0.0",
     "govuk-prototype-filters": "^0.1.0",
     "govuk-prototype-rig": "file:./",
     "govuk-prototype-wizard": "^0.2.0",
