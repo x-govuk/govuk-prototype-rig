@@ -4,7 +4,7 @@ Go to the [GOV.UK Prototype Rig](https://x-govuk.github.io/govuk-prototype-rig/)
 
 ## Requirements
 
-* Node.js v16
+* Node.js v18
 
 ## Installation
 
